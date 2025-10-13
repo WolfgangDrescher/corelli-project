@@ -4,8 +4,10 @@ const { data } = await useAsyncData('pieces', () => queryCollection('pieces').al
 const { t } = useI18n();
 const localePath = useLocalePath();
 
-const pieces = data.value.map(item => {
-    return {
+const { filteredElements } = usePieceFilter(data.value);
+
+const pieces = computed(() => {
+    return filteredElements.value.map(item => ({
         // composer: item.composer,
         key: item.key,
         // largerWorkTitle: item.largerWorkTitle,
@@ -20,7 +22,7 @@ const pieces = data.value.map(item => {
         opnr: `${item.op} / ${item.nr}`,
         mvAndDesignation: `${item.mv}. ${item.movementDesignation}`,
         title: item.title,
-    };
+    }));
 });
 
 const columns = [
@@ -40,6 +42,7 @@ const columns = [
     <UContainer>
         <div class="flex flex-col gap-8">
             <Heading>{{ $t('pieces') }}</Heading>
+            <PieceFilter />
             <UTable :data="pieces" :columns="columns" class="mt-8">
                 <template #audio-cell="{ row }">
                     <MidiPlayer :url="row.original.localRawFile" class="text-2xl"/>
