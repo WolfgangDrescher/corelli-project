@@ -27,7 +27,6 @@ const pieces = computed(() => {
 
 const columns = [
     { accessorKey: 'audio', header: null },
-    // { accessorKey: 'slug' },
     { accessorKey: 'opnr', header: t('opNr') },
     { accessorKey: 'mvAndDesignation', header: t('movement') },
     { accessorKey: 'title', header: t('title') },
