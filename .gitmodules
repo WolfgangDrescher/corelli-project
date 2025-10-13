@@ -1,0 +1,3 @@
+[submodule "corelli-trio-sonatas"]
+	path = corelli-trio-sonatas
+	url = https://github.com/WolfgangDrescher/corelli-trio-sonatas.git
