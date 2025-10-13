@@ -43,7 +43,7 @@ const columns = [
         <div class="flex flex-col gap-8">
             <Heading>{{ $t('pieces') }}</Heading>
             <PieceFilter />
-            <UTable :data="pieces" :columns="columns" class="mt-8">
+            <UTable :data="pieces" :columns="columns" :get-row-id="(item) => item.slug" class="mt-8">
                 <template #audio-cell="{ row }">
                     <MidiPlayer :url="row.original.localRawFile" class="text-2xl"/>
                 </template>
