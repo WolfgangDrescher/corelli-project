@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxt/ui',
+    '@nuxtjs/i18n',
   ],
   css: ['~/assets/css/main.css'],
 });
