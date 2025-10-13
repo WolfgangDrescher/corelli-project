@@ -25,7 +25,6 @@ const state = ref(null);
 
 Promise.all([midiPlayerIsReady.promise, soundFrontIsReady.promise]).then(() => {
     isReady.resolve();
-    isLoading.value = false;
 });
 
 const activeKeys = {};
