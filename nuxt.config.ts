@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'node:url';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
@@ -22,5 +24,14 @@ export default defineNuxtConfig({
     },
     colorMode: {
         preference: 'light',
+    },
+    nitro: {
+        publicAssets: [
+            {
+                baseURL: 'kern/corelli-trio-sonatas',
+                dir: fileURLToPath(new URL('./corelli-trio-sonatas/kern', import.meta.url)),
+                maxAge: 3600,
+            },
+        ],
     },
 });
