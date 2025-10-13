@@ -4,6 +4,14 @@ export default defineNuxtConfig({
     devtools: { enabled: false },
     modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/i18n', '@pinia/nuxt'],
     css: ['~/assets/css/main.css'],
+    i18n: {
+        strategy: 'prefix_except_default',
+        locales: [
+            { code: 'de', language: 'de-DE', file: 'de.yaml', dir: 'ltr' },
+        ],
+        defaultLocale: 'de',
+        langDir: 'locales/',
+    },
     colorMode: {
         preference: 'light',
     },
