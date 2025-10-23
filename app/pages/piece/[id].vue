@@ -43,15 +43,15 @@ const formattedData = computed(() => {
                         {{ piece.composer }}
                     </div>
                 </Heading>
-                <div class="flex gap-2 items-center">
+                <div class="flex gap-2">
                     <div v-if="prevPiece">
-                        <UButton :to="localePath({ name: 'piece-id', params: { id: prevPiece.slug }, hash: $route.hash })">
+                        <UButton :to="localePath({ name: 'piece-id', params: { id: prevPiece.slug }, hash: $route.hash })" size="xs">
                             <Icon name="heroicons:arrow-left-circle" class="text-xl" />
                             {{ $t('previous') }}
                         </UButton>
                     </div>
                     <div v-if="nextPiece">
-                        <UButton :to="localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: $route.hash })">
+                        <UButton :to="localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: $route.hash })" size="xs">
                             {{ $t('next') }}
                             <Icon name="heroicons:arrow-right-circle" class="text-xl" />
                         </UButton>
