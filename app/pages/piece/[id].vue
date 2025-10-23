@@ -74,6 +74,7 @@ const formattedData = computed(() => {
             <VerovioCanvas
                 v-if="formattedData"
                 :data="formattedData"
+                :scale="35"
                 :options="{
                     header: true,
                     spacingSystem: 15,
