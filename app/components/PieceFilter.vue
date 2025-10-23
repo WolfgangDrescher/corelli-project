@@ -13,13 +13,15 @@ function resetFilter() {
     pieceFilter.reset();
 }
 
-const { title, key, meter, tempo } = storeToRefs(pieceFilter);
+const { title, key, meter, tempo, op, nr } = storeToRefs(pieceFilter);
 
 const {
     meterOptions,
     keyOptions,
     titleOptions,
     tempoOptions,
+    opOptions,
+    nrOptions,
 } = toRefs(filterOptions);
 </script>
 
@@ -31,6 +33,24 @@ const {
             </div>
         </template>
         <div class="flex gap-2 mb-3">
+            <UFormField :label="$t('opus')" class="lg:w-48">
+                <USelectMenu
+                    v-model="op"
+                    multiple
+                    class="w-full"
+                    :search-input="false"
+                    :items="opOptions"
+                />
+            </UFormField>
+            <UFormField :label="$t('number')" class="lg:w-48">
+                <USelectMenu
+                    v-model="nr"
+                    multiple
+                    class="w-full"
+                    :search-input="false"
+                    :items="nrOptions"
+                />
+            </UFormField>
             <UFormField :label="$t('title')" class="lg:w-48">
                 <USelectMenu
                     v-model="title"

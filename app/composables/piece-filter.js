@@ -18,6 +18,16 @@ const filterByKey = (values, element) => {
     return values.includes(element.key);
 };
 
+const filterByOp = (values, element) => {
+    if (!values.length) return true;
+    return values.includes(element.op);
+};
+
+const filterByNr = (values, element) => {
+    if (!values.length) return true;
+    return values.includes(element.nr);
+};
+
 export function usePieceFilter(elements) {
     const store = usePieceFilterOptions();
     const filteredElements = computed(() => {
@@ -26,12 +36,16 @@ export function usePieceFilter(elements) {
             const tempoMatches = filterByTempo(store.tempo, element);
             const meterMatches = filterByMeter(store.meter, element);
             const keyMatches = filterByKey(store.key, element);
+            const opMatches = filterByOp(store.op, element);
+            const nrMatches = filterByNr(store.nr, element);
 
             return (
                 titleMatches
                 && tempoMatches
                 && meterMatches
                 && keyMatches
+                && opMatches
+                && nrMatches
             );
         });
 

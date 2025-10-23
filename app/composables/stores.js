@@ -6,6 +6,8 @@ function createDefaultPieceFilterOptions() {
         tempo: [],
         key: [],
         meter: [],
+        op: [],
+        nr: [],
     };
 };
 

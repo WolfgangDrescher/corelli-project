@@ -28,12 +28,16 @@ const meterOptions = [...new Set(pieces.map(piece => piece.meter).filter(n => n)
 const keyOptions = [...new Set(pieces.map(piece => piece.key).filter(n => n))];
 const titleOptions = [...new Set(pieces.map(piece => piece.title).filter(n => n))];
 const tempoOptions = [...new Set(pieces.map(piece => piece.movementDesignation).filter(n => n))];
+const opOptions = [...new Set(pieces.map(piece => piece.op).filter(n => n))];
+const nrOptions = [...new Set(pieces.map(piece => piece.nr).filter(n => n))];
 
 const json = {
     meterOptions,
     keyOptions,
     titleOptions,
     tempoOptions,
+    opOptions,
+    nrOptions,
 };
 
 console.log(json);
