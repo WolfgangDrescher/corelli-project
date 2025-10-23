@@ -17,6 +17,11 @@ const [prevPiece, nextPiece] = surroundData.value;
 
 const score = ref();
 
+const scoreOptions = reactive({
+    showMeter: false,
+    bassstufen: false,
+});
+
 onMounted(async () => {
     const response = await fetch(piece.value.localRawFile);
     const kern = await response.text();
@@ -25,6 +30,14 @@ onMounted(async () => {
 
 const formattedData = computed(() => {
     const lines = score.value?.trim().split('\n') ?? [];
+
+    if (scoreOptions.showMeter) {
+        lines.push(`!!!filter: meter -f`);
+    }
+    if (scoreOptions.bassstufen) {
+        lines.push(`!!!filter: deg -k1 --box`);
+    }
+
     return score.value ? `${lines.join('\n')}` : null;
 });
 
@@ -60,6 +73,12 @@ const formattedData = computed(() => {
             </div>
 
             <div class="flex flex-col md:flex-row items-center gap-4">
+                <div>
+                    <div class="flex gap-4">
+                        <UCheckbox v-model="scoreOptions.showMeter" label="meter" />
+                        <UCheckbox v-model="scoreOptions.bassstufen" label="bassstufen" />
+                    </div>
+                </div>
                 <div class="shrink-0 flex gap-2 ml-auto md:order-2">
                     <MidiPlayer :url="piece.localRawFile" class="text-2xl"/>
                     <UButton :to="`https://github.com/WolfgangDrescher/corelli-trio-sonatas/blob/master/kern/${piece.slug}.krn`" target="_blank">
