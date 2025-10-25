@@ -88,6 +88,6 @@ const {
                 />
             </UFormField>
         </div>
-        <UButton color="warning" variant="subtle" @click="resetFilter">{{ $t('reset')}}</UButton>
+        <UButton color="warning" variant="subtle" icon="i-heroicons-funnel" @click="resetFilter">{{ $t('reset')}}</UButton>
     </UCard>
 </template>
