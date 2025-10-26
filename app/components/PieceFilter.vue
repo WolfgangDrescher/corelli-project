@@ -32,8 +32,8 @@ const {
                 {{ $t('filter') }}
             </div>
         </template>
-        <div class="flex gap-2 mb-3">
-            <UFormField :label="$t('opus')" class="lg:w-48">
+        <div class="flex flex-wrap gap-2">
+            <UFormField :label="$t('opus')" class="w-32">
                 <USelectMenu
                     v-model="op"
                     multiple
@@ -42,7 +42,7 @@ const {
                     :items="opOptions"
                 />
             </UFormField>
-            <UFormField :label="$t('number')" class="lg:w-48">
+            <UFormField :label="$t('number')" class="w-32">
                 <USelectMenu
                     v-model="nr"
                     multiple
@@ -51,7 +51,7 @@ const {
                     :items="nrOptions"
                 />
             </UFormField>
-            <UFormField :label="$t('title')" class="lg:w-48">
+            <UFormField :label="$t('title')" class="w-32">
                 <USelectMenu
                     v-model="title"
                     multiple
@@ -60,7 +60,7 @@ const {
                     :items="titleOptions"
                 />
             </UFormField>
-            <UFormField :label="$t('tempo')" class="lg:w-48">
+            <UFormField :label="$t('tempo')" class="w-32">
                 <USelectMenu
                     v-model="tempo"
                     multiple
@@ -69,7 +69,7 @@ const {
                     :items="tempoOptions"
                 />
             </UFormField>
-            <UFormField :label="$t('key')" class="lg:w-48">
+            <UFormField :label="$t('key')" class="w-32">
                 <USelectMenu
                     v-model="key"
                     multiple
@@ -78,7 +78,7 @@ const {
                     :items="keyOptions"
                 />
             </UFormField>
-            <UFormField :label="$t('meter')" class="lg:w-48">
+            <UFormField :label="$t('meter')" class="w-32">
                 <USelectMenu
                     v-model="meter"
                     multiple
@@ -87,7 +87,10 @@ const {
                     :items="meterOptions"
                 />
             </UFormField>
+            <UFormField label="&nbsp;" class="w-32">
+                <UButton color="warning" variant="subtle" icon="i-lucide-funnel-x" @click="resetFilter">{{ $t('reset')}}</UButton>
+            </UFormField>
+
         </div>
-        <UButton color="warning" variant="subtle" icon="i-lucide-funnel-x" @click="resetFilter">{{ $t('reset')}}</UButton>
     </UCard>
 </template>

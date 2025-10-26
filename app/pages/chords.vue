@@ -255,27 +255,27 @@ function chartClickHandler(type, chart, event) {
                         {{ $t('filter') }}
                     </div>
                 </template>
-                <div class="flex flex-wrap gap-x-2 gap-y-4">
-                    <UFormField :label="$t('mode')">
-                        <USelectMenu v-model="viewFbMode" :items="[{id: 'fb', label: $t('figuredBassNumbers')}, {id: 'hint', label: $t('exactIntervals')}]" value-key="id" class="w-40" :search-input="false" />
+                <div class="flex flex-wrap gap-2">
+                    <UFormField :label="$t('mode')" class="w-40">
+                        <USelectMenu v-model="viewFbMode" :items="[{id: 'fb', label: $t('figuredBassNumbers')}, {id: 'hint', label: $t('exactIntervals')}]" value-key="id" class="w-full" :search-input="false" />
                     </UFormField>
-                    <UFormField :label="$t('deg')">
-                        <USelectMenu v-model="filters.deg" :items="uniqueDegs" multiple class="w-32" :search-input="false" />
+                    <UFormField :label="$t('deg')" class="w-32">
+                        <USelectMenu v-model="filters.deg" :items="uniqueDegs" multiple class="w-full" :search-input="false" />
                     </UFormField>
-                    <UFormField :label="$t('nextDeg')">
-                        <USelectMenu v-model="filters.nextDeg" :items="uniqueDegs" multiple class="w-32" :search-input="false" />
+                    <UFormField :label="$t('nextDeg')" class="w-32">
+                        <USelectMenu v-model="filters.nextDeg" :items="uniqueDegs" multiple class="w-full" :search-input="false" />
                     </UFormField>
-                    <UFormField :label="$t('fb')">
-                        <USelectMenu v-model="filters.fb" :items="uniqueFb" multiple class="w-32" />
+                    <UFormField :label="$t('fb')" class="w-32">
+                        <USelectMenu v-model="filters.fb" :items="uniqueFb" multiple class="w-full" />
                     </UFormField>
-                    <UFormField :label="$t('hint')">
-                        <USelectMenu v-model="filters.hint" :items="uniqueHint" multiple class="w-32" />
+                    <UFormField :label="$t('hint')" class="w-32">
+                        <USelectMenu v-model="filters.hint" :items="uniqueHint" multiple class="w-full" />
                     </UFormField>
-                    <UFormField :label="$t('intervalSearch')">
-                        <UInput v-model="filters.search" class="w-32" />
+                    <UFormField :label="$t('intervalSearch')" class="w-32">
+                        <UInput v-model="filters.search" class="w-full" />
                     </UFormField>
-                    <UFormField :label="$t('meterWeight')">
-                        <USelectMenu v-model="filters.meterWeight" :items="uniqueBeatWeights" multiple class="w-32" :search-input="false" />
+                    <UFormField :label="$t('meterWeight')" class="w-32">
+                        <USelectMenu v-model="filters.meterWeight" :items="uniqueBeatWeights" multiple class="w-full" :search-input="false" />
                         <template #help>
                             <UModal :title="$t('meterWeightsTitle')">
                                 <UButton icon="i-lucide-info" :label="$t('explanation')" color="neutral" variant="ghost" size="xs" />
@@ -285,7 +285,7 @@ function chartClickHandler(type, chart, event) {
                             </UModal>
                         </template>
                     </UFormField>
-                    <UFormField label="&nbsp;">
+                    <UFormField label="&nbsp;" class="w-32">
                         <UButton icon="i-lucide-funnel-x" color="warning" variant="subtle" @click="resetFilters">
                             {{ $t('reset') }}
                         </UButton>
