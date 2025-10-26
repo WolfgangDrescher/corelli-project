@@ -119,8 +119,6 @@ async function onClick() {
             state.value = 'loaderror';
         }
     }
-
-    play();
 }
 
 function updateLoop(s) {
