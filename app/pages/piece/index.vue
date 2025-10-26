@@ -1,5 +1,5 @@
 <script setup>
-const { data } = await useAsyncData('pieces', () => queryCollection('pieces').all())
+const { data } = await useAsyncData('pieces', () => queryCollection('pieces').all());
 
 const { t } = useI18n();
 const localePath = useLocalePath();
