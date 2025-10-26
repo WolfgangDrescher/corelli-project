@@ -49,13 +49,6 @@ export function usePieceFilter(elements) {
             );
         });
 
-        filteredElems.sort((a, b) => {
-            if (filteredElems.orderBy === 'id') {
-                return a.id > b.id ? 1 : -1;
-            }
-            return 0;
-        });
-
         return filteredElems;
     });
 
