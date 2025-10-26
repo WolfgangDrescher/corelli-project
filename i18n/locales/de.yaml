@@ -17,3 +17,4 @@ filter: Filter
 reset: Zurücksetzen
 opus: Opus
 number: Nummer
+meterWeightsInfoText: Zählzeiten, die oben nicht aufgeführt sind (z. B. Sechzehntel), werden als „none“ gekennzeichnet.
