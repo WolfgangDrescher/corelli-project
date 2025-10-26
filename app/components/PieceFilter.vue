@@ -22,7 +22,7 @@ const {
     tempoOptions,
     opOptions,
     nrOptions,
-} = toRefs(filterOptions);
+} = filterOptions;
 </script>
 
 <template>
