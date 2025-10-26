@@ -7,7 +7,7 @@ const localePath = useLocalePath();
         <UContainer>
             <div class="grid md:grid-cols-3 gap-4">
                 <div>
-                    <h4 class="text-lg font-bold mb-2">{{ $t('pages' )}}</h4>
+                    <h4 class="text-lg font-bold mb-2">{{ $t('pages') }}</h4>
                     <ul class="grid grid-cols-2 gap-x-2">
                         <li><NuxtLink :href="localePath('index')">{{ $t('home') }}</NuxtLink></li>
                         <li><NuxtLink :href="localePath('piece')">{{ $t('pieces') }}</NuxtLink></li>
