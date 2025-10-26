@@ -22,8 +22,10 @@ const scoreOptions = reactive({
     bassstufen: false,
 });
 
+const { localScoreUrlGenerator, githubScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
+
 onMounted(async () => {
-    const response = await fetch(piece.value.localRawFile);
+    const response = await fetch(localScoreUrlGenerator(piece.value.slug));
     const kern = await response.text();
     score.value = kern;
 });
@@ -80,11 +82,11 @@ const formattedData = computed(() => {
                     </div>
                 </div>
                 <div class="shrink-0 flex gap-2 ml-auto md:order-2">
-                    <MidiPlayer :url="piece.localRawFile" class="text-2xl"/>
-                    <UButton :to="`https://github.com/WolfgangDrescher/corelli-trio-sonatas/blob/master/kern/${piece.slug}.krn`" target="_blank">
+                    <MidiPlayer :url="localScoreUrlGenerator(piece.slug)" class="text-2xl"/>
+                    <UButton :to="githubScoreUrlGenerator(piece.slug)" target="_blank">
                         {{ $t('github') }}
                     </UButton>
-                    <UButton :to="`https://verovio.humdrum.org/?file=${encodeURIComponent(`https://github.com/WolfgangDrescher/corelli-trio-sonatas/blob/master/kern/${piece.slug}.krn`)}`" target="_blank">
+                    <UButton :to="vhvScoreUrlGenerator(piece.slug)" target="_blank">
                         {{ $t('vhv') }}
                     </UButton>
                 </div>

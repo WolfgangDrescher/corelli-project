@@ -69,7 +69,6 @@ getFiles(pathToKernScores).forEach(file => {
         nr: parseInt(referenceRecords.ONM.replaceAll(/\D/g, '')),
         mv: parseInt(referenceRecords.OMV.replaceAll(/\D/g, '')),
         largerWorkTitle: referenceRecords.OPR,
-        localRawFile: `/kern/corelli-trio-sonatas/${id}.krn`,
         composer: 'Arcangelo Corelli',
         key,
         meter,

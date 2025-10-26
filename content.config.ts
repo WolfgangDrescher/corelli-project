@@ -9,7 +9,6 @@ export default defineContentConfig({
                 composer: z.string(),
                 key: z.string(),
                 largerWorkTitle: z.string(),
-                localRawFile: z.string(),
                 majorMinor: z.string(),
                 meter: z.string(),
                 movementDesignation: z.string(),

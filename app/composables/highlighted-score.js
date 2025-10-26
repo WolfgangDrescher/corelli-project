@@ -1,10 +1,12 @@
 export function useHighlightedScore(chordsData) {
+
+    const { localScoreUrlGenerator } = useScoreUrlGenerator();
     const scoreData = ref(null);
 
     async function loadScoreData(group) {
         scoreData.value = null;
 
-        const data = await $fetch(`/kern/corelli-trio-sonatas/${group.id}.krn`, {
+        const data = await $fetch(localScoreUrlGenerator(group.id), {
             parseResponse: (txt) => txt,
         });
 

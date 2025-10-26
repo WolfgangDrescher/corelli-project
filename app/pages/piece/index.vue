@@ -11,7 +11,6 @@ const pieces = computed(() => {
         // composer: item.composer,
         key: item.key,
         // largerWorkTitle: item.largerWorkTitle,
-        localRawFile: item.localRawFile,
         majorMinor: item.majorMinor,
         meter: item.meter,
         movementDesignation: item.movementDesignation,
@@ -35,6 +34,8 @@ const columns = [
     { accessorKey: 'meter', header: t('meter') },
     { accessorKey: 'actions', header: null },
 ];
+
+const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
 </script>
 
 <template>
@@ -44,7 +45,7 @@ const columns = [
             <PieceFilter />
             <UTable :data="pieces" :columns="columns" :get-row-id="(item) => item.slug" class="mt-8">
                 <template #audio-cell="{ row }">
-                    <MidiPlayer :url="row.original.localRawFile" class="text-2xl"/>
+                    <MidiPlayer :url="localScoreUrlGenerator(row.original.slug)" class="text-2xl"/>
                 </template>
                 <template #title-cell="{ row }">
                     <NuxtLink :to="localePath({ name: 'piece-id', params: { id: row.original.slug } })">
@@ -53,7 +54,7 @@ const columns = [
                 </template>
                 <template #actions-cell="{ row }">
                     <div class="flex gap-1 justify-end">
-                        <UButton size="sm" color="primary" variant="solid" :label="t('vhv')" :to="`https://verovio.humdrum.org/?file=${encodeURIComponent(`https://github.com/WolfgangDrescher/corelli-trio-sonatas/blob/master/kern/${row.original.slug}.krn`)}`" target="_blank" />
+                        <UButton size="sm" color="primary" variant="solid" :label="t('vhv')" :to="vhvScoreUrlGenerator(row.original.slug)" target="_blank" />
                         <UButton size="sm" color="primary" variant="solid" :label="t('view')" :to="localePath({ name: 'piece-id', params: { id: row.original.slug } })" />
                     </div>
                 </template>
