@@ -25,14 +25,14 @@ const pieces = computed(() => {
 });
 
 const columns = [
-    { accessorKey: 'audio', header: null },
+    { accessorKey: 'audio', header: '' },
     { accessorKey: 'opnr', header: t('opNr') },
     { accessorKey: 'mvAndDesignation', header: t('movement') },
     { accessorKey: 'title', header: t('title') },
     { accessorKey: 'key', header: t('key')  },
     { accessorKey: 'majorMinor', header: t('majorMinor') },
     { accessorKey: 'meter', header: t('meter') },
-    { accessorKey: 'actions', header: null },
+    { accessorKey: 'actions', header: '' },
 ];
 
 const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
