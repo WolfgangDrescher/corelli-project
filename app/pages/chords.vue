@@ -268,7 +268,7 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
                         <USelectMenu v-model="filters.meterWeight" :items="uniqueBeatWeights" multiple size="xs" class="w-32" :search-input="false" />
                         <template #help>
                             <UModal :title="$t('meterWeightsTitle')">
-                                <UButton icon="i-heroicons-information-circle" :label="$t('explanation')" color="neutral" variant="ghost" size="xs" />
+                                <UButton icon="i-lucide-info" :label="$t('explanation')" color="neutral" variant="ghost" size="xs" />
                                 <template #body>
                                     <MeterWeightInfo />
                                 </template>
@@ -276,7 +276,7 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
                         </template>
                     </UFormField>
                     <UFormField label="&nbsp;">
-                        <UButton icon="i-heroicons-funnel" color="warning" variant="subtle" size="xs" @click="resetFilters">
+                        <UButton icon="i-lucide-funnel-x" color="warning" variant="subtle" size="xs" @click="resetFilters">
                             {{ $t('reset') }}
                         </UButton>
                     </UFormField>
