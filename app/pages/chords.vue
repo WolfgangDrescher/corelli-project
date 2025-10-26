@@ -239,42 +239,49 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
         <Heading>{{ $t('chords') }}</Heading>
         <div>
 
-            <div class="flex flex-wrap gap-x-2 gap-y-4 mb-4">
-                <UFormField :label="$t('mode')">
-                    <USelectMenu v-model="viewFbMode" :items="[{id: 'fb', label: $t('figuredBassNumbers')}, {id: 'hint', label: $t('exactIntervals')}]" value-key="id" size="xs" class="w-40" :search-input="false" />
-                </UFormField>
-                <UFormField :label="$t('deg')">
-                    <USelectMenu v-model="filters.deg" :items="uniqueDegs" multiple size="xs" class="w-32" :search-input="false" />
-                </UFormField>
-                <UFormField :label="$t('nextDeg')">
-                    <USelectMenu v-model="filters.nextDeg" :items="uniqueDegs" multiple size="xs" class="w-32" :search-input="false" />
-                </UFormField>
-                <UFormField :label="$t('fb')">
-                    <USelectMenu v-model="filters.fb" :items="uniqueFb" multiple size="xs" class="w-32" />
-                </UFormField>
-                <UFormField :label="$t('hint')">
-                    <USelectMenu v-model="filters.hint" :items="uniqueHint" multiple size="xs" class="w-32" />
-                </UFormField>
-                <UFormField :label="$t('intervalSearch')">
-                    <UInput v-model="filters.search" size="xs" class="w-32" />
-                </UFormField>
-                <UFormField :label="$t('meterWeight')">
-                    <USelectMenu v-model="filters.meterWeight" :items="uniqueBeatWeights" multiple size="xs" class="w-32" :search-input="false" />
-                    <template #help>
-                        <UModal :title="$t('meterWeightsTitle')">
-                            <UButton icon="i-heroicons-information-circle" :label="$t('explanation')" color="neutral" variant="ghost" size="xs" />
-                            <template #body>
-                                <MeterWeightInfo />
-                            </template>
-                        </UModal>
-                    </template>
-                </UFormField>
-                <UFormField label="&nbsp;">
-                    <UButton icon="i-heroicons-funnel" color="warning" variant="subtle" size="xs" @click="resetFilters">
-                        {{ $t('reset') }}
-                    </UButton>
-                </UFormField>
-            </div>
+            <UCard>
+                <template #header>
+                    <div class="font-medium leading-5">
+                        {{ $t('filter') }}
+                    </div>
+                </template>
+                <div class="flex flex-wrap gap-x-2 gap-y-4">
+                    <UFormField :label="$t('mode')">
+                        <USelectMenu v-model="viewFbMode" :items="[{id: 'fb', label: $t('figuredBassNumbers')}, {id: 'hint', label: $t('exactIntervals')}]" value-key="id" size="xs" class="w-40" :search-input="false" />
+                    </UFormField>
+                    <UFormField :label="$t('deg')">
+                        <USelectMenu v-model="filters.deg" :items="uniqueDegs" multiple size="xs" class="w-32" :search-input="false" />
+                    </UFormField>
+                    <UFormField :label="$t('nextDeg')">
+                        <USelectMenu v-model="filters.nextDeg" :items="uniqueDegs" multiple size="xs" class="w-32" :search-input="false" />
+                    </UFormField>
+                    <UFormField :label="$t('fb')">
+                        <USelectMenu v-model="filters.fb" :items="uniqueFb" multiple size="xs" class="w-32" />
+                    </UFormField>
+                    <UFormField :label="$t('hint')">
+                        <USelectMenu v-model="filters.hint" :items="uniqueHint" multiple size="xs" class="w-32" />
+                    </UFormField>
+                    <UFormField :label="$t('intervalSearch')">
+                        <UInput v-model="filters.search" size="xs" class="w-32" />
+                    </UFormField>
+                    <UFormField :label="$t('meterWeight')">
+                        <USelectMenu v-model="filters.meterWeight" :items="uniqueBeatWeights" multiple size="xs" class="w-32" :search-input="false" />
+                        <template #help>
+                            <UModal :title="$t('meterWeightsTitle')">
+                                <UButton icon="i-heroicons-information-circle" :label="$t('explanation')" color="neutral" variant="ghost" size="xs" />
+                                <template #body>
+                                    <MeterWeightInfo />
+                                </template>
+                            </UModal>
+                        </template>
+                    </UFormField>
+                    <UFormField label="&nbsp;">
+                        <UButton icon="i-heroicons-funnel" color="warning" variant="subtle" size="xs" @click="resetFilters">
+                            {{ $t('reset') }}
+                        </UButton>
+                    </UFormField>
+                </div>
+            </UCard>
 
             <div class="my-4">
                 {{ filteredChords.length }} / {{ chords.length }}
