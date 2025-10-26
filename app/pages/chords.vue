@@ -232,6 +232,16 @@ const {
 } = useChordModal(chordsGroupById, loadScoreData);
 
 const { localScoreUrlGenerator } = useScoreUrlGenerator();
+
+function chartClickHandler(type, chart, event) {
+    const points = chart.getElementsAtEventForMode(event, 'nearest', { intersect: false, axis: 'x' }, true);
+    if (points.length) {
+        const firstPoint = points[0];
+        const prop = filters[type];
+        const value = chart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index].x;
+        filters[type] = (prop === value || prop.includes?.(value)) ? [] : [value];
+    }
+}
 </script>
 
 <template>
