@@ -17,4 +17,16 @@ filter: Filter
 reset: Zurücksetzen
 opus: Opus
 number: Nummer
+chords: Akkorde
+fb: Bezifferung
+deg: Bassstufe
+nextDeg: Nächste Bassstufe
+mode: Modus
+figuredBassNumbers: Generalbass-Ziffern
+exactIntervals: Exakte Intervalle
+hint: Intervalle
+intervalSearch: Intervallsuche
+meterWeight: Zählzeit
+explanation: Erklärung
+meterWeightsTitle: Metrische Schwerpunkte der Taktarten
 meterWeightsInfoText: Zählzeiten, die oben nicht aufgeführt sind (z. B. Sechzehntel), werden als „none“ gekennzeichnet.
