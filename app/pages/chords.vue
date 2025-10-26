@@ -312,11 +312,13 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
             </div>
             <UModal v-model:open="modalIsOpen" :title="currentGroup.id">
                 <template #body>
-                    <div class="flex gap-1 justify-end">
-                        <MidiPlayer :url="localScoreUrlGenerator(currentGroup.id)" class="text-2xl" />
-                        <UButton size="sm" color="primary" variant="solid" :label="t('view')" :to="localePath({ name: 'piece-id', params: { id: currentGroup.id } })" />
+                    <div :key="scoreData">
+                        <div class="flex gap-1 justify-end">
+                            <MidiPlayer :url="localScoreUrlGenerator(currentGroup.id)" class="text-2xl" />
+                            <UButton size="sm" color="primary" variant="solid" :label="t('view')" :to="localePath({ name: 'piece-id', params: { id: currentGroup.id } })" />
+                        </div>
+                        <VerovioCanvas v-if="scoreData" :data="scoreData" :scale="25" :page-margin="50" />
                     </div>
-                    <VerovioCanvas :data="scoreData" :scale="25" :page-margin="50" />
                 </template>
                 <template #footer>
                     <UButton class="mr-auto" v-if="hasPrevious" @click="loadIndex(activeIndex - 1)">
