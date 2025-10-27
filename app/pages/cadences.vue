@@ -1,0 +1,83 @@
+<script setup>
+const { data: cadencesData } = await useAsyncData('cadences', () => queryCollection('cadences').first(), {
+    deep: false,
+});
+
+const localePath = useLocalePath();
+
+const { loadScoreData } = useHighlightedScore();
+
+const cadences = cadencesData.value.cadences;
+
+const uniqueTags = [...new Set(cadences.map(cadence => cadence.tag))].toSorted();
+
+const uniqueDegs = [...new Set(cadences.map(cadence => cadence.deg))].toSorted();
+
+const uniqueEndBassDegs = [...new Set(cadences.map(cadence => cadence.endBassDeg))].toSorted();
+
+const { filters, filteredCadences, resetFilters } = useCadenceFilter(cadences);
+</script>
+
+<template>
+    <UContainer>
+        <Heading>{{ $t('cadences') }}</Heading>
+
+        <UCard>
+            <template #header>
+                <div class="font-medium leading-5">
+                    {{ $t('filter') }}
+                </div>
+            </template>
+            <div class="flex flex-wrap gap-2">
+                <UFormField :label="$t('tags')" class="w-40">
+                    <USelectMenu v-model="filters.tag" :items="uniqueTags" multiple class="w-full" :search-input="false" />
+                </UFormField>
+                <UFormField :label="$t('cadenceDeg')" class="w-32">
+                    <USelectMenu v-model="filters.deg" :items="uniqueDegs" multiple class="w-full" :search-input="false" />
+                </UFormField>
+                <UFormField :label="$t('endBassDeg')" class="w-32">
+                    <USelectMenu v-model="filters.endBassDeg" :items="uniqueEndBassDegs" multiple class="w-full" :search-input="false" />
+                </UFormField>
+                <UFormField label="&nbsp;" class="w-32">
+                    <UButton icon="i-lucide-funnel-x" color="warning" variant="subtle" @click="resetFilters">
+                        {{ $t('reset') }}
+                    </UButton>
+                </UFormField>
+            </div>
+        </UCard>
+
+        <div class="my-4">
+            {{ filteredCadences.length }} / {{ cadences.length }}
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div v-for="cadence in filteredCadences" :key="`${cadence.pieceId}-${cadence.startBeat}`">
+                <UCard class="h-full">
+                    <template #header>
+                        <NuxtLink :to="localePath({ name: 'piece-id', params: { id: cadence.pieceId } })">
+                            {{ `${cadence.pieceId} ${cadence.startLine}-${cadence.endLine}` }}
+                        </NuxtLink>
+                    </template>
+                    <VerovioCanvas :data="loadScoreData(cadence.pieceId, [], [
+                        `myank -l ${cadence.startLine}-${cadence.endLine}`,
+                        `shed -e 's/fb/fba/gX'`,
+                        `shed -e 's/^([A-Ha-h\#\-]+):$/${cadence.key}:/gI'`,
+                        'deg -k1 -t --box',
+                    ])" :scale="35" :page-margin="50" />
+                    <dl class="grid grid-cols-[auto_1fr] gap-x-4">
+                        <dt class="font-medium">{{ $t('cadenceDeg') }}</dt>
+                        <dd>{{ cadence.deg }}</dd>
+
+                        <dt class="font-medium">{{ $t('key') }}</dt>
+                        <dd>{{ cadence.key }}</dd>
+
+                        <dt class="font-medium">{{ $t('endBassDeg') }}</dt>
+                        <dd>{{ cadence.key }}</dd>
+                    </dl>
+                    <UBadge v-if="cadence.tag" :label="cadence.tag" />
+                </UCard>
+            </div>
+        </div>
+
+    </UContainer>
+</template>

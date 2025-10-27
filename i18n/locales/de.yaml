@@ -4,6 +4,7 @@ pages: Seiten
 sitemap: Sitemap
 pieces: Stücke
 modulations: Modulationen
+cadences: Kadenzen
 opNr: Op. / Nr.
 movement: Satz
 title: Titel
@@ -36,3 +37,6 @@ meterWeightsInfoText: Zählzeiten, die oben nicht aufgeführt sind (z. B. Sechze
 minimap: Minimap
 transitions: Übergänge
 showKeys: Tonarten anzeigen
+tags: Tags
+cadenceDeg: Kadenzstufe
+endBassDeg: Kadenz Bassstufe
