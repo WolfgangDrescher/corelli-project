@@ -66,7 +66,7 @@ const { filters, filteredCadences, resetFilters } = useCadenceFilter(cadences);
                     ])" :scale="35" :options="{
                         pageMarginLeft: 42,
                     }" />
-                    <dl class="grid grid-cols-[auto_1fr] gap-x-4">
+                    <dl class="grid grid-cols-[auto_1fr] gap-x-4 mt-4">
                         <dt class="font-medium">{{ $t('cadenceDeg') }}</dt>
                         <dd>{{ cadence.deg }}</dd>
 
