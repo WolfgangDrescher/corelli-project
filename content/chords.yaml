@@ -370,25 +370,25 @@ chords:
     - {beat: 29, fb: 6 3, hint: M6 M3, deg: '6', lineNumber: 86, pieceId: op04n01c, nextDeg: '5', meterWeight: weak}
     - {beat: 29.5, fb: 6 3, hint: M6 M3, deg: '6', lineNumber: 87, pieceId: op04n01c, nextDeg: '5', meterWeight: none}
     - {beat: 30, fb: '3', hint: M3, deg: '5', lineNumber: 88, pieceId: op04n01c, nextDeg: '6', meterWeight: half-strong}
-    - {beat: 32, fb: 7 3, hint: M7 M3, deg: '6', lineNumber: 92, pieceId: op04n01c, nextDeg: 6+, meterWeight: strong}
-    - {beat: 32.5, fb: 7 3, hint: M7 M3, deg: '6', lineNumber: 93, pieceId: op04n01c, nextDeg: 6+, meterWeight: none}
-    - {beat: 33, fb: 6 3, hint: m6 m3, deg: 6+, lineNumber: 94, pieceId: op04n01c, nextDeg: '7', meterWeight: weak}
-    - {beat: 33.5, fb: 6 3, hint: m6 m3, deg: 6+, lineNumber: 95, pieceId: op04n01c, nextDeg: '7', meterWeight: none}
-    - {beat: 34, fb: 5 3, hint: P5 M3, deg: '7', lineNumber: 96, pieceId: op04n01c, nextDeg: 7+, meterWeight: half-strong}
-    - {beat: 34.5, fb: 5 3, hint: P5 M3, deg: '7', lineNumber: 97, pieceId: op04n01c, nextDeg: 7+, meterWeight: none}
-    - {beat: 35, fb: 6 3, hint: m6 m3, deg: 7+, lineNumber: 98, pieceId: op04n01c, nextDeg: '1', meterWeight: weak}
-    - {beat: 35.5, fb: 6 3, hint: m6 m3, deg: 7+, lineNumber: 99, pieceId: op04n01c, nextDeg: '1', meterWeight: none}
-    - {beat: 36, fb: 5 3, hint: P5 m3, deg: '1', lineNumber: 101, pieceId: op04n01c, nextDeg: '6', meterWeight: strong}
-    - {beat: 36.5, fb: 5 3, hint: P5 m3, deg: '1', lineNumber: 102, pieceId: op04n01c, nextDeg: '6', meterWeight: none}
-    - {beat: 37, fb: 6 3, hint: M6 M3, deg: '6', lineNumber: 103, pieceId: op04n01c, nextDeg: '4', meterWeight: weak}
-    - {beat: 37.5, fb: 5 3, hint: P5 m3, deg: '4', lineNumber: 104, pieceId: op04n01c, nextDeg: '4', meterWeight: none}
-    - {beat: 38, fb: 6 4, hint: M6 A4, deg: '4', lineNumber: 105, pieceId: op04n01c, nextDeg: 4+, meterWeight: half-strong}
-    - {beat: 39, fb: 7 5, hint: d7 d5, deg: 4+, lineNumber: 106, pieceId: op04n01c, nextDeg: '5', meterWeight: weak}
-    - {beat: 40, fb: 5 4, hint: P5 P4, deg: '5', lineNumber: 108, pieceId: op04n01c, nextDeg: '5', meterWeight: strong}
-    - {beat: 41, fb: 5 3, hint: P5 M3, deg: '5', lineNumber: 109, pieceId: op04n01c, nextDeg: '7', meterWeight: weak}
-    - {beat: 44, fb: 6 3, hint: M6 M3, deg: '7', lineNumber: 112, pieceId: op04n01c, nextDeg: '6', meterWeight: strong}
-    - {beat: 46, fb: 6 3, hint: M6 M3, deg: '6', lineNumber: 114, pieceId: op04n01c, nextDeg: '5', meterWeight: half-strong}
-    - {beat: 48, fb: '3', hint: M3, deg: '5', lineNumber: 117, pieceId: op04n01c, nextDeg: '7', meterWeight: strong}
+    - {beat: 32, fb: 7 3, hint: M7 M3, deg: '6', lineNumber: 92, pieceId: op04n01c, nextDeg: '7', meterWeight: strong}
+    - {beat: 32.5, fb: 7 3, hint: M7 M3, deg: '6', lineNumber: 93, pieceId: op04n01c, nextDeg: '7', meterWeight: none}
+    - {beat: 33, fb: 6 3, hint: m6 m3, deg: '7', lineNumber: 95, pieceId: op04n01c, nextDeg: '1', meterWeight: weak}
+    - {beat: 33.5, fb: 6 3, hint: m6 m3, deg: '7', lineNumber: 96, pieceId: op04n01c, nextDeg: '1', meterWeight: none}
+    - {beat: 34, fb: 5 3, hint: P5 M3, deg: '1', lineNumber: 97, pieceId: op04n01c, nextDeg: 7+, meterWeight: half-strong}
+    - {beat: 34.5, fb: 5 3, hint: P5 M3, deg: '1', lineNumber: 98, pieceId: op04n01c, nextDeg: 7+, meterWeight: none}
+    - {beat: 35, fb: 6 3, hint: m6 m3, deg: 7+, lineNumber: 100, pieceId: op04n01c, nextDeg: '1', meterWeight: weak}
+    - {beat: 35.5, fb: 6 3, hint: m6 m3, deg: 7+, lineNumber: 101, pieceId: op04n01c, nextDeg: '1', meterWeight: none}
+    - {beat: 36, fb: 5 3, hint: P5 m3, deg: '1', lineNumber: 103, pieceId: op04n01c, nextDeg: '6', meterWeight: strong}
+    - {beat: 36.5, fb: 5 3, hint: P5 m3, deg: '1', lineNumber: 104, pieceId: op04n01c, nextDeg: '6', meterWeight: none}
+    - {beat: 37, fb: 6 3, hint: M6 M3, deg: '6', lineNumber: 105, pieceId: op04n01c, nextDeg: '4', meterWeight: weak}
+    - {beat: 37.5, fb: 5 3, hint: P5 m3, deg: '4', lineNumber: 106, pieceId: op04n01c, nextDeg: '4', meterWeight: none}
+    - {beat: 38, fb: 6 4, hint: M6 A4, deg: '4', lineNumber: 107, pieceId: op04n01c, nextDeg: 4+, meterWeight: half-strong}
+    - {beat: 39, fb: 7 5, hint: d7 d5, deg: 4+, lineNumber: 108, pieceId: op04n01c, nextDeg: '5', meterWeight: weak}
+    - {beat: 40, fb: 5 4, hint: P5 P4, deg: '5', lineNumber: 110, pieceId: op04n01c, nextDeg: '5', meterWeight: strong}
+    - {beat: 41, fb: 5 3, hint: P5 M3, deg: '5', lineNumber: 111, pieceId: op04n01c, nextDeg: '7', meterWeight: weak}
+    - {beat: 44, fb: 6 3, hint: M6 M3, deg: '7', lineNumber: 114, pieceId: op04n01c, nextDeg: '6', meterWeight: strong}
+    - {beat: 46, fb: 6 3, hint: M6 M3, deg: '6', lineNumber: 116, pieceId: op04n01c, nextDeg: '5', meterWeight: half-strong}
+    - {beat: 48, fb: '3', hint: M3, deg: '5', lineNumber: 119, pieceId: op04n01c, nextDeg: '7', meterWeight: strong}
     - {beat: 0.5, fb: '2', hint: m2, deg: '7', lineNumber: 20, pieceId: op04n01d, nextDeg: '6', meterWeight: none}
     - {beat: 1, fb: '3', hint: m3, deg: '6', lineNumber: 21, pieceId: op04n01d, nextDeg: '5', meterWeight: weak}
     - {beat: 1.5, fb: '4', hint: P4, deg: '5', lineNumber: 22, pieceId: op04n01d, nextDeg: '6', meterWeight: none}
