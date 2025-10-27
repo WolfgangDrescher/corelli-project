@@ -35,5 +35,15 @@ export default defineContentConfig({
                 })),
             }),
         }),
+        modulations: defineCollection({
+            source: 'modulations.yaml',
+            type: 'data',
+            schema: z.object({}).passthrough(),
+        }),
+        transitions: defineCollection({
+            source: 'transitions.yaml',
+            type: 'data',
+            schema: z.object({}).passthrough(),
+        }),
     },
 });
