@@ -39,7 +39,7 @@ const formattedData = computed(() => {
         lines.push(`!!!filter: meter -f`);
     }
     if (scoreOptions.bassstufen) {
-        lines.push(`!!!filter: deg -k1 --box`);
+        lines.push(`!!!filter: deg -k1 --box -t`);
     }
     if (scoreOptions.hideFiguredbass) {
         lines.push(`!!!filter: extract -I "**fb" | extract -I "**fba"`);
