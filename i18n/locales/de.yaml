@@ -3,6 +3,7 @@ legalNotice: Impressum
 pages: Seiten
 sitemap: Sitemap
 pieces: Stücke
+modulations: Modulationen
 opNr: Op. / Nr.
 movement: Satz
 title: Titel
@@ -32,3 +33,5 @@ meterWeight: Zählzeit
 explanation: Erklärung
 meterWeightsTitle: Metrische Schwerpunkte der Taktarten
 meterWeightsInfoText: Zählzeiten, die oben nicht aufgeführt sind (z. B. Sechzehntel), werden als „none“ gekennzeichnet.
+minimap: Minimap
+showKeys: Tonarten anzeigen
