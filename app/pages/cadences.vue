@@ -74,7 +74,11 @@ const { filters, filteredCadences, resetFilters } = useCadenceFilter(cadences);
                         <dd>{{ cadence.key }}</dd>
 
                         <dt class="font-medium">{{ $t('endBassDeg') }}</dt>
-                        <dd>{{ cadence.key }}</dd>
+                        <dd>
+                            <div class="inline-flex items-center justify-center w-[1.2em] h-[1.2em] rounded-full border border-gray-400 text-center">
+                                {{ cadence.endBassDeg }}
+                            </div>
+                        </dd>
                     </dl>
                     <UBadge v-if="cadence.tag" :label="cadence.tag" />
                 </UCard>
