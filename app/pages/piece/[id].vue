@@ -20,6 +20,8 @@ const score = ref();
 const scoreOptions = reactive({
     showMeter: false,
     bassstufen: false,
+    hideFiguredbass: false,
+    showFiguredbassAbove: false,
 });
 
 const { localScoreUrlGenerator, githubScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
@@ -38,6 +40,12 @@ const formattedData = computed(() => {
     }
     if (scoreOptions.bassstufen) {
         lines.push(`!!!filter: deg -k1 --box`);
+    }
+    if (scoreOptions.hideFiguredbass) {
+        lines.push(`!!!filter: extract -I "**fb" | extract -I "**fba"`);
+    }
+    if (scoreOptions.showFiguredbassAbove) {
+        lines.push(`!!!filter: shed -e "s/fb/fba/gX"`);
     }
 
     return score.value ? `${lines.join('\n')}` : null;
@@ -79,6 +87,8 @@ const formattedData = computed(() => {
                     <div class="flex gap-4">
                         <UCheckbox v-model="scoreOptions.showMeter" label="meter" />
                         <UCheckbox v-model="scoreOptions.bassstufen" label="bassstufen" />
+                        <UCheckbox v-model="scoreOptions.hideFiguredbass" label="GB ausblenden" />
+                        <UCheckbox v-model="scoreOptions.showFiguredbassAbove" label="GB oberhalb anzeigen" />
                     </div>
                 </div>
                 <div class="shrink-0 flex gap-2 ml-auto md:order-2">
