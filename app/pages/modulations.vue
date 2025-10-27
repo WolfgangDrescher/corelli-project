@@ -180,30 +180,33 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
                 <div class="h-[300px]">
                     <Chart :config="transitionsConfig" @chart-click="chartClickHandler" />
                 </div>
-                <div v-if="filteredTransition.items" class="flex flex-wrap gap-2 mt-4">
-                    <UButton v-for="(item, index) in filteredTransition.items" :key="`${item.id}-${item.beat}`" @click="loadIndex(index)">
-                        {{ `${item.id}-${item.beat}` }}
-                    </UButton>
-                    <UModal v-model:open="modalIsOpen" :title="currentGroup.id">
-                        <template #body>
-                            <div :key="scoreData">
-                                <div class="flex gap-1 justify-end">
-                                    <MidiPlayer :url="localScoreUrlGenerator(currentGroup.id)" class="text-2xl" />
-                                    <UButton size="sm" color="primary" variant="solid" :label="t('view')" :to="localePath({ name: 'piece-id', params: { id: currentGroup.id } })" />
+                <template v-if="filteredTransition.items">
+                    <Subheading class="mt-8">{{ `${filteredTransition.currentDeg}${separator}${filteredTransition.nextDeg}` }}</Subheading>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <UButton v-for="(item, index) in filteredTransition.items" :key="`${item.id}-${item.lineNumber}`" @click="loadIndex(index)">
+                            {{ `${item.id}-${item.lineNumber}` }}
+                        </UButton>
+                        <UModal v-model:open="modalIsOpen" :title="currentGroup.id">
+                            <template #body>
+                                <div :key="scoreData">
+                                    <div class="flex gap-1 justify-end">
+                                        <MidiPlayer :url="localScoreUrlGenerator(currentGroup.id)" class="text-2xl" />
+                                        <UButton size="sm" color="primary" variant="solid" :label="t('view')" :to="localePath({ name: 'piece-id', params: { id: currentGroup.id } })" />
+                                    </div>
+                                    <VerovioCanvas v-if="scoreData" :data="scoreData" :scale="25" :page-margin="50" />
                                 </div>
-                                <VerovioCanvas v-if="scoreData" :data="scoreData" :scale="25" :page-margin="50" />
-                            </div>
-                        </template>
-                        <template #footer>
-                            <UButton class="mr-auto" v-if="hasPrevious" @click="loadIndex(activeIndex - 1)">
-                                {{ $t('previous') }}
-                            </UButton>
-                            <UButton class="ml-auto" v-if="hasNext" @click="loadIndex(activeIndex + 1)">
-                                {{ $t('next') }}
-                            </UButton>
-                        </template>
-                    </UModal>
-                </div>
+                            </template>
+                            <template #footer>
+                                <UButton class="mr-auto" v-if="hasPrevious" @click="loadIndex(activeIndex - 1)">
+                                    {{ $t('previous') }}
+                                </UButton>
+                                <UButton class="ml-auto" v-if="hasNext" @click="loadIndex(activeIndex + 1)">
+                                    {{ $t('next') }}
+                                </UButton>
+                            </template>
+                        </UModal>
+                    </div>
+                </template>
             </template>
 
         </UTabs>
