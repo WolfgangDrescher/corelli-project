@@ -15,6 +15,10 @@ const items = [
         label: t('chords'),
         to: localePath({name: 'chords'}),
     },
+    {
+        label: t('modulations'),
+        to: localePath({name: 'modulations'}),
+    },
 ];
 </script>
 

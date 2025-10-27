@@ -12,6 +12,7 @@ const localePath = useLocalePath();
                         <li><NuxtLink :href="localePath('index')">{{ $t('home') }}</NuxtLink></li>
                         <li><NuxtLink :href="localePath('piece')">{{ $t('pieces') }}</NuxtLink></li>
                         <li><NuxtLink :href="localePath('chords')">{{ $t('chords') }}</NuxtLink></li>
+                        <li><NuxtLink :href="localePath('modulations')">{{ $t('modulations') }}</NuxtLink></li>
                     </ul>
                 </div>
                 <div></div>
