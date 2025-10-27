@@ -177,22 +177,25 @@ const chordsGroupById = computed(() => {
     }))
 });
 
-const { scoreData, loadScoreData } = useHighlightedScore(chordsData.value);
+const { scoreData, loadScoreData } = useHighlightedScore();
 
-function useChordModal(chordsGroupById, loadScoreData) {
+function useChordModal(chordsGroupById, loadScoreData, chordsData) {
     const modalIsOpen = ref(false)
     const activeIndex = ref(null)
-
-    async function openModal(index) {
-        activeIndex.value = index;
-        await loadScoreData(currentGroup.value);
-        modalIsOpen.value = true;
-    };
 
     async function loadIndex(index) {
         if (index < 0 || index >= chordsGroupById.value.length) return;
         activeIndex.value = index;
-        await loadScoreData(currentGroup.value);
+
+        const choraleIntervalLength = chordsData.value.chords.filter(i => i.pieceId === currentGroup.value.id).length;
+
+        let highlightLineNumbers = [];
+        if (currentGroup.value.chords.length < choraleIntervalLength) {
+            highlightLineNumbers = currentGroup.value.chords.filter(c => c.pieceId === currentGroup.value.id).map(c => c.lineNumber);
+        }
+
+        await loadScoreData(currentGroup.value.id, highlightLineNumbers, ['deg -k 1 --box']);
+        modalIsOpen.value = true;
     };
 
     const currentGroup = computed(() => {
@@ -213,7 +216,6 @@ function useChordModal(chordsGroupById, loadScoreData) {
     return {
         modalIsOpen,
         activeIndex,
-        openModal,
         loadIndex,
         currentGroup,
         hasPrevious,
@@ -224,12 +226,11 @@ function useChordModal(chordsGroupById, loadScoreData) {
 const {
     modalIsOpen,
     activeIndex,
-    openModal,
     loadIndex,
     currentGroup,
     hasPrevious,
     hasNext,
-} = useChordModal(chordsGroupById, loadScoreData);
+} = useChordModal(chordsGroupById, loadScoreData, chordsData);
 
 const { localScoreUrlGenerator } = useScoreUrlGenerator();
 
@@ -318,7 +319,7 @@ function chartClickHandler(type, chart, event) {
 
         <div class="flex flex-wrap gap-2 mt-8">
             <div v-for="(group, index) in chordsGroupById" :key="group.id">
-                <UButton :label="`${group.id} (${group.chords.length})`" @click="openModal(index)" />
+                <UButton :label="`${group.id} (${group.chords.length})`" @click="loadIndex(index)" />
             </div>
             <UModal v-model:open="modalIsOpen" :title="currentGroup.id">
                 <template #body>
