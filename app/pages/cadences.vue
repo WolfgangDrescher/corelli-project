@@ -58,12 +58,14 @@ const { filters, filteredCadences, resetFilters } = useCadenceFilter(cadences);
                             {{ `${cadence.pieceId} ${cadence.startLine}-${cadence.endLine}` }}
                         </NuxtLink>
                     </template>
-                    <VerovioCanvas :data="loadScoreData(cadence.pieceId, [], [
+                    <VerovioCanvas view-mode="horizontal" :data="loadScoreData(cadence.pieceId, [], [
                         `myank -l ${cadence.startLine}-${cadence.endLine}`,
                         `shed -e 's/fb/fba/gX'`,
                         `shed -e 's/^([A-Ha-h\#\-]+):$/${cadence.key}:/gI'`,
                         'deg -k1 -t --box',
-                    ])" :scale="35" :page-margin="50" />
+                    ])" :scale="35" :options="{
+                        pageMarginLeft: 42,
+                    }" />
                     <dl class="grid grid-cols-[auto_1fr] gap-x-4">
                         <dt class="font-medium">{{ $t('cadenceDeg') }}</dt>
                         <dd>{{ cadence.deg }}</dd>
