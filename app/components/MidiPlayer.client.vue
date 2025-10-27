@@ -113,12 +113,12 @@ async function onClick() {
                 duration.value = midiPlayer.getSongTime();
                 midiPlayerStore.update(midiPlayer, stop);
                 state.value = 'loaded';
-                play();
             }
         } catch {
             state.value = 'loaderror';
         }
     }
+    play();
 }
 
 function updateLoop(s) {
