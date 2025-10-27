@@ -1,0 +1,1217 @@
+modulations:
+    -
+        deg: I
+        endBeat: 16
+        endLine: 53
+        key: C
+        pieceId: op04n01a
+        startBeat: 0
+        startLine: 18
+    -
+        deg: vi
+        endBeat: 24
+        endLine: 72
+        key: a
+        pieceId: op04n01a
+        startBeat: 16
+        startLine: 53
+    -
+        deg: iii
+        endBeat: 32
+        endLine: 88
+        key: e
+        pieceId: op04n01a
+        startBeat: 24
+        startLine: 72
+    -
+        deg: ii
+        endBeat: 34
+        endLine: 93
+        key: d
+        pieceId: op04n01a
+        startBeat: 32
+        startLine: 88
+    -
+        deg: I
+        endBeat: 38
+        endLine: 102
+        key: C
+        pieceId: op04n01a
+        startBeat: 34
+        startLine: 93
+    -
+        deg: vi
+        endBeat: 40
+        endLine: 108
+        key: a
+        pieceId: op04n01a
+        startBeat: 38
+        startLine: 102
+    -
+        deg: I
+        endBeat: 68
+        endLine: 14
+        key: C
+        pieceId: op04n01a
+        startBeat: 40
+        startLine: 108
+    -
+        deg: I
+        endBeat: 12.5
+        endLine: 43
+        key: C
+        pieceId: op04n01b
+        startBeat: 0
+        startLine: 18
+    -
+        deg: V
+        endBeat: 18.5
+        endLine: 58
+        key: G
+        pieceId: op04n01b
+        startBeat: 12.5
+        startLine: 43
+    -
+        deg: I
+        endBeat: 35.5
+        endLine: 97
+        key: C
+        pieceId: op04n01b
+        startBeat: 18.5
+        startLine: 58
+    -
+        deg: V
+        endBeat: 57.5
+        endLine: 144
+        key: G
+        pieceId: op04n01b
+        startBeat: 35.5
+        startLine: 97
+    -
+        deg: I
+        endBeat: 63.5
+        endLine: 159
+        key: C
+        pieceId: op04n01b
+        startBeat: 57.5
+        startLine: 144
+    -
+        deg: IV
+        endBeat: 69.5
+        endLine: 174
+        key: F
+        pieceId: op04n01b
+        startBeat: 63.5
+        startLine: 159
+    -
+        deg: V
+        endBeat: 75.5
+        endLine: 189
+        key: G
+        pieceId: op04n01b
+        startBeat: 69.5
+        startLine: 174
+    -
+        deg: vi
+        endBeat: 93.5
+        endLine: 228
+        key: a
+        pieceId: op04n01b
+        startBeat: 75.5
+        startLine: 189
+    -
+        deg: V
+        endBeat: 101.5
+        endLine: 247
+        key: G
+        pieceId: op04n01b
+        startBeat: 93.5
+        startLine: 228
+    -
+        deg: I
+        endBeat: 141.5
+        endLine: 20
+        key: C
+        pieceId: op04n01b
+        startBeat: 101.5
+        startLine: 247
+    -
+        deg: i
+        endBeat: 12
+        endLine: 46
+        key: a
+        pieceId: op04n01c
+        startBeat: 0
+        startLine: 18
+    -
+        deg: v
+        endBeat: 18
+        endLine: 60
+        key: e
+        pieceId: op04n01c
+        startBeat: 12
+        startLine: 46
+    -
+        deg: iv
+        endBeat: 26
+        endLine: 79
+        key: d
+        pieceId: op04n01c
+        startBeat: 18
+        startLine: 60
+    -
+        deg: i
+        endBeat: 33
+        endLine: 95
+        key: a
+        pieceId: op04n01c
+        startBeat: 26
+        startLine: 79
+    -
+        deg: VII
+        endBeat: 35
+        endLine: 100
+        key: G
+        pieceId: op04n01c
+        startBeat: 33
+        startLine: 95
+    -
+        deg: i
+        endBeat: 52
+        endLine: 12
+        key: a
+        pieceId: op04n01c
+        startBeat: 35
+        startLine: 100
+    -
+        deg: I
+        endBeat: 20
+        endLine: 65
+        key: C
+        pieceId: op04n01d
+        startBeat: 0
+        startLine: 19
+    -
+        deg: V
+        endBeat: 30
+        endLine: 88
+        key: G
+        pieceId: op04n01d
+        startBeat: 20
+        startLine: 65
+    -
+        deg: I
+        endBeat: 68
+        endLine: 169
+        key: C
+        pieceId: op04n01d
+        startBeat: 30
+        startLine: 88
+    -
+        deg: vi
+        endBeat: 76
+        endLine: 188
+        key: a
+        pieceId: op04n01d
+        startBeat: 68
+        startLine: 169
+    -
+        deg: iii
+        endBeat: 84
+        endLine: 207
+        key: e
+        pieceId: op04n01d
+        startBeat: 76
+        startLine: 188
+    -
+        deg: ii
+        endBeat: 90
+        endLine: 221
+        key: d
+        pieceId: op04n01d
+        startBeat: 84
+        startLine: 207
+    -
+        deg: I
+        endBeat: 136
+        endLine: 14
+        key: C
+        pieceId: op04n01d
+        startBeat: 90
+        startLine: 221
+    -
+        deg: i
+        endBeat: 24
+        endLine: 59
+        key: g
+        pieceId: op04n02a
+        startBeat: 0
+        startLine: 18
+    -
+        deg: III
+        endBeat: 42
+        endLine: 104
+        key: B-
+        pieceId: op04n02a
+        startBeat: 24
+        startLine: 59
+    -
+        deg: v
+        endBeat: 46
+        endLine: 114
+        key: d
+        pieceId: op04n02a
+        startBeat: 42
+        startLine: 104
+    -
+        deg: iv
+        endBeat: 50
+        endLine: 124
+        key: c
+        pieceId: op04n02a
+        startBeat: 46
+        startLine: 114
+    -
+        deg: III
+        endBeat: 53
+        endLine: 132
+        key: B-
+        pieceId: op04n02a
+        startBeat: 50
+        startLine: 124
+    -
+        deg: i
+        endBeat: 80
+        endLine: 12
+        key: g
+        pieceId: op04n02a
+        startBeat: 53
+        startLine: 132
+    -
+        deg: i
+        endBeat: 16.5
+        endLine: 58
+        key: g
+        pieceId: op04n02b
+        startBeat: 0
+        startLine: 19
+    -
+        deg: iv
+        endBeat: 20.5
+        endLine: 68
+        key: c
+        pieceId: op04n02b
+        startBeat: 16.5
+        startLine: 58
+    -
+        deg: III
+        endBeat: 26
+        endLine: 82
+        key: B-
+        pieceId: op04n02b
+        startBeat: 20.5
+        startLine: 68
+    -
+        deg: i
+        endBeat: 28.5
+        endLine: 90
+        key: g
+        pieceId: op04n02b
+        startBeat: 26
+        startLine: 82
+    -
+        deg: v
+        endBeat: 36
+        endLine: 105
+        key: d
+        pieceId: op04n02b
+        startBeat: 28.5
+        startLine: 90
+    -
+        deg: III
+        endBeat: 40
+        endLine: 116
+        key: B-
+        pieceId: op04n02b
+        startBeat: 36
+        startLine: 105
+    -
+        deg: iv
+        endBeat: 44
+        endLine: 127
+        key: c
+        pieceId: op04n02b
+        startBeat: 40
+        startLine: 116
+    -
+        deg: v
+        endBeat: 52.5
+        endLine: 150
+        key: d
+        pieceId: op04n02b
+        startBeat: 44
+        startLine: 127
+    -
+        deg: iv
+        endBeat: 56.5
+        endLine: 161
+        key: c
+        pieceId: op04n02b
+        startBeat: 52.5
+        startLine: 150
+    -
+        deg: III
+        endBeat: 65.5
+        endLine: 182
+        key: B-
+        pieceId: op04n02b
+        startBeat: 56.5
+        startLine: 161
+    -
+        deg: i
+        endBeat: 72
+        endLine: 197
+        key: g
+        pieceId: op04n02b
+        startBeat: 65.5
+        startLine: 182
+    -
+        deg: iv
+        endBeat: 76.5
+        endLine: 209
+        key: c
+        pieceId: op04n02b
+        startBeat: 72
+        startLine: 197
+    -
+        deg: i
+        endBeat: 88
+        endLine: 26
+        key: g
+        pieceId: op04n02b
+        startBeat: 76.5
+        startLine: 209
+    -
+        deg: I
+        endBeat: 2
+        endLine: 22
+        key: E-
+        pieceId: op04n02c
+        startBeat: 0
+        startLine: 19
+    -
+        deg: vi
+        endBeat: 10
+        endLine: 31
+        key: c
+        pieceId: op04n02c
+        startBeat: 2
+        startLine: 22
+    -
+        deg: iii
+        endBeat: 20
+        endLine: 6
+        key: g
+        pieceId: op04n02c
+        startBeat: 10
+        startLine: 31
+    -
+        deg: i
+        endBeat: 15
+        endLine: 39
+        key: g
+        pieceId: op04n02d
+        startBeat: 0
+        startLine: 18
+    -
+        deg: iv
+        endBeat: 18
+        endLine: 44
+        key: c
+        pieceId: op04n02d
+        startBeat: 15
+        startLine: 39
+    -
+        deg: i
+        endBeat: 27
+        endLine: 57
+        key: g
+        pieceId: op04n02d
+        startBeat: 18
+        startLine: 44
+    -
+        deg: iv
+        endBeat: 33
+        endLine: 66
+        key: c
+        pieceId: op04n02d
+        startBeat: 27
+        startLine: 57
+    -
+        deg: i
+        endBeat: 49
+        endLine: 87
+        key: g
+        pieceId: op04n02d
+        startBeat: 33
+        startLine: 66
+    -
+        deg: i
+        endBeat: 55
+        endLine: 96
+        key: g
+        pieceId: op04n02d
+        startBeat: 49
+        startLine: 87
+    -
+        deg: III
+        endBeat: 61
+        endLine: 105
+        key: B-
+        pieceId: op04n02d
+        startBeat: 55
+        startLine: 96
+    -
+        deg: iv
+        endBeat: 67
+        endLine: 114
+        key: c
+        pieceId: op04n02d
+        startBeat: 61
+        startLine: 105
+    -
+        deg: i
+        endBeat: 87
+        endLine: 140
+        key: g
+        pieceId: op04n02d
+        startBeat: 67
+        startLine: 114
+    -
+        deg: III
+        endBeat: 104
+        endLine: 162
+        key: B-
+        pieceId: op04n02d
+        startBeat: 87
+        startLine: 140
+    -
+        deg: v
+        endBeat: 110
+        endLine: 171
+        key: d
+        pieceId: op04n02d
+        startBeat: 104
+        startLine: 162
+    -
+        deg: vii
+        endBeat: 115
+        endLine: 179
+        key: f
+        pieceId: op04n02d
+        startBeat: 110
+        startLine: 171
+    -
+        deg: iv
+        endBeat: 123
+        endLine: 190
+        key: c
+        pieceId: op04n02d
+        startBeat: 115
+        startLine: 179
+    -
+        deg: i
+        endBeat: 171
+        endLine: 28
+        key: g
+        pieceId: op04n02d
+        startBeat: 123
+        startLine: 190
+    -
+        deg: I
+        endBeat: 19
+        endLine: 64
+        key: A
+        pieceId: op04n03a
+        startBeat: 0
+        startLine: 18
+    -
+        deg: V
+        endBeat: 40
+        endLine: 109
+        key: E
+        pieceId: op04n03a
+        startBeat: 19
+        startLine: 64
+    -
+        deg: vi
+        endBeat: 54
+        endLine: 141
+        key: f#
+        pieceId: op04n03a
+        startBeat: 40
+        startLine: 109
+    -
+        deg: I
+        endBeat: 57
+        endLine: 150
+        key: A
+        pieceId: op04n03a
+        startBeat: 54
+        startLine: 141
+    -
+        deg: IV
+        endBeat: 59
+        endLine: 155
+        key: D
+        pieceId: op04n03a
+        startBeat: 57
+        startLine: 150
+    -
+        deg: V
+        endBeat: 61
+        endLine: 161
+        key: E
+        pieceId: op04n03a
+        startBeat: 59
+        startLine: 155
+    -
+        deg: I
+        endBeat: 72
+        endLine: 14
+        key: A
+        pieceId: op04n03a
+        startBeat: 61
+        startLine: 161
+    -
+        deg: I
+        endBeat: 7
+        endLine: 39
+        key: F
+        pieceId: op04n07a
+        startBeat: 0
+        startLine: 19
+    -
+        deg: V
+        endBeat: 19
+        endLine: 73
+        key: C
+        pieceId: op04n07a
+        startBeat: 7
+        startLine: 39
+    -
+        deg: I
+        endBeat: 27
+        endLine: 104
+        key: F
+        pieceId: op04n07a
+        startBeat: 19
+        startLine: 73
+    -
+        deg: vi
+        endBeat: 33.5
+        endLine: 124
+        key: d
+        pieceId: op04n07a
+        startBeat: 27
+        startLine: 104
+    -
+        deg: I
+        endBeat: 60
+        endLine: 10
+        key: F
+        pieceId: op04n07a
+        startBeat: 33.5
+        startLine: 124
+    -
+        deg: I
+        endBeat: 35
+        endLine: 70
+        key: F
+        pieceId: op04n07b
+        startBeat: 0
+        startLine: 18
+    -
+        deg: V
+        endBeat: 67
+        endLine: 114
+        key: C
+        pieceId: op04n07b
+        startBeat: 35
+        startLine: 70
+    -
+        deg: I
+        endBeat: 74
+        endLine: 125
+        key: F
+        pieceId: op04n07b
+        startBeat: 67
+        startLine: 114
+    -
+        deg: vi
+        endBeat: 90
+        endLine: 148
+        key: d
+        pieceId: op04n07b
+        startBeat: 74
+        startLine: 125
+    -
+        deg: I
+        endBeat: 114
+        endLine: 185
+        key: F
+        pieceId: op04n07b
+        startBeat: 90
+        startLine: 148
+    -
+        deg: IV
+        endBeat: 126
+        endLine: 210
+        key: B-
+        pieceId: op04n07b
+        startBeat: 114
+        startLine: 185
+    -
+        deg: I
+        endBeat: 138
+        endLine: 14
+        key: F
+        pieceId: op04n07b
+        startBeat: 126
+        startLine: 210
+    -
+        deg: i
+        endBeat: 8
+        endLine: 27
+        key: d
+        pieceId: op04n07c
+        startBeat: 0
+        startLine: 18
+    -
+        deg: iv
+        endBeat: 16
+        endLine: 36
+        key: g
+        pieceId: op04n07c
+        startBeat: 8
+        startLine: 27
+    -
+        deg: i
+        endBeat: 24
+        endLine: 6
+        key: d
+        pieceId: op04n07c
+        startBeat: 16
+        startLine: 36
+    -
+        deg: I
+        endBeat: 14
+        endLine: 51
+        key: F
+        pieceId: op04n07d
+        startBeat: 0
+        startLine: 18
+    -
+        deg: V
+        endBeat: 24
+        endLine: 71
+        key: C
+        pieceId: op04n07d
+        startBeat: 14
+        startLine: 51
+    -
+        deg: IV
+        endBeat: 30
+        endLine: 86
+        key: B-
+        pieceId: op04n07d
+        startBeat: 24
+        startLine: 71
+    -
+        deg: V
+        endBeat: 36
+        endLine: 101
+        key: C
+        pieceId: op04n07d
+        startBeat: 30
+        startLine: 86
+    -
+        deg: vi
+        endBeat: 48
+        endLine: 125
+        key: d
+        pieceId: op04n07d
+        startBeat: 36
+        startLine: 101
+    -
+        deg: I
+        endBeat: 96
+        endLine: 12
+        key: F
+        pieceId: op04n07d
+        startBeat: 48
+        startLine: 125
+    -
+        deg: i
+        endBeat: 22
+        endLine: 33
+        key: d
+        pieceId: op04n08a
+        startBeat: 0
+        startLine: 18
+    -
+        deg: iv
+        endBeat: 28
+        endLine: 38
+        key: g
+        pieceId: op04n08a
+        startBeat: 22
+        startLine: 33
+    -
+        deg: i
+        endBeat: 48
+        endLine: 53
+        key: d
+        pieceId: op04n08a
+        startBeat: 28
+        startLine: 38
+    -
+        deg: v
+        endBeat: 92
+        endLine: 86
+        key: a
+        pieceId: op04n08a
+        startBeat: 48
+        startLine: 53
+    -
+        deg: i
+        endBeat: 98
+        endLine: 91
+        key: d
+        pieceId: op04n08a
+        startBeat: 92
+        startLine: 86
+    -
+        deg: iv
+        endBeat: 104
+        endLine: 96
+        key: g
+        pieceId: op04n08a
+        startBeat: 98
+        startLine: 91
+    -
+        deg: III
+        endBeat: 136
+        endLine: 118
+        key: F
+        pieceId: op04n08a
+        startBeat: 104
+        startLine: 96
+    -
+        deg: i
+        endBeat: 166
+        endLine: 142
+        key: d
+        pieceId: op04n08a
+        startBeat: 136
+        startLine: 118
+    -
+        deg: iv
+        endBeat: 174
+        endLine: 149
+        key: g
+        pieceId: op04n08a
+        startBeat: 166
+        startLine: 142
+    -
+        deg: i
+        endBeat: 188
+        endLine: 159
+        key: d
+        pieceId: op04n08a
+        startBeat: 174
+        startLine: 149
+    -
+        deg: iv
+        endBeat: 214
+        endLine: 178
+        key: g
+        pieceId: op04n08a
+        startBeat: 188
+        startLine: 159
+    -
+        deg: i
+        endBeat: 228
+        endLine: 24
+        key: d
+        pieceId: op04n08a
+        startBeat: 214
+        startLine: 178
+    -
+        deg: i
+        endBeat: 16
+        endLine: 88
+        key: d
+        pieceId: op04n08b
+        startBeat: 0
+        startLine: 19
+    -
+        deg: iv
+        endBeat: 20
+        endLine: 106
+        key: g
+        pieceId: op04n08b
+        startBeat: 16
+        startLine: 88
+    -
+        deg: III
+        endBeat: 36
+        endLine: 175
+        key: F
+        pieceId: op04n08b
+        startBeat: 20
+        startLine: 106
+    -
+        deg: v
+        endBeat: 48
+        endLine: 216
+        key: a
+        pieceId: op04n08b
+        startBeat: 36
+        startLine: 175
+    -
+        deg: i
+        endBeat: 52
+        endLine: 234
+        key: d
+        pieceId: op04n08b
+        startBeat: 48
+        startLine: 216
+    -
+        deg: III
+        endBeat: 68
+        endLine: 303
+        key: F
+        pieceId: op04n08b
+        startBeat: 52
+        startLine: 234
+    -
+        deg: i
+        endBeat: 75
+        endLine: 333
+        key: d
+        pieceId: op04n08b
+        startBeat: 68
+        startLine: 303
+    -
+        deg: III
+        endBeat: 79
+        endLine: 351
+        key: F
+        pieceId: op04n08b
+        startBeat: 75
+        startLine: 333
+    -
+        deg: i
+        endBeat: 83
+        endLine: 366
+        key: d
+        pieceId: op04n08b
+        startBeat: 79
+        startLine: 351
+    -
+        deg: III
+        endBeat: 87
+        endLine: 384
+        key: F
+        pieceId: op04n08b
+        startBeat: 83
+        startLine: 366
+    -
+        deg: i
+        endBeat: 92
+        endLine: 22
+        key: d
+        pieceId: op04n08b
+        startBeat: 87
+        startLine: 384
+    -
+        deg: i
+        endBeat: 15
+        endLine: 52
+        key: d
+        pieceId: op04n08c
+        startBeat: 0
+        startLine: 18
+    -
+        deg: III
+        endBeat: 27
+        endLine: 78
+        key: F
+        pieceId: op04n08c
+        startBeat: 15
+        startLine: 52
+    -
+        deg: i
+        endBeat: 36
+        endLine: 97
+        key: d
+        pieceId: op04n08c
+        startBeat: 27
+        startLine: 78
+    -
+        deg: III
+        endBeat: 39
+        endLine: 105
+        key: F
+        pieceId: op04n08c
+        startBeat: 36
+        startLine: 97
+    -
+        deg: i
+        endBeat: 48
+        endLine: 10
+        key: d
+        pieceId: op04n08c
+        startBeat: 39
+        startLine: 105
+    -
+        deg: I
+        endBeat: 12
+        endLine: 71
+        key: B-
+        pieceId: op04n09a
+        startBeat: 0
+        startLine: 19
+    -
+        deg: V
+        endBeat: 28
+        endLine: 132
+        key: F
+        pieceId: op04n09a
+        startBeat: 12
+        startLine: 71
+    -
+        deg: iii
+        endBeat: 37
+        endLine: 170
+        key: d
+        pieceId: op04n09a
+        startBeat: 28
+        startLine: 132
+    -
+        deg: ii
+        endBeat: 39
+        endLine: 179
+        key: c
+        pieceId: op04n09a
+        startBeat: 37
+        startLine: 170
+    -
+        deg: I
+        endBeat: 52
+        endLine: 10
+        key: B-
+        pieceId: op04n09a
+        startBeat: 39
+        startLine: 179
+    -
+        deg: I
+        endBeat: 7
+        endLine: 34
+        key: B-
+        pieceId: op04n09b
+        startBeat: 0
+        startLine: 18
+    -
+        deg: V
+        endBeat: 20
+        endLine: 63
+        key: F
+        pieceId: op04n09b
+        startBeat: 7
+        startLine: 34
+    -
+        deg: I
+        endBeat: 32
+        endLine: 91
+        key: B-
+        pieceId: op04n09b
+        startBeat: 20
+        startLine: 63
+    -
+        deg: V
+        endBeat: 63
+        endLine: 154
+        key: F
+        pieceId: op04n09b
+        startBeat: 32
+        startLine: 91
+    -
+        deg: I
+        endBeat: 66
+        endLine: 162
+        key: B-
+        pieceId: op04n09b
+        startBeat: 63
+        startLine: 154
+    -
+        deg: vi
+        endBeat: 69
+        endLine: 170
+        key: g
+        pieceId: op04n09b
+        startBeat: 66
+        startLine: 162
+    -
+        deg: IV
+        endBeat: 72
+        endLine: 178
+        key: E-
+        pieceId: op04n09b
+        startBeat: 69
+        startLine: 170
+    -
+        deg: vi
+        endBeat: 84
+        endLine: 205
+        key: g
+        pieceId: op04n09b
+        startBeat: 72
+        startLine: 178
+    -
+        deg: I
+        endBeat: 91
+        endLine: 222
+        key: B-
+        pieceId: op04n09b
+        startBeat: 84
+        startLine: 205
+    -
+        deg: V
+        endBeat: 94
+        endLine: 230
+        key: F
+        pieceId: op04n09b
+        startBeat: 91
+        startLine: 222
+    -
+        deg: I
+        endBeat: 132
+        endLine: 22
+        key: B-
+        pieceId: op04n09b
+        startBeat: 94
+        startLine: 230
+    -
+        deg: i
+        endBeat: 24
+        endLine: 53
+        key: g
+        pieceId: op04n09c
+        startBeat: 0
+        startLine: 18
+    -
+        deg: v
+        endBeat: 26
+        endLine: 56
+        key: d
+        pieceId: op04n09c
+        startBeat: 24
+        startLine: 53
+    -
+        deg: iv
+        endBeat: 32
+        endLine: 66
+        key: c
+        pieceId: op04n09c
+        startBeat: 26
+        startLine: 56
+    -
+        deg: i
+        endBeat: 48
+        endLine: 8
+        key: g
+        pieceId: op04n09c
+        startBeat: 32
+        startLine: 66
+    -
+        deg: I
+        endBeat: 24
+        endLine: 8
+        key: B-
+        pieceId: op04n09d
+        startBeat: 0
+        startLine: 4
+    -
+        deg: ii
+        endBeat: 32
+        endLine: 8
+        key: c
+        pieceId: op04n09d
+        startBeat: 24
+        startLine: 8
+    -
+        deg: iii
+        endBeat: 56
+        endLine: 8
+        key: d
+        pieceId: op04n09d
+        startBeat: 32
+        startLine: 8
+    -
+        deg: I
+        endBeat: 112
+        endLine: 8
+        key: B-
+        pieceId: op04n09d
+        startBeat: 56
+        startLine: 8
+    -
+        deg: vi
+        endBeat: 120
+        endLine: 8
+        key: g
+        pieceId: op04n09d
+        startBeat: 112
+        startLine: 8
+    -
+        deg: ii
+        endBeat: 144
+        endLine: 8
+        key: c
+        pieceId: op04n09d
+        startBeat: 120
+        startLine: 8
+    -
+        deg: iii
+        endBeat: 160
+        endLine: 4
+        key: d
+        pieceId: op04n09d
+        startBeat: 144
+        startLine: 8
+    -
+        deg: I
+        endBeat: 168
+        endLine: 4
+        key: B-
+        pieceId: op04n09d
+        startBeat: 160
+        startLine: 4
+    -
+        deg: V
+        endBeat: 174
+        endLine: 2
+        key: F
+        pieceId: op04n09d
+        startBeat: 168
+        startLine: 4
+    -
+        deg: I
+        endBeat: 224
+        endLine: 20
+        key: B-
+        pieceId: op04n09d
+        startBeat: 174
+        startLine: 2
