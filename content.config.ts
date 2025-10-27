@@ -45,5 +45,22 @@ export default defineContentConfig({
             type: 'data',
             schema: z.object({}).passthrough(),
         }),
+        cadences: defineCollection({
+            source: 'cadences.yaml',
+            type: 'data',
+            schema: z.object({
+                cadences: z.array(z.object({
+                    deg: z.string(),
+                    endBassDeg: z.string(),
+                    endBeat: z.number(),
+                    endLine: z.number(),
+                    key: z.string(),
+                    pieceId: z.string(),
+                    startBeat: z.number(),
+                    startLine:z.number(),
+                    tag: z.string(),
+                })),
+            }),
+        }),
     },
 });
