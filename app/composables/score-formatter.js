@@ -33,7 +33,7 @@ export function useScoreFormatter() {
         }
 
         if (hightlightLineNumbers.length) {
-            lines.push('!!!RDF**kern: @ = marked note color="#ef4444');
+            lines.push('!!!RDF**kern: @ = marked note color="#ef4444"');
         }
 
         if (filters.length) {

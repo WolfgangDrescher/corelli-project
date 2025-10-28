@@ -5,7 +5,7 @@ const { data } = await useAsyncData('pieces', () => queryCollection('pieces').al
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection(`modulations`).first(), {deep: false });
 const { data: transitionsData } = await useAsyncData(`transitions`, () => queryCollection(`transitions`).first(), {deep: false });
 
-const modulations = modulationsData.value.meta.modulations;
+const modulations = modulationsData.value.modulations;
 const transitions = transitionsData.value.meta.transitions;
 
 const localePath = useLocalePath();
