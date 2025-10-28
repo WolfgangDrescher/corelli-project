@@ -1,4 +1,4 @@
-export function useHighlightedScore() {
+export function useScoreFormatter() {
 
     const { localScoreUrlGenerator } = useScoreUrlGenerator();
     const scoreData = ref(null);

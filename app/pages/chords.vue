@@ -177,7 +177,7 @@ const chordsGroupById = computed(() => {
     }))
 });
 
-const { scoreData, loadScoreData } = useHighlightedScore();
+const { scoreData, loadScoreData } = useScoreFormatter();
 
 function useChordModal(chordsGroupById, loadScoreData, chordsData) {
     const modalIsOpen = ref(false)

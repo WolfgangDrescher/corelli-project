@@ -5,7 +5,7 @@ const { data: cadencesData } = await useAsyncData('cadences', () => queryCollect
 
 const localePath = useLocalePath();
 
-const { loadScoreData } = useHighlightedScore();
+const { loadScoreData } = useScoreFormatter();
 
 const cadences = cadencesData.value.cadences;
 
