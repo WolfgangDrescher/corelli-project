@@ -93,7 +93,7 @@ const filteredTransition = computed(() => {
     return transitions.filter(t => t.currentDeg === filter.currentDeg && t.nextDeg === filter.nextDeg)[0] ?? {};
 });
 
-function useChordModal(filteredTransition, loadScoreData) {
+function useChordModal(filteredTransition) {
     const modalIsOpen = ref(false)
     const activeIndex = ref(null)
 
