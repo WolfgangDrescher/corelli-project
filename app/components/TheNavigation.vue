@@ -23,6 +23,10 @@ const items = [
         label: t('cadences'),
         to: localePath({name: 'cadences'}),
     },
+    {
+        label: t('faq'),
+        to: localePath({name: 'faq'}),
+    },
 ];
 </script>
 
