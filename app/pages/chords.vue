@@ -177,24 +177,13 @@ const chordsGroupById = computed(() => {
     }))
 });
 
-const { scoreData, loadScoreData } = useScoreFormatter();
-
-function useChordModal(chordsGroupById, loadScoreData, chordsData) {
+function useChordModal(chordsGroupById, chordsData) {
     const modalIsOpen = ref(false)
     const activeIndex = ref(null)
 
     async function loadIndex(index) {
         if (index < 0 || index >= chordsGroupById.value.length) return;
         activeIndex.value = index;
-
-        const choraleIntervalLength = chordsData.value.chords.filter(i => i.pieceId === currentGroup.value.id).length;
-
-        let highlightLineNumbers = [];
-        if (currentGroup.value.chords.length < choraleIntervalLength) {
-            highlightLineNumbers = currentGroup.value.chords.filter(c => c.pieceId === currentGroup.value.id).map(c => c.lineNumber);
-        }
-
-        await loadScoreData(currentGroup.value.id, highlightLineNumbers, ['deg -k 1 --box']);
         modalIsOpen.value = true;
     };
 
@@ -213,6 +202,16 @@ function useChordModal(chordsGroupById, loadScoreData, chordsData) {
         if (modalIsOpen.value && activeIndex.value !== null && hasNext.value) loadIndex(activeIndex.value + 1);
     });
 
+    const highlightLineNumbers = computed(() => {
+        const pieceIntervalLength = chordsData.value.chords.filter(i => i.pieceId === currentGroup.value.id).length;
+
+        let highlightLineNumbers = [];
+        if (currentGroup.value.chords.length < pieceIntervalLength) {
+            highlightLineNumbers = currentGroup.value.chords.filter(c => c.pieceId === currentGroup.value.id).map(c => c.lineNumber);
+        }
+        return highlightLineNumbers;
+    });
+
     return {
         modalIsOpen,
         activeIndex,
@@ -220,6 +219,7 @@ function useChordModal(chordsGroupById, loadScoreData, chordsData) {
         currentGroup,
         hasPrevious,
         hasNext,
+        highlightLineNumbers,
     }
 }
 
@@ -230,7 +230,8 @@ const {
     currentGroup,
     hasPrevious,
     hasNext,
-} = useChordModal(chordsGroupById, loadScoreData, chordsData);
+    highlightLineNumbers,
+} = useChordModal(chordsGroupById, chordsData);
 
 const { localScoreUrlGenerator } = useScoreUrlGenerator();
 
@@ -323,12 +324,19 @@ function chartClickHandler(type, chart, event) {
             </div>
             <UModal v-model:open="modalIsOpen" :title="currentGroup.id">
                 <template #body>
-                    <div :key="scoreData">
+                    <div :key="`${currentGroup.id}${highlightLineNumbers.join(',')}`">
                         <div class="flex gap-1 justify-end">
                             <MidiPlayer :url="localScoreUrlGenerator(currentGroup.id)" class="text-2xl" />
                             <UButton size="sm" color="primary" variant="solid" :label="t('view')" :to="localePath({ name: 'piece-id', params: { id: currentGroup.id } })" />
                         </div>
-                        <VerovioCanvas v-if="scoreData" :data="scoreData" :scale="25" :page-margin="50" />
+                        <HighlightedScore
+                            :piece-id="currentGroup.id"
+                            :lines="highlightLineNumbers"
+                            :verovio-options="{
+                                scale: 25,
+                                pageMargin: 50,
+                            }"
+                        />
                     </div>
                 </template>
                 <template #footer>

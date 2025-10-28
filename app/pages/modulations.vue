@@ -93,8 +93,6 @@ const filteredTransition = computed(() => {
     return transitions.filter(t => t.currentDeg === filter.currentDeg && t.nextDeg === filter.nextDeg)[0] ?? {};
 });
 
-const { scoreData, loadScoreData } = useScoreFormatter();
-
 function useChordModal(filteredTransition, loadScoreData) {
     const modalIsOpen = ref(false)
     const activeIndex = ref(null)
@@ -102,7 +100,6 @@ function useChordModal(filteredTransition, loadScoreData) {
     async function loadIndex(index) {
         if (index < 0 || index >= filteredTransition.value.length) return;
         activeIndex.value = index;
-        await loadScoreData(currentGroup.value.id, [currentGroup.value.lineNumber], ['deg -k 1 --box']);
         modalIsOpen.value = true;
     };
 
@@ -138,7 +135,7 @@ const {
     currentGroup,
     hasPrevious,
     hasNext,
-} = useChordModal(filteredTransition, loadScoreData);
+} = useChordModal(filteredTransition);
 
 const { localScoreUrlGenerator } = useScoreUrlGenerator();
 </script>
@@ -186,12 +183,19 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
                         </UButton>
                         <UModal v-model:open="modalIsOpen" :title="currentGroup.id">
                             <template #body>
-                                <div :key="scoreData">
+                                <div :key="`${currentGroup.id}-${currentGroup.lineNumber}`">
                                     <div class="flex gap-1 justify-end">
                                         <MidiPlayer :url="localScoreUrlGenerator(currentGroup.id)" class="text-2xl" />
                                         <UButton size="sm" color="primary" variant="solid" :label="t('view')" :to="localePath({ name: 'piece-id', params: { id: currentGroup.id } })" />
                                     </div>
-                                    <VerovioCanvas v-if="scoreData" :data="scoreData" :scale="25" :page-margin="50" />
+                                    <HighlightedScore
+                                        :piece-id="currentGroup.id"
+                                        :lines="[currentGroup.lineNumber]"
+                                        :verovio-options="{
+                                            scale: 25,
+                                            pageMargin: 50,
+                                        }"
+                                    />
                                 </div>
                             </template>
                             <template #footer>

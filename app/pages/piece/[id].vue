@@ -32,25 +32,22 @@ onMounted(async () => {
     score.value = kern;
 });
 
-const formattedData = computed(() => {
-    const lines = score.value?.trim().split('\n') ?? [];
-
+const humdrumFilters = computed(() => {
+    const filters = [];
     if (scoreOptions.showMeter) {
-        lines.push(`!!!filter: meter -f`);
+        filters.push(`meter -f`);
     }
     if (scoreOptions.bassstufen) {
-        lines.push(`!!!filter: deg -k1 --box -t`);
+        filters.push(`deg -k1 --box -t`);
     }
     if (scoreOptions.hideFiguredbass) {
-        lines.push(`!!!filter: extract -I "**fb" | extract -I "**fba"`);
+        filters.push(`extract -I "**fb" | extract -I "**fba"`);
     }
     if (scoreOptions.showFiguredbassAbove) {
-        lines.push(`!!!filter: shed -e "s/fb/fba/gX"`);
+        filters.push(`shed -e "s/fb/fba/gX"`);
     }
-
-    return score.value ? `${lines.join('\n')}` : null;
+    return filters;
 });
-
 </script>
 
 <template>
@@ -102,18 +99,17 @@ const formattedData = computed(() => {
                 </div>
             </div>
 
-            <VerovioCanvas
-                v-if="formattedData"
-                :data="formattedData"
-                :scale="35"
-                :options="{
+            <HighlightedScore
+                :piece-id="piece.slug"
+                :verovio-options="{
                     header: true,
                     spacingSystem: 15,
-                    pageMarginLeft: 30,
-                    pageMarginRight: 30,
+                    pageMarginLeft: 50,
+                    pageMarginRight: 0,
                     pageMarginTop: 10,
                     pageMarginBottom: 10,
                 }"
+                :filters="humdrumFilters"
             />
 
         </div>
