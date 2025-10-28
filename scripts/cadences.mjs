@@ -38,10 +38,13 @@ function parseTimepoint(tp) {
     };
 }
 
+const cadencesYaml = yaml.load(fs.readFileSync(pathToCadenceData, 'utf8').toString());
+
+const cadences = [];
+
 getFiles(pathToKernScores).forEach(file => {
     const id = getIdFromFilename(file);
 
-    const cadencesYaml = yaml.load(fs.readFileSync(pathToCadenceData, 'utf8').toString());
 
     const pieceCadences = cadencesYaml[id];
     if (!pieceCadences) return
@@ -50,7 +53,7 @@ getFiles(pathToKernScores).forEach(file => {
 
     const kern = execSync(`cat ${file} | lnnr | beat -ca | meter -f | degx --resolve-null -t`).toString().trim();
 
-    const cadences = pieceCadences.map(([a, b, tag]) => ({ tag, pieceId: id }));
+    cadences.push(...pieceCadences.map(([a, b, tag]) => ({ tag, pieceId: id })));
 
     pieceCadences.forEach((pieceCadence, cadenceIndex) => {
         const [startPoint, endPoint] = pieceCadence;
@@ -161,10 +164,10 @@ getFiles(pathToKernScores).forEach(file => {
 
     });
 
-    fs.writeFileSync(pathToCadencesYaml, yaml.dump({cadences}, {
-        indent: 4,
-        lineWidth: -1,
-        sortKeys: true,
-    }));
-
 });
+
+fs.writeFileSync(pathToCadencesYaml, yaml.dump({cadences}, {
+    indent: 4,
+    lineWidth: -1,
+    sortKeys: true,
+}));
