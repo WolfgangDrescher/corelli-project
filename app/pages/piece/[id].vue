@@ -2,6 +2,11 @@
 const localePath = useLocalePath();
 const { params: { id } } = useRoute();
 const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection('pieces').where('stem', '=', `pieces/${id}`).first());
+const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').first());
+const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
+
+const cadences = cadencesData.value.cadences.filter(c => c.pieceId === id);
+const modulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
 
 if (!piece.value) {
     throw createError({
@@ -22,6 +27,8 @@ const scoreOptions = reactive({
     bassstufen: false,
     hideFiguredbass: false,
     showFiguredbassAbove: false,
+    showCadences: false,
+    showModulations: false,
 });
 
 const { localScoreUrlGenerator, githubScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
@@ -86,6 +93,8 @@ const humdrumFilters = computed(() => {
                         <UCheckbox v-model="scoreOptions.bassstufen" label="bassstufen" />
                         <UCheckbox v-model="scoreOptions.hideFiguredbass" label="GB ausblenden" />
                         <UCheckbox v-model="scoreOptions.showFiguredbassAbove" label="GB oberhalb anzeigen" />
+                        <UCheckbox v-model="scoreOptions.showCadences" label="Kadenzen anzeigen" />
+                        <UCheckbox v-model="scoreOptions.showModulations" label="Modulationen anzeigen" />
                     </div>
                 </div>
                 <div class="shrink-0 flex gap-2 ml-auto md:order-2">
@@ -109,6 +118,14 @@ const humdrumFilters = computed(() => {
                     pageMarginTop: 10,
                     pageMarginBottom: 10,
                 }"
+                :sections="scoreOptions.showCadences ? cadences.map(c => ({
+                    startLine: c.startLine,
+                    endLine: c.endLine,
+                })) : []"
+                :lines="scoreOptions.showModulations ? [{
+                    items: modulations.map(m => m.startLine),
+                    color: 'rgb(34 197 94 / 0.4)',
+                }] : []"
                 :filters="humdrumFilters"
             />
 
