@@ -53,7 +53,7 @@ getFiles(pathToKernScores).forEach(file => {
 
     const kern = execSync(`cat ${file} | lnnr | beat -ca | meter -f | degx --resolve-null -t`).toString().trim();
 
-    cadences.push(...pieceCadences.map(([a, b, tag]) => ({ tag, pieceId: id })));
+    const newCadences = [...pieceCadences.map(([a, b, tag]) => ({ tag, pieceId: id }))];
 
     pieceCadences.forEach((pieceCadence, cadenceIndex) => {
         const [startPoint, endPoint] = pieceCadence;
@@ -141,15 +141,15 @@ getFiles(pathToKernScores).forEach(file => {
             }
 
             if (currentMeasure === start.measure && currentBeat === start.beat) {
-                cadences[cadenceIndex].startLine = currentLineNumber;
-                cadences[cadenceIndex].startBeat = currentAbsb;
+                newCadences[cadenceIndex].startLine = currentLineNumber;
+                newCadences[cadenceIndex].startBeat = currentAbsb;
             }
             
             if (currentMeasure === end.measure && currentBeat === end.beat) {
-                cadences[cadenceIndex].endLine = currentLineNumber;
-                cadences[cadenceIndex].endBeat = currentAbsb;
-                cadences[cadenceIndex].key = currentKey;
-                cadences[cadenceIndex].endBassDeg = currentBassScaleDegree;
+                newCadences[cadenceIndex].endLine = currentLineNumber;
+                newCadences[cadenceIndex].endBeat = currentAbsb;
+                newCadences[cadenceIndex].key = currentKey;
+                newCadences[cadenceIndex].endBassDeg = currentBassScaleDegree;
 
                 const degScore = `**kern
 *${pieceKey}:
@@ -158,11 +158,13 @@ getFiles(pathToKernScores).forEach(file => {
                 const stdout = execSync(`echo "${degScore}" | degx | extractxx -i deg | ridx -I`).toString().trim();
                 let deg = romanize(stdout);
                 deg = currentKey === currentKey.toLowerCase() ? deg.toLowerCase() : deg.toUpperCase();
-                cadences[cadenceIndex].deg = deg;
+                newCadences[cadenceIndex].deg = deg;
             }
         }
 
     });
+
+    cadences.push(...newCadences.filter(c => c.pieceId));
 
 });
 
