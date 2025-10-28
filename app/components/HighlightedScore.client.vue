@@ -71,7 +71,7 @@ onMounted(async () => {
             </template>
         </div>
         <div ref="scoreContainer" class="verovio-canvas-container">
-            <VerovioCanvas ref="verovioCanvas" v-bind="verovioCanvasOptions" />
+            <VerovioCanvas v-if="verovioCanvasOptions.data" ref="verovioCanvas" v-bind="verovioCanvasOptions" />
         </div>
     </div>
 </template>
