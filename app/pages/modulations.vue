@@ -102,8 +102,6 @@ function useChordModal(filteredTransition, loadScoreData) {
     async function loadIndex(index) {
         if (index < 0 || index >= filteredTransition.value.length) return;
         activeIndex.value = index;
-        console.log(filteredTransition.value)
-        console.log(currentGroup.value)
         await loadScoreData(currentGroup.value.id, [currentGroup.value.lineNumber], ['deg -k 1 --box']);
         modalIsOpen.value = true;
     };
