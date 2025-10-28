@@ -1,71 +1,71 @@
 cadences:
     -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 15
+        endLine: 50
+        key: G
+        pieceId: op04n01b
+        startBeat: 12
+        startLine: 43
+        tag: null
+    -
         deg: I
         endBassDeg: '1'
-        endBeat: 14
-        endLine: 47
+        endBeat: 27
+        endLine: 78
         key: C
-        pieceId: op04n01a
-        startBeat: 10
-        startLine: 40
+        pieceId: op04n01b
+        startBeat: 24
+        startLine: 72
+        tag: null
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 48
+        endLine: 127
+        key: G
+        pieceId: op04n01b
+        startBeat: 42
+        startLine: 114
         tag: doppia
     -
         deg: vi
-        endBassDeg: '5'
-        endBeat: 22
-        endLine: 67
+        endBassDeg: '1'
+        endBeat: 90
+        endLine: 220
         key: a
-        pieceId: op04n01a
-        startBeat: 20
-        startLine: 62
-        tag: phrygian
-    -
-        deg: iii
-        endBassDeg: '1'
-        endBeat: 30
-        endLine: 83
-        key: e
-        pieceId: op04n01a
-        startBeat: 26
-        startLine: 76
-        tag: null
-    -
-        deg: I
-        endBassDeg: '5'
-        endBeat: 42
-        endLine: 111
-        key: C
-        pieceId: op04n01a
-        startBeat: 40
-        startLine: 108
-        tag: null
-    -
-        deg: I
-        endBassDeg: '5'
-        endBeat: 50
-        endLine: 123
-        key: C
-        pieceId: op04n01a
-        startBeat: 48
-        startLine: 120
-        tag: null
-    -
-        deg: I
-        endBassDeg: '1'
-        endBeat: 56
-        endLine: 134
-        key: C
-        pieceId: op04n01a
-        startBeat: 52
-        startLine: 127
+        pieceId: op04n01b
+        startBeat: 84
+        startLine: 210
         tag: doppia
     -
         deg: I
         endBassDeg: '1'
-        endBeat: 66
-        endLine: 151
+        endBeat: 108
+        endLine: 263
         key: C
-        pieceId: op04n01a
-        startBeat: 62
-        startLine: 144
+        pieceId: op04n01b
+        startBeat: 104
+        startLine: 254
+        tag: null
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 123
+        endLine: 293
+        key: C
+        pieceId: op04n01b
+        startBeat: 117
+        startLine: 284
+        tag: doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 138
+        endLine: 322
+        key: C
+        pieceId: op04n01b
+        startBeat: 132
+        startLine: 314
         tag: doppia
