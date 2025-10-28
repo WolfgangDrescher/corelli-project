@@ -72,5 +72,15 @@ export default defineContentConfig({
                 })),
             }),
         }),
+        initialVoicings: defineCollection({
+            source: 'initial-voicings.yaml',
+            type: 'data',
+            schema: z.object({
+                initialVoicings: z.array(z.object({
+                    fb: z.string(),
+                    pieceId: z.string(),
+                })),
+            }),
+        }),
     },
 });
