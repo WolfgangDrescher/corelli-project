@@ -38,7 +38,7 @@ function parseTimepoint(tp) {
     };
 }
 
-getFiles(pathToKernScores).splice(99,1).forEach(file => {
+getFiles(pathToKernScores).forEach(file => {
     const id = getIdFromFilename(file);
 
     const cadencesYaml = yaml.load(fs.readFileSync(pathToCadenceData, 'utf8').toString());
