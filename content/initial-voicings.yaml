@@ -1,0 +1,448 @@
+initialVoicings:
+    -
+        fb: 5 3
+        pieceId: op01n01a
+    -
+        fb: null
+        pieceId: op01n01b
+    -
+        fb: 3 8
+        pieceId: op01n01c
+    -
+        fb: null
+        pieceId: op01n01d
+    -
+        fb: 5 3
+        pieceId: op01n02a
+    -
+        fb: null
+        pieceId: op01n02b
+    -
+        fb: 3 8
+        pieceId: op01n02c
+    -
+        fb: null
+        pieceId: op01n02d
+    -
+        fb: 5 3
+        pieceId: op01n03a
+    -
+        fb: '8'
+        pieceId: op01n03b
+    -
+        fb: 5 3
+        pieceId: op01n03c
+    -
+        fb: null
+        pieceId: op01n03d
+    -
+        fb: null
+        pieceId: op01n04a
+    -
+        fb: null
+        pieceId: op01n04b
+    -
+        fb: null
+        pieceId: op01n04c
+    -
+        fb: null
+        pieceId: op01n04d
+    -
+        fb: 3 8
+        pieceId: op01n05a
+    -
+        fb: '8'
+        pieceId: op01n05b
+    -
+        fb: 5 3
+        pieceId: op01n05c
+    -
+        fb: null
+        pieceId: op01n05d
+    -
+        fb: 5 3
+        pieceId: op01n06a
+    -
+        fb: '3'
+        pieceId: op01n06b
+    -
+        fb: 5 3
+        pieceId: op01n06c
+    -
+        fb: null
+        pieceId: op01n06d
+    -
+        fb: null
+        pieceId: op01n07a
+    -
+        fb: 5 3
+        pieceId: op01n07b
+    -
+        fb: null
+        pieceId: op01n07c
+    -
+        fb: '8'
+        pieceId: op01n08a
+    -
+        fb: 5 3
+        pieceId: op01n08b
+    -
+        fb: null
+        pieceId: op01n08c
+    -
+        fb: null
+        pieceId: op01n08d
+    -
+        fb: '8'
+        pieceId: op01n09a
+    -
+        fb: '8'
+        pieceId: op01n09b
+    -
+        fb: 5 3
+        pieceId: op01n09c
+    -
+        fb: '8'
+        pieceId: op01n09d
+    -
+        fb: '5'
+        pieceId: op01n10a
+    -
+        fb: null
+        pieceId: op01n10b
+    -
+        fb: null
+        pieceId: op01n10c
+    -
+        fb: 8 8
+        pieceId: op01n10d
+    -
+        fb: null
+        pieceId: op01n10e
+    -
+        fb: 3 8
+        pieceId: op01n11a
+    -
+        fb: null
+        pieceId: op01n11b
+    -
+        fb: 3 8
+        pieceId: op01n11c
+    -
+        fb: 3 8
+        pieceId: op01n11d
+    -
+        fb: 5 3
+        pieceId: op01n12a
+    -
+        fb: '8'
+        pieceId: op01n12b
+    -
+        fb: 5 3
+        pieceId: op01n12c
+    -
+        fb: null
+        pieceId: op01n12d
+    -
+        fb: 5 3
+        pieceId: op03n01a
+    -
+        fb: null
+        pieceId: op03n01b
+    -
+        fb: 5 3
+        pieceId: op03n01c
+    -
+        fb: null
+        pieceId: op03n01d
+    -
+        fb: '8'
+        pieceId: op03n02a
+    -
+        fb: null
+        pieceId: op03n02b
+    -
+        fb: '3'
+        pieceId: op03n02c
+    -
+        fb: null
+        pieceId: op03n02d
+    -
+        fb: 5 3
+        pieceId: op03n03a
+    -
+        fb: 3 5
+        pieceId: op03n03b
+    -
+        fb: '3'
+        pieceId: op03n03c
+    -
+        fb: '8'
+        pieceId: op03n03d
+    -
+        fb: 5 3
+        pieceId: op03n04a
+    -
+        fb: null
+        pieceId: op03n04b
+    -
+        fb: 5 3
+        pieceId: op03n04c
+    -
+        fb: '5'
+        pieceId: op03n04d
+    -
+        fb: 5 3
+        pieceId: op03n05a
+    -
+        fb: '8'
+        pieceId: op03n05b
+    -
+        fb: 5 3
+        pieceId: op03n05c
+    -
+        fb: '8'
+        pieceId: op03n05d
+    -
+        fb: '3'
+        pieceId: op03n06a
+    -
+        fb: null
+        pieceId: op03n06b
+    -
+        fb: null
+        pieceId: op03n06c
+    -
+        fb: null
+        pieceId: op03n06d
+    -
+        fb: null
+        pieceId: op03n07a
+    -
+        fb: null
+        pieceId: op03n07b
+    -
+        fb: '5'
+        pieceId: op03n07c
+    -
+        fb: '8'
+        pieceId: op03n07d
+    -
+        fb: 5 3
+        pieceId: op03n08a
+    -
+        fb: null
+        pieceId: op03n08b
+    -
+        fb: '6'
+        pieceId: op03n08c
+    -
+        fb: '3'
+        pieceId: op03n08d
+    -
+        fb: '8'
+        pieceId: op03n09a
+    -
+        fb: null
+        pieceId: op03n09b
+    -
+        fb: 3 8
+        pieceId: op03n09c
+    -
+        fb: 3 8
+        pieceId: op03n09d
+    -
+        fb: 5 3
+        pieceId: op03n10a
+    -
+        fb: null
+        pieceId: op03n10b
+    -
+        fb: '3'
+        pieceId: op03n10c
+    -
+        fb: 2 4
+        pieceId: op03n10d
+    -
+        fb: 5 3
+        pieceId: op03n11a
+    -
+        fb: '5'
+        pieceId: op03n11b
+    -
+        fb: 5 3
+        pieceId: op03n11c
+    -
+        fb: null
+        pieceId: op03n11d
+    -
+        fb: 5 3
+        pieceId: op03n12a
+    -
+        fb: '3'
+        pieceId: op03n12b
+    -
+        fb: 6 4
+        pieceId: op03n12c
+    -
+        fb: 3 8
+        pieceId: op03n12d
+    -
+        fb: '8'
+        pieceId: op03n12e
+    -
+        fb: '8'
+        pieceId: op03n12f
+    -
+        fb: null
+        pieceId: op03n12g
+    -
+        fb: 5 3
+        pieceId: op04n01a
+    -
+        fb: 8 3
+        pieceId: op04n01b
+    -
+        fb: '6'
+        pieceId: op04n01c
+    -
+        fb: '8'
+        pieceId: op04n01d
+    -
+        fb: '8'
+        pieceId: op04n02a
+    -
+        fb: 8 5
+        pieceId: op04n02b
+    -
+        fb: 5 3
+        pieceId: op04n02c
+    -
+        fb: null
+        pieceId: op04n02d
+    -
+        fb: '8'
+        pieceId: op04n03a
+    -
+        fb: 5 3
+        pieceId: op04n03b
+    -
+        fb: 8 3
+        pieceId: op04n03c
+    -
+        fb: null
+        pieceId: op04n03d
+    -
+        fb: 5 3
+        pieceId: op04n04a
+    -
+        fb: 5 3
+        pieceId: op04n04b
+    -
+        fb: '8'
+        pieceId: op04n04c
+    -
+        fb: 5 3
+        pieceId: op04n04d
+    -
+        fb: 5 3
+        pieceId: op04n05a
+    -
+        fb: '8'
+        pieceId: op04n05b
+    -
+        fb: 3 5
+        pieceId: op04n05c
+    -
+        fb: 3 8
+        pieceId: op04n05d
+    -
+        fb: 5 3
+        pieceId: op04n06a
+    -
+        fb: null
+        pieceId: op04n06b
+    -
+        fb: '5'
+        pieceId: op04n06c
+    -
+        fb: 8 8
+        pieceId: op04n06d
+    -
+        fb: '5'
+        pieceId: op04n06e
+    -
+        fb: null
+        pieceId: op04n06f
+    -
+        fb: 5 3
+        pieceId: op04n06g
+    -
+        fb: 5 3
+        pieceId: op04n07a
+    -
+        fb: null
+        pieceId: op04n07b
+    -
+        fb: 5 3
+        pieceId: op04n07c
+    -
+        fb: '8'
+        pieceId: op04n07d
+    -
+        fb: 8 3
+        pieceId: op04n07e
+    -
+        fb: null
+        pieceId: op04n08a
+    -
+        fb: 3 8
+        pieceId: op04n08b
+    -
+        fb: 3 8
+        pieceId: op04n08c
+    -
+        fb: '3'
+        pieceId: op04n09a
+    -
+        fb: '5'
+        pieceId: op04n09b
+    -
+        fb: 3 5
+        pieceId: op04n09c
+    -
+        fb: null
+        pieceId: op04n09d
+    -
+        fb: 3 5
+        pieceId: op04n10a
+    -
+        fb: '8'
+        pieceId: op04n10b
+    -
+        fb: 3 3
+        pieceId: op04n10c
+    -
+        fb: '6'
+        pieceId: op04n10d
+    -
+        fb: 3 8
+        pieceId: op04n10e
+    -
+        fb: 5 3
+        pieceId: op04n11a
+    -
+        fb: 5 3
+        pieceId: op04n11b
+    -
+        fb: '8'
+        pieceId: op04n11c
+    -
+        fb: 3 8
+        pieceId: op04n12a
+    -
+        fb: 5 3
+        pieceId: op04n12b
+    -
+        fb: 5 3
+        pieceId: op04n12c
