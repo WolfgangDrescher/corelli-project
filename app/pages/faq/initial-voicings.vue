@@ -24,27 +24,29 @@ const groupedArray = Object.entries(groupedVoicings)
 
 const filters = reactive({
     groupNumbers: false,
+    ignoreTwoNoteChords: false,
 });
 
 const filteredGroupedArray = computed(() => {
-    if (!filters.groupNumbers) {
-        return groupedArray;
-    }
-    const map = new Map();
-    for (const { key, items } of groupedArray) {
-        const numbers = key.split(' ').map(Number).filter(n => !isNaN(n));
-        const normalizedKey = numbers.length === 0
-            ? key
-            : [...new Set(numbers)].sort((a, b) => b - a).join(' ');
-        if (!map.has(normalizedKey)) {
-            map.set(normalizedKey, []);
+    const makeGrouped = (source) => {
+        const map = new Map();
+        for (const { key, items } of source) {
+            const numbers = key.split(' ').map(Number).filter(n => !isNaN(n));
+            const normalized = numbers.length
+                ? numbers.sort((a, b) => b - a).join(' ')
+                : key;
+            (map.get(normalized) ?? map.set(normalized, []).get(normalized)).push(...items);
         }
-        map.get(normalizedKey).push(...items);
+        return Array.from(map, ([key, items]) => ({ key, items }));
+    };
+
+    let result = filters.groupNumbers ? makeGrouped(groupedArray) : groupedArray;
+
+    if (filters.ignoreTwoNoteChords) {
+        result = result.filter(({ key }) => key.trim().split(/\s+/).length > 1);
     }
-    
-    return Array.from(map.entries())
-        .map(([key, items]) => ({ key, items }))
-        .sort((a, b) => b.items.length - a.items.length);
+
+    return result.sort((a, b) => b.items.length - a.items.length);
 });
 
 const chartConfig = computed(() => ({
@@ -176,6 +178,7 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
 
         <div class="flex flex-wrap gap-4 mt-8 mb-4">
             <UCheckbox v-model="filters.groupNumbers" :label="$t('groupFiguresIgnoreOrder')" />
+            <UCheckbox v-model="filters.ignoreTwoNoteChords" :label="$t('ignoreTwoNoteChords')" />
         </div>
 
         <div class="h-[300px]">
