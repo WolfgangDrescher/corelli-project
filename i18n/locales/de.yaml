@@ -45,3 +45,4 @@ overview: Übersicht
 initialVoicings: Lagen des Starttons
 groupFiguresIgnoreOrder: Ziffern unabhängig von der Lage gruppieren
 ignoreTwoNoteChords: Zweiklänge ignorieren
+initialVoicingsBarChartClickHint: Klicke auf einen Balken, um die einzelnen Stücke für die jeweilige Lage des Starttons anzuzeigen.

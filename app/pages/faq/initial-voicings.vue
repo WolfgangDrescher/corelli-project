@@ -185,6 +185,10 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
             <Chart :config="chartConfig" @chart-click="chartClickHandler" />
         </div>
 
+        <p class="text-sm text-gray-600 mt-2">
+            {{ $t('initialVoicingsBarChartClickHint') }}
+        </p>
+
         <Subheading class="mt-8">{{ filteredKey }}</Subheading>
         <div class="flex flex-wrap gap-2 mt-4">
             <UButton v-for="(item, index) in filteredVoicings" :key="item.pieceId" @click="loadIndex(index)">
