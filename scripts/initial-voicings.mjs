@@ -62,7 +62,7 @@ getFiles(pathToKernScores).forEach(file => {
             break;
         }
     }
-    console.log(kern);
+
     initialVoicings.push({
         pieceId: id,
         fb: fbToken,
