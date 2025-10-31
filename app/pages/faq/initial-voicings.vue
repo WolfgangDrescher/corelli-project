@@ -95,10 +95,10 @@ function chartClickHandler(chart, event) {
         const firstPoint = points[0];
         const value = chart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index].x;
         if (filteredKey.value === (value === 'null' ? null : value)) {
-			filteredKey.value = ''; // oder null, wenn du das bevorzugst
-		} else {
-			filteredKey.value = value === 'null' ? null : value;
-		}
+            filteredKey.value = '';
+        } else {
+            filteredKey.value = value === 'null' ? null : value;
+        }
 
     }
     event.stopPropagation();
@@ -174,7 +174,7 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
             über dem Bass in Violine 1 und eine Terz über dem Bass in Violine 2.
         </p>
 
-        <div class="flex flex-wrap gap-4 mt-8">
+        <div class="flex flex-wrap gap-4 mt-8 mb-4">
             <UCheckbox v-model="filters.groupNumbers" :label="$t('groupFiguresIgnoreOrder')" />
         </div>
 
