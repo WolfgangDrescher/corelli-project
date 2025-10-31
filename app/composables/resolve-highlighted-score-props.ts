@@ -26,12 +26,35 @@ export function useResolveHighlightedScoreProps(props: {
     notes?: NotesProp;
     lines?: LinesProp;
     sections?: SectionsProp;
+    filters?: Array<string>,
 }) {
     const defaultColors = [
         'rgb(234 179 8 / 0.4)', // yellow-500/40
         'rgb(34 197 94 / 0.4)', // green-500/40
         'rgb(59 130 246 / 0.4)', // blue-500/40
     ];
+
+	const lineShiftAmount = computed(() => {
+		let lineShift = 0;
+		if (props.filters?.includes('meter -f')) lineShift += 1;
+		if (props.filters?.includes('deg -k1 --box -t')) lineShift += 1;
+		return lineShift;
+	});
+
+	const applyLineShift = (value: number): number => {
+		return value + lineShiftAmount.value;
+    }
+
+    const applyLineShiftToNoteId = (id: string): string => {
+        const match = id.match(/^L(\d+)F(\d+)$/);
+        if (!match) return id;
+
+        const [, line, field] = match;
+        if (!line || !field) return id;
+
+        const shiftedLine = parseInt(line, 10) + lineShiftAmount.value;
+        return `L${shiftedLine}F${field}`;
+    };
 
     const isValidLineField = (id: string) => /^L\d+F\d+$/.test(id);
 
@@ -40,7 +63,7 @@ export function useResolveHighlightedScoreProps(props: {
 
         // case: string[]
         if (notes.length > 0 && typeof notes[0] === 'string') {
-            const validIds = (notes as string[]).filter(isValidLineField);
+            const validIds = (notes as string[]).filter(isValidLineField).map(applyLineShiftToNoteId);
             return [
                 {
                     items: validIds,
@@ -52,7 +75,7 @@ export function useResolveHighlightedScoreProps(props: {
         // case: NoteGroup[]
         return (notes as NoteGroup[]).map((group, index) => ({
             ...group,
-            items: group.items.filter(isValidLineField),
+            items: group.items.filter(isValidLineField).map(applyLineShiftToNoteId),
             color: group.color || defaultColors[index % defaultColors.length],
         }));
     });
@@ -71,7 +94,10 @@ export function useResolveHighlightedScoreProps(props: {
 
         // case: Section[]
         if (sections.length > 0 && sections[0] && 'startLine' in sections[0]) {
-            const valid = (sections as Section[]).filter(isValidSection);
+            const valid = (sections as Section[]).filter(isValidSection).map((s) => ({
+					startLine: applyLineShift(s.startLine)!,
+					endLine: applyLineShift(s.endLine)!,
+				}));
             return [
                 {
                     items: valid,
@@ -84,7 +110,10 @@ export function useResolveHighlightedScoreProps(props: {
         return (sections as SectionGroup[]).map((group, index) => ({
             ...group,
             items: Array.isArray(group.items)
-                ? group.items.filter(isValidSection)
+                ? group.items.filter(isValidSection).map((s) => ({
+                    startLine: applyLineShift(s.startLine)!,
+                    endLine: applyLineShift(s.endLine)!,
+                }))
                 : [],
             color: group.color || defaultColors[index % defaultColors.length],
         }));
@@ -97,7 +126,7 @@ export function useResolveHighlightedScoreProps(props: {
 
         // case: number[]
         if (lines.length > 0 && typeof lines[0] === 'number') {
-            const valid = (lines as number[]).filter(isValidLineNumber);
+            const valid = (lines as number[]).filter(isValidLineNumber).map((n) => applyLineShift(n)!);
             return [
                 {
                     items: valid,
@@ -110,7 +139,7 @@ export function useResolveHighlightedScoreProps(props: {
         return (lines as LineGroup[]).map((group, index) => ({
             ...group,
             items: Array.isArray(group.items)
-                ? group.items.filter(isValidLineNumber)
+                ? group.items.filter(isValidLineNumber).map((n) => applyLineShift(n)!)
                 : [],
             color: group.color || defaultColors[index % defaultColors.length],
         }));
