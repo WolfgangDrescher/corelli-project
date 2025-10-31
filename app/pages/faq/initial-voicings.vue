@@ -158,10 +158,10 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
         <Heading>{{ $t('initialVoicings') }}</Heading>
 
         <p>
-            Um für eigene Kompositionen im Stile Corellis eine geeignete Lage
-            und ein passendes Voicing zu wählen, wurde untersucht, welche
-            Startposition des Voicings beim ersten Akkord mit allen drei
-            Instrumenten am häufigsten vorkommt.
+            Um für Anfänge eigener Kompositionen im Stile Corellis eine
+            geeignete Lage und ein passendes Voicing zu wählen, wurde
+            untersucht, welche Startposition des Voicings beim ersten Akkord mit
+            allen drei Instrumenten am häufigsten vorkommt.
             
             Für diese Auswertung wurde jeweils der erste Zusammenklang in Takt 0
             (also im Auftakt) oder in Takt 1 betrachtet.
