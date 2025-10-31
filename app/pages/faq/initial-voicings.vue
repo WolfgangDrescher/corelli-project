@@ -156,20 +156,22 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
         <Heading>{{ $t('initialVoicings') }}</Heading>
 
         <p>
-            Es stellt sich die Frage, was eine übliche Startposition des
-            Voicings für den ersten Akkord mir allen drei Instrumenten ist.
+            Um für eigene Kompositionen im Stile Corellis eine geeignete Lage
+            und ein passendes Voicing zu wählen, wurde untersucht, welche
+            Startposition des Voicings beim ersten Akkord mit allen drei
+            Instrumenten am häufigsten vorkommt.
             
             Für diese Auswertung wurde jeweils der erste Zusammenklang in Takt 0
-            (also einem Auftakt) oder Takt 1 genommen.
+            (also im Auftakt) oder in Takt 1 betrachtet.
             
             Auf diese Weise wurden von insgesamt {{ initialVoicings.length }}
             Anfängen {{ filteredValidVoicings.length }} Stücke gefunden, bei
-            denen unmittelbar am Anfang ein Zusammenklang vorkommt.
+            denen unmittelbar zu Beginn ein Zusammenklang auftritt.
         </p>
         <p>
             Die erste Zahl im Voicing gibt die obere Stimme an, die zweite Zahl
-            die mittlere Stimme (z. B. bedeutet „5 3“ eine Quinte über dem Bass
-            in Violine 1 und eine Terz über dem Bass in Violine 2).
+            die mittlere Stimme. So bedeutet beispielsweise „5 3“ eine Quinte
+            über dem Bass in Violine 1 und eine Terz über dem Bass in Violine 2.
         </p>
 
         <div class="flex flex-wrap gap-4 mt-8">
