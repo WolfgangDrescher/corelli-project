@@ -83,7 +83,7 @@ const chartConfig = computed(() => ({
     },
 }));
 
-const filteredKey = ref(null);
+const filteredKey = ref('');
 
 const filteredVoicings = computed(() => {
     return initialVoicings.filter(iv => iv.fb === filteredKey.value);
@@ -94,7 +94,12 @@ function chartClickHandler(chart, event) {
     if (points.length) {
         const firstPoint = points[0];
         const value = chart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index].x;
-        filteredKey.value = value === 'null' ? null : value;
+        if (filteredKey.value === (value === 'null' ? null : value)) {
+			filteredKey.value = ''; // oder null, wenn du das bevorzugst
+		} else {
+			filteredKey.value = value === 'null' ? null : value;
+		}
+
     }
     event.stopPropagation();
 }
