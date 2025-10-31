@@ -19,16 +19,40 @@ const filteredValidVoicings = initialVoicings.filter(iv => iv.fb);
 const groupedVoicings = Object.groupBy(initialVoicings, iv => String(iv.fb).trim());
 
 const groupedArray = Object.entries(groupedVoicings)
-	.map(([key, items]) => ({ key, items }))
-	.sort((a, b) => b.items.length - a.items.length);
+    .map(([key, items]) => ({ key, items }))
+    .sort((a, b) => b.items.length - a.items.length);
 
+const filters = reactive({
+    groupNumbers: false,
+});
+
+const filteredGroupedArray = computed(() => {
+    if (!filters.groupNumbers) {
+        return groupedArray;
+    }
+    const map = new Map();
+    for (const { key, items } of groupedArray) {
+        const numbers = key.split(' ').map(Number).filter(n => !isNaN(n));
+        const normalizedKey = numbers.length === 0
+            ? key
+            : [...new Set(numbers)].sort((a, b) => b - a).join(' ');
+        if (!map.has(normalizedKey)) {
+            map.set(normalizedKey, []);
+        }
+        map.get(normalizedKey).push(...items);
+    }
+    
+    return Array.from(map.entries())
+        .map(([key, items]) => ({ key, items }))
+        .sort((a, b) => b.items.length - a.items.length);
+});
 
 const chartConfig = computed(() => ({
     type: 'bar',
     data: {
         datasets: [{
             label: t('initialVoicings'),
-            data: groupedArray.map(v => ({ x: v.key, y: v.items.length })),
+            data: filteredGroupedArray.value.map(v => ({ x: v.key, y: v.items.length })),
         }],
     },
     options: {
@@ -142,6 +166,10 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
             die mittlere Stimme (z. B. bedeutet „5 3“ eine Quinte über dem Bass
             in Violine 1 und eine Terz über dem Bass in Violine 2).
         </p>
+
+        <div class="flex flex-wrap gap-4 mt-8">
+            <UCheckbox v-model="filters.groupNumbers" :label="$t('groupFiguresIgnoreOrder')" />
+        </div>
 
         <div class="h-[300px]">
             <Chart :config="chartConfig" @chart-click="chartClickHandler" />
