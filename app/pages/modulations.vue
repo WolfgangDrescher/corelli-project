@@ -195,6 +195,10 @@ const { localScoreUrlGenerator } = useScoreUrlGenerator();
                                             scale: 25,
                                             pageMargin: 50,
                                         }"
+                                        :filters="[
+                                            'deg -k1 --box',
+                                            `shed -e 's/fb/fba/gX'`,
+                                        ]"
                                     />
                                 </div>
                             </template>

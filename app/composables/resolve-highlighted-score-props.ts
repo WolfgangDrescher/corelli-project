@@ -38,6 +38,7 @@ export function useResolveHighlightedScoreProps(props: {
 		let lineShift = 0;
 		if (props.filters?.includes('meter -f')) lineShift += 1;
 		if (props.filters?.includes('deg -k1 --box -t')) lineShift += 1;
+		if (props.filters?.includes('deg -k1 --box')) lineShift += 1;
 		return lineShift;
 	});
 
