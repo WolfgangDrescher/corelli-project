@@ -22,15 +22,6 @@ const [prevPiece, nextPiece] = surroundData.value;
 
 const score = ref();
 
-const scoreOptions = reactive({
-    showMeter: false,
-    bassstufen: false,
-    hideFiguredbass: false,
-    showFiguredbassAbove: false,
-    showCadences: false,
-    showModulations: false,
-});
-
 const { localScoreUrlGenerator, githubScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
 
 onMounted(async () => {
@@ -39,22 +30,8 @@ onMounted(async () => {
     score.value = kern;
 });
 
-const humdrumFilters = computed(() => {
-    const filters = [];
-    if (scoreOptions.showMeter) {
-        filters.push(`meter -f`);
-    }
-    if (scoreOptions.bassstufen) {
-        filters.push(`deg -k1 --box -t`);
-    }
-    if (scoreOptions.hideFiguredbass) {
-        filters.push(`extract -I "**fb" | extract -I "**fba"`);
-    }
-    if (scoreOptions.showFiguredbassAbove) {
-        filters.push(`shed -e "s/fb/fba/gX"`);
-    }
-    return filters;
-});
+const scoreOptions = useScoreOptions();
+const humdrumFilters = computed(() => scoreOptions.humdrumFilters);
 </script>
 
 <template>
