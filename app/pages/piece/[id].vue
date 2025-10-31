@@ -1,4 +1,7 @@
 <script setup>
+import { onKeyStroke } from '@vueuse/core';
+
+const route = useRoute();
 const localePath = useLocalePath();
 const { params: { id } } = useRoute();
 const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection('pieces').where('stem', '=', `pieces/${id}`).first());
@@ -32,6 +35,18 @@ onMounted(async () => {
 
 const scoreOptions = useScoreOptions();
 const humdrumFilters = computed(() => scoreOptions.humdrumFilters);
+
+onKeyStroke('ArrowLeft', () => {
+    if (prevPiece) {
+        navigateTo(localePath({ name: 'piece-id', params: { id: prevPiece.slug }, hash: route.hash }));
+    }
+});
+
+onKeyStroke('ArrowRight', () => {
+    if (nextPiece) {
+        navigateTo(localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: route.hash }));
+    }
+});
 </script>
 
 <template>
