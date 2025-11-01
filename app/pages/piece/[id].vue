@@ -87,6 +87,7 @@ onKeyStroke('ArrowRight', () => {
                         <UCheckbox v-model="scoreOptions.showFiguredbassAbove" label="GB oberhalb anzeigen" />
                         <UCheckbox v-model="scoreOptions.showCadences" label="Kadenzen anzeigen" />
                         <UCheckbox v-model="scoreOptions.showModulations" label="Modulationen anzeigen" />
+                        <UCheckbox v-model="scoreOptions.showModulationsDegLabel" label="Modulationen als Stufe anzeigen" />
                     </div>
                 </div>
                 <div class="shrink-0 flex gap-2 ml-auto md:order-2">
@@ -119,7 +120,7 @@ onKeyStroke('ArrowRight', () => {
                     items: modulations.map(m => ({
                         lineNumber: m.startLine,
                         label: {
-                            value: m.key,
+                            value: scoreOptions.showModulationsDegLabel ? m.deg : m.key,
                             position: 'bottom',
                         },
                     })),

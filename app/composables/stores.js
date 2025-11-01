@@ -19,6 +19,7 @@ function createDefaultScoreOptions() {
         showFiguredbassAbove: false,
         showCadences: false,
         showModulations: false,
+        showModulationsDegLabel: false,
     };
 }
 
