@@ -3,7 +3,7 @@ export function useCadenceFilter(cadences, defaults = {}) {
     const defaultFilters = Object.assign({
         deg: [],
         endBassDeg: [],
-        tag: [],
+        tags: [],
     }, defaults);
     
     const filters = reactive({
@@ -14,7 +14,7 @@ export function useCadenceFilter(cadences, defaults = {}) {
         return cadences.filter(cadence => {
             return filterDeg(cadence, filters.deg)
                 && filterEndBassDeg(cadence, filters.endBassDeg)
-                && filterTag(cadence, filters.tag)
+                && filterTags(cadence, filters.tags)
             ;
         });
     });
@@ -41,7 +41,8 @@ function filterEndBassDeg(cadence, endBassDeg) {
     return endBassDeg.includes(cadence.endBassDeg);
 }
 
-function filterTag(cadence, tags) {
-    if (tags === null || !tags.length) return true;
-    return tags.includes(cadence.tag);
+function filterTags(cadence, tags) {
+    if (!tags?.length) return true;
+    const cadenceTags = cadence.tags || [];
+    return cadenceTags.some(tag => tags.includes(tag));
 }

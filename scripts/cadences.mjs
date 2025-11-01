@@ -53,7 +53,10 @@ getFiles(pathToKernScores).forEach(file => {
 
     const kern = execSync(`cat ${file} | lnnr | beat -ca | meter -f | degx --resolve-null -t`).toString().trim();
 
-    const newCadences = [...pieceCadences.map(([a, b, tag]) => ({ tag, pieceId: id }))];
+    const newCadences = pieceCadences.map(([a, b, tags]) => ({
+        tags: tags == null ? [] : [].concat(tags),
+        pieceId: id,
+    }));
 
     pieceCadences.forEach((pieceCadence, cadenceIndex) => {
         const [startPoint, endPoint] = pieceCadence;

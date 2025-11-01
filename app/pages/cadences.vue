@@ -9,7 +9,7 @@ const { loadScoreData } = useScoreFormatter();
 
 const cadences = cadencesData.value.cadences;
 
-const uniqueTags = [...new Set(cadences.map(cadence => cadence.tag))].toSorted();
+const uniqueTags = [...new Set(cadences.flatMap(cadence => cadence.tags || []))].toSorted();
 
 const uniqueDegs = [...new Set(cadences.map(cadence => cadence.deg))].toSorted();
 
@@ -30,7 +30,7 @@ const { filters, filteredCadences, resetFilters } = useCadenceFilter(cadences);
             </template>
             <div class="flex flex-wrap gap-2">
                 <UFormField :label="$t('tags')" class="w-40">
-                    <USelectMenu v-model="filters.tag" :items="uniqueTags" multiple class="w-full" :search-input="false" />
+                    <USelectMenu v-model="filters.tags" :items="uniqueTags" multiple class="w-full" :search-input="false" />
                 </UFormField>
                 <UFormField :label="$t('cadenceDeg')" class="w-32">
                     <USelectMenu v-model="filters.deg" :items="uniqueDegs" multiple class="w-full" :search-input="false" />
@@ -80,7 +80,9 @@ const { filters, filteredCadences, resetFilters } = useCadenceFilter(cadences);
                             </div>
                         </dd>
                     </dl>
-                    <UBadge v-if="cadence.tag" :label="cadence.tag" />
+                    <div v-if="cadence.tags?.length" class="flex flex-wrap gap-2">
+                        <UBadge v-for="tag in cadence.tags" :label="tag" />
+                    </div>
                 </UCard>
             </div>
         </div>
