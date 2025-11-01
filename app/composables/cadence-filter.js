@@ -32,12 +32,12 @@ export function useCadenceFilter(cadences, defaults = {}) {
 }
 
 function filterDeg(cadence, deg) {
-    if (deg === null || !deg.length) return true;
+    if (!deg?.length) return true;
     return deg.includes(cadence.deg);
 }
 
 function filterEndBassDeg(cadence, endBassDeg) {
-    if (endBassDeg === null || !endBassDeg.length) return true;
+    if (!endBassDeg?.length) return true;
     return endBassDeg.includes(cadence.endBassDeg);
 }
 
