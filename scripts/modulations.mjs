@@ -122,10 +122,10 @@ const transitionsMap = {};
 
 
 const pieces = modulationsResult.reduce((acc, modulation) => {
-	const { pieceId } = modulation;
-	acc[pieceId] ??= [];
-	acc[pieceId].push(modulation);
-	return acc;
+    const { pieceId } = modulation;
+    acc[pieceId] ??= [];
+    acc[pieceId].push(modulation);
+    return acc;
 }, {});
 
 for (const piece in pieces) {

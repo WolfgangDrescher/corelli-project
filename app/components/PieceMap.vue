@@ -9,13 +9,13 @@ const props = defineProps({
 
 const modulationsGroupedByKey = computed(() => {
     return Object.entries(props.modulations.reduce((groups, item) => {
-		const key = props.showKeys ? item.key : item.deg;
-		if (!groups[key]) {
-			groups[key] = [];
-		}
-		groups[key].push(item);
-		return groups;
-	}, {}));
+        const key = props.showKeys ? item.key : item.deg;
+        if (!groups[key]) {
+            groups[key] = [];
+        }
+        groups[key].push(item);
+        return groups;
+    }, {}));
 });
 
 const maxBeat = props.modulations[props.modulations.length - 1].endBeat;

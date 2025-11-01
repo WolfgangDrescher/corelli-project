@@ -31,16 +31,16 @@ function getFiles(directory, fileList) {
 }
 
 function getBeatWeight(tsig, beat) {
-	if (!tsig) return 'error';
-	if (beat === '.') return '.';
+    if (!tsig) return 'error';
+    if (beat === '.') return '.';
 
-	const meterDef = meterWeights.find(m => m.meter === tsig);
-	if (!meterDef) return 'none';
+    const meterDef = meterWeights.find(m => m.meter === tsig);
+    if (!meterDef) return 'none';
 
-	const beatDef = meterDef.beats.find(b => b[0] === beat);
-	if (!beatDef) return 'none';
+    const beatDef = meterDef.beats.find(b => b[0] === beat);
+    if (!beatDef) return 'none';
 
-	return beatDef[1];
+    return beatDef[1];
 }
 
 const result = [];

@@ -25,9 +25,9 @@ const pieces = getFiles(`${__dirname}/../content/pieces`).map(file => {
 });
 
 const meterOptions = [...new Set(pieces.map(piece => piece.meter).filter(n => n))].sort((a, b) => {
-	const [numA, denA] = a.split('/').map(Number);
-	const [numB, denB] = b.split('/').map(Number);
-	return denA - denB || numA - numB;
+    const [numA, denA] = a.split('/').map(Number);
+    const [numB, denB] = b.split('/').map(Number);
+    return denA - denB || numA - numB;
 });
 const keyOptions = [...new Set(pieces.map(piece => piece.key).filter(n => n))];
 const titleOptions = [...new Set(pieces.map(piece => piece.title).filter(n => n))];
