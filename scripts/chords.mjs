@@ -51,9 +51,13 @@ getFiles(pathToKernScores).forEach(file => {
 
     const id = getIdFromFilename(file);
 
-    if (!modulations[id]) return;
+    if (!modulations[id] || modulations[id].length === 0) {
+        console.warn(`❌ [chords] No modulations found for ${id}`);
+        return;
+    }
 
-    console.log(id);
+    console.log(`✅ [chords] Modulations found for ${id}`);
+
     const cmd = `cat ${file} | lnnr -p | beat -cp | fb -cnl | fb -cnlr | fb -cnl --hint | degx --resolve-null -t | composite | meter -tLr | shed -s 2 -e "s/beat/beat-composite/X" | shed -s 3 -e "s/tsig/tsig-composite/X" | extractxx -I '**kern' | extractxx -I '**text' | extractxx -I '**dynam' | extractxx -I '**kern-comp' | extractxx -I '**cdata-beat' | extractxx -I '**cdata-tsig' | ridx -LGTMId`;
     const stdout = execSync(cmd).toString().trim();
 

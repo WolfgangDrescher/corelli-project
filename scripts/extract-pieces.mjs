@@ -52,7 +52,7 @@ execSync(`mkdir -p ${piecesYamlPath}`);
 
 getFiles(pathToKernScores).forEach(file => {
     const id = getIdFromFilename(file);
-    console.log(id);
+    console.log(`✅ Extract metadata for ${id}`);
 
     const kern = fs.readFileSync(file, 'utf8');
     const referenceRecords = parseHumdrumReferenceRecords(kern);

@@ -32,7 +32,7 @@ const initialVoicings = []
 
 getFiles(pathToKernScores).forEach(file => {
     const id = getIdFromFilename(file);
-    console.log(id);
+    console.log(`✅ Initial voicing for ${id}`);
 
     const content = fs.readFileSync(file, 'utf8').toString();
     const exinterpLine = content.split('\n').find(l => l.startsWith('**'));

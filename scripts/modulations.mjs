@@ -39,9 +39,13 @@ getFiles(pathToKernScores).forEach(file => {
 
     const id = getIdFromFilename(file);
 
-    if (!modulationAnnotations[id]) return;
+    if (!modulationAnnotations[id] || modulationAnnotations[id].length === 0) {
+        console.warn(`❌ No modulations found for ${id}`);
+        return;
+    }
 
-    console.log(id);
+    console.log(`✅ Modulations found for ${id}`);
+
     const stdout = execSync(`cat ${file} | lnnr | beat -cp | beat -dp | extractxx -I '**text' | extractxx -I '**dynam' | ridx -LGMd | sed '/^\*[^:]*$/d' | sed -n '/^\*/{p;n;p;}'`).toString().trim();
     const maxBeatStdout = execSync(`cat ${file} | lnnr | beat -cp | beat -dp | beat -da --attacks 0 | extractxx -I '**text' | extractxx -I '**dynam' | ridx -LGTMId | sed -n '$p'`).toString().trim();
     const lines = stdout.trim().split('\n');

@@ -47,9 +47,13 @@ getFiles(pathToKernScores).forEach(file => {
 
 
     const pieceCadences = cadencesYaml[id];
-    if (!pieceCadences) return
+
+    if (!pieceCadences || pieceCadences.length === 0) {
+        console.warn(`❌ No cadences found for ${id}`);
+        return;
+    }
     
-    console.log(id);
+    console.log(`✅ Cadences found for ${id}`);
 
     const kern = execSync(`cat ${file} | lnnr | beat -ca | meter -f | degx --resolve-null -t`).toString().trim();
 
