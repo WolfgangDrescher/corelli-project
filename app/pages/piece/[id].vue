@@ -113,9 +113,16 @@ onKeyStroke('ArrowRight', () => {
                 :sections="scoreOptions.showCadences ? cadences.map(c => ({
                     startLine: c.startLine,
                     endLine: c.endLine,
+                    label: c.tags?.join(', '),
                 })) : []"
                 :lines="scoreOptions.showModulations ? [{
-                    items: modulations.map(m => m.startLine),
+                    items: modulations.map(m => ({
+                        lineNumber: m.startLine,
+                        label: {
+                            value: m.key,
+                            position: 'bottom',
+                        },
+                    })),
                     color: 'rgb(34 197 94 / 0.4)',
                 }] : []"
                 :filters="humdrumFilters"

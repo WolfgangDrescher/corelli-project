@@ -57,6 +57,10 @@ export default {
         endLine: Number,
         color: String,
         container: HTMLElement,
+        label: {
+            type: Object,
+            default: null,
+        },
     },
     setup(props) {
 
@@ -101,6 +105,39 @@ export default {
             }
         }
 
-        return () => h('div', {}, markers);
+        let labelElem = null;
+        if (props.label && props.label.value && markers.length > 0) {
+            const firstMarker = markers[0];
+
+            const position = props.label.position || 'top';
+
+            const baseClasses = [
+                'absolute',
+                'text-sm',
+                'bg-white/90',
+                'rounded-md',
+                'shadow',
+                'p-2',
+                'py-1',
+                'z-100',
+                'border',
+                'border-gray-200',
+                'pointer-events-none',
+            ];
+
+            const style = {
+                left: firstMarker.props.style.left,
+            };
+
+            if (position === 'bottom') {
+                style.top = `calc(${firstMarker.props.style.top} + ${firstMarker.props.style.height} + 0.4em)`;
+            } else {
+                style.top = `calc(${firstMarker.props.style.top} - 2.3rem)`;
+            }
+
+            labelElem = h('div', { class: baseClasses.join(' '), style }, props.label.value);
+        }
+
+        return () => h('div', {}, labelElem ? [labelElem, ...markers] : markers);
     },
 };

@@ -6,6 +6,7 @@ interface NoteGroup {
 interface Section {
     startLine: number;
     endLine: number;
+    label?: Label | string | null;
 }
 
 interface SectionGroup {
@@ -13,9 +14,19 @@ interface SectionGroup {
     color?: string;
 }
 
+interface Line {
+    lineNumber: number,
+    label?: Label | string | null;
+}
+
 interface LineGroup {
-    items: number[];
+    items: Line[] | number[];
     color?: string;
+}
+
+interface Label {
+    value: string;
+    position?: 'top' | 'bottom';
 }
 
 export type NotesProp = NoteGroup[] | string[];
@@ -57,6 +68,24 @@ export function useResolveHighlightedScoreProps(props: {
         return `L${shiftedLine}F${field}`;
     };
 
+    function resolveLabel(input?: Label | string | null): Label | null {
+        if (input == null) return null;
+        let value = '';
+        if (typeof input === 'object') {
+            value = input.value?.trim() ?? '';
+        } else if (typeof input === 'string') {
+            value = input.trim();
+        } else if (typeof input === 'number') {
+            value = String(input);
+        }
+        if (value === '') return null;
+        const label: Label = { value };
+        if (typeof input === 'object' && input.position) {
+            label.position = input.position;
+        }
+        return label;
+    }
+
     const isValidLineField = (id: string) => /^L\d+F\d+$/.test(id);
 
     const resolvedNotes = computed<NoteGroup[]>(() => {
@@ -96,9 +125,10 @@ export function useResolveHighlightedScoreProps(props: {
         // case: Section[]
         if (sections.length > 0 && sections[0] && 'startLine' in sections[0]) {
             const valid = (sections as Section[]).filter(isValidSection).map((s) => ({
-					startLine: applyLineShift(s.startLine)!,
-					endLine: applyLineShift(s.endLine)!,
-				}));
+                    startLine: applyLineShift(s.startLine)!,
+                    endLine: applyLineShift(s.endLine)!,
+                    label: resolveLabel(s.label),
+                }));
             return [
                 {
                     items: valid,
@@ -114,6 +144,7 @@ export function useResolveHighlightedScoreProps(props: {
                 ? group.items.filter(isValidSection).map((s) => ({
                     startLine: applyLineShift(s.startLine)!,
                     endLine: applyLineShift(s.endLine)!,
+                    label: resolveLabel(s.label) ?? null,
                 }))
                 : [],
             color: group.color || defaultColors[index % defaultColors.length],
@@ -127,7 +158,10 @@ export function useResolveHighlightedScoreProps(props: {
 
         // case: number[]
         if (lines.length > 0 && typeof lines[0] === 'number') {
-            const valid = (lines as number[]).filter(isValidLineNumber).map((n) => applyLineShift(n)!);
+            const valid = (lines as number[]).filter(isValidLineNumber).map((n) => ({
+                lineNumber: applyLineShift(n)!,
+                label: null,
+            }));
             return [
                 {
                     items: valid,
@@ -137,13 +171,30 @@ export function useResolveHighlightedScoreProps(props: {
         }
 
         // case: LineGroup[]
-        return (lines as LineGroup[]).map((group, index) => ({
-            ...group,
-            items: Array.isArray(group.items)
-                ? group.items.filter(isValidLineNumber).map((n) => applyLineShift(n)!)
-                : [],
-            color: group.color || defaultColors[index % defaultColors.length],
-        }));
+        return (lines as LineGroup[]).map((group, index) => {
+            const groupItems = group.items ?? [];
+            let resolvedItems: Line[] = [];
+
+            if (typeof groupItems[0] === 'number') {
+                // case: number[]
+                resolvedItems = (groupItems as number[]).filter(isValidLineNumber).map((n) => ({
+                    lineNumber: applyLineShift(n)!,
+                    label: null,
+                }));
+            } else {
+                // case: Line[]
+                resolvedItems = (groupItems as Line[]).filter((l) => isValidLineNumber(l.lineNumber)).map((l) => ({
+                    lineNumber: applyLineShift(l.lineNumber)!,
+                    label: resolveLabel(l.label),
+                }));
+            }
+
+            return {
+                ...group,
+                items: resolvedItems,
+                color: group.color || defaultColors[index % defaultColors.length],
+            };
+});
     });
 
     return {
