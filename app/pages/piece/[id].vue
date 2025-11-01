@@ -80,7 +80,7 @@ onKeyStroke('ArrowRight', () => {
 
             <div class="flex flex-col md:flex-row items-center gap-4">
                 <div>
-                    <div class="flex gap-4">
+                    <div class="flex flex-wrap gap-4">
                         <UCheckbox v-model="scoreOptions.showMeter" label="meter" />
                         <UCheckbox v-model="scoreOptions.bassstufen" label="bassstufen" />
                         <UCheckbox v-model="scoreOptions.hideFiguredbass" label="GB ausblenden" />
