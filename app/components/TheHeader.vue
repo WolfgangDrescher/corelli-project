@@ -1,5 +1,14 @@
 <script setup>
+import { useMagicKeys } from '@vueuse/core';
+
 const localePath = useLocalePath();
+
+const isSearchOpen = ref(false);
+const { meta, k } = useMagicKeys();
+
+watchEffect(() => {
+    if (meta.value && k.value) isSearchOpen.value = true;
+});
 </script>
 
 <template>
@@ -14,7 +23,7 @@ const localePath = useLocalePath();
                 </div>
             </div>
             <div class="flex justify-end items-center">
-                Deutsch
+                <SearchPiecePalette v-model:open="isSearchOpen" />
             </div>
         </div>
     </header>
