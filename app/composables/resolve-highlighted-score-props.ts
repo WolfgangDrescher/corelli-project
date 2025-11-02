@@ -24,6 +24,11 @@ interface LineGroup {
     color?: string;
 }
 
+interface ResolvedLineGroup {
+    items: Line[];
+    color?: string;
+}
+
 interface Label {
     value: string;
     position?: 'top' | 'bottom';
@@ -153,7 +158,7 @@ export function useResolveHighlightedScoreProps(props: {
 
     const isValidLineNumber = (n: number): boolean => Number.isInteger(n) && n >= 0;
 
-    const resolvedLines = computed<LineGroup[]>(() => {
+    const resolvedLines = computed<ResolvedLineGroup[]>(() => {
         const lines = props.lines ?? [];
 
         // case: number[]
