@@ -36,16 +36,19 @@ onMounted(async () => {
 const scoreOptions = useScoreOptions();
 const humdrumFilters = computed(() => scoreOptions.humdrumFilters);
 
+const ignoreIfInput = () => {
+    const el = document.activeElement;
+    return el && (['input', 'textarea'].includes(el.tagName.toLowerCase()) || el.isContentEditable);
+};
+
 onKeyStroke('ArrowLeft', () => {
-    if (prevPiece) {
-        navigateTo(localePath({ name: 'piece-id', params: { id: prevPiece.slug }, hash: route.hash }));
-    }
+    if (ignoreIfInput() || !prevPiece) return;
+    navigateTo(localePath({ name: 'piece-id', params: { id: prevPiece.slug }, hash: route.hash }));
 });
 
 onKeyStroke('ArrowRight', () => {
-    if (nextPiece) {
-        navigateTo(localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: route.hash }));
-    }
+    if (ignoreIfInput() || !nextPiece) return;
+    navigateTo(localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: route.hash }));
 });
 
 const { copy, copied } = useClipboard();
