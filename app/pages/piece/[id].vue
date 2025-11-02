@@ -1,5 +1,5 @@
 <script setup>
-import { onKeyStroke } from '@vueuse/core';
+import { onKeyStroke, useClipboard } from '@vueuse/core';
 
 const route = useRoute();
 const localePath = useLocalePath();
@@ -47,6 +47,12 @@ onKeyStroke('ArrowRight', () => {
         navigateTo(localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: route.hash }));
     }
 });
+
+const { copy, copied } = useClipboard();
+
+function copyId() {
+    copy(id);
+};
 </script>
 
 <template>
@@ -55,8 +61,13 @@ onKeyStroke('ArrowRight', () => {
             <div>
                 <Heading>
                     {{ `${piece.largerWorkTitle} Op. ${piece.op} №${piece.nr}` }}
-                    <div class="text-2xl">
-                        {{ `${piece.mv}. ${piece.body.title ? `${piece.title}: ` : ''} ${piece.movementDesignation}`}}
+                    <div class="text-2xl flex gap-2">
+                        <div>
+                            {{ `${piece.mv}. ${piece.body.title ? `${piece.title}: ` : ''} ${piece.movementDesignation}`}}
+                        </div>
+                        <div class="flex items-center">
+                            <UBadge color="neutral" size="sm" variant="outline" class="font-mono cursor-pointer select-none w-[11ch] inline-flex items-center justify-center text-center" @click="copyId" :label="copied ? $t('copied') : id" />
+                        </div>
                     </div>
                     <div class="text-base font-normal">
                         {{ piece.composer }}
