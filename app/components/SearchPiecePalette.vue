@@ -1,4 +1,6 @@
 <script setup>
+import { useMagicKeys } from '@vueuse/core';
+
 const { data: pieces } = await useAsyncData(`pieces`, () => queryCollection('pieces').all());
 
 const open = defineModel('open', { type: Boolean })
@@ -30,6 +32,8 @@ function fuzzysearch (needle, haystack) {
     return true;
 }
 
+const { meta } = useMagicKeys();
+
 const groups = computed(() => {
     if (!pieces.value) return []
     
@@ -47,8 +51,17 @@ const groups = computed(() => {
                 value: p.slug,
                 search: `opus. ${opStr} no nr ${nrStr} ${p.mv}. ${title} ${p.movementDesignation}`,
                 onSelect: () => {
-                    navigateTo(localePath({ name: 'piece-id', params: { id: p.slug } }));
-                    open.value = false;
+                    navigateTo(
+                        localePath({ name: 'piece-id', params: { id: p.slug } }),
+                        meta.value ? {
+                            open: {
+                                target: '_blank',
+                            },
+                        } : {}
+                    );
+                    if (!meta.value) {
+                        open.value = false;
+                    }
 
                 },
             };
