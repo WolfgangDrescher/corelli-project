@@ -1425,11 +1425,11 @@ cadences:
         tags:
             - doppia
     -
-        deg: iv
-        endBassDeg: '2'
+        deg: v
+        endBassDeg: '1'
         endBeat: 96
-        endLine: 236
-        key: e
+        endLine: 235
+        key: f#
         pieceId: op04n12b
         startBeat: 92
         startLine: 226

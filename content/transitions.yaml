@@ -932,9 +932,9 @@ transitions:
                 id: op04n11a
                 lineNumber: 125
             -
-                beat: 94.5
+                beat: 98.5
                 id: op04n12b
-                lineNumber: 231
+                lineNumber: 240
         nextDeg: iv
     -
         count: 1

@@ -2569,8 +2569,8 @@ modulations:
         startLine: 202
     -
         deg: v
-        endBeat: 94.5
-        endLine: 231
+        endBeat: 98.5
+        endLine: 240
         key: f#
         pieceId: op04n12b
         startBeat: 86.5
@@ -2581,8 +2581,8 @@ modulations:
         endLine: 264
         key: e
         pieceId: op04n12b
-        startBeat: 94.5
-        startLine: 231
+        startBeat: 98.5
+        startLine: 240
     -
         deg: III
         endBeat: 116.5
