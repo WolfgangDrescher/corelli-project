@@ -8,6 +8,7 @@ useHead({
 
 const id = 'op04n01a';
 const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection('pieces').where('stem', '=', `pieces/${id}`).first());
+const { data: pieces } = await useAsyncData(`pieces`, () => queryCollection('pieces').all());
 const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').first());
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
 
@@ -51,6 +52,22 @@ const timeline = [
         date: 'Februar 2026',
     },
 ];
+
+const totalPieces = computed(() => pieces.value?.length ?? 0);
+
+const modulationCount = computed(() => {
+    if (!pieces.value || !modulationsData.value) return 0;
+    const mods = modulationsData.value.modulations;
+    const piecesWithMods = new Set(mods.map(m => m.pieceId));
+    return pieces.value.filter(p => piecesWithMods.has(p.slug)).length;
+});
+
+const cadenceCount = computed(() => {
+    if (!pieces.value || !cadencesData.value) return 0;
+    const cads = cadencesData.value.cadences;
+    const piecesWithCadences = new Set(cads.map(c => c.pieceId));
+    return pieces.value.filter(p => piecesWithCadences.has(p.slug)).length;
+});
 </script>
 
  <template>
@@ -176,18 +193,48 @@ const timeline = [
                     <UTimeline :items="timeline" v-model="timelineValue" color="primary" />
                 </div>
             </section>
-            <section class="max-w-2xl lg:w-1/2">
-                <Subheading :level="2">Beispielpartitur</Subheading>
-                <p>
-                    Die folgende Partitur zeigt ein Beispiel für die interaktive
-                    Darstellung der im Seminar entwickelten Analysetools.
-                    Kadenzen, Sequenzen und Modulationen können direkt in der
-                    Notendarstellung erkundet und über verschiedene Filter und
-                    Visualisierungen ausgewertet werden.
-
-                    Probieren Sie die Befehlspalette aus, um für Sie
-                    interessante Phänomene in der Partitur anzuzeigen.
-                </p>
+            <section class="grid gap-10 lg:grid-cols-2">
+                <div>
+                    <Subheading :level="2">Beispielpartitur</Subheading>
+                    <p>
+                        Die folgende Partitur zeigt ein Beispiel für die interaktive
+                        Darstellung der im Seminar entwickelten Analysetools.
+                        Kadenzen, Sequenzen und Modulationen können direkt in der
+                        Notendarstellung erkundet und über verschiedene Filter und
+                        Visualisierungen ausgewertet werden.
+    
+                        Probieren Sie die Befehlspalette aus, um für Sie
+                        interessante Phänomene in der Partitur anzuzeigen.
+                    </p>
+                </div>
+                <div>
+                    <Subheading :level="2">Projektfortschritt</Subheading>
+                    <div class="space-y-6 mt-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Modulationen</span>
+                                <span>{{ modulationCount }} / {{ totalPieces }}</span>
+                            </div>
+                            <UProgress
+                                v-model="modulationCount"
+                                :max="totalPieces"
+                                height="8px"
+                            />
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Kadenzen</span>
+                                <span>{{ cadenceCount }} / {{ totalPieces }}</span>
+                            </div>
+                            <UProgress
+                                v-model="cadenceCount"
+                                :max="totalPieces"
+                                height="8px"
+                                :striped="false"
+                            />
+                        </div>
+                    </div>
+                </div>
             </section>
             <section>
                 <div class="flex flex-col sm:flex-row items-center gap-4 mb-4">
