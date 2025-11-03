@@ -149,7 +149,7 @@ const groups = computed(() => {
 </script>
 
 <template>
-    <UModal v-model:open="open">
+    <UModal v-model:open="open" @after:leave="showOnlyActive = false">
         <UChip :text="scoreOptions.countTotal" :show="scoreOptions.countTotal > 0" size="3xl">
             <UButton
                 :label="$t('scoreCommandPalette')"
