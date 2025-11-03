@@ -3,6 +3,7 @@
 
 @theme {
     --font-sans: 'Alegreya Sans', sans-serif;
+    --font-serif: 'Alegreya',  sans-serif;
 }
 
 @layer utilities {
