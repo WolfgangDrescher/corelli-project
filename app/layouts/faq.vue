@@ -13,6 +13,26 @@ const items: NavigationMenuItem[] = [
         label: t('initialVoicings'),
         to: localePath({ name: 'faq-initial-voicings' }),
     },
+    {
+        label: t('cadenzaDoppia'),
+        to: localePath({ name: 'faq-cadenza-doppia' }),
+    },
+    {
+        label: t('syncopations'),
+        to: localePath({ name: 'faq-syncopations' }),
+    },
+    {
+        label: t('ascendingSyncopations'),
+        to: localePath({ name: 'faq-ascending-syncopations' }),
+    },
+    {
+        label: t('suspensions'),
+        to: localePath({ name: 'faq-suspensions' }),
+    },
+    {
+        label: t('voiceExchange'),
+        to: localePath({ name: 'faq-voice-exchange' }),
+    },
 ];
 </script>
 

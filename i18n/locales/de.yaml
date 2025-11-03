@@ -43,6 +43,11 @@ endBassDeg: Kadenz Bassstufe
 faq: Häufige Fragen
 overview: Übersicht
 initialVoicings: Lagen des Starttons
+syncopations: Synkopenketten
+suspensions: Vorhalte
+cadenzaDoppia: Cadenza doppia
+ascendingSyncopations: Aufsteigende Synkopenketten
+voiceExchange: Stimmtausch
 groupFiguresIgnoreOrder: Ziffern unabhängig von der Lage gruppieren
 ignoreTwoNoteChords: Zweiklänge ignorieren
 initialVoicingsBarChartClickHint: Klicke auf einen Balken, um die einzelnen Stücke für die jeweilige Lage des Starttons anzuzeigen.
