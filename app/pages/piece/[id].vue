@@ -34,7 +34,6 @@ onMounted(async () => {
 });
 
 const scoreOptions = useScoreOptions();
-const humdrumFilters = computed(() => scoreOptions.humdrumFilters);
 
 const ignoreIfInput = () => {
     const el = document.activeElement;
@@ -94,15 +93,7 @@ function copyId() {
 
             <div class="flex flex-col md:flex-row items-center gap-4">
                 <div>
-                    <div class="flex flex-wrap gap-4">
-                        <UCheckbox v-model="scoreOptions.showMeter" label="meter" />
-                        <UCheckbox v-model="scoreOptions.bassstufen" label="bassstufen" />
-                        <UCheckbox v-model="scoreOptions.hideFiguredbass" label="GB ausblenden" />
-                        <UCheckbox v-model="scoreOptions.showFiguredbassAbove" label="GB oberhalb anzeigen" />
-                        <UCheckbox v-model="scoreOptions.showCadences" label="Kadenzen anzeigen" />
-                        <UCheckbox v-model="scoreOptions.showModulations" label="Modulationen anzeigen" />
-                        <UCheckbox v-model="scoreOptions.showModulationsDegLabel" label="Modulationen als Stufe anzeigen" />
-                    </div>
+                    <ScoreOptionsPalette />
                 </div>
                 <div class="shrink-0 flex gap-2 ml-auto md:order-2">
                     <MidiPlayer :url="localScoreUrlGenerator(piece.slug)" class="text-2xl"/>
@@ -118,6 +109,7 @@ function copyId() {
             <HighlightedScore
                 :piece-id="piece.slug"
                 :verovio-options="{
+                    ...scoreOptions.verovioOptions,
                     header: true,
                     spacingSystem: 15,
                     pageMarginLeft: 50,
@@ -125,6 +117,7 @@ function copyId() {
                     pageMarginTop: 10,
                     pageMarginBottom: 10,
                 }"
+                _notes="['L21F4', 'L25F3']"
                 :sections="scoreOptions.showCadences ? cadences.map(c => ({
                     startLine: c.startLine,
                     endLine: c.endLine,
@@ -140,7 +133,7 @@ function copyId() {
                     })),
                     color: 'rgb(34 197 94 / 0.4)',
                 }] : []"
-                :filters="humdrumFilters"
+                :filters="scoreOptions.humdrumFilters"
             />
 
         </div>
