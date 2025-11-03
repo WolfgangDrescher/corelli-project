@@ -1,7 +1,6 @@
 <script setup>
 import { onKeyStroke, useClipboard } from '@vueuse/core';
 
-const route = useRoute();
 const localePath = useLocalePath();
 const { params: { id } } = useRoute();
 const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection('pieces').where('stem', '=', `pieces/${id}`).first());
@@ -35,49 +34,9 @@ onMounted(async () => {
 
 const scoreOptions = useScoreOptions();
 
-const ignoreIfInput = () => {
-    const el = document.activeElement;
-    return el && (['input', 'textarea'].includes(el.tagName.toLowerCase()) || el.isContentEditable);
-};
-
-onKeyStroke('ArrowLeft', () => {
-    if (ignoreIfInput() || !prevPiece) return;
-    navigateTo(localePath({ name: 'piece-id', params: { id: prevPiece.slug }, hash: route.hash }));
-});
-
-onKeyStroke('ArrowRight', () => {
-    if (ignoreIfInput() || !nextPiece) return;
-    navigateTo(localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: route.hash }));
-});
-
-onKeyStroke('c', () => {
-    if (ignoreIfInput()) return;
-    scoreOptions.showCadences = !scoreOptions.showCadences;
-});
-
-onKeyStroke('m', () => {
-    if (ignoreIfInput()) return;
-    scoreOptions.showModulations = !scoreOptions.showModulations;
-});
-
-onKeyStroke('+', () => {
-    if (ignoreIfInput()) return;
-    scoreOptions.zoomIn();
-});
-
-onKeyStroke('-', () => {
-    if (ignoreIfInput()) return;
-    scoreOptions.zoomOut();
-});
-
-onKeyStroke('0', () => {
-    if (ignoreIfInput()) return;
-    scoreOptions.resetZoom();
-});
-
-onKeyStroke('r', () => {
-    if (ignoreIfInput()) return;
-    scoreOptions.reset();
+useScoreKeyboardShortcuts({
+    prevPiece,
+    nextPiece,
 });
 
 const { copy, copied } = useClipboard();
