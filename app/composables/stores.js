@@ -45,31 +45,16 @@ export const useScoreOptions = defineStore('score_options', {
         }),
         humdrumFilters(state) {
             const map = this.humdrumFilterMap;
-            const filters = [];
-            if (state.showMeter) {
-                filters.push(map.showMeter);
-            }
-            if (state.bassstufen) {
-                filters.push(map.bassstufen);
-            }
-            if (state.hideFiguredbass) {
-                filters.push(map.hideFiguredbass);
-            }
-            if (state.showFiguredbassAbove) {
-                filters.push(map.showFiguredbassAbove);
-            }
-            return filters;
+            return Object.entries(map)
+                .filter(([key]) => state[key])
+                .map(([, value]) => value);
         },
         verovioOptions: (state) => ({
             scale: state.verovioScale,
         }),
         countHumdrumFilters(state) {
-            return [
-                state.showMeter,
-                state.bassstufen,
-                state.hideFiguredbass,
-                state.showFiguredbassAbove,
-            ].filter(Boolean).length;
+            const map = this.humdrumFilterMap;
+            return Object.keys(map).filter((key) => state[key]).length;
         },
         countHighlights(state) {
             return [
@@ -98,10 +83,10 @@ export const useScoreOptions = defineStore('score_options', {
         },
         resetHumdrumFilters() {
             const defaults = createDefaultScoreOptions();
-            this.showMeter = defaults.showMeter;
-            this.bassstufen = defaults.bassstufen;
-            this.hideFiguredbass = defaults.hideFiguredbass;
-            this.showFiguredbassAbove = defaults.showFiguredbassAbove;
+            const map = this.humdrumFilterMap;
+            for (const key of Object.keys(map)) {
+                this[key] = defaults[key];
+            }
         },
         resetVerovio() {
             const defaults = createDefaultScoreOptions();
