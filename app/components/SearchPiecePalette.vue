@@ -84,7 +84,7 @@ const groups = computed(() => {
         <UButton
             :label="$t('search')"
             color="neutral"
-            variant="subtle"
+            variant="soft"
             icon="i-lucide-search"
         >
             <template #trailing>
