@@ -55,10 +55,14 @@ const timeline = [
 
  <template>
     <UContainer>
+        <section class="grid gap-12 lg:grid-cols-2 lg:items-start">
+            <div>
+                <Heading>Digitale Perspektiven auf Corellis Triosonaten</Heading>
+            </div>
+        </section>
         <div class="grid grid-cols-1 gap-8">
             <section class="grid gap-12 lg:grid-cols-2 lg:items-start">
                 <div class="flex flex-col gap-6">
-                    <Heading>Digitale Perspektiven auf Corellis Triosonaten</Heading>
                     <p>
                         Die Plattform vereint Analysen, Materialien und
                         Werkzeuge, die im Rahmen des Seminars
