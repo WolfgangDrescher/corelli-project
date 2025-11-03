@@ -31,11 +31,13 @@ const groups = computed(() => {
                     label: t('showCadences'),
                     onSelect: () => (scoreOptions.showCadences = !scoreOptions.showCadences),
                     active: scoreOptions.showCadences,
+                    kbd: 'C',
                 },
                 {
                     label: t('showModulations'),
                     onSelect: () => (scoreOptions.showModulations = !scoreOptions.showModulations),
                     active: scoreOptions.showModulations,
+                    kbd: 'M',
                 },
                 {
                     label: t('showModulationsDegLabel'),
@@ -87,6 +89,7 @@ const groups = computed(() => {
                 {
                     label: t('zoomIn'),
                     icon: 'i-lucide-zoom-in',
+                    kbd: '+',
                     onSelect: () => {
                         scoreOptions.zoomIn();
                     },
@@ -94,6 +97,7 @@ const groups = computed(() => {
                 {
                     label: t('zoomOut'),
                     icon: 'i-lucide-zoom-out',
+                    kbd: '-',
                     onSelect: () => {
                         scoreOptions.zoomOut();
                     },
@@ -101,6 +105,7 @@ const groups = computed(() => {
                 {
                     label: t('resetZoom'),
                     icon: 'i-lucide-image-upscale',
+                    kbd: '0',
                     onSelect: () => {
                         scoreOptions.resetZoom();
                     },
@@ -135,6 +140,7 @@ const groups = computed(() => {
                 {
                     label: t('resetAll'),
                     // icon: 'i-lucide-refresh-ccw',
+                    kbd: 'R',
                     onSelect: () => {
                         scoreOptions.reset();
                     },
@@ -179,6 +185,9 @@ const groups = computed(() => {
                 </template>
                 <template #item-trailing="{ item }">
                     <div v-if="item.cmd" class="font-mono text-[0.55rem] text-gray-500 translate-y-0.5">{{ item.cmd }}</div>
+                    <template v-if="item.kbd">
+                        <UKbd v-for="kbd in Array.isArray(item.kbd) ? item.kbd : [item.kbd]" :value="kbd" size="sm" class="font-mono translate-y-0.5" />
+                    </template>
                 </template>
                 <template #footer>
                     <UCheckbox v-model="showOnlyActive" size="xs" :label="$t('showOnlyActiveFilters')" />

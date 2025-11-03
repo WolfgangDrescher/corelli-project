@@ -50,6 +50,36 @@ onKeyStroke('ArrowRight', () => {
     navigateTo(localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: route.hash }));
 });
 
+onKeyStroke('c', () => {
+    if (ignoreIfInput()) return;
+    scoreOptions.showCadences = !scoreOptions.showCadences;
+});
+
+onKeyStroke('m', () => {
+    if (ignoreIfInput()) return;
+    scoreOptions.showModulations = !scoreOptions.showModulations;
+});
+
+onKeyStroke('+', () => {
+    if (ignoreIfInput()) return;
+    scoreOptions.zoomIn();
+});
+
+onKeyStroke('-', () => {
+    if (ignoreIfInput()) return;
+    scoreOptions.zoomOut();
+});
+
+onKeyStroke('0', () => {
+    if (ignoreIfInput()) return;
+    scoreOptions.resetZoom();
+});
+
+onKeyStroke('r', () => {
+    if (ignoreIfInput()) return;
+    scoreOptions.reset();
+});
+
 const { copy, copied } = useClipboard();
 
 function copyId() {
