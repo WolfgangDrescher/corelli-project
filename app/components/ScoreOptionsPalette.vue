@@ -35,12 +35,12 @@ const groups = computed(() => {
                 {
                     label: t('showModulations'),
                     onSelect: () => (scoreOptions.showModulations = !scoreOptions.showModulations),
-                    active: scoreOptions.showModulations
+                    active: scoreOptions.showModulations,
                 },
                 {
                     label: t('showModulationsDegLabel'),
                     onSelect: () => (scoreOptions.showModulationsDegLabel = !scoreOptions.showModulationsDegLabel),
-                    active: scoreOptions.showModulationsDegLabel
+                    active: scoreOptions.showModulationsDegLabel,
                 },
             ],
         },
@@ -52,25 +52,25 @@ const groups = computed(() => {
                     label: t('showMeter'),
                     cmd: scoreOptions.humdrumFilterMap.showMeter,
                     onSelect: () => (scoreOptions.showMeter = !scoreOptions.showMeter),
-                    active: scoreOptions.showMeter
+                    active: scoreOptions.showMeter,
                 },
                 {
                     label: t('bassstufen'),
                     cmd: scoreOptions.humdrumFilterMap.bassstufen,
                     onSelect: () => (scoreOptions.bassstufen = !scoreOptions.bassstufen),
-                    active: scoreOptions.bassstufen
+                    active: scoreOptions.bassstufen,
                 },
                 {
                     label: t('hideFiguredbass'),
                     cmd: scoreOptions.humdrumFilterMap.hideFiguredbass,
                     onSelect: () => (scoreOptions.hideFiguredbass = !scoreOptions.hideFiguredbass),
-                    active: scoreOptions.hideFiguredbass
+                    active: scoreOptions.hideFiguredbass,
                 },
                 {
                     label: t('showFiguredbassAbove'),
                     cmd: scoreOptions.humdrumFilterMap.showFiguredbassAbove,
                     onSelect: () => (scoreOptions.showFiguredbassAbove = !scoreOptions.showFiguredbassAbove),
-                    active: scoreOptions.showFiguredbassAbove
+                    active: scoreOptions.showFiguredbassAbove,
                 },
                 {
                     label: t('hideInstrumentNames'),
