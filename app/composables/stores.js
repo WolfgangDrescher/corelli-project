@@ -30,6 +30,7 @@ function createDefaultScoreOptions() {
         showCadences: false,
         showModulations: false,
         showModulationsDegLabel: false,
+        hideInstrumentNames: false,
         verovioScale: 40,
     };
 }
@@ -42,6 +43,7 @@ export const useScoreOptions = defineStore('score_options', {
             bassstufen: 'deg -k1 --box -t',
             hideFiguredbass: 'extract -I "**fb" | extract -I "**fba"',
             showFiguredbassAbove: 'shed -e "s/fb/fba/gX"',
+            hideInstrumentNames: 'shed -e "s/^I.*//gI"',
         }),
         humdrumFilters(state) {
             const map = this.humdrumFilterMap;

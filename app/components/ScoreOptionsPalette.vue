@@ -72,6 +72,12 @@ const groups = computed(() => {
                     onSelect: () => (scoreOptions.showFiguredbassAbove = !scoreOptions.showFiguredbassAbove),
                     active: scoreOptions.showFiguredbassAbove
                 },
+                {
+                    label: t('hideInstrumentNames'),
+                    cmd: scoreOptions.humdrumFilterMap.hideInstrumentNames,
+                    onSelect: () => (scoreOptions.hideInstrumentNames = !scoreOptions.hideInstrumentNames),
+                    active: scoreOptions.hideInstrumentNames,
+                }
             ],
         },
         {
