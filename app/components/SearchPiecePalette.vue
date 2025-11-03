@@ -3,7 +3,7 @@ import { useMagicKeys } from '@vueuse/core';
 
 const { data: pieces } = await useAsyncData(`pieces`, () => queryCollection('pieces').all());
 
-const open = defineModel('open', { type: Boolean })
+const open = defineModel('open', { type: Boolean });
 
 const searchTerm = ref('');
 
@@ -36,12 +36,12 @@ const { meta } = useMagicKeys();
 
 const groups = computed(() => {
     if (!pieces.value) return []
-    
+
     const groupedPieces = Object.groupBy(pieces.value, p => `${p.op}-${p.nr}`)
     
     const commandGroups = Object.entries(groupedPieces).map(([key, groupPieces]) => {
         const { op, nr } = groupPieces[0]
-        
+
         const filteredItems = groupPieces.map(p => {
             const title = p.title?.toLowerCase() !== p.slug?.toLowerCase() ? p.title : '';
             const opStr = String(p.op).padStart(2, '0');
@@ -66,7 +66,7 @@ const groups = computed(() => {
                 },
             };
         }).filter(item => fuzzysearch(searchTerm.value, item.value) || fuzzysearch(searchTerm.value, item.search))
-        
+
         return {
             id: `op${op}n${nr}`,
             label: `Op. ${op} №${nr}`,
@@ -74,8 +74,7 @@ const groups = computed(() => {
             items: filteredItems,
         }
     })
-    
-    // Leere Gruppen ausfiltern
+
     return commandGroups.filter(g => g.items.length > 0)
 });
 </script>
