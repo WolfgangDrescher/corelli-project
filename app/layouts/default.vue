@@ -1,4 +1,6 @@
 <script setup>
+import { de } from '@nuxt/ui/locale';
+
 useHead({
     titleTemplate: (titleChunk) => {
         return titleChunk ? `${titleChunk} | Corelli Project` : 'Corelli Project';
@@ -7,7 +9,7 @@ useHead({
 </script>
 
 <template>
-    <UApp>
+    <UApp :locale="de">
         <div class="flex flex-col min-h-screen">
             <TheHeader />
             <TheNavigation />
