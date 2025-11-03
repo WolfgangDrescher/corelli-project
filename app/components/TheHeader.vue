@@ -22,7 +22,16 @@ watchEffect(() => {
                     </NuxtLink>
                 </div>
             </div>
-            <div class="flex justify-end items-center">
+            <div class="flex gap-2 justify-end items-center">
+                <UButton
+                    icon="i-simple-icons-github"
+                    to="https://github.com/WolfgangDrescher/corelli-project"
+                    target="_blank"
+                    variant="ghost"
+                    color="neutral"
+                    square
+                    :ui="{ label: 'hidden', base: 'text-white hover:text-black' }"
+                />
                 <SearchPiecePalette v-model:open="isSearchOpen" />
             </div>
         </div>
