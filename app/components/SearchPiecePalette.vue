@@ -89,7 +89,7 @@ const groups = computed(() => {
         >
             <template #trailing>
                 <UKbd value="meta" />
-                <UKbd color="neutral">K</UKbd>
+                <UKbd color="neutral" class="font-mono">K</UKbd>
             </template>
         </UButton>
         
