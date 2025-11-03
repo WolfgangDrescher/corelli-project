@@ -1,0 +1,183 @@
+<script setup>
+const open = defineModel('open', { type: Boolean });
+
+onMounted(() => {
+    const handler = (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'p') {
+            e.preventDefault();
+            e.stopPropagation();
+            open.value = true;
+        }
+    };
+    window.addEventListener('keydown', handler, { capture: true });
+    onBeforeUnmount(() => {
+        window.removeEventListener('keydown', handler, { capture: true });
+    });
+});
+
+const { t } = useI18n();
+
+const scoreOptions = useScoreOptions();
+
+const showOnlyActive = ref(false);
+
+const groups = computed(() => {
+    const allGroups = [
+        {
+            id: 'highlights',
+            label: t('highlights'),
+            items: [
+                {
+                    label: t('showCadences'),
+                    onSelect: () => (scoreOptions.showCadences = !scoreOptions.showCadences),
+                    active: scoreOptions.showCadences,
+                },
+                {
+                    label: t('showModulations'),
+                    onSelect: () => (scoreOptions.showModulations = !scoreOptions.showModulations),
+                    active: scoreOptions.showModulations
+                },
+                {
+                    label: t('showModulationsDegLabel'),
+                    onSelect: () => (scoreOptions.showModulationsDegLabel = !scoreOptions.showModulationsDegLabel),
+                    active: scoreOptions.showModulationsDegLabel
+                },
+            ],
+        },
+        {
+            id: 'humdrum-filters',
+            label: t('humdrumFilters'),
+            items: [
+                {
+                    label: t('showMeter'),
+                    cmd: scoreOptions.humdrumFilterMap.showMeter,
+                    onSelect: () => (scoreOptions.showMeter = !scoreOptions.showMeter),
+                    active: scoreOptions.showMeter
+                },
+                {
+                    label: t('bassstufen'),
+                    cmd: scoreOptions.humdrumFilterMap.bassstufen,
+                    onSelect: () => (scoreOptions.bassstufen = !scoreOptions.bassstufen),
+                    active: scoreOptions.bassstufen
+                },
+                {
+                    label: t('hideFiguredbass'),
+                    cmd: scoreOptions.humdrumFilterMap.hideFiguredbass,
+                    onSelect: () => (scoreOptions.hideFiguredbass = !scoreOptions.hideFiguredbass),
+                    active: scoreOptions.hideFiguredbass
+                },
+                {
+                    label: t('showFiguredbassAbove'),
+                    cmd: scoreOptions.humdrumFilterMap.showFiguredbassAbove,
+                    onSelect: () => (scoreOptions.showFiguredbassAbove = !scoreOptions.showFiguredbassAbove),
+                    active: scoreOptions.showFiguredbassAbove
+                },
+            ],
+        },
+        {
+            id: 'verovio',
+            label: t('verovioOptions'),
+            items: [
+                {
+                    label: t('zoomIn'),
+                    icon: 'i-lucide-zoom-in',
+                    onSelect: () => {
+                        scoreOptions.zoomIn();
+                    },
+                },
+                {
+                    label: t('zoomOut'),
+                    icon: 'i-lucide-zoom-out',
+                    onSelect: () => {
+                        scoreOptions.zoomOut();
+                    },
+                },
+                {
+                    label: t('resetZoom'),
+                    icon: 'i-lucide-image-upscale',
+                    onSelect: () => {
+                        scoreOptions.resetZoom();
+                    },
+                },
+            ],
+        },
+        {
+            id: 'reset',
+            label: t('reset'),
+            items: [
+                {
+                    label: t('resetAllVerovioOptions'),
+                    // icon: 'i-lucide-refresh-ccw',
+                    onSelect: () => {
+                        scoreOptions.resetVerovio();
+                    },
+                },
+                {
+                    label: t('resetAllHumdrumFilters'),
+                    // icon: 'i-lucide-refresh-ccw',
+                    onSelect: () => {
+                        scoreOptions.resetHumdrumFilters();
+                    },
+                },
+                {
+                    label: t('resetAllHighlights'),
+                    // icon: 'i-lucide-refresh-ccw',
+                    onSelect: () => {
+                        scoreOptions.resetHighlights();
+                    },
+                },
+                {
+                    label: t('resetAll'),
+                    // icon: 'i-lucide-refresh-ccw',
+                    onSelect: () => {
+                        scoreOptions.reset();
+                    },
+                },
+            ],
+        },
+    ];
+
+    if (showOnlyActive.value) {
+        return allGroups.map(g => ({
+            ...g,
+            items: g.items.filter(item => item.active),
+        })).filter(g => g.items.length > 0);
+    }
+
+    return allGroups;
+});
+</script>
+
+<template>
+    <UModal v-model:open="open">
+        <UChip :text="scoreOptions.countTotal" :show="scoreOptions.countTotal > 0" size="3xl">
+            <UButton
+                :label="$t('scoreCommandPalette')"
+                variant="soft"
+                icon="i-lucide-terminal"
+            >
+                <template #trailing>
+                    <UKbd value="meta" />
+                    <UKbd color="neutral">P</UKbd>
+                </template>
+            </UButton>
+        </UChip>
+        
+        <template #content>
+            <UCommandPalette
+                :placeholder="$t('searchCommandsAndScoreOptions')"
+                :groups="groups"
+            >
+                <template #item-leading="{ item }">
+                    <UCheckbox v-if="['humdrum-filters', 'highlights'].includes(item.group)" v-model="item.active" />
+                </template>
+                <template #item-trailing="{ item }">
+                    <div v-if="item.cmd" class="font-mono text-[0.55rem] text-gray-500 translate-y-0.5">{{ item.cmd }}</div>
+                </template>
+                <template #footer>
+                    <UCheckbox v-model="showOnlyActive" size="xs" :label="$t('showOnlyActiveFilters')" />
+                </template>
+            </UCommandPalette>
+        </template>
+    </UModal>
+</template>

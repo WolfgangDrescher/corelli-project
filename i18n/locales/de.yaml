@@ -49,3 +49,23 @@ initialVoicingsBarChartClickHint: Klicke auf einen Balken, um die einzelnen Stü
 copied: Kopiert
 search: Suchen
 searchPieces: Stücke suchen
+scoreCommandPalette: Partitur-Befehlspalette 
+searchCommandsAndScoreOptions: Suche nach Befehlen und Partituroptionen
+highlights: Hervorhebungen
+humdrumFilters: Humdrum Filter
+verovioOptions: Verovio Optionen
+showCadences: Kadenzen anzeigen
+showModulations: Modulationen anzeigen
+showModulationsDegLabel: Modulationen als Stufe anzeigen
+showMeter: Schläge anzeigen
+bassstufen: Bassstufen anzeigen
+hideFiguredbass: Generalbass ausblenden
+showFiguredbassAbove: Generalbassziffern oberhalb anzeigen
+zoomIn: Partitur Anzeige vergrössern
+zoomOut: Partitur Anzeige verkleinern
+resetZoom: Partitur Anzeige zurücksetzen
+resetAllVerovioOptions: Alle Verovio Optionen zurücksetzen
+resetAllHumdrumFilters: Alle Humdrum Filter zurücksetzen
+resetAllHighlights: Alle Hervorhebungen zurücksetzen
+resetAll: Alles zurücksetzen
+showOnlyActiveFilters: Nur aktive Filter anzeigen

@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import { defineStore, acceptHMRUpdate } from 'pinia';
 
 function createDefaultPieceFilterOptions() {
     return {
@@ -11,18 +11,6 @@ function createDefaultPieceFilterOptions() {
     };
 };
 
-function createDefaultScoreOptions() {
-    return {
-        showMeter: false,
-        bassstufen: false,
-        hideFiguredbass: false,
-        showFiguredbassAbove: false,
-        showCadences: false,
-        showModulations: false,
-        showModulationsDegLabel: false,
-    };
-}
-
 export const usePieceFilterOptions = defineStore('piece_filter_options', {
     state: () => (createDefaultPieceFilterOptions()),
     actions: {
@@ -32,24 +20,66 @@ export const usePieceFilterOptions = defineStore('piece_filter_options', {
     },
 });
 
+
+function createDefaultScoreOptions() {
+    return {
+        showMeter: false,
+        bassstufen: false,
+        hideFiguredbass: false,
+        showFiguredbassAbove: false,
+        showCadences: false,
+        showModulations: false,
+        showModulationsDegLabel: false,
+        verovioScale: 40,
+    };
+}
+
 export const useScoreOptions = defineStore('score_options', {
     state: () => createDefaultScoreOptions(),
     getters: {
-        humdrumFilters: (state) => {
+        humdrumFilterMap: () => ({
+            showMeter: 'meter -f',
+            bassstufen: 'deg -k1 --box -t',
+            hideFiguredbass: 'extract -I "**fb" | extract -I "**fba"',
+            showFiguredbassAbove: 'shed -e "s/fb/fba/gX"',
+        }),
+        humdrumFilters(state) {
+            const map = this.humdrumFilterMap;
             const filters = [];
             if (state.showMeter) {
-                filters.push('meter -f');
+                filters.push(map.showMeter);
             }
             if (state.bassstufen) {
-                filters.push('deg -k1 --box -t');
+                filters.push(map.bassstufen);
             }
             if (state.hideFiguredbass) {
-                filters.push('extract -I "**fb" | extract -I "**fba"');
+                filters.push(map.hideFiguredbass);
             }
             if (state.showFiguredbassAbove) {
-                filters.push('shed -e "s/fb/fba/gX"');
+                filters.push(map.showFiguredbassAbove);
             }
             return filters;
+        },
+        verovioOptions: (state) => ({
+            scale: state.verovioScale,
+        }),
+        countHumdrumFilters(state) {
+            return [
+                state.showMeter,
+                state.bassstufen,
+                state.hideFiguredbass,
+                state.showFiguredbassAbove,
+            ].filter(Boolean).length;
+        },
+        countHighlights(state) {
+            return [
+                state.showCadences,
+                state.showModulations,
+                state.showModulationsDegLabel,
+            ].filter(Boolean).length;
+        },
+        countTotal() {
+            return this.countHumdrumFilters + this.countHighlights;
         },
     },
 
@@ -57,5 +87,35 @@ export const useScoreOptions = defineStore('score_options', {
         reset() {
             this.$patch(createDefaultScoreOptions());
         },
+        zoomIn() {
+            this.verovioScale = Math.min(this.verovioScale + 5, 100);
+        },
+        zoomOut() {
+            this.verovioScale = Math.max(this.verovioScale - 5, 20);
+        },
+        resetZoom() {
+            this.verovioScale = createDefaultScoreOptions().verovioScale;
+        },
+        resetHumdrumFilters() {
+            const defaults = createDefaultScoreOptions();
+            this.showMeter = defaults.showMeter;
+            this.bassstufen = defaults.bassstufen;
+            this.hideFiguredbass = defaults.hideFiguredbass;
+            this.showFiguredbassAbove = defaults.showFiguredbassAbove;
+        },
+        resetVerovio() {
+            const defaults = createDefaultScoreOptions();
+            this.verovioScale = defaults.verovioScale;
+        },
+        resetHighlights() {
+            const defaults = createDefaultScoreOptions();
+            this.showCadences = defaults.showCadences;
+            this.showModulations = defaults.showModulations;
+            this.showModulationsDegLabel = defaults.showModulationsDegLabel;
+        },
     },
 });
+
+if (import.meta.hot) {
+    import.meta.hot.accept(acceptHMRUpdate(useScoreOptions, import.meta.hot));
+}
