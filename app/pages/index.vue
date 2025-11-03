@@ -68,6 +68,10 @@ const cadenceCount = computed(() => {
     const piecesWithCadences = new Set(cads.map(c => c.pieceId));
     return pieces.value.filter(p => piecesWithCadences.has(p.slug)).length;
 });
+
+const sequenceCount = computed(() => {
+    return 0;
+});
 </script>
 
  <template>
@@ -215,23 +219,21 @@ const cadenceCount = computed(() => {
                                 <span>Modulationen</span>
                                 <span>{{ modulationCount }} / {{ totalPieces }}</span>
                             </div>
-                            <UProgress
-                                v-model="modulationCount"
-                                :max="totalPieces"
-                                height="8px"
-                            />
+                            <UProgress v-model="modulationCount" :max="totalPieces" height="8px" />
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
                                 <span>Kadenzen</span>
                                 <span>{{ cadenceCount }} / {{ totalPieces }}</span>
                             </div>
-                            <UProgress
-                                v-model="cadenceCount"
-                                :max="totalPieces"
-                                height="8px"
-                                :striped="false"
-                            />
+                            <UProgress v-model="cadenceCount" :max="totalPieces" height="8px" />
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Satzmodelle</span>
+                                <span>{{ sequenceCount }} / {{ totalPieces }}</span>
+                            </div>
+                            <UProgress v-model="sequenceCount" :max="totalPieces" height="8px" />
                         </div>
                     </div>
                 </div>
