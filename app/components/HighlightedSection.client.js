@@ -119,9 +119,10 @@ export default {
                 'shadow',
                 'p-2',
                 'py-1',
-                'z-100',
+                'z-1',
                 'border',
-                'pointer-events-none',
+                // 'pointer-events-none',
+                'hover:z-2'
             ];
 
             const style = {

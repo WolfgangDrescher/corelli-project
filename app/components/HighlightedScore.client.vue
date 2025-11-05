@@ -57,7 +57,7 @@ onMounted(async () => {
 
 <template>
     <div class="relative">
-        <div class="absolute w-full h-full top-0 left-0 pointer-events-none overflow-hidden" ref="markerContainer" :key="scoreKey">
+        <div class="absolute w-full h-full top-0 left-0 overflow-hidden" ref="markerContainer" :key="scoreKey">
             <template v-if="scoreContainer">
                 <template v-for="noteGroup in resolvedNotes">
                     <HighlightedNote v-for="noteId in noteGroup.items" :note-id="noteId" :color="noteGroup.color" :container="scoreContainer" />
