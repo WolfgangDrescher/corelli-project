@@ -1,0 +1,214 @@
+sequences:
+    -
+        endBeat: 11
+        endLine: 42
+        pieceId: op04n01a
+        startBeat: 0
+        startLine: 18
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 14
+        endLine: 47
+        pieceId: op04n01a
+        startBeat: 12
+        startLine: 45
+        tags:
+            - Quintfall
+    -
+        endBeat: 22
+        endLine: 67
+        pieceId: op04n01a
+        startBeat: 17
+        startLine: 55
+        tags:
+            - Lamento (Oktavregel)
+    -
+        endBeat: 40
+        endLine: 108
+        pieceId: op04n01a
+        startBeat: 31
+        startLine: 84
+        tags:
+            - Synkopenkette
+            - Terzfalltreppe
+    -
+        endBeat: 47
+        endLine: 117
+        pieceId: op04n01a
+        startBeat: 43
+        startLine: 112
+        tags:
+            - Synkopenkette
+            - Karussell
+    -
+        endBeat: 61
+        endLine: 142
+        pieceId: op04n01a
+        startBeat: 56
+        startLine: 134
+        tags:
+            - Romanesca
+            - Bass schrittweise abwärts
+    -
+        endBeat: 15
+        endLine: 50
+        pieceId: op04n01b
+        startBeat: 6
+        startLine: 28
+        tags:
+            - Lamento (Oktavregel)
+            - Synkopenkette
+    -
+        endBeat: 66
+        endLine: 166
+        pieceId: op04n01b
+        startBeat: 51
+        startLine: 132
+        tags:
+            - Quintfall
+    -
+        endBeat: 78
+        endLine: 196
+        pieceId: op04n01b
+        startBeat: 69
+        startLine: 174
+        tags:
+            - Monte
+    -
+        endBeat: 102
+        endLine: 250
+        pieceId: op04n01b
+        startBeat: 90
+        startLine: 220
+        tags:
+            - Fonte
+    -
+        endBeat: 7
+        endLine: 33
+        pieceId: op04n01c
+        startBeat: 0
+        startLine: 18
+        tags:
+            - Lamento
+            - Chromatik
+    -
+        endBeat: 11
+        endLine: 43
+        pieceId: op04n01c
+        startBeat: 8
+        startLine: 36
+        tags:
+            - Synkopenkette
+            - Orgelpunkt
+    -
+        endBeat: 19
+        endLine: 63
+        pieceId: op04n01c
+        startBeat: 16
+        startLine: 55
+        tags:
+            - Synkopenkette
+            - Orgelpunkt
+    -
+        endBeat: 36
+        endLine: 103
+        pieceId: op04n01c
+        startBeat: 32
+        startLine: 92
+        tags:
+            - Monte
+            - Chromatik
+            - Bass schrittweise aufwärts
+    -
+        endBeat: 48
+        endLine: 119
+        pieceId: op04n01c
+        startBeat: 42
+        startLine: 112
+        tags:
+            - Lamento
+    -
+        endBeat: 21
+        endLine: 67
+        pieceId: op04n01d
+        startBeat: 8
+        startLine: 37
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 12
+        endLine: 46
+        pieceId: op04n01d
+        startBeat: 8
+        startLine: 37
+        tags:
+            - Romanesca
+            - Synkopenkette
+    -
+        endBeat: 16
+        endLine: 55
+        pieceId: op04n01d
+        startBeat: 14
+        startLine: 50
+        tags:
+            - Romanesca
+            - Synkopenkette
+    -
+        endBeat: 39
+        endLine: 108
+        pieceId: op04n01d
+        startBeat: 29
+        startLine: 85
+        tags:
+            - Synkopenkette aufwärts
+    -
+        endBeat: 47
+        endLine: 126
+        pieceId: op04n01d
+        startBeat: 37
+        startLine: 104
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 42
+        endLine: 115
+        pieceId: op04n01d
+        startBeat: 38
+        startLine: 106
+        tags:
+            - Romanesca
+            - Synkopenkette
+    -
+        endBeat: 59
+        endLine: 153
+        pieceId: op04n01d
+        startBeat: 51
+        startLine: 135
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 58
+        endLine: 151
+        pieceId: op04n01d
+        startBeat: 52
+        startLine: 138
+        tags:
+            - Romanesca
+            - Synkopenkette
+    -
+        endBeat: 94
+        endLine: 230
+        pieceId: op04n01d
+        startBeat: 82
+        startLine: 202
+        tags:
+            - Fonte
+    -
+        endBeat: 103
+        endLine: 251
+        pieceId: op04n01d
+        startBeat: 96
+        startLine: 235
+        tags:
+            - 5-6-Konsekutive aufwärts
