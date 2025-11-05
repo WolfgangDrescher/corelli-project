@@ -43,6 +43,9 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
         <div class="flex flex-col gap-8">
             <Heading>{{ $t('pieces') }}</Heading>
             <PieceFilter />
+            <div>
+                {{ pieces.length }} / {{ data.length }}
+            </div>
             <UTable :data="pieces" :columns="columns" :get-row-id="(item) => item.slug" class="mt-8">
                 <template #audio-cell="{ row }">
                     <MidiPlayer :url="localScoreUrlGenerator(row.original.slug)" class="text-2xl"/>
