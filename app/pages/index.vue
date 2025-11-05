@@ -10,9 +10,11 @@ const id = 'op04n01a';
 const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection('pieces').where('stem', '=', `pieces/${id}`).first());
 const { data: pieces } = await useAsyncData(`pieces`, () => queryCollection('pieces').all());
 const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').first());
+const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
 
 const cadences = cadencesData.value.cadences.filter(c => c.pieceId === id);
+const sequences = sequencesData.value.sequences.filter(s => s.pieceId === id);
 const modulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
 
 const scoreOptions = useScoreOptions();
@@ -263,12 +265,24 @@ const sequenceCount = computed(() => {
                         pageMarginRight: 0,
                         pageMarginTop: 10,
                         pageMarginBottom: 10,
-                    }"
-                    :sections="scoreOptions.showCadences ? cadences.map(c => ({
-                        startLine: c.startLine,
-                        endLine: c.endLine,
-                        label: c.tags?.join(', '),
-                    })) : []"
+                        }"
+                    :sections="[
+                        {
+                            items: scoreOptions.showCadences ? cadences.map(c => ({
+                                startLine: c.startLine,
+                                endLine: c.endLine,
+                                label: c.tags?.join(', '),
+                            })) : []
+                        },
+                        {
+                            color: 'rgb(59 130 246 / 0.4)',
+                            items: scoreOptions.showSequences ? sequences.map(s => ({
+                                startLine: s.startLine,
+                                endLine: s.endLine,
+                                label: s.tags?.join(', '),
+                            })) : []
+                        }
+                    ]"
                     :lines="scoreOptions.showModulations ? [{
                         items: modulations.map(m => ({
                             lineNumber: m.startLine,
