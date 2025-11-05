@@ -72,7 +72,10 @@ const cadenceCount = computed(() => {
 });
 
 const sequenceCount = computed(() => {
-    return 0;
+    if (!pieces.value || !sequencesData.value) return 0;
+    const seqs = sequencesData.value.sequences;
+    const piecesWithSequences = new Set(seqs.map(s => s.pieceId));
+    return pieces.value.filter(p => piecesWithSequences.has(p.slug)).length;
 });
 </script>
 
