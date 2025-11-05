@@ -17,13 +17,13 @@ studies.
 
 * [Nuxt 4](https://nuxt.com/) and [Vue 3](https://vuejs.org/) as the application framework.
 * [Nuxt UI](https://ui.nuxt.com/) for UI components and Tailwind utility classes.
-* [`@nuxt/content`](https://content.nuxt.com/) for managing YAML-based datasets.
+* [Nuxt Content](https://content.nuxt.com/) for managing YAML-based datasets.
 * [Verovio](https://www.verovio.org/) and [vue-verovio-canvas](https://github.com/WolfgangDrescher/vue-verovio-canvas) for score rendering.
 
 
 ## Repository overview
 
-| Path/Repository        | Description                                                                                                                                                                                         |
+| Path                   | Description                                                                                                                                                                                         |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `corelli-trio-sonatas` | Git submodule containing the core (`**kern`) files of Corelli’s trio sonatas. Source: [github.com/WolfgangDrescher/corelli-trio-sonatas](https://github.com/WolfgangDrescher/corelli-trio-sonatas). |
 | `content/`             | YAML-based content collections (pieces, cadences, modulations, chords, transitions).                                                                                                                |
