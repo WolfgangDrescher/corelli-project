@@ -121,12 +121,12 @@ export default {
                 'py-1',
                 'z-100',
                 'border',
-                'border-gray-200',
                 'pointer-events-none',
             ];
 
             const style = {
                 left: firstMarker.props.style.left,
+                borderColor: props.color,
             };
 
             if (position === 'bottom') {
