@@ -1,32 +1,71 @@
 <script setup>
 const localePath = useLocalePath();
+
+const { t } = useI18n();
+
+const columns = [
+    {
+        label: t('pages'),
+        children: [
+            {
+                label: t('home'),
+                to: localePath('index'),
+            },
+            {
+                label: t('pieces'),
+                to: localePath('pieces'),
+            },
+            {
+                label: t('chords'),
+                to: localePath('chords'),
+            },
+            {
+                label: t('modulations'),
+                to: localePath('modulations'),
+            },
+            {
+                label: t('cadences'),
+                to: localePath('cadences'),
+            },
+            {
+                label: t('faq'),
+                to: localePath('faq'),
+            },
+        ],
+    },
+    {
+        label: t('sitemap'),
+        children: [
+            {
+                label: t('legalNotice'),
+                to: localePath('legal-notice'),
+            },
+        ],
+    },
+];
 </script>
 
 <template>
-    <footer class="py-6 md:py-12 bg-primary-500 text-white bg-pattern">
-        <UContainer>
-            <div class="grid md:grid-cols-3 gap-4">
-                <div>
-                    <h4 class="text-lg font-bold mb-2">{{ $t('pages') }}</h4>
-                    <ul class="grid grid-cols-2 gap-x-2">
-                        <li><NuxtLink :href="localePath('index')">{{ $t('home') }}</NuxtLink></li>
-                        <li><NuxtLink :href="localePath('piece')">{{ $t('pieces') }}</NuxtLink></li>
-                        <li><NuxtLink :href="localePath('chords')">{{ $t('chords') }}</NuxtLink></li>
-                        <li><NuxtLink :href="localePath('modulations')">{{ $t('modulations') }}</NuxtLink></li>
-                        <li><NuxtLink :href="localePath('cadences')">{{ $t('cadences') }}</NuxtLink></li>
-                        <li><NuxtLink :href="localePath('faq')">{{ $t('faq') }}</NuxtLink></li>
-                    </ul>
-                </div>
-                <div></div>
-                <div>
-                    <h4 class="text-lg font-bold mb-2">{{ $t('sitemap') }}</h4>
-                    <ul class="grid grid-cols-2 gap-x-2">
-                        <li>
-                            <NuxtLink :href="localePath('legal-notice')">{{ $t('legalNotice') }}</NuxtLink>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </UContainer>
-    </footer>
+    <UFooter class="bg-pattern">
+        <template #top>
+            <UContainer>
+                <UFooterColumns :columns="columns" :ui="{
+                    list: 'grid grid-cols-2 gap-x-2 space-y-0 mt-3',
+                    link: 'text-white text-base',
+                    label: 'text-white text-lg',
+                }">
+                    <template #right>
+                        <div>
+                            <div class="flex justify-end">
+                                <img src="/mhfr-logo-white.svg" class="max-h-[100px]" alt="Hochschule für Musik Freiburg" />
+                            </div>
+                            <div class="flex justify-end">
+                                <img src="/fzm-logo-white.svg" class="max-h-[130px]" alt="FZM – Freiburger Forschungs- und Lehrzentrum Musik" />
+                            </div>
+                        </div>
+                    </template>
+                </UFooterColumns>
+            </UContainer>
+        </template>
+    </UFooter>
 </template>
