@@ -1,75 +1,56 @@
-# Nuxt Minimal Starter
+# Corelli Project
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The **Corelli Project** brings together analyses, materials, and digital tools
+developed in the seminar *Digitale Methoden zur Analyse von Corellis
+Triosonaten* (Hochschule für Musik Freiburg, Wintersemester 2025/26). Building
+on detailed annotations of cadences, sequences, and tonal structures, the
+website presents Corelli’s trio sonatas through interactive visualizations and
+score-based analyses. Using frameworks such as **Humdrum** and **Verovio**,
+analytical results can be explored directly within the digital score,
+complemented by charts and filtering tools. The project aims to support students
+in researching basso continuo practice and compositional techniques in Corelli’s
+works, while encouraging them to conduct their own analyses and stylistic
+studies.
 
-## Setup
 
-Make sure to install dependencies:
+## Technologies
 
-```bash
-# npm
+* [Nuxt 4](https://nuxt.com/) and [Vue 3](https://vuejs.org/) as the application framework.
+* [Nuxt UI](https://ui.nuxt.com/) for UI components and Tailwind utility classes.
+* [`@nuxt/content`](https://content.nuxt.com/) for managing YAML-based datasets.
+* [Verovio](https://www.verovio.org/) and [vue-verovio-canvas](https://github.com/WolfgangDrescher/vue-verovio-canvas) for score rendering.
+
+
+## Repository overview
+
+| Path/Repository        | Description                                                                                                                                                                                         |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `corelli-trio-sonatas` | Git submodule containing the core (`**kern`) files of Corelli’s trio sonatas. Source: [github.com/WolfgangDrescher/corelli-trio-sonatas](https://github.com/WolfgangDrescher/corelli-trio-sonatas). |
+| `content/`             | YAML-based content collections (pieces, cadences, modulations, chords, transitions).                                                                                                                |
+| `app/`                 | Nuxt application with components, pages, layouts, and composables.                                                                                                                                  |
+| `scripts/`             | Utility scripts, e.g., for generating YAML metadata from the core files.                                                                                                                            |
+
+
+## Project Setup
+
+```sh
+git clone --recurse-submodules https://github.com/WolfgangDrescher/corelli-project.git
+cd corelli-project
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
 
-Build the application for production:
+## Updating metadata
 
-```bash
-# npm
-npm run build
+The analytical metadata in `content/*.yaml` is automatically generated from the
+core files. When a new version of the scores is pulled into the
+corelli-trio-sonatas submodule, you should run:
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+```sh
+git submodule update
+node scripts/index.mjs
 ```
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This regenerates the metadata so that any changes in line numbers, or additions
+of keys and cadences, are reflected automatically.
