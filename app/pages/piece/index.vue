@@ -20,7 +20,7 @@ const pieces = computed(() => {
         slug: item.slug,
         opnr: `${item.op} / ${item.nr}`,
         mvAndDesignation: `${item.mv}. ${item.movementDesignation}`,
-        title: item.title,
+        title: item.body.title,
     }));
 });
 
