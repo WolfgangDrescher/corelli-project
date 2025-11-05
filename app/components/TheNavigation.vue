@@ -8,6 +8,10 @@ const items = [
         to: localePath({name: 'index'}),
     },
     {
+        label: t('about'),
+        to: localePath({name: 'about'}),
+    },
+    {
         label: t('pieces'),
         to: localePath({name: 'piece'}),
     },
@@ -22,6 +26,10 @@ const items = [
     {
         label: t('cadences'),
         to: localePath({name: 'cadences'}),
+    },
+    {
+        label: t('sequences'),
+        to: localePath({name: 'sequences'}),
     },
     {
         label: t('faq'),

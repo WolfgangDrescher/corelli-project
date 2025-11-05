@@ -72,6 +72,20 @@ export default defineContentConfig({
                 })),
             }),
         }),
+        sequences: defineCollection({
+            source: 'sequences.yaml',
+            type: 'data',
+            schema: z.object({
+                sequences: z.array(z.object({
+                    endBeat: z.number(),
+                    endLine: z.number(),
+                    pieceId: z.string(),
+                    startBeat: z.number(),
+                    startLine:z.number(),
+                    tags: z.union([z.string(), z.array(z.string())]),
+                })),
+            }),
+        }),
         initialVoicings: defineCollection({
             source: 'initial-voicings.yaml',
             type: 'data',
