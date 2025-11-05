@@ -105,8 +105,8 @@ function copyId() {
                     spacingSystem: 15,
                     pageMarginLeft: 50,
                     pageMarginRight: 0,
-                    pageMarginTop: 10,
-                    pageMarginBottom: 10,
+                    pageMarginTop: 50,
+                    pageMarginBottom: 50,
                 }"
                 :notes="['L21F4', 'L25F3']"
                 :sections="[
