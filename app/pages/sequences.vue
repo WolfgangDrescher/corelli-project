@@ -25,7 +25,7 @@ const { filters, filteredSequences, resetFilters } = useSequenceFilter(sequences
                 </div>
             </template>
             <div class="flex flex-wrap gap-2">
-                <UFormField :label="$t('tags')" class="w-40">
+                <UFormField :label="$t('tags')" class="w-64">
                     <USelectMenu v-model="filters.tags" :items="uniqueTags" multiple class="w-full" :search-input="false" />
                 </UFormField>
                 <UFormField label="&nbsp;" class="w-32">
