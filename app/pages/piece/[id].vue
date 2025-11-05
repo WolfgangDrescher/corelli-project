@@ -6,9 +6,11 @@ const { params: { id } } = useRoute();
 const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection('pieces').where('stem', '=', `pieces/${id}`).first());
 const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').first());
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
+const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
 
 const cadences = cadencesData.value.cadences.filter(c => c.pieceId === id);
 const modulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
+const sequences = sequencesData.value.sequences.filter(s => s.pieceId === id);
 
 if (!piece.value) {
     throw createError({
@@ -106,11 +108,24 @@ function copyId() {
                     pageMarginTop: 10,
                     pageMarginBottom: 10,
                 }"
-                :sections="scoreOptions.showCadences ? cadences.map(c => ({
-                    startLine: c.startLine,
-                    endLine: c.endLine,
-                    label: c.tags?.join(', '),
-                })) : []"
+                :notes="['L21F4', 'L25F3']"
+                :sections="[
+                    {
+                        items: scoreOptions.showCadences ? cadences.map(c => ({
+                            startLine: c.startLine,
+                            endLine: c.endLine,
+                            label: c.tags?.join(', '),
+                        })) : []
+                    },
+                    {
+                        color: 'rgb(59 130 246 / 0.4)',
+                        items: scoreOptions.showSequences ? sequences.map(s => ({
+                            startLine: s.startLine,
+                            endLine: s.endLine,
+                            label: s.tags?.join(', '),
+                        })) : []
+                    }
+                ]"
                 :lines="scoreOptions.showModulations ? [{
                     items: modulations.map(m => ({
                         lineNumber: m.startLine,

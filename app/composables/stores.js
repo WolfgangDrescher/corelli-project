@@ -28,6 +28,7 @@ function createDefaultScoreOptions() {
         hideFiguredbass: false,
         showFiguredbassAbove: false,
         showCadences: false,
+        showSequences: false,
         showModulations: false,
         showModulationsDegLabel: false,
         hideInstrumentNames: false,
@@ -97,6 +98,7 @@ export const useScoreOptions = defineStore('score_options', {
         resetHighlights() {
             const defaults = createDefaultScoreOptions();
             this.showCadences = defaults.showCadences;
+            this.showSequences = defaults.showSequences;
             this.showModulations = defaults.showModulations;
             this.showModulationsDegLabel = defaults.showModulationsDegLabel;
         },

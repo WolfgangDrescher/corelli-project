@@ -34,6 +34,12 @@ const groups = computed(() => {
                     kbd: 'C',
                 },
                 {
+                    label: t('showSequences'),
+                    onSelect: () => (scoreOptions.showSequences = !scoreOptions.showSequences),
+                    active: scoreOptions.showSequences,
+                    kbd: 'S',
+                },
+                {
                     label: t('showModulations'),
                     onSelect: () => (scoreOptions.showModulations = !scoreOptions.showModulations),
                     active: scoreOptions.showModulations,

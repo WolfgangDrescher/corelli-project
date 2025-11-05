@@ -27,6 +27,11 @@ export function useScoreKeyboardShortcuts(options = {}) {
         scoreOptions.showCadences = !scoreOptions.showCadences;
     });
 
+    onKeyStroke('s', () => {
+        if (ignoreIfInput()) return;
+        scoreOptions.showSequences = !scoreOptions.showSequences;
+    });
+
     onKeyStroke('m', () => {
         if (ignoreIfInput()) return;
         scoreOptions.showModulations = !scoreOptions.showModulations;
