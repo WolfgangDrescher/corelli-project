@@ -4,31 +4,13 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { meterWeights } from '../app/utils/meter-weights.js';
+import { getIdFromFilename, getFiles } from './utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const pathToKernScores = `${__dirname}/../corelli-trio-sonatas/kern`;
 const pathToModulations = `${__dirname}/../corelli-trio-sonatas/modulations.yaml`;
 const dataFile = `${__dirname}/../content/chords.yaml`;
-
-function getIdFromFilename(path) {
-    return path.split(/[\\\/]/).pop().replace(/\..+$/, '');
-}
-
-function getFiles(directory, fileList) {
-    fileList = fileList || [];
-    let files = fs.readdirSync(directory);
-    files = files.filter(item => !(/(^|\/)\.[^\/\.]/g).test(item));
-    for (let i in files) {
-        const name = `${directory}/${files[i]}`;
-        if (fs.statSync(name).isDirectory()) {
-            getFiles(name, fileList);
-        } else {
-            fileList.push(name);
-        }
-    }
-    return fileList;
-}
 
 function getBeatWeight(tsig, beat) {
     if (!tsig) return 'error';

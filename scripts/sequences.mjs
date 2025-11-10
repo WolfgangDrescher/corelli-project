@@ -3,40 +3,13 @@ import fs from 'node:fs';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
-import { romanize } from '../app/utils/romanize.js';
+import { getIdFromFilename, getFiles } from './utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const pathToKernScores = `${__dirname}/../corelli-trio-sonatas/kern`;
 const pathToSequenceData = `${__dirname}/../corelli-trio-sonatas/sequences.yaml`;
 const pathToSequencesYaml = `${__dirname}/../content/sequences.yaml`;
-
-function getIdFromFilename(path) {
-    return path.split(/[\\\/]/).pop().replace(/\..+$/, '');
-}
-
-function getFiles(directory, fileList) {
-    fileList = fileList || [];
-    let files = fs.readdirSync(directory);
-    files = files.filter(item => !(/(^|\/)\.[^\/\.]/g).test(item));
-    for (let i in files) {
-        const name = `${directory}/${files[i]}`;
-        if (fs.statSync(name).isDirectory()) {
-            getFiles(name, fileList);
-        } else {
-            fileList.push(name);
-        }
-    }
-    return fileList;
-}
-
-function parseTimepoint(tp) {
-    const [measureStr, beatStr] = tp.split('/');
-    return {
-        measure: parseInt(measureStr, 10),
-        beat: parseFloat(beatStr)
-    };
-}
 
 const sequencesYaml = yaml.load(fs.readFileSync(pathToSequenceData, 'utf8').toString());
 
