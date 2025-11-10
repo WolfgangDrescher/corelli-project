@@ -1031,6 +1031,142 @@ cadences:
         tags:
             - composta
     -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 6
+        endLine: 36
+        key: F
+        pieceId: op04n07a
+        startBeat: 4
+        startLine: 31
+        tags:
+            - semplice
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 10
+        endLine: 47
+        key: C
+        pieceId: op04n07a
+        startBeat: 8
+        startLine: 42
+        tags:
+            - semplice
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 18
+        endLine: 68
+        key: C
+        pieceId: op04n07a
+        startBeat: 16
+        startLine: 63
+        tags:
+            - Zauberflötenkadenz
+            - fast
+            - doppia
+    -
+        deg: vi
+        endBassDeg: '1'
+        endBeat: 32
+        endLine: 120
+        key: d
+        pieceId: op04n07a
+        startBeat: 30
+        startLine: 114
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 48
+        endLine: 160
+        key: F
+        pieceId: op04n07a
+        startBeat: 44
+        startLine: 150
+        tags:
+            - TRIPPIA
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 56
+        endLine: 175
+        key: F
+        pieceId: op04n07a
+        startBeat: 52
+        startLine: 169
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 18
+        endLine: 46
+        key: F
+        pieceId: op04n07b
+        startBeat: 16
+        startLine: 42
+        tags:
+            - semplice
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 51
+        endLine: 92
+        key: C
+        pieceId: op04n07b
+        startBeat: 45
+        startLine: 83
+        tags:
+            - sfuggita
+            - fast
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 72
+        endLine: 122
+        key: F
+        pieceId: op04n07b
+        startBeat: 70
+        startLine: 119
+        tags:
+            - semplice
+    -
+        deg: vi
+        endBassDeg: r
+        endBeat: 84
+        endLine: 138
+        key: d
+        pieceId: op04n07b
+        startBeat: 81
+        startLine: 135
+        tags:
+            - semplice
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 111
+        endLine: 180
+        key: F
+        pieceId: op04n07b
+        startBeat: 108
+        startLine: 175
+        tags:
+            - composta
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 135
+        endLine: 225
+        key: F
+        pieceId: op04n07b
+        startBeat: 129
+        startLine: 216
+        tags:
+            - doppia
+    -
         deg: iv
         endBassDeg: '1'
         endBeat: 24
