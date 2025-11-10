@@ -20,7 +20,7 @@ export function getFiles(directory, fileList) {
 }
 
 export function parseTimepoint(tp) {
-    const [measureStr, beatStr] = tp.split('/', 2);
+    const [measureStr, beatStr] = tp.split(/\/(.+)/).filter(Boolean);
     return {
         measure: parseInt(measureStr, 10),
         beat: convertFloatToTwoPart(beatStr),
