@@ -108,7 +108,6 @@ function copyId() {
                     pageMarginTop: 50,
                     pageMarginBottom: 50,
                 }"
-                :notes="['L21F4', 'L25F3']"
                 :sections="[
                     {
                         items: scoreOptions.showCadences ? cadences.map(c => ({
