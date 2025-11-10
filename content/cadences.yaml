@@ -363,21 +363,52 @@ cadences:
         tags:
             - half-cadence
     -
+        deg: V
+        endBassDeg: '6'
+        endBeat: 21
+        endLine: 64
+        key: A
         pieceId: op04n04d
         tags: []
     -
+        deg: I
+        endBassDeg: '3'
+        endBeat: 33
+        endLine: 91
+        key: D
         pieceId: op04n04d
         tags: []
     -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 45
+        endLine: 118
+        key: D
         pieceId: op04n04d
+        startBeat: 41
+        startLine: 107
         tags:
             - composta
     -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 69
+        endLine: 169
+        key: A
         pieceId: op04n04d
+        startBeat: 65
+        startLine: 159
         tags:
             - composta
     -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 81
+        endLine: 194
+        key: A
         pieceId: op04n04d
+        startBeat: 77
+        startLine: 185
         tags:
             - composta
     -
@@ -387,6 +418,8 @@ cadences:
         endLine: 252
         key: b
         pieceId: op04n04d
+        startBeat: 107
+        startLine: 248
         tags:
             - semplice
     -
@@ -407,14 +440,30 @@ cadences:
         endLine: 320
         key: e
         pieceId: op04n04d
+        startBeat: 137
+        startLine: 316
         tags:
             - sfuggita
     -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 171
+        endLine: 392
+        key: D
         pieceId: op04n04d
+        startBeat: 167
+        startLine: 382
         tags:
             - composta
     -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 183
+        endLine: 417
+        key: D
         pieceId: op04n04d
+        startBeat: 179
+        startLine: 408
         tags:
             - composta
     -
