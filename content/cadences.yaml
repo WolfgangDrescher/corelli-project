@@ -369,6 +369,8 @@ cadences:
         endLine: 64
         key: A
         pieceId: op04n04d
+        startBeat: 18
+        startLine: 55
         tags: []
     -
         deg: I
@@ -377,6 +379,8 @@ cadences:
         endLine: 91
         key: D
         pieceId: op04n04d
+        startBeat: 30
+        startLine: 82
         tags: []
     -
         deg: I
