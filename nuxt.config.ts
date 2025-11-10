@@ -22,6 +22,13 @@ export default defineNuxtConfig({
             corelliTrioSonatasSha,
         },
     },
+    app: {
+        head: {
+            meta: [
+                { name: 'robots', content: process.env.DEPLOY_ENV === 'prod' ? 'all' : 'noindex' },
+            ],
+        },
+    },
     vite: {
         worker: {
             format: 'es',
