@@ -11,6 +11,8 @@ const props = defineProps<{
     filters?: Array<string>,
 }>();
 
+defineOptions({ inheritAttrs: false });
+
 const { resolvedNotes, resolvedLines, resolvedSections } = useResolveHighlightedScoreProps(props);
 
 const verovioCanvas = ref(null);
@@ -71,7 +73,7 @@ onMounted(async () => {
             </template>
         </div>
         <div ref="scoreContainer" class="verovio-canvas-container">
-            <VerovioCanvas v-if="verovioCanvasOptions.data" ref="verovioCanvas" v-bind="verovioCanvasOptions" />
+            <VerovioCanvas v-if="verovioCanvasOptions.data" ref="verovioCanvas" v-bind="{ ...$attrs, ...verovioCanvasOptions }" />
         </div>
     </div>
 </template>
