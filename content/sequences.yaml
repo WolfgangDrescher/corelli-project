@@ -241,15 +241,15 @@ sequences:
             - Karussell
     -
         endBeat: 43
-        endLine: 88
+        endLine: 89
         pieceId: op04n10d
         startBeat: 39
         startLine: 80
         tags:
-            - Karussell
+            - Synkopenkette
     -
-        endBeat: 40
-        endLine: 82
+        endBeat: 41
+        endLine: 84
         pieceId: op04n10d
         startBeat: 38
         startLine: 78
