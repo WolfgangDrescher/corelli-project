@@ -85,7 +85,13 @@ const groups = computed(() => {
                     cmd: scoreOptions.humdrumFilterMap.hideInstrumentNames,
                     onSelect: () => (scoreOptions.hideInstrumentNames = !scoreOptions.hideInstrumentNames),
                     active: scoreOptions.hideInstrumentNames,
-                }
+                },
+                {
+                    label: t('showIntervallsatz'),
+                    cmd: scoreOptions.humdrumFilterMap.showIntervallsatz,
+                    onSelect: () => (scoreOptions.showIntervallsatz = !scoreOptions.showIntervallsatz),
+                    active: scoreOptions.showIntervallsatz,
+                },
             ],
         },
         {
