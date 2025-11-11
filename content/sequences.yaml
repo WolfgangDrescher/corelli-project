@@ -212,3 +212,46 @@ sequences:
         startLine: 235
         tags:
             - 5-6-Konsekutive aufwärts
+    -
+        endBeat: 15
+        endLine: 37
+        pieceId: op04n10d
+        startBeat: 7
+        startLine: 25
+        tags:
+            - Synkopenkette
+            - Stimmtausch
+            - Karussell
+    -
+        endBeat: 34
+        endLine: 71
+        pieceId: op04n10d
+        startBeat: 21
+        startLine: 47
+        tags:
+            - Synkopenkette
+            - Stimmtausch
+    -
+        endBeat: 35
+        endLine: 72
+        pieceId: op04n10d
+        startBeat: 32
+        startLine: 69
+        tags:
+            - Karussell
+    -
+        endBeat: 43
+        endLine: 88
+        pieceId: op04n10d
+        startBeat: 39
+        startLine: 80
+        tags:
+            - Karussell
+    -
+        endBeat: 40
+        endLine: 82
+        pieceId: op04n10d
+        startBeat: 38
+        startLine: 78
+        tags:
+            - Karussell
