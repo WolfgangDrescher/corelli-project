@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
-import { getIdFromFilename, getFiles } from './utils.mjs';
+import { getIdFromFilename, getFiles, parseTimepoint } from './utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -28,7 +28,7 @@ getFiles(pathToKernScores).forEach(file => {
     
     console.log(`✅ Sequences found for ${id}`);
 
-    const kern = execSync(`cat ${file} | lnnr | beat -ca | meter -f`).toString().trim();
+    const kern = execSync(`cat ${file} | lnnr | beat -ca | meter`).toString().trim();
 
     const newSequences = pieceSequences.map(([a, b, tags]) => ({
         tags: tags == null ? [] : [].concat(tags),
@@ -80,7 +80,7 @@ getFiles(pathToKernScores).forEach(file => {
                 if (!header || !header.includes('**cdata-beat')) continue;
                 const v = tokens[j]?.trim();
                 if (v && v !== '.' && !v.startsWith('*') && !v.startsWith('!') && !v.startsWith('=')) {
-                    currentBeat = parseFloat(v);
+                    currentBeat = v;
                     break;
                 }
             }
