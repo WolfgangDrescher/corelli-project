@@ -213,6 +213,123 @@ sequences:
         tags:
             - 5-6-Konsekutive aufwärts
     -
+        endBeat: 8
+        endLine: 38
+        pieceId: op04n06a
+        startBeat: 2
+        startLine: 23
+        tags:
+            - Quintfall
+    -
+        endBeat: 17
+        endLine: 58
+        pieceId: op04n06a
+        startBeat: 14
+        startLine: 51
+        tags:
+            - 7-6-Konsekutive
+    -
+        endBeat: 55
+        endLine: 145
+        pieceId: op04n06b
+        startBeat: 42
+        startLine: 113
+        tags:
+            - Quintfall
+    -
+        endBeat: 26
+        endLine: 79
+        pieceId: op04n06d
+        startBeat: 21
+        startLine: 68
+        tags:
+            - 7-6-Konsekutive
+    -
+        endBeat: 45
+        endLine: 123
+        pieceId: op04n06d
+        startBeat: 36
+        startLine: 100
+        tags:
+            - Quintfall
+    -
+        endBeat: 62
+        endLine: 162
+        pieceId: op04n06d
+        startBeat: 46
+        startLine: 125
+        tags:
+            - 5-6-Konsekutive
+    -
+        endBeat: 66
+        endLine: 172
+        pieceId: op04n06d
+        startBeat: 60
+        startLine: 158
+        tags:
+            - Quintfall
+    -
+        pieceId: op04n06e
+        startBeat: 42
+        startLine: 50
+        tags:
+            - Fauxbourdon
+    -
+        endBeat: 30
+        endLine: 40
+        pieceId: op04n06e
+        startBeat: 28
+        startLine: 38
+        tags: []
+    -
+        endBeat: 34
+        endLine: 43
+        pieceId: op04n06e
+        startBeat: 32
+        startLine: 42
+        tags:
+            - sfuggita
+    -
+        endBeat: 42
+        endLine: 50
+        pieceId: op04n06e
+        startBeat: 36
+        startLine: 46
+        tags:
+            - composta special
+    -
+        endBeat: 54
+        endLine: 56
+        pieceId: op04n06e
+        startBeat: 46
+        startLine: 51
+        tags:
+            - phrygian
+    -
+        endBeat: 46
+        endLine: 113
+        pieceId: op04n06f
+        startBeat: 38
+        startLine: 97
+        tags:
+            - chromatischer Sekundanstieg
+    -
+        endBeat: 71
+        endLine: 159
+        pieceId: op04n06f
+        startBeat: 60
+        startLine: 140
+        tags:
+            - chromatischer Sekundanstieg
+    -
+        endBeat: 91
+        endLine: 198
+        pieceId: op04n06f
+        startBeat: 80
+        startLine: 179
+        tags:
+            - chromatischer Sekundanstieg
+    -
         endBeat: 15
         endLine: 37
         pieceId: op04n10d
