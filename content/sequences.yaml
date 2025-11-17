@@ -154,8 +154,8 @@ sequences:
         tags:
             - Synkopenkette aufwärts
     -
-        endBeat: 47
-        endLine: 126
+        endBeat: 45
+        endLine: 122
         pieceId: op04n01d
         startBeat: 37
         startLine: 104
@@ -179,8 +179,8 @@ sequences:
         tags:
             - Synkopenkette
     -
-        endBeat: 58
-        endLine: 151
+        endBeat: 56
+        endLine: 147
         pieceId: op04n01d
         startBeat: 52
         startLine: 138
@@ -313,6 +313,86 @@ sequences:
         tags:
             - Monte
             - Chromatik im Bass aufwärts
+    -
+        endBeat: 64
+        endLine: 66
+        pieceId: op04n08a
+        startBeat: 36
+        startLine: 43
+        tags:
+            - imitations
+    -
+        endBeat: 120
+        endLine: 107
+        pieceId: op04n08a
+        startBeat: 92
+        startLine: 86
+        tags:
+            - quintfall
+    -
+        endBeat: 172
+        endLine: 146
+        pieceId: op04n08a
+        startBeat: 156
+        startLine: 135
+        tags:
+            - quintfall
+    -
+        endBeat: 172
+        endLine: 146
+        pieceId: op04n08a
+        startBeat: 156
+        startLine: 135
+        tags:
+            - 9-8-kette
+    -
+        endBeat: 218
+        endLine: 181
+        pieceId: op04n08a
+        startBeat: 210
+        startLine: 176
+        tags:
+            - hemiole
+    -
+        endBeat: 24
+        endLine: 123
+        pieceId: op04n08b
+        startBeat: 16
+        startLine: 88
+        tags:
+            - quintfall
+    -
+        endBeat: 55
+        endLine: 248
+        pieceId: op04n08b
+        startBeat: 48
+        startLine: 216
+        tags:
+            - quintfall
+    -
+        endBeat: 71
+        endLine: 317
+        pieceId: op04n08b
+        startBeat: 64
+        startLine: 285
+        tags:
+            - quintstieg
+    -
+        endBeat: 17
+        endLine: 57
+        pieceId: op04n08c
+        startBeat: 12
+        startLine: 44
+        tags:
+            - DurMoll-Parallelismus mit Zwischendominanten
+    -
+        endBeat: 29
+        endLine: 83
+        pieceId: op04n08c
+        startBeat: 24
+        startLine: 70
+        tags:
+            - quintstieg
     -
         endBeat: 15
         endLine: 37

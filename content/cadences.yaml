@@ -323,11 +323,11 @@ cadences:
         tags:
             - doppia
     -
-        deg: I
-        endBassDeg: '7'
-        endBeat: 90
-        endLine: 221
-        key: C
+        deg: ii
+        endBassDeg: '1'
+        endBeat: 88
+        endLine: 216
+        key: d
         pieceId: op04n01d
         startBeat: 84
         startLine: 207
@@ -346,6 +346,7 @@ cadences:
             - doppia
             - sfuggita
             - half
+            - special
     -
         deg: I
         endBassDeg: '1'
