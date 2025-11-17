@@ -66,6 +66,7 @@ export const useScoreOptions = defineStore('score_options', {
                 state.showCadences,
                 state.showModulations,
                 state.showModulationsDegLabel,
+                state.showSequences,
             ].filter(Boolean).length;
         },
         countTotal() {
