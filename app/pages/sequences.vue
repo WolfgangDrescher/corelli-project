@@ -41,7 +41,7 @@ const { filters, filteredSequences, resetFilters } = useSequenceFilter(sequences
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div v-for="sequence in filteredSequences" :key="`${sequence.pieceId}-${sequence.startBeat}`">
+            <div v-for="sequence in filteredSequences" :key="`${sequence.pieceId}-${sequence.startLine}-${sequence.endLine}`">
                 <UCard class="h-full">
                     <template #header>
                         <NuxtLink :to="localePath({ name: 'piece-id', params: { id: sequence.pieceId } })">

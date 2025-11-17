@@ -51,7 +51,7 @@ const { filters, filteredCadences, resetFilters } = useCadenceFilter(cadences);
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div v-for="cadence in filteredCadences" :key="`${cadence.pieceId}-${cadence.startBeat}`">
+            <div v-for="cadence in filteredCadences" :key="`${cadence.pieceId}-${cadence.startLine}-${cadence.endLine}`">
                 <UCard class="h-full">
                     <template #header>
                         <NuxtLink :to="localePath({ name: 'piece-id', params: { id: cadence.pieceId } })">
