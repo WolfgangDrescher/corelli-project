@@ -8,21 +8,13 @@ sequences:
         tags:
             - Synkopenkette
     -
-        endBeat: 14
-        endLine: 47
-        pieceId: op04n01a
-        startBeat: 12
-        startLine: 45
-        tags:
-            - Quintfall
-    -
         endBeat: 22
         endLine: 67
         pieceId: op04n01a
         startBeat: 17
         startLine: 55
         tags:
-            - Lamento (Oktavregel)
+            - Lamento
     -
         endBeat: 40
         endLine: 108
@@ -57,8 +49,7 @@ sequences:
         startBeat: 6
         startLine: 28
         tags:
-            - Lamento (Oktavregel)
-            - Synkopenkette
+            - Lamento in Dur (Oktavregel)
     -
         endBeat: 66
         endLine: 166
@@ -220,14 +211,15 @@ sequences:
         startLine: 23
         tags:
             - Quintfall
+            - Synkopenkette
     -
-        endBeat: 17
-        endLine: 58
+        endBeat: 19
+        endLine: 62
         pieceId: op04n06a
         startBeat: 14
         startLine: 51
         tags:
-            - 7-6-Konsekutive
+            - Synkopenkette
     -
         endBeat: 55
         endLine: 145
@@ -237,13 +229,22 @@ sequences:
         tags:
             - Quintfall
     -
+        endBeat: 30
+        endLine: 38
+        pieceId: op04n06c
+        startBeat: 16
+        startLine: 27
+        tags:
+            - Quintfall
+            - Sopranklausel
+    -
         endBeat: 26
         endLine: 79
         pieceId: op04n06d
-        startBeat: 21
-        startLine: 68
+        startBeat: 19
+        startLine: 63
         tags:
-            - 7-6-Konsekutive
+            - Synkopenkette
     -
         endBeat: 45
         endLine: 123
@@ -261,50 +262,30 @@ sequences:
         tags:
             - 5-6-Konsekutive
     -
-        endBeat: 66
-        endLine: 172
+        endBeat: 69
+        endLine: 179
         pieceId: op04n06d
-        startBeat: 60
-        startLine: 158
+        startBeat: 63
+        startLine: 165
         tags:
             - Quintfall
     -
+        endBeat: 24
+        endLine: 35
         pieceId: op04n06e
-        startBeat: 42
-        startLine: 50
+        startBeat: 16
+        startLine: 28
         tags:
-            - Fauxbourdon
-    -
-        endBeat: 30
-        endLine: 40
-        pieceId: op04n06e
-        startBeat: 28
-        startLine: 38
-        tags: []
-    -
-        endBeat: 34
-        endLine: 43
-        pieceId: op04n06e
-        startBeat: 32
-        startLine: 42
-        tags:
-            - sfuggita
-    -
-        endBeat: 42
-        endLine: 50
-        pieceId: op04n06e
-        startBeat: 36
-        startLine: 46
-        tags:
-            - composta special
+            - Quintfall
+            - Sopranklausel
     -
         endBeat: 54
         endLine: 56
         pieceId: op04n06e
-        startBeat: 46
-        startLine: 51
+        startBeat: 42
+        startLine: 50
         tags:
-            - phrygian
+            - Lamento
     -
         endBeat: 46
         endLine: 113
@@ -312,7 +293,8 @@ sequences:
         startBeat: 38
         startLine: 97
         tags:
-            - chromatischer Sekundanstieg
+            - Monte
+            - Chromatik im Bass aufwärts
     -
         endBeat: 71
         endLine: 159
@@ -320,7 +302,8 @@ sequences:
         startBeat: 60
         startLine: 140
         tags:
-            - chromatischer Sekundanstieg
+            - Monte
+            - Chromatik im Bass aufwärts
     -
         endBeat: 91
         endLine: 198
@@ -328,7 +311,8 @@ sequences:
         startBeat: 80
         startLine: 179
         tags:
-            - chromatischer Sekundanstieg
+            - Monte
+            - Chromatik im Bass aufwärts
     -
         endBeat: 15
         endLine: 37

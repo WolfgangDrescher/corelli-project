@@ -21,6 +21,7 @@ cadences:
         startLine: 62
         tags:
             - phrygian
+            - half
     -
         deg: iii
         endBassDeg: '1'
@@ -30,7 +31,8 @@ cadences:
         pieceId: op04n01a
         startBeat: 26
         startLine: 76
-        tags: []
+        tags:
+            - doppia
     -
         deg: I
         endBassDeg: '5'
@@ -40,7 +42,8 @@ cadences:
         pieceId: op04n01a
         startBeat: 40
         startLine: 108
-        tags: []
+        tags:
+            - half
     -
         deg: I
         endBassDeg: '5'
@@ -50,7 +53,8 @@ cadences:
         pieceId: op04n01a
         startBeat: 48
         startLine: 120
-        tags: []
+        tags:
+            - half
     -
         deg: I
         endBassDeg: '1'
@@ -82,7 +86,8 @@ cadences:
         pieceId: op04n01b
         startBeat: 12
         startLine: 43
-        tags: []
+        tags:
+            - semplice
     -
         deg: I
         endBassDeg: '1'
@@ -92,7 +97,8 @@ cadences:
         pieceId: op04n01b
         startBeat: 24
         startLine: 72
-        tags: []
+        tags:
+            - composta
     -
         deg: V
         endBassDeg: '1'
@@ -124,7 +130,8 @@ cadences:
         pieceId: op04n01b
         startBeat: 104
         startLine: 254
-        tags: []
+        tags:
+            - composta
     -
         deg: I
         endBassDeg: '1'
@@ -145,6 +152,231 @@ cadences:
         pieceId: op04n01b
         startBeat: 132
         startLine: 314
+        tags:
+            - doppia
+    -
+        deg: i
+        endBassDeg: '5'
+        endBeat: 7
+        endLine: 34
+        key: a
+        pieceId: op04n01c
+        startBeat: 5
+        startLine: 29
+        tags:
+            - phrygian
+            - half
+    -
+        deg: v
+        endBassDeg: '1'
+        endBeat: 16
+        endLine: 55
+        key: e
+        pieceId: op04n01c
+        startBeat: 12
+        startLine: 46
+        tags:
+            - doppia
+            - sfuggita
+    -
+        deg: iv
+        endBassDeg: '1'
+        endBeat: 24
+        endLine: 74
+        key: d
+        pieceId: op04n01c
+        startBeat: 20
+        startLine: 65
+        tags:
+            - doppia
+    -
+        deg: i
+        endBassDeg: '5'
+        endBeat: 30
+        endLine: 88
+        key: a
+        pieceId: op04n01c
+        startBeat: 28
+        startLine: 84
+        tags:
+            - phrygian
+            - half
+    -
+        deg: i
+        endBassDeg: '1'
+        endBeat: 42
+        endLine: 112
+        key: a
+        pieceId: op04n01c
+        startBeat: 38
+        startLine: 107
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 6
+        endLine: 32
+        key: C
+        pieceId: op04n01d
+        startBeat: 4
+        startLine: 28
+        tags:
+            - composta
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 14
+        endLine: 50
+        key: C
+        pieceId: op04n01d
+        startBeat: 12
+        startLine: 46
+        tags:
+            - composta
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 20
+        endLine: 65
+        key: G
+        pieceId: op04n01d
+        startBeat: 18
+        startLine: 59
+        tags:
+            - composta
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 28
+        endLine: 83
+        key: G
+        pieceId: op04n01d
+        startBeat: 24
+        startLine: 74
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 32
+        endLine: 93
+        key: C
+        pieceId: op04n01d
+        startBeat: 30
+        startLine: 88
+        tags:
+            - composta
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 44
+        endLine: 120
+        key: C
+        pieceId: op04n01d
+        startBeat: 42
+        startLine: 115
+        tags:
+            - composta
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 50
+        endLine: 133
+        key: C
+        pieceId: op04n01d
+        startBeat: 46
+        startLine: 124
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 58
+        endLine: 151
+        key: C
+        pieceId: op04n01d
+        startBeat: 56
+        startLine: 147
+        tags:
+            - composta
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 64
+        endLine: 165
+        key: C
+        pieceId: op04n01d
+        startBeat: 60
+        startLine: 156
+        tags:
+            - doppia
+    -
+        deg: iii
+        endBassDeg: '1'
+        endBeat: 82
+        endLine: 201
+        key: e
+        pieceId: op04n01d
+        startBeat: 78
+        startLine: 192
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '7'
+        endBeat: 90
+        endLine: 221
+        key: C
+        pieceId: op04n01d
+        startBeat: 84
+        startLine: 207
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '5'
+        endBeat: 94
+        endLine: 230
+        key: C
+        pieceId: op04n01d
+        startBeat: 90
+        startLine: 221
+        tags:
+            - doppia
+            - sfuggita
+            - half
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 110
+        endLine: 266
+        key: C
+        pieceId: op04n01d
+        startBeat: 104
+        startLine: 253
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 126
+        endLine: 302
+        key: C
+        pieceId: op04n01d
+        startBeat: 122
+        startLine: 293
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 132
+        endLine: 316
+        key: C
+        pieceId: op04n01d
+        startBeat: 128
+        startLine: 307
         tags:
             - doppia
     -
