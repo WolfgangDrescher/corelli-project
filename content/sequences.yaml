@@ -22,8 +22,8 @@ sequences:
         startBeat: 31
         startLine: 84
         tags:
-            - Synkopenkette
             - Terzfalltreppe
+            - Synkopenkette
     -
         endBeat: 47
         endLine: 117
@@ -31,8 +31,8 @@ sequences:
         startBeat: 43
         startLine: 112
         tags:
-            - Synkopenkette
             - Karussell
+            - Synkopenkette
     -
         endBeat: 61
         endLine: 142
@@ -203,6 +203,161 @@ sequences:
         startLine: 235
         tags:
             - 5-6-Konsekutive aufwärts
+    -
+        endBeat: 11
+        endLine: 42
+        pieceId: op04n02a
+        startBeat: 2
+        startLine: 22
+        tags:
+            - Synkopenkette
+            - Special Ende
+    -
+        endBeat: 12
+        endLine: 45
+        pieceId: op04n02a
+        startBeat: 4
+        startLine: 27
+        tags:
+            - Terzfalltreppe
+            - Synkopenkette
+    -
+        endBeat: 33
+        endLine: 79
+        pieceId: op04n02a
+        startBeat: 26
+        startLine: 63
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 31
+        endLine: 74
+        pieceId: op04n02a
+        startBeat: 28
+        startLine: 68
+        tags:
+            - Terzfalltreppe
+            - Synkopenkette
+    -
+        endBeat: 33
+        endLine: 79
+        pieceId: op04n02a
+        startBeat: 30
+        startLine: 72
+        tags:
+            - Karussell
+            - Synkopenkette
+    -
+        endBeat: 45
+        endLine: 111
+        pieceId: op04n02a
+        startBeat: 41
+        startLine: 101
+        tags:
+            - Synkopenkette aufwärts
+    -
+        endBeat: 54
+        endLine: 135
+        pieceId: op04n02a
+        startBeat: 53
+        startLine: 132
+        tags:
+            - Karussell
+    -
+        endBeat: 22
+        endLine: 72
+        pieceId: op04n02b
+        startBeat: 16
+        startLine: 58
+        tags:
+            - Fonte
+    -
+        endBeat: 29
+        endLine: 92
+        pieceId: op04n02b
+        startBeat: 22
+        startLine: 72
+        tags:
+            - Romanesca
+            - Synkopenkette
+            - Zwischendominanten
+    -
+        endBeat: 46
+        endLine: 134
+        pieceId: op04n02b
+        startBeat: 36
+        startLine: 105
+        tags:
+            - Monte
+    -
+        endBeat: 58
+        endLine: 165
+        pieceId: op04n02b
+        startBeat: 52
+        startLine: 150
+        tags:
+            - Fonte
+    -
+        endBeat: 65
+        endLine: 182
+        pieceId: op04n02b
+        startBeat: 58
+        startLine: 165
+        tags:
+            - Romanesca
+            - Synkopenkette
+    -
+        endBeat: 74
+        endLine: 202
+        pieceId: op04n02b
+        startBeat: 67
+        startLine: 185
+        tags:
+            - Quintfall
+    -
+        endBeat: 36
+        endLine: 70
+        pieceId: op04n02d
+        startBeat: 27
+        startLine: 57
+        tags:
+            - Quintstieg
+    -
+        endBeat: 66
+        endLine: 112
+        pieceId: op04n02d
+        startBeat: 49
+        startLine: 87
+        tags:
+            - Ansteigende Sequenz
+            - unregelmässig
+            - quasi-Monte
+    -
+        endBeat: 95
+        endLine: 150
+        pieceId: op04n02d
+        startBeat: 85
+        startLine: 136
+        tags:
+            - Synkopenkette
+            - Stimmtausch
+    -
+        endBeat: 90
+        endLine: 144
+        pieceId: op04n02d
+        startBeat: 87
+        startLine: 140
+        tags:
+            - Karussell
+            - Synkopenkette
+    -
+        endBeat: 106
+        endLine: 165
+        pieceId: op04n02d
+        startBeat: 98
+        startLine: 154
+        tags:
+            - Synkopenkette aufwärts
     -
         endBeat: 8
         endLine: 38
@@ -436,3 +591,249 @@ sequences:
         startLine: 78
         tags:
             - Karussell
+    -
+        endBeat: 12
+        endLine: 44
+        pieceId: op04n11a
+        startBeat: 6
+        startLine: 30
+        tags:
+            - Quintfall
+            - fast
+    -
+        endBeat: 32
+        endLine: 82
+        pieceId: op04n11a
+        startBeat: 26
+        startLine: 68
+        tags:
+            - Quintfall
+            - fast
+    -
+        endBeat: 38
+        endLine: 97
+        pieceId: op04n11a
+        startBeat: 36
+        startLine: 93
+        tags:
+            - Synkopenkette aufwärts
+            - fast
+    -
+        endBeat: 42
+        endLine: 107
+        pieceId: op04n11a
+        startBeat: 40
+        startLine: 103
+        tags:
+            - Synkopenkette aufwärts
+            - fast
+    -
+        endBeat: 56
+        endLine: 140
+        pieceId: op04n11a
+        startBeat: 48
+        startLine: 120
+        tags:
+            - Fonte
+    -
+        endBeat: 64
+        endLine: 161
+        pieceId: op04n11a
+        startBeat: 56
+        startLine: 140
+        tags:
+            - Karussell
+            - fast
+            - Synkopenkette
+    -
+        endBeat: 79
+        endLine: 196
+        pieceId: op04n11a
+        startBeat: 65
+        startLine: 163
+        tags:
+            - quasi-Fauxbourdon
+    -
+        endBeat: 39
+        endLine: 97
+        pieceId: op04n11b
+        startBeat: 30
+        startLine: 76
+        tags:
+            - Terzfalltreppe
+    -
+        endBeat: 48
+        endLine: 116
+        pieceId: op04n11b
+        startBeat: 39
+        startLine: 97
+        tags:
+            - 5-6-Konsekutive aufwärts
+    -
+        endBeat: 69
+        endLine: 164
+        pieceId: op04n11b
+        startBeat: 57
+        startLine: 135
+        tags:
+            - Quintstieg
+    -
+        endBeat: 87
+        endLine: 207
+        pieceId: op04n11b
+        startBeat: 78
+        startLine: 186
+        tags:
+            - Lamento
+    -
+        endBeat: 102
+        endLine: 236
+        pieceId: op04n11b
+        startBeat: 93
+        startLine: 215
+        tags:
+            - Lamento
+    -
+        endBeat: 138
+        endLine: 312
+        pieceId: op04n11b
+        startBeat: 134
+        startLine: 302
+        tags:
+            - Monte
+    -
+        endBeat: 192
+        endLine: 420
+        pieceId: op04n11b
+        startBeat: 171
+        startLine: 371
+        tags:
+            - Quintfall
+    -
+        endBeat: 11
+        endLine: 44
+        pieceId: op04n11c
+        startBeat: 0
+        startLine: 19
+        tags:
+            - Terzstieg
+            - quasi Synkopenkette aufwärts
+    -
+        endBeat: 26
+        endLine: 80
+        pieceId: op04n11c
+        startBeat: 20
+        startLine: 67
+        tags:
+            - Ansteigende Sequenz
+            - Synkopenkette aufwärts
+            - Stimmtausch
+    -
+        endBeat: 36
+        endLine: 103
+        pieceId: op04n11c
+        startBeat: 27
+        startLine: 82
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 28
+        endLine: 85
+        pieceId: op04n11c
+        startBeat: 26
+        startLine: 80
+        tags:
+            - Romanesca
+    -
+        endBeat: 40
+        endLine: 113
+        pieceId: op04n11c
+        startBeat: 37
+        startLine: 106
+        tags:
+            - Synkopenkette aufwärts
+    -
+        endBeat: 80
+        endLine: 203
+        pieceId: op04n11c
+        startBeat: 69
+        startLine: 177
+        tags:
+            - Fonte
+    -
+        endBeat: 104
+        endLine: 260
+        pieceId: op04n11c
+        startBeat: 93
+        startLine: 233
+        tags:
+            - Monte
+    -
+        endBeat: 122
+        endLine: 301
+        pieceId: op04n11c
+        startBeat: 113
+        startLine: 281
+        tags:
+            - Synkopenkette aufwärts
+    -
+        endBeat: 22
+        endLine: 52
+        pieceId: op04n12a
+        startBeat: 12
+        startLine: 37
+        tags:
+            - Parallelismus
+            - Terzstieg
+    -
+        endBeat: 72
+        endLine: 118
+        pieceId: op04n12a
+        startBeat: 62
+        startLine: 105
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+    -
+        endBeat: 95
+        endLine: 150
+        pieceId: op04n12a
+        startBeat: 78
+        startLine: 126
+        tags:
+            - Synkopenkette
+            - Special
+    -
+        endBeat: 83
+        endLine: 133
+        pieceId: op04n12a
+        startBeat: 78
+        startLine: 126
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+    -
+        endBeat: 82
+        endLine: 132
+        pieceId: op04n12a
+        startBeat: 79
+        startLine: 128
+        tags:
+            - Quintfall
+            - Synkopenkette
+    -
+        endBeat: 93
+        endLine: 147
+        pieceId: op04n12a
+        startBeat: 82
+        startLine: 132
+        tags:
+            - quasi-Karussell
+    -
+        endBeat: 24
+        endLine: 76
+        pieceId: op04n12b
+        startBeat: 18
+        startLine: 61
+        tags:
+            - Quintstieg
