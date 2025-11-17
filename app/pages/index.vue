@@ -12,6 +12,7 @@ const { data: pieces } = await useAsyncData(`pieces`, () => queryCollection('pie
 const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').first());
 const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
+const { data: reviewsData } = await useAsyncData(`reviews`, () => queryCollection('reviews').first());
 
 const cadences = cadencesData.value.cadences.filter(c => c.pieceId === id);
 const sequences = sequencesData.value.sequences.filter(s => s.pieceId === id);
@@ -55,25 +56,46 @@ const timeline = [
     },
 ];
 
-const totalPieces = computed(() => pieces.value?.length ?? 0);
+const progressTabs = [
+    { label: 'Total', value: 'total', slot: 'total' },
+    { label: 'Op. 1', value: 'op01', slot: 'op01' },
+    { label: 'Op. 2', value: 'op02', slot: 'op02' },
+    { label: 'Op. 3', value: 'op03', slot: 'op03' },
+    { label: 'Op. 4', value: 'op04', slot: 'op04' },
+];
+
+const activeProgressTab = ref('total');
+
+function filterPiecesByOp(data, prop = 'pieceId') {
+    return activeProgressTab.value === 'total' ? true : data[prop]?.startsWith(activeProgressTab.value);
+}
+
+const totalPieces = computed(() => pieces.value.filter(item => filterPiecesByOp(item, 'slug'))?.length ?? 0);
 
 const modulationCount = computed(() => {
     if (!pieces.value || !modulationsData.value) return 0;
-    const mods = modulationsData.value.modulations;
+    const mods = modulationsData.value.modulations.filter(item => filterPiecesByOp(item, 'pieceId'));
     const piecesWithMods = new Set(mods.map(m => m.pieceId));
     return pieces.value.filter(p => piecesWithMods.has(p.slug)).length;
 });
 
 const cadenceCount = computed(() => {
     if (!pieces.value || !cadencesData.value) return 0;
-    const cads = cadencesData.value.cadences;
+    const cads = cadencesData.value.cadences.filter(item => filterPiecesByOp(item, 'pieceId'));
     const piecesWithCadences = new Set(cads.map(c => c.pieceId));
     return pieces.value.filter(p => piecesWithCadences.has(p.slug)).length;
 });
 
 const sequenceCount = computed(() => {
     if (!pieces.value || !sequencesData.value) return 0;
-    const seqs = sequencesData.value.sequences;
+    const seqs = sequencesData.value.sequences.filter(item => filterPiecesByOp(item, 'pieceId'));
+    const piecesWithSequences = new Set(seqs.map(s => s.pieceId));
+    return pieces.value.filter(p => piecesWithSequences.has(p.slug)).length;
+});
+
+const reviewsCount = computed(() => {
+    if (!pieces.value || !reviewsData.value) return 0;
+    const seqs = reviewsData.value.reviews.filter(item => filterPiecesByOp(item, 'pieceId'));
     const piecesWithSequences = new Set(seqs.map(s => s.pieceId));
     return pieces.value.filter(p => piecesWithSequences.has(p.slug)).length;
 });
@@ -217,30 +239,40 @@ const sequenceCount = computed(() => {
                     </p>
                 </div>
                 <div>
-                    <Subheading :level="2">Projektfortschritt</Subheading>
-                    <div class="space-y-6 mt-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>Modulationen</span>
-                                <span>{{ modulationCount }} / {{ totalPieces }}</span>
+                    <UCard>
+                        <template #header>Projektfortschritt</template>
+                        <UTabs v-model="activeProgressTab" :items="progressTabs" />
+                        <div class="space-y-6 mt-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Modulationen</span>
+                                    <span>{{ modulationCount }} / {{ totalPieces }}</span>
+                                </div>
+                                <UProgress v-model="modulationCount" :max="totalPieces" height="8px" />
                             </div>
-                            <UProgress v-model="modulationCount" :max="totalPieces" height="8px" />
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>Kadenzen</span>
-                                <span>{{ cadenceCount }} / {{ totalPieces }}</span>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Kadenzen</span>
+                                    <span>{{ cadenceCount }} / {{ totalPieces }}</span>
+                                </div>
+                                <UProgress v-model="cadenceCount" :max="totalPieces" height="8px" />
                             </div>
-                            <UProgress v-model="cadenceCount" :max="totalPieces" height="8px" />
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>Satzmodelle</span>
-                                <span>{{ sequenceCount }} / {{ totalPieces }}</span>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Satzmodelle</span>
+                                    <span>{{ sequenceCount }} / {{ totalPieces }}</span>
+                                </div>
+                                <UProgress v-model="sequenceCount" :max="totalPieces" height="8px" />
                             </div>
-                            <UProgress v-model="sequenceCount" :max="totalPieces" height="8px" />
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Reviews</span>
+                                    <span>{{ reviewsCount }} / {{ totalPieces }}</span>
+                                </div>
+                                <UProgress v-model="reviewsCount" :max="totalPieces" height="8px" color="info" />
+                            </div>
                         </div>
-                    </div>
+                    </UCard>
                 </div>
             </section>
             <section>
@@ -268,7 +300,7 @@ const sequenceCount = computed(() => {
                         pageMarginRight: 0,
                         pageMarginTop: 10,
                         pageMarginBottom: 10,
-                        }"
+                    }"
                     :sections="[
                         {
                             items: scoreOptions.showCadences ? cadences.map(c => ({

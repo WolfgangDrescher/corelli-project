@@ -4,4 +4,5 @@ import './chords.mjs';
 import './modulations.mjs';
 import './cadences.mjs';
 import './sequences.mjs';
+import './reviews.mjs';
 import './initial-voicings.mjs';

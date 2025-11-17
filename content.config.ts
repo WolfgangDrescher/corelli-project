@@ -86,6 +86,17 @@ export default defineContentConfig({
                 })),
             }),
         }),
+        reviews: defineCollection({
+            source: 'reviews.yaml',
+            type: 'data',
+            schema: z.object({
+                reviews: z.array(z.object({
+                    pieceId: z.string(),
+                    date: z.date(),
+                    needsReview: z.boolean(),
+                })),
+            }),
+        }),
         initialVoicings: defineCollection({
             source: 'initial-voicings.yaml',
             type: 'data',
