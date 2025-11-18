@@ -359,6 +359,57 @@ sequences:
         tags:
             - Synkopenkette aufwärts
     -
+        endBeat: 25
+        endLine: 81
+        pieceId: op04n05b
+        startBeat: 18
+        startLine: 60
+        tags:
+            - Karussell
+            - Synkopenkette
+    -
+        endBeat: 46
+        endLine: 123
+        pieceId: op04n05b
+        startBeat: 42
+        startLine: 118
+        tags:
+            - Lamento
+    -
+        endBeat: 72
+        endLine: 183
+        pieceId: op04n05b
+        startBeat: 54
+        startLine: 139
+        tags:
+            - Romanesca
+            - aufwärts
+            - quasi Synkopenkette aufwärts
+    -
+        endBeat: 80
+        endLine: 205
+        pieceId: op04n05b
+        startBeat: 74
+        startLine: 187
+        tags:
+            - Fonte
+    -
+        endBeat: 87
+        endLine: 225
+        pieceId: op04n05b
+        startBeat: 83
+        startLine: 213
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 94
+        endLine: 245
+        pieceId: op04n05b
+        startBeat: 88
+        startLine: 229
+        tags:
+            - Quintfall
+    -
         endBeat: 8
         endLine: 38
         pieceId: op04n06a
@@ -443,31 +494,34 @@ sequences:
             - Lamento
     -
         endBeat: 46
-        endLine: 113
+        endLine: 116
         pieceId: op04n06f
         startBeat: 38
-        startLine: 97
+        startLine: 98
         tags:
             - Monte
-            - Chromatik im Bass aufwärts
+            - Chromatik
+            - Bass schrittweise aufwärts
     -
         endBeat: 71
-        endLine: 159
+        endLine: 165
         pieceId: op04n06f
         startBeat: 60
-        startLine: 140
+        startLine: 144
         tags:
             - Monte
-            - Chromatik im Bass aufwärts
+            - Chromatik
+            - Bass schrittweise aufwärts
     -
         endBeat: 91
-        endLine: 198
+        endLine: 208
         pieceId: op04n06f
         startBeat: 80
-        startLine: 179
+        startLine: 187
         tags:
             - Monte
-            - Chromatik im Bass aufwärts
+            - Chromatik
+            - Bass schrittweise aufwärts
     -
         endBeat: 64
         endLine: 66
@@ -509,13 +563,37 @@ sequences:
         tags:
             - hemiole
     -
-        endBeat: 24
-        endLine: 123
+        endBeat: 7
+        endLine: 51
+        pieceId: op04n08b
+        startBeat: 0
+        startLine: 19
+        tags:
+            - Parallelismus
+    -
+        endBeat: 14
+        endLine: 78
+        pieceId: op04n08b
+        startBeat: 10
+        startLine: 61
+        tags:
+            - Lamento
+    -
+        endBeat: 23
+        endLine: 121
         pieceId: op04n08b
         startBeat: 16
         startLine: 88
         tags:
-            - quintfall
+            - Fonte
+    -
+        endBeat: 35
+        endLine: 172
+        pieceId: op04n08b
+        startBeat: 30
+        startLine: 148
+        tags:
+            - Romanesca
     -
         endBeat: 55
         endLine: 248
@@ -523,7 +601,8 @@ sequences:
         startBeat: 48
         startLine: 216
         tags:
-            - quintfall
+            - Terzweise ansteignder Quintfall
+            - quasi Monte
     -
         endBeat: 71
         endLine: 317
@@ -531,7 +610,23 @@ sequences:
         startBeat: 64
         startLine: 285
         tags:
-            - quintstieg
+            - Quintstieg
+    -
+        endBeat: 78
+        endLine: 347
+        pieceId: op04n08b
+        startBeat: 75
+        startLine: 333
+        tags:
+            - Quintstieg
+    -
+        endBeat: 86
+        endLine: 380
+        pieceId: op04n08b
+        startBeat: 83
+        startLine: 366
+        tags:
+            - Quintstieg
     -
         endBeat: 17
         endLine: 57
