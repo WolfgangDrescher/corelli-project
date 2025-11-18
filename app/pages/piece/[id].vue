@@ -19,9 +19,7 @@ if (!piece.value) {
     });
 }
 
-const { data: surroundData } = await useAsyncData(`pieces/${piece.value.path}/surroundings`, () => queryCollectionItemSurroundings('pieces', piece.value.path, {
-    fields: ['slug'],
-}));
+const { data: surroundData } = await useAsyncDataPiecesCollectionSurroundings(piece.value.path);
 const [prevPiece, nextPiece] = surroundData.value;
 
 const score = ref();

@@ -1,58 +1,70 @@
-const filterByTitle = (values, element) => {
-    if (!values.length) return true;
-    return values.map(value => value?.toLowerCase()).includes(element.title?.toLowerCase());
-};
+import { defineStore, acceptHMRUpdate } from 'pinia';
 
-const filterByTempo = (values, element) => {
-    if (!values.length) return true;
-    return values.map(value => value?.toLowerCase()).includes(element.movementDesignation?.toLowerCase());
-};
-
-const filterByMeter = (values, element) => {
-    if (!values.length) return true;
-    return values.map(value => value?.toLowerCase()).includes(element.meter?.toLowerCase());
-};
-
-const filterByKey = (values, element) => {
-    if (!values.length) return true;
-    return values.includes(element.key);
-};
-
-const filterByOp = (values, element) => {
-    if (!values.length) return true;
-    return values.includes(element.op);
-};
-
-const filterByNr = (values, element) => {
-    if (!values.length) return true;
-    return values.includes(element.nr);
-};
-
-export function usePieceFilter(elements) {
-    const store = usePieceFilterOptions();
-    const filteredElements = computed(() => {
-        const filteredElems = elements.filter(element => {
-            const titleMatches = filterByTitle(store.title, element);
-            const tempoMatches = filterByTempo(store.tempo, element);
-            const meterMatches = filterByMeter(store.meter, element);
-            const keyMatches = filterByKey(store.key, element);
-            const opMatches = filterByOp(store.op, element);
-            const nrMatches = filterByNr(store.nr, element);
-
-            return (
-                titleMatches
-                && tempoMatches
-                && meterMatches
-                && keyMatches
-                && opMatches
-                && nrMatches
-            );
-        });
-
-        return filteredElems;
-    });
-
+function createDefaultPieceFilterOptions() {
     return {
-        filteredElements,
+        title: [],
+        tempo: [],
+        key: [],
+        meter: [],
+        op: [],
+        nr: [],
     };
 };
+
+export const usePieceFilterOptions = defineStore('piece_filter_options', {
+    state: () => (createDefaultPieceFilterOptions()),
+    actions: {
+        reset() {
+            this.$patch(createDefaultPieceFilterOptions());
+        },
+    },
+});
+
+function queryBuidler(store, queryBuidler) {
+    if (store.meter.length) {
+        queryBuidler.where('meter', 'IN', [...store.meter]);
+    }
+
+    if (store.op.length) {
+        queryBuidler.where('op', 'IN', [...store.op]);
+    }
+
+    if (store.tempo.length) {
+        // TODO case insensitive
+        queryBuidler.where('movementDesignation', 'IN', [...store.tempo]);
+    }
+
+    if (store.key.length) {
+        queryBuidler.where('key', 'IN', [...store.key]);
+    }
+
+    if (store.nr.length) {
+        queryBuidler.where('nr', 'IN', [...store.nr]);
+    }
+
+    if (store.title.length) {
+        // TODO case insensitive
+        queryBuidler.where('title', 'IN', [...store.title]);
+    }
+    return queryBuidler;
+};
+
+export async function useAsyncDataPiecesCollection(options) {
+    const store = usePieceFilterOptions();
+    return await useAsyncData('filtered-pieces', () => {
+        return queryBuidler(store, queryCollection('pieces')).all();
+    }, options);
+};
+
+export async function useAsyncDataPiecesCollectionSurroundings(path) {
+    const store = usePieceFilterOptions();
+    return await useAsyncData(`pieces/${path}/surroundings`, () => {
+        return queryBuidler(store, queryCollectionItemSurroundings('pieces', path, {
+            fields: ['slug'],
+        }));
+    });
+};
+
+if (import.meta.hot) {
+    import.meta.hot.accept(acceptHMRUpdate(useScoreOptions, import.meta.hot));
+}

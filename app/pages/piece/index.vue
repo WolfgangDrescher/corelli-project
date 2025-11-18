@@ -1,13 +1,11 @@
 <script setup>
-const { data } = await useAsyncData('pieces', () => queryCollection('pieces').all());
+const { data, refresh } = await useAsyncDataPiecesCollection();
 
 const { t } = useI18n();
 const localePath = useLocalePath();
 
-const { filteredElements } = usePieceFilter(data.value);
-
 const pieces = computed(() => {
-    return filteredElements.value.map(item => ({
+    return (data.value ?? []).map(item => ({
         // composer: item.composer,
         key: item.key,
         // largerWorkTitle: item.largerWorkTitle,
@@ -42,7 +40,7 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
     <UContainer>
         <div class="flex flex-col gap-8">
             <Heading>{{ $t('pieces') }}</Heading>
-            <PieceFilter />
+            <PieceFilter @update-filter="refresh"/>
             <div>
                 {{ pieces.length }} / {{ data.length }}
             </div>
