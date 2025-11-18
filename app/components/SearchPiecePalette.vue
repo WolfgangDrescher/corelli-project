@@ -1,7 +1,7 @@
 <script setup>
 import { useMagicKeys } from '@vueuse/core';
 
-const { data: pieces } = await useAsyncData(`pieces`, () => queryCollection('pieces').all());
+const { data: pieces } = await useAsyncData('pieces/search-palette', () => queryCollection('pieces').all());
 
 const open = defineModel('open', { type: Boolean });
 
