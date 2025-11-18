@@ -682,27 +682,19 @@ modulations:
     -
         deg: V
         endBeat: 48
-        endLine: 71
+        endLine: 72
         key: E
         pieceId: op04n03c
         startBeat: 14
         startLine: 35
     -
         deg: I
-        endBeat: 54
-        endLine: 79
-        key: A
-        pieceId: op04n03c
-        startBeat: 48
-        startLine: 71
-    -
-        deg: I
         endBeat: 62
         endLine: 90
         key: A
         pieceId: op04n03c
-        startBeat: 54
-        startLine: 79
+        startBeat: 48
+        startLine: 72
     -
         deg: vi
         endBeat: 74
@@ -714,7 +706,7 @@ modulations:
     -
         deg: I
         endBeat: 96
-        endLine: 12
+        endLine: 10
         key: A
         pieceId: op04n03c
         startBeat: 74
@@ -2689,8 +2681,8 @@ modulations:
         startLine: 74
     -
         deg: i
-        endBeat: 60
-        endLine: 102
+        endBeat: 58
+        endLine: 100
         key: b
         pieceId: op04n12a
         startBeat: 45
@@ -2701,8 +2693,8 @@ modulations:
         endLine: 143
         key: D
         pieceId: op04n12a
-        startBeat: 60
-        startLine: 102
+        startBeat: 58
+        startLine: 100
     -
         deg: i
         endBeat: 105
