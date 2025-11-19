@@ -1,5 +1,6 @@
 <script setup>
 const { data, refresh } = await useAsyncDataPiecesCollection();
+const { data: countPieces } = await useAsyncDataCountPieces();
 
 const { t } = useI18n();
 const localePath = useLocalePath();
@@ -42,7 +43,7 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
             <Heading>{{ $t('pieces') }}</Heading>
             <PieceFilter @update-filter="refresh"/>
             <div>
-                {{ pieces.length }} / {{ data.length }}
+                {{ pieces.length }} / {{ countPieces }}
             </div>
             <UTable :data="pieces" :columns="columns" :get-row-id="(item) => item.slug" class="mt-8">
                 <template #audio-cell="{ row }">

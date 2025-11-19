@@ -56,6 +56,13 @@ export async function useAsyncDataPiecesCollection(options) {
     }, options);
 };
 
+export async function useAsyncDataCountPiecesCollection(options) {
+    const store = usePieceFilterOptions();
+    return await useAsyncData('count-filtered-pieces', () => {
+        return queryBuidler(store, queryCollection('pieces')).count();
+    }, options);
+};
+
 export async function useAsyncDataPiecesCollectionSurroundings(path) {
     const store = usePieceFilterOptions();
     return await useAsyncData(`pieces/${path}/surroundings`, () => {
@@ -63,6 +70,12 @@ export async function useAsyncDataPiecesCollectionSurroundings(path) {
             fields: ['slug'],
         }));
     });
+};
+
+export async function useAsyncDataCountPieces(options) {
+    return await useAsyncData('count-pieces', () => {
+        return queryCollection('pieces').count();
+    }, options);
 };
 
 if (import.meta.hot) {

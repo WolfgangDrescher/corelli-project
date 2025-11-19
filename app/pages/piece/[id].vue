@@ -7,6 +7,8 @@ const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection
 const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').first());
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
 const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
+const { data: countPieces } = await useAsyncDataCountPieces();
+const { data: countFilteredPieces, refresh: refreshCount } = await useAsyncDataCountPiecesCollection();
 
 const cadences = cadencesData.value.cadences.filter(c => c.pieceId === id);
 const modulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
@@ -19,8 +21,9 @@ if (!piece.value) {
     });
 }
 
-const { data: surroundData } = await useAsyncDataPiecesCollectionSurroundings(piece.value.path);
-const [prevPiece, nextPiece] = surroundData.value;
+const { data: surroundData, refresh } = await useAsyncDataPiecesCollectionSurroundings(piece.value.path);
+const prevPiece = computed(() => surroundData.value?.[0] ?? null);
+const nextPiece = computed(() => surroundData.value?.[1] ?? null);
 
 const score = ref();
 
@@ -44,6 +47,14 @@ const { copy, copied } = useClipboard();
 function copyId() {
     copy(id);
 };
+
+const pieceFilter = usePieceFilterOptions();
+
+function resetFilter() {
+    pieceFilter.reset();
+    refresh();
+    refreshCount();
+}
 </script>
 
 <template>
@@ -77,6 +88,12 @@ function copyId() {
                             <Icon name="heroicons:arrow-right-circle" class="text-xl" />
                         </UButton>
                     </div>
+                    <template v-if="countPieces > countFilteredPieces">
+                        <UButton color="warning" variant="subtle" icon="i-lucide-funnel-x" @click="resetFilter" size="xs">
+                            {{ $t('reset')}} 
+                            ({{ countFilteredPieces }} / {{ countPieces }})
+                        </UButton>
+                    </template>
                 </div>
             </div>
 
