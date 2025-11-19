@@ -53,14 +53,22 @@ export async function useAsyncDataPiecesCollection(options) {
     const store = usePieceFilterOptions();
     return await useAsyncData('filtered-pieces', () => {
         return queryBuidler(store, queryCollection('pieces')).all();
-    }, options);
+    }, {
+        watch: [store.$state],
+        // deep: true,
+        ...options,
+    });
 };
 
 export async function useAsyncDataCountPiecesCollection(options) {
     const store = usePieceFilterOptions();
     return await useAsyncData('count-filtered-pieces', () => {
         return queryBuidler(store, queryCollection('pieces')).count();
-    }, options);
+    }, {
+        watch: [store.$state],
+        // deep: true,
+        ...options,
+    });
 };
 
 export async function useAsyncDataPiecesCollectionSurroundings(path) {
@@ -69,6 +77,9 @@ export async function useAsyncDataPiecesCollectionSurroundings(path) {
         return queryBuidler(store, queryCollectionItemSurroundings('pieces', path, {
             fields: ['slug'],
         }));
+    }, {
+        watch: [store.$state],
+        // deep: true,
     });
 };
 

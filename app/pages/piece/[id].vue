@@ -8,7 +8,7 @@ const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollect
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
 const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
 const { data: countPieces } = await useAsyncDataCountPieces();
-const { data: countFilteredPieces, refresh: refreshCount } = await useAsyncDataCountPiecesCollection();
+const { data: countFilteredPieces } = await useAsyncDataCountPiecesCollection();
 
 const cadences = cadencesData.value.cadences.filter(c => c.pieceId === id);
 const modulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
@@ -52,8 +52,6 @@ const pieceFilter = usePieceFilterOptions();
 
 function resetFilter() {
     pieceFilter.reset();
-    refresh();
-    refreshCount();
 }
 </script>
 

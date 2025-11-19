@@ -1,5 +1,5 @@
 <script setup>
-const { data, refresh } = await useAsyncDataPiecesCollection();
+const { data } = await useAsyncDataPiecesCollection();
 const { data: countPieces } = await useAsyncDataCountPieces();
 
 const { t } = useI18n();
@@ -41,7 +41,7 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
     <UContainer>
         <div class="flex flex-col gap-8">
             <Heading>{{ $t('pieces') }}</Heading>
-            <PieceFilter @update-filter="refresh"/>
+            <PieceFilter />
             <div>
                 {{ pieces.length }} / {{ countPieces }}
             </div>
