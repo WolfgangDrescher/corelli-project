@@ -1,5 +1,5 @@
 <script setup>
-import { onKeyStroke, useClipboard } from '@vueuse/core';
+import { useClipboard } from '@vueuse/core';
 
 const localePath = useLocalePath();
 const { params: { id } } = useRoute();
