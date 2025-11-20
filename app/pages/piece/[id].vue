@@ -21,7 +21,7 @@ if (!piece.value) {
     });
 }
 
-const { data: surroundData, refresh } = await useAsyncDataPiecesCollectionSurroundings(piece.value.path);
+const { data: surroundData } = await useAsyncDataPiecesCollectionSurroundings(piece.value.path);
 const prevPiece = computed(() => surroundData.value?.[0] ?? null);
 const nextPiece = computed(() => surroundData.value?.[1] ?? null);
 
@@ -47,12 +47,6 @@ const { copy, copied } = useClipboard();
 function copyId() {
     copy(id);
 };
-
-const pieceFilter = usePieceFilterOptions();
-
-function resetFilter() {
-    pieceFilter.reset();
-}
 </script>
 
 <template>
@@ -74,24 +68,20 @@ function resetFilter() {
                     </div>
                 </Heading>
                 <div class="flex gap-2">
-                    <div v-if="prevPiece">
-                        <UButton :to="localePath({ name: 'piece-id', params: { id: prevPiece.slug }, hash: $route.hash })" size="xs">
-                            <Icon name="heroicons:arrow-left-circle" class="text-xl" />
-                            {{ $t('previous') }}
-                        </UButton>
-                    </div>
-                    <div v-if="nextPiece">
-                        <UButton :to="localePath({ name: 'piece-id', params: { id: nextPiece.slug }, hash: $route.hash })" size="xs">
-                            {{ $t('next') }}
-                            <Icon name="heroicons:arrow-right-circle" class="text-xl" />
-                        </UButton>
-                    </div>
-                    <template v-if="countPieces > countFilteredPieces">
-                        <UButton color="warning" variant="subtle" icon="i-lucide-funnel-x" @click="resetFilter" size="xs">
-                            {{ $t('reset')}} 
-                            ({{ countFilteredPieces }} / {{ countPieces }})
-                        </UButton>
-                    </template>
+                    <UButton :disabled="!prevPiece" :to="localePath({ name: 'piece-id', params: { id: prevPiece?.slug }, hash: $route.hash })" size="xs">
+                        <Icon name="heroicons:arrow-left-circle" class="text-xl" />
+                        {{ $t('previous') }}
+                    </UButton>
+                    <UButton :disabled="!nextPiece" :to="localePath({ name: 'piece-id', params: { id: nextPiece?.slug }, hash: $route.hash })" size="xs">
+                        {{ $t('next') }}
+                        <Icon name="heroicons:arrow-right-circle" class="text-xl" />
+                    </UButton>
+                    <UModal v-if="countFilteredPieces">
+                        <UButton :label="`${$t('filter')} ${countPieces === countFilteredPieces ? '' : `(${countFilteredPieces}/${countPieces})`}`" color="neutral" variant="subtle" size="xs" icon="i-lucide-funnel" />
+                        <template #content>
+                            <PieceFilter />
+                        </template>
+                    </UModal>
                 </div>
             </div>
 
