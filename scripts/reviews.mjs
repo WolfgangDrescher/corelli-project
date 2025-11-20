@@ -29,9 +29,9 @@ getFiles(pathToKernScores).forEach(file => {
     const stdout = execSync(`cd ${pathToKernScores} && git log -1 --format="%aI" -- ${id}.krn`).toString().trim();
 
     const reviewDate = new Date(reviewsData[id]);
-    // reviewDate.setHours(23, 59, 59, 999);
-    const now = new Date();
-    reviewDate.setHours(now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds());
+    reviewDate.setHours(23, 59, 59, 999);
+    // const now = new Date();
+    // reviewDate.setHours(now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds());
     const gitDate = new Date(stdout);
 
     const needsReview = gitDate > reviewDate;
