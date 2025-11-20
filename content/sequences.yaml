@@ -848,6 +848,15 @@ sequences:
         tags:
             - Synkopenkette aufwärts
     -
+        endBeat: 61
+        endLine: 162
+        pieceId: op04n11c
+        startBeat: 52
+        startLine: 141
+        tags:
+            - Quintfall
+            - unregelmässig
+    -
         endBeat: 80
         endLine: 203
         pieceId: op04n11c

@@ -2679,6 +2679,28 @@ cadences:
         tags:
             - doppia
     -
+        deg: III
+        endBassDeg: '1'
+        endBeat: 32
+        endLine: 94
+        key: E-
+        pieceId: op04n11c
+        startBeat: 30
+        startLine: 89
+        tags:
+            - composta
+    -
+        deg: III
+        endBassDeg: '1'
+        endBeat: 36
+        endLine: 103
+        key: E-
+        pieceId: op04n11c
+        startBeat: 34
+        startLine: 98
+        tags:
+            - composta
+    -
         deg: v
         endBassDeg: '1'
         endBeat: 52
