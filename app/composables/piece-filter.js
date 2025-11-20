@@ -54,6 +54,7 @@ export async function useAsyncDataPiecesCollection(options) {
     return await useAsyncData('filtered-pieces', () => {
         return queryBuidler(store, queryCollection('pieces')).all();
     }, {
+        server: false, // used for nuxt generate deployment
         watch: [store.$state],
         // deep: true,
         ...options,
@@ -65,6 +66,7 @@ export async function useAsyncDataCountPiecesCollection(options) {
     return await useAsyncData('count-filtered-pieces', () => {
         return queryBuidler(store, queryCollection('pieces')).count();
     }, {
+        server: false, // used for nuxt generate deployment
         watch: [store.$state],
         // deep: true,
         ...options,
@@ -78,6 +80,7 @@ export async function useAsyncDataPiecesCollectionSurroundings(path) {
             fields: ['slug'],
         }));
     }, {
+        server: false, // used for nuxt generate deployment
         watch: [store.$state],
         // deep: true,
     });
