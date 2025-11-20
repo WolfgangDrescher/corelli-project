@@ -79,3 +79,6 @@ hideInstrumentNames: Instrumentenbezeichnungen ausblenden
 sequences: Satzmodelle
 showSequences: Satzmodelle anzeigen
 showIntervallsatz: Intervallsatz anzeigen
+pieceNotInFilterResultTitle: 'Stück {id} nicht im Filterergebnis'
+pieceNotInFilterResultDescription: Weiterleitung zum ersten Ergebnis der gefilterten Stücke
+noPiecesFound: Keine Stücke mit den gewählten Filtern gefunden

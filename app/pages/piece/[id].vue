@@ -1,5 +1,7 @@
 <script setup>
 import { useClipboard } from '@vueuse/core';
+const toast = useToast();
+const { t } = useI18n();
 
 const localePath = useLocalePath();
 const { params: { id } } = useRoute();
@@ -47,6 +49,36 @@ const { copy, copied } = useClipboard();
 function copyId() {
     copy(id);
 };
+
+async function redirectToFirstFilteredPiece() {
+    const { data: filteredPieces } = await useAsyncDataPiecesCollection({ server: false });
+    const pieces = filteredPieces.value ?? [];
+
+    const isCurrentPieceFiltered = pieces.some(p => p.slug === id);
+
+    const toastDuration = 3000;
+
+    if (!isCurrentPieceFiltered) {
+        const firstPiece = pieces[0];
+
+        if (!firstPiece) {
+            toast.add({
+                title: t('noPiecesFound'),
+                icon: 'i-lucide-alert-circle',
+                duration: toastDuration,
+            });
+        } else {
+            toast.add({
+                title: t('pieceNotInFilterResultTitle', { id }),
+                description: t('pieceNotInFilterResultDescription'),
+                icon: 'i-lucide-alert-circle',
+                duration: toastDuration,
+            });
+            await new Promise(resolve => setTimeout(resolve, toastDuration));
+            navigateTo(localePath({ name: 'piece-id', params: { id: firstPiece.slug } }));
+        }
+    }
+}
 </script>
 
 <template>
@@ -76,7 +108,7 @@ function copyId() {
                         {{ $t('next') }}
                         <Icon name="heroicons:arrow-right-circle" class="text-xl" />
                     </UButton>
-                    <UModal v-if="countFilteredPieces">
+                    <UModal v-if="countFilteredPieces !== undefined" @after:leave="redirectToFirstFilteredPiece">
                         <UButton :label="`${$t('filter')} ${countPieces === countFilteredPieces ? '' : `(${countFilteredPieces}/${countPieces})`}`" color="neutral" variant="subtle" size="xs" icon="i-lucide-funnel" />
                         <template #content>
                             <PieceFilter />
