@@ -29,7 +29,7 @@ const verovioCanvasAttrs = computed(() => {
         options: {
             ...props.verovioOptions,
             svgBoundingBoxes: true,
-            svgViewBox: true,
+            // svgViewBox: true,
         },
         data: formattedScoreData.value,
     });
