@@ -27,15 +27,7 @@ const { data: surroundData } = await useAsyncDataPiecesCollectionSurroundings(pi
 const prevPiece = computed(() => surroundData.value?.[0] ?? null);
 const nextPiece = computed(() => surroundData.value?.[1] ?? null);
 
-const score = ref();
-
 const { localScoreUrlGenerator, githubScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
-
-onMounted(async () => {
-    const response = await fetch(localScoreUrlGenerator(piece.value.slug));
-    const kern = await response.text();
-    score.value = kern;
-});
 
 const scoreOptions = useScoreOptions();
 
