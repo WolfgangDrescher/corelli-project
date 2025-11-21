@@ -5,8 +5,6 @@ const { data: sequencesData } = await useAsyncData('sequences', () => queryColle
 
 const localePath = useLocalePath();
 
-const { loadScoreData } = useScoreFormatter();
-
 const sequences = sequencesData.value.sequences;
 
 const uniqueTags = [...new Set(sequences.flatMap(sequence => sequence.tags || []))].toSorted();
@@ -48,9 +46,10 @@ const { filters, filteredSequences, resetFilters } = useSequenceFilter(sequences
                             {{ `${sequence.pieceId} ${sequence.startLine}-${sequence.endLine}` }}
                         </NuxtLink>
                     </template>
-                    <VerovioCanvas view-mode="horizontal" :data="loadScoreData(sequence.pieceId, [], [
+                    <HighlightedScore view-mode="horizontal" :piece-id="sequence.pieceId" :filters="[
                         `myank -l ${sequence.startLine}-${sequence.endLine}`,
-                    ])" :scale="35" :options="{
+                    ]" :verovio-options="{
+                        scale: 35,
                         pageMarginLeft: 42,
                     }" />
                     <div v-if="sequence.tags?.length" class="flex flex-wrap gap-2 mt-4">

@@ -5,8 +5,6 @@ const { data: cadencesData } = await useAsyncData('cadences', () => queryCollect
 
 const localePath = useLocalePath();
 
-const { loadScoreData } = useScoreFormatter();
-
 const cadences = cadencesData.value.cadences;
 
 const uniqueTags = [...new Set(cadences.flatMap(cadence => cadence.tags || []))].toSorted();
@@ -58,12 +56,13 @@ const { filters, filteredCadences, resetFilters } = useCadenceFilter(cadences);
                             {{ `${cadence.pieceId} ${cadence.startLine}-${cadence.endLine}` }}
                         </NuxtLink>
                     </template>
-                    <VerovioCanvas view-mode="horizontal" :data="loadScoreData(cadence.pieceId, [], [
+                    <HighlightedScore view-mode="horizontal" :piece-id="cadence.pieceId" :filters="[
                         `myank -l ${cadence.startLine}-${cadence.endLine}`,
                         `shed -e 's/fb/fba/gX'`,
                         `shed -e 's/^([A-Ha-h\#\-]+):$/${cadence.key}:/gI'`,
                         'deg -k1 -t --box',
-                    ])" :scale="35" :options="{
+                    ]" :verovio-options="{
+                        scale: 35,
                         pageMarginLeft: 42,
                     }" />
                     <dl class="grid grid-cols-[auto_1fr] gap-x-4 mt-4">
