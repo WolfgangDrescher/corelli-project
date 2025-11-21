@@ -25,7 +25,7 @@ watchEffect(async () => {
     scoreKern.value = await loadScoreData(props.pieceId, [], props.filters);
 });
 
-const verovioCanvasOptions = computed(() => {
+const verovioCanvasAttrs = computed(() => {
     return Object.assign({
         pageMargin: 50,
         options: {
@@ -73,7 +73,7 @@ onMounted(async () => {
             </template>
         </div>
         <div ref="scoreContainer" class="verovio-canvas-container">
-            <VerovioCanvas v-if="verovioCanvasOptions.data" ref="verovioCanvas" v-bind="{ ...$attrs, ...verovioCanvasOptions }" />
+            <VerovioCanvas v-if="verovioCanvasAttrs.data" ref="verovioCanvas" v-bind="{ ...$attrs, ...verovioCanvasAttrs }" />
         </div>
     </div>
 </template>
