@@ -1,10 +1,9 @@
 export function useScoreUrlGenerator() {
-    const requestUrl = useRequestURL();
 
     const { public: { corelliTrioSonatasSha } } = useRuntimeConfig();
 
     function localScoreUrlGenerator(id) {
-        const url = `${requestUrl.origin}/kern/corelli-trio-sonatas/${id}.krn?${corelliTrioSonatasSha}`;
+        const url = `/kern/corelli-trio-sonatas/${id}.krn?${corelliTrioSonatasSha}`;
         return url;
     }
 
