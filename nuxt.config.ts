@@ -49,6 +49,9 @@ export default defineNuxtConfig({
         preference: 'light',
     },
     nitro: {
+        routeRules: {
+            '/kern/**': { prerender: false },
+        },
         publicAssets: [
             {
                 baseURL: 'kern/corelli-trio-sonatas',
