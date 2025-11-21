@@ -17,12 +17,10 @@ const { resolvedNotes, resolvedLines, resolvedSections } = useResolveHighlighted
 
 const verovioCanvas = ref(null);
 
-const { loadScoreData } = useScoreFormatter();
+const { loadScore, applyScoreFormatting, formattedScoreData } = useScoreFormatter();
 
-const scoreKern = ref(null);
-
-watchEffect(async () => {
-    scoreKern.value = await loadScoreData(props.pieceId, [], props.filters);
+watch(() => props.filters, (filters) => {
+    applyScoreFormatting([], filters);
 });
 
 const verovioCanvasAttrs = computed(() => {
@@ -33,7 +31,7 @@ const verovioCanvasAttrs = computed(() => {
             svgBoundingBoxes: true,
             svgViewBox: true,
         },
-        data: scoreKern.value,
+        data: formattedScoreData.value,
     });
 });
 
@@ -45,6 +43,7 @@ function mutationObserverEvent() {
 }
 
 onMounted(async () => {
+    loadScore(props.pieceId, props.filters);
     await nextTick();
     const mutationObserver = new MutationObserver(mutationObserverEvent);
     if (scoreContainer.value) {
