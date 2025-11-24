@@ -88,8 +88,10 @@ const groups = computed(() => {
             icon="i-lucide-search"
         >
             <template #trailing>
-                <UKbd value="meta" />
-                <UKbd color="neutral" class="font-mono">K</UKbd>
+                <div class="hidden sm:flex gap-1">
+                    <UKbd value="meta" />
+                    <UKbd color="neutral" class="font-mono">K</UKbd>
+                </div>
             </template>
         </UButton>
         

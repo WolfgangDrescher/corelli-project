@@ -181,8 +181,10 @@ const groups = computed(() => {
                 icon="i-lucide-terminal"
             >
                 <template #trailing>
-                    <UKbd value="meta" />
-                    <UKbd color="neutral" class="font-mono">P</UKbd>
+                    <div class="hidden sm:flex gap-1">
+                        <UKbd value="meta" />
+                        <UKbd color="neutral" class="font-mono">P</UKbd>
+                    </div>
                 </template>
             </UButton>
         </UChip>
