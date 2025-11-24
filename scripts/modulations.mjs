@@ -28,19 +28,27 @@ getFiles(pathToKernScores).forEach(file => {
 
     console.log(`✅ Modulations found for ${id}`);
 
-    const stdout = execSync(`cat ${file} | lnnr | beat -cp | beat -dp | extractxx -I '**text' | extractxx -I '**dynam' | ridx -LGMd | sed '/^\*[^:]*$/d' | sed -n '/^\*/{p;n;p;}'`).toString().trim();
-    const maxBeatStdout = execSync(`cat ${file} | lnnr | beat -cp | beat -dp | beat -da --attacks 0 | extractxx -I '**text' | extractxx -I '**dynam' | ridx -LGTMId | sed -n '$p'`).toString().trim();
+    const kernScore = fs.readFileSync(file, 'utf8');
+
+    const stdout = execSync(`lnnr | beat -cp | beat -dp | beat -da --attacks 0 | extractxx -I '**fb' | extractxx -I '**dynam' | ridx -LGMd | sed '/^\*[^:]*$/d' | sed -n '/^\*/{p;n;p;}'`, {
+        input: kernScore,
+    }).toString().trim();
+    const maxBeatStdout = execSync(`lnnr | beat -cp | beat -dp | beat -da --attacks 0 | extractxx -I '**fb' | extractxx -I '**dynam' | ridx -LGTMId | sed -n '$p'`, {
+        input: kernScore,
+    }).toString().trim();
     const lines = stdout.trim().split('\n');
+
+    // Find the exclusive interpretation line (column headers: **kern, **cdata-beat, etc.)
+    const headerLine = kernScore.split('\n').find(l => l.startsWith('**'));
+    if (!headerLine) throw new Error(`No exclusive interpretation found in ${id}`);
+    const headers = headerLine.split('\t');
+    const kernCount = headers.filter(h => h.startsWith('**kern')).length;
     
     const indexMap = {
         beatDur: 0,
         beat: 1,
-        bass: 2,
-        tenor: 3,
-        alto: 4,
-        soprano: 5,
-        lineNumber: 6,
-        beatDurAttacksNull: 7,
+        lineNumber: 2 + kernCount,
+        beatDurAttacksNull: 3 + kernCount,
     };
 
     let maxBeat = parseFloat(maxBeatStdout.split('\t')[indexMap.beat]);
