@@ -9,8 +9,6 @@ const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection
 const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').first());
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
 const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
-const { data: countPieces } = await useAsyncDataCountPieces();
-const { data: countFilteredPieces } = await useAsyncDataCountPiecesCollection();
 
 const cadences = cadencesData.value.cadences.filter(c => c.pieceId === id);
 const modulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
@@ -100,12 +98,7 @@ async function redirectToFirstFilteredPiece() {
                         {{ $t('next') }}
                         <Icon name="heroicons:arrow-right-circle" class="text-xl" />
                     </UButton>
-                    <UModal v-if="countFilteredPieces !== undefined" @after:leave="redirectToFirstFilteredPiece">
-                        <UButton :label="`${$t('filter')} ${countPieces === countFilteredPieces ? '' : `(${countFilteredPieces}/${countPieces})`}`" color="neutral" variant="subtle" size="xs" icon="i-lucide-funnel" />
-                        <template #content>
-                            <PieceFilter />
-                        </template>
-                    </UModal>
+                    <PieceFilterModal @after:leave="redirectToFirstFilteredPiece" />
                 </div>
             </div>
 
