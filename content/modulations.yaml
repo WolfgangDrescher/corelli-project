@@ -2138,75 +2138,75 @@ modulations:
     -
         deg: I
         endBeat: 24
-        endLine: 8
+        endLine: 55
         key: B-
         pieceId: op04n09d
         startBeat: 0
-        startLine: 4
+        startLine: 19
     -
         deg: ii
         endBeat: 32
-        endLine: 8
+        endLine: 72
         key: c
         pieceId: op04n09d
         startBeat: 24
-        startLine: 8
+        startLine: 55
     -
         deg: iii
         endBeat: 56
-        endLine: 8
+        endLine: 110
         key: d
         pieceId: op04n09d
         startBeat: 32
-        startLine: 8
+        startLine: 72
     -
         deg: I
         endBeat: 112
-        endLine: 8
+        endLine: 192
         key: B-
         pieceId: op04n09d
         startBeat: 56
-        startLine: 8
+        startLine: 110
     -
         deg: vi
         endBeat: 120
-        endLine: 8
+        endLine: 209
         key: g
         pieceId: op04n09d
         startBeat: 112
-        startLine: 8
+        startLine: 192
     -
         deg: ii
         endBeat: 144
-        endLine: 8
+        endLine: 256
         key: c
         pieceId: op04n09d
         startBeat: 120
-        startLine: 8
+        startLine: 209
     -
         deg: iii
         endBeat: 160
-        endLine: 4
+        endLine: 288
         key: d
         pieceId: op04n09d
         startBeat: 144
-        startLine: 8
+        startLine: 256
     -
         deg: I
         endBeat: 168
-        endLine: 4
+        endLine: 299
         key: B-
         pieceId: op04n09d
         startBeat: 160
-        startLine: 4
+        startLine: 288
     -
         deg: V
         endBeat: 174
-        endLine: 2
+        endLine: 307
         key: F
         pieceId: op04n09d
         startBeat: 168
-        startLine: 4
+        startLine: 299
     -
         deg: I
         endBeat: 224
@@ -2214,7 +2214,7 @@ modulations:
         key: B-
         pieceId: op04n09d
         startBeat: 174
-        startLine: 2
+        startLine: 307
     -
         deg: I
         endBeat: 8
