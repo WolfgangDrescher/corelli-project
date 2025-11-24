@@ -644,6 +644,278 @@ sequences:
         tags:
             - quintstieg
     -
+        endBeat: 7
+        endLine: 50
+        pieceId: op04n09a
+        startBeat: 2
+        startLine: 27
+        tags:
+            - Romanesca
+    -
+        endBeat: 19
+        endLine: 100
+        pieceId: op04n09a
+        startBeat: 14
+        startLine: 79
+        tags:
+            - Fauxbourdon
+    -
+        endBeat: 31
+        endLine: 144
+        pieceId: op04n09a
+        startBeat: 24
+        startLine: 114
+        tags:
+            - Romanesca
+    -
+        endBeat: 40
+        endLine: 184
+        pieceId: op04n09a
+        startBeat: 36
+        startLine: 166
+        tags:
+            - Fonte
+    -
+        endBeat: 19
+        endLine: 60
+        pieceId: op04n09b
+        startBeat: 13
+        startLine: 47
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 47
+        endLine: 126
+        pieceId: op04n09b
+        startBeat: 39
+        startLine: 108
+        tags:
+            - Romanesca
+    -
+        endBeat: 63
+        endLine: 154
+        pieceId: op04n09b
+        startBeat: 57
+        startLine: 139
+        tags:
+            - Romanesca
+            - Bass schrittweise abwärts
+    -
+        endBeat: 72
+        endLine: 178
+        pieceId: op04n09b
+        startBeat: 63
+        startLine: 154
+        tags:
+            - Romanesca
+            - quasi Synkopenkette
+    -
+        endBeat: 87
+        endLine: 212
+        pieceId: op04n09b
+        startBeat: 81
+        startLine: 197
+        tags:
+            - 5-6-Konsekutive
+    -
+        endBeat: 104
+        endLine: 253
+        pieceId: op04n09b
+        startBeat: 96
+        startLine: 235
+        tags:
+            - Romanesca
+    -
+        endBeat: 122
+        endLine: 292
+        pieceId: op04n09b
+        startBeat: 114
+        startLine: 274
+        tags:
+            - Romanesca
+    -
+        endBeat: 5
+        endLine: 24
+        pieceId: op04n09c
+        startBeat: 0
+        startLine: 18
+        tags:
+            - Lamento
+    -
+        endBeat: 9
+        endLine: 30
+        pieceId: op04n09c
+        startBeat: 5
+        startLine: 24
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 16
+        endLine: 41
+        pieceId: op04n09c
+        startBeat: 12
+        startLine: 36
+        tags:
+            - Lamento
+            - Fauxbourdon
+    -
+        endBeat: 27
+        endLine: 57
+        pieceId: op04n09c
+        startBeat: 21
+        startLine: 48
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 46
+        endLine: 87
+        pieceId: op04n09c
+        startBeat: 42
+        startLine: 82
+        tags:
+            - Lamento
+    -
+        endBeat: 10
+        endLine: 31
+        pieceId: op04n09d
+        startBeat: 7
+        startLine: 27
+        tags:
+            - Quintfall
+    -
+        endBeat: 39
+        endLine: 86
+        pieceId: op04n09d
+        startBeat: 16
+        startLine: 38
+        tags:
+            - Monte
+    -
+        endBeat: 84
+        endLine: 157
+        pieceId: op04n09d
+        startBeat: 72
+        startLine: 142
+        tags:
+            - aufsteigende Quintfälle
+            - quasi 5-6-Konsekutive
+    -
+        endBeat: 104
+        endLine: 182
+        pieceId: op04n09d
+        startBeat: 92
+        startLine: 167
+        tags:
+            - aufsteigende Quintfälle
+            - quasi 5-6-Konsekutive
+    -
+        endBeat: 126
+        endLine: 222
+        pieceId: op04n09d
+        startBeat: 112
+        startLine: 192
+        tags:
+            - Quintfall
+    -
+        endBeat: 151
+        endLine: 271
+        pieceId: op04n09d
+        startBeat: 136
+        startLine: 237
+        tags:
+            - Monte
+    -
+        endBeat: 194
+        endLine: 350
+        pieceId: op04n09d
+        startBeat: 176
+        startLine: 310
+        tags:
+            - Dezimensatz
+    -
+        endBeat: 218
+        endLine: 400
+        pieceId: op04n09d
+        startBeat: 200
+        startLine: 360
+        tags:
+            - Dezimensatz
+    -
+        endBeat: 6
+        endLine: 26
+        pieceId: op04n10a
+        startBeat: 0
+        startLine: 19
+        tags:
+            - Lamento in Dur (Oktavregel)
+    -
+        endBeat: 23
+        endLine: 104
+        pieceId: op04n10b
+        startBeat: 8
+        startLine: 52
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 17
+        endLine: 86
+        pieceId: op04n10b
+        startBeat: 8
+        startLine: 52
+        tags:
+            - Romanesca
+            - Synkopenkette
+    -
+        endBeat: 40
+        endLine: 170
+        pieceId: op04n10b
+        startBeat: 30
+        startLine: 125
+        tags:
+            - Monte
+    -
+        endBeat: 72
+        endLine: 297
+        pieceId: op04n10b
+        startBeat: 50
+        startLine: 201
+        tags:
+            - Fonte
+            - unregelmässig
+    -
+        endBeat: 78
+        endLine: 322
+        pieceId: op04n10b
+        startBeat: 72
+        startLine: 297
+        tags:
+            - Fauxbourdon
+    -
+        endBeat: 109
+        endLine: 422
+        pieceId: op04n10b
+        startBeat: 92
+        startLine: 366
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 101
+        endLine: 400
+        pieceId: op04n10b
+        startBeat: 92
+        startLine: 366
+        tags:
+            - Romanesca
+            - Synkopenkette
+    -
+        endBeat: 119
+        endLine: 443
+        pieceId: op04n10b
+        startBeat: 113
+        startLine: 430
+        tags:
+            - 5-6-Konsekutive aufwärts
+    -
         endBeat: 15
         endLine: 37
         pieceId: op04n10d
@@ -686,6 +958,62 @@ sequences:
         startLine: 78
         tags:
             - Karussell
+    -
+        endBeat: 54
+        endLine: 105
+        pieceId: op04n10d
+        startBeat: 48
+        startLine: 98
+        tags:
+            - Lamento
+    -
+        endBeat: 7
+        endLine: 28
+        pieceId: op04n10e
+        startBeat: 0
+        startLine: 19
+        tags:
+            - Romanesca
+    -
+        endBeat: 38
+        endLine: 68
+        pieceId: op04n10e
+        startBeat: 32
+        startLine: 60
+        tags:
+            - Lamento in Dur (Oktavregel)
+    -
+        endBeat: 111
+        endLine: 160
+        pieceId: op04n10e
+        startBeat: 96
+        startLine: 141
+        tags:
+            - Fonte
+    -
+        endBeat: 142
+        endLine: 202
+        pieceId: op04n10e
+        startBeat: 128
+        startLine: 184
+        tags:
+            - quasi-Fonte
+    -
+        endBeat: 168
+        endLine: 235
+        pieceId: op04n10e
+        startBeat: 159
+        startLine: 223
+        tags:
+            - Fauxbourdon
+    -
+        endBeat: 184
+        endLine: 255
+        pieceId: op04n10e
+        startBeat: 175
+        startLine: 243
+        tags:
+            - Fauxbourdon
     -
         endBeat: 12
         endLine: 44
