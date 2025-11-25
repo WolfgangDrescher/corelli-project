@@ -25,7 +25,7 @@ reviews:
         pieceId: op04n02b
     -
         date: 2025-11-17T00:00:00.000Z
-        needsReview: false
+        needsReview: true
         pieceId: op04n02c
     -
         date: 2025-11-18T00:00:00.000Z

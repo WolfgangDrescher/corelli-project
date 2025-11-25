@@ -572,11 +572,11 @@ cadences:
         deg: iii
         endBassDeg: '5'
         endBeat: 16
-        endLine: 38
+        endLine: 37
         key: g
         pieceId: op04n02c
         startBeat: 12
-        startLine: 33
+        startLine: 32
         tags:
             - phrygian
             - half

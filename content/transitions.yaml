@@ -18,7 +18,7 @@ transitions:
             -
                 beat: 2
                 id: op04n02c
-                lineNumber: 22
+                lineNumber: 21
             -
                 beat: 81.5
                 id: op04n03b
@@ -264,7 +264,7 @@ transitions:
             -
                 beat: 10
                 id: op04n02c
-                lineNumber: 31
+                lineNumber: 30
         nextDeg: iii
     -
         count: 14
