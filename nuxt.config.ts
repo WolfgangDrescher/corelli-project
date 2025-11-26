@@ -58,6 +58,11 @@ export default defineNuxtConfig({
                 dir: fileURLToPath(new URL('./corelli-trio-sonatas/kern', import.meta.url)),
                 maxAge: 3600,
             },
+            {
+                baseURL: 'kern/annotated-corelli-trio-sonatas',
+                dir: fileURLToPath(new URL('./corelli-trio-sonatas/annotated-kern', import.meta.url)),
+                maxAge: 3600,
+            },
         ],
     },
 });
