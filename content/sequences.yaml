@@ -359,6 +359,30 @@ sequences:
         tags:
             - Synkopenkette aufwärts
     -
+        endBeat: 21
+        endLine: 45
+        pieceId: op04n03d
+        startBeat: 17
+        startLine: 40
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 79
+        endLine: 120
+        pieceId: op04n03d
+        startBeat: 56
+        startLine: 91
+        tags:
+            - Quintfall
+    -
+        endBeat: 102
+        endLine: 150
+        pieceId: op04n03d
+        startBeat: 88
+        startLine: 132
+        tags:
+            - Quintfall
+    -
         endBeat: 25
         endLine: 81
         pieceId: op04n05b
@@ -409,6 +433,30 @@ sequences:
         startLine: 229
         tags:
             - Quintfall
+    -
+        endBeat: 6
+        endLine: 27
+        pieceId: op04n05d
+        startBeat: 0
+        startLine: 19
+        tags:
+            - Parallelismus
+    -
+        endBeat: 22
+        endLine: 48
+        pieceId: op04n05d
+        startBeat: 16
+        startLine: 40
+        tags:
+            - Fonte
+    -
+        endBeat: 38
+        endLine: 74
+        pieceId: op04n05d
+        startBeat: 32
+        startLine: 66
+        tags:
+            - Monte
     -
         endBeat: 8
         endLine: 38
