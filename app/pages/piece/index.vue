@@ -1,12 +1,17 @@
 <script setup>
-const { data } = await useAsyncDataPiecesCollection();
+const { data: allPieces } = await useAsyncData('pieces/search-palette', () => queryCollection('pieces').all());
+const { data: filteredPieces } = await useAsyncDataPiecesCollection();
 const { data: countPieces } = await useAsyncDataCountPieces();
 
 const { t } = useI18n();
 const localePath = useLocalePath();
 
 const pieces = computed(() => {
-    return (data.value ?? []).map(item => ({
+    // TODO workaround to solve problems where the linker in nuxt generate does
+    // not have access to all pieces because useAsyncDataPiecesCollection is
+    // server=false because of nuxt generate issues
+    const base = filteredPieces.value ?? allPieces.value ?? [];
+    return base.map(item => ({
         // composer: item.composer,
         key: item.key,
         // largerWorkTitle: item.largerWorkTitle,
