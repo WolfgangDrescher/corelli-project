@@ -2589,14 +2589,14 @@ cadences:
         tags:
             - semplice
     -
-        deg: V
-        endBassDeg: '2'
+        deg: vi
+        endBassDeg: '1'
         endBeat: 56
-        endLine: 228
-        key: D
+        endLine: 227
+        key: e
         pieceId: op04n10b
         startBeat: 54
-        startLine: 219
+        startLine: 218
         tags:
             - semplice
     -

@@ -2305,8 +2305,8 @@ modulations:
         startLine: 143
     -
         deg: vi
-        endBeat: 54
-        endLine: 219
+        endBeat: 58
+        endLine: 236
         key: e
         pieceId: op04n10b
         startBeat: 38
@@ -2317,8 +2317,8 @@ modulations:
         endLine: 271
         key: D
         pieceId: op04n10b
-        startBeat: 54
-        startLine: 219
+        startBeat: 58
+        startLine: 236
     -
         deg: iii
         endBeat: 84
