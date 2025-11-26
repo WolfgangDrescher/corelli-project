@@ -13,6 +13,7 @@ function createDefaultScoreOptions() {
         hideInstrumentNames: false,
         showIntervallsatz: false,
         verovioScale: 40,
+        showDcmlAnnotations: false,
     };
 }
 
@@ -48,8 +49,13 @@ export const useScoreOptions = defineStore('score_options', {
                 state.showSequences,
             ].filter(Boolean).length;
         },
+        countOthers(state) {
+            return [
+                state.showDcmlAnnotations,
+            ].filter(Boolean).length; 
+        },
         countTotal() {
-            return this.countHumdrumFilters + this.countHighlights;
+            return this.countHumdrumFilters + this.countHighlights + this.countOthers;
         },
     },
 
@@ -83,6 +89,10 @@ export const useScoreOptions = defineStore('score_options', {
             this.showSequences = defaults.showSequences;
             this.showModulations = defaults.showModulations;
             this.showModulationsDegLabel = defaults.showModulationsDegLabel;
+        },
+        resetDcmlOptions() {
+            const defaults = createDefaultScoreOptions();
+            this.showDcmlAnnotations = defaults.showDcmlAnnotations;
         },
     },
 });

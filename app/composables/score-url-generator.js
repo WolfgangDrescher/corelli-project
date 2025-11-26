@@ -2,8 +2,16 @@ export function useScoreUrlGenerator() {
 
     const { public: { corelliTrioSonatasSha } } = useRuntimeConfig();
 
-    function localScoreUrlGenerator(id) {
+    function localScoreUrlGenerator(id, annotated = false) {
+        if (annotated === true) {
+            return localAnnotatedScoreUrlGenerator(id);
+        }
         const url = `/kern/corelli-trio-sonatas/${id}.krn?${corelliTrioSonatasSha}`;
+        return url;
+    }
+
+    function localAnnotatedScoreUrlGenerator(id) {
+        const url = `/kern/annotated-corelli-trio-sonatas/${id}.krn?${corelliTrioSonatasSha}`;
         return url;
     }
 
@@ -24,6 +32,7 @@ export function useScoreUrlGenerator() {
 
     return {
         localScoreUrlGenerator,
+        localAnnotatedScoreUrlGenerator,
         githubScoreUrlGenerator,
         githubRawScoreUrlGenerator,
         vhvScoreUrlGenerator,

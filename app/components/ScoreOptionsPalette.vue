@@ -95,6 +95,18 @@ const groups = computed(() => {
             ],
         },
         {
+            id: 'dcml',
+            label: t('dcmlOptions'),
+            items: [
+                {
+                    label: t('showDcmlAnnotations'),
+                    // icon: 'i-heroicons-chat-bubble-bottom-center-text',
+                    onSelect: () => (scoreOptions.showDcmlAnnotations = !scoreOptions.showDcmlAnnotations),
+                    active: scoreOptions.showDcmlAnnotations,
+                },
+            ],
+        },
+        {
             id: 'verovio',
             label: t('verovioOptions'),
             items: [
@@ -195,7 +207,7 @@ const groups = computed(() => {
                 :groups="groups"
             >
                 <template #item-leading="{ item }">
-                    <UCheckbox v-if="['humdrum-filters', 'highlights'].includes(item.group)" v-model="item.active" />
+                    <UCheckbox v-if="['humdrum-filters', 'highlights', 'dcml'].includes(item.group)" v-model="item.active" />
                 </template>
                 <template #item-trailing="{ item }">
                     <div v-if="item.cmd" class="font-mono text-[0.55rem] text-gray-500 translate-y-1">{{ item.cmd }}</div>
