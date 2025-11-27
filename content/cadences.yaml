@@ -695,6 +695,232 @@ cadences:
     -
         deg: I
         endBassDeg: '1'
+        endBeat: 8
+        endLine: 36
+        key: A
+        pieceId: op04n03a
+        startBeat: 6
+        startLine: 31
+        tags:
+            - semplice
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 16
+        endLine: 57
+        key: A
+        pieceId: op04n03a
+        startBeat: 14
+        startLine: 49
+        tags:
+            - doppia
+            - fast
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 16
+        endLine: 57
+        key: A
+        pieceId: op04n03a
+        startBeat: 18
+        startLine: 61
+        tags:
+            - semplice
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 28
+        endLine: 88
+        key: E
+        pieceId: op04n03a
+        startBeat: 26
+        startLine: 80
+        tags:
+            - doppia
+            - fast
+    -
+        deg: vi
+        endBassDeg: '1'
+        endBeat: 44
+        endLine: 118
+        key: f#
+        pieceId: op04n03a
+        startBeat: 42
+        startLine: 113
+        tags:
+            - doppia
+            - fast
+    -
+        deg: I
+        endBassDeg: '5'
+        endBeat: 56
+        endLine: 147
+        key: A
+        pieceId: op04n03a
+        startBeat: 54
+        startLine: 141
+        tags:
+            - half
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 64
+        endLine: 168
+        key: A
+        pieceId: op04n03a
+        startBeat: 62
+        startLine: 163
+        tags:
+            - doppia
+            - fast
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 68
+        endLine: 177
+        key: A
+        pieceId: op04n03a
+        startBeat: 66
+        startLine: 172
+        tags:
+            - doppia
+            - fast
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 15
+        endLine: 54
+        key: E
+        pieceId: op04n03b
+        startBeat: 12
+        startLine: 47
+        tags:
+            - composta
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 33
+        endLine: 96
+        key: A
+        pieceId: op04n03b
+        startBeat: 27
+        startLine: 83
+        tags:
+            - doppia
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 45
+        endLine: 125
+        key: E
+        pieceId: op04n03b
+        startBeat: 42
+        startLine: 118
+        tags:
+            - semplice
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 69
+        endLine: 174
+        key: E
+        pieceId: op04n03b
+        startBeat: 60
+        startLine: 160
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 75
+        endLine: 187
+        key: A
+        pieceId: op04n03b
+        startBeat: 72
+        startLine: 180
+        tags:
+            - cantizans
+    -
+        deg: vi
+        endBassDeg: '1'
+        endBeat: 87
+        endLine: 214
+        key: f#
+        pieceId: op04n03b
+        startBeat: 81
+        startLine: 202
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 141
+        endLine: 344
+        key: A
+        pieceId: op04n03b
+        startBeat: 135
+        startLine: 331
+        tags:
+            - doppia
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 20
+        endLine: 42
+        key: E
+        pieceId: op04n03c
+        startBeat: 14
+        startLine: 35
+        tags:
+            - semplice
+    -
+        deg: V
+        endBassDeg: '1'
+        endBeat: 44
+        endLine: 69
+        key: E
+        pieceId: op04n03c
+        startBeat: 32
+        startLine: 56
+        tags:
+            - doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 56
+        endLine: 82
+        key: A
+        pieceId: op04n03c
+        startBeat: 50
+        startLine: 75
+        tags:
+            - cantizans
+            - tenorizans
+    -
+        deg: vi
+        endBassDeg: '1'
+        endBeat: 68
+        endLine: 97
+        key: f#
+        pieceId: op04n03c
+        startBeat: 62
+        startLine: 90
+        tags:
+            - quasi-doppia
+    -
+        deg: I
+        endBassDeg: '1'
+        endBeat: 92
+        endLine: 125
+        key: A
+        pieceId: op04n03c
+        startBeat: 86
+        startLine: 119
+        tags:
+            - quasi-doppia
+    -
+        deg: I
+        endBassDeg: '1'
         endBeat: 16
         endLine: 39
         key: A

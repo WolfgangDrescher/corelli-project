@@ -508,9 +508,9 @@ transitions:
                 id: op04n03b
                 lineNumber: 252
             -
-                beat: 48
+                beat: 50
                 id: op04n03c
-                lineNumber: 72
+                lineNumber: 75
             -
                 beat: 131
                 id: op04n03d

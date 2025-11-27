@@ -359,11 +359,107 @@ sequences:
         tags:
             - Synkopenkette aufwärts
     -
+        endBeat: 5
+        endLine: 29
+        pieceId: op04n03a
+        startBeat: 0
+        startLine: 18
+        tags:
+            - Romanesca
+    -
+        endBeat: 13
+        endLine: 48
+        pieceId: op04n03a
+        startBeat: 8
+        startLine: 36
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+            - fast
+    -
+        endBeat: 25
+        endLine: 79
+        pieceId: op04n03a
+        startBeat: 20
+        startLine: 67
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+            - fast
+    -
+        endBeat: 40
+        endLine: 109
+        pieceId: op04n03a
+        startBeat: 32
+        startLine: 90
+        tags:
+            - Romanesca
+    -
+        endBeat: 52
+        endLine: 136
+        pieceId: op04n03a
+        startBeat: 44
+        startLine: 118
+        tags:
+            - Romanesca
+            - unregelmässig
+            - Vorhalte
+    -
+        endBeat: 60
+        endLine: 158
+        pieceId: op04n03a
+        startBeat: 57
+        startLine: 150
+        tags:
+            - Monte
+    -
+        endBeat: 24
+        endLine: 74
+        pieceId: op04n03b
+        startBeat: 15
+        startLine: 54
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 59
+        endLine: 157
+        pieceId: op04n03b
+        startBeat: 45
+        startLine: 125
+        tags:
+            - Fauxbourdon
+            - Quintfall
+            - Synkopenkette
+    -
+        endBeat: 111
+        endLine: 274
+        pieceId: op04n03b
+        startBeat: 90
+        startLine: 222
+        tags:
+            - Quintfall
+    -
+        endBeat: 135
+        endLine: 329
+        pieceId: op04n03b
+        startBeat: 114
+        startLine: 282
+        tags:
+            - 5-6-Konsekutive
+    -
         endBeat: 21
         endLine: 45
         pieceId: op04n03d
         startBeat: 17
         startLine: 40
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 35
+        endLine: 64
+        pieceId: op04n03d
+        startBeat: 31
+        startLine: 59
         tags:
             - Synkopenkette
     -
