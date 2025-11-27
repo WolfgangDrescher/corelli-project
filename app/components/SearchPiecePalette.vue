@@ -9,7 +9,7 @@ const searchTerm = ref('');
 
 const localePath = useLocalePath();
 
-function fuzzysearch (needle, haystack) {
+function fuzzysearch(needle, haystack) {
     needle = needle.toLowerCase();
     haystack = haystack.toLowerCase();
     var hlen = haystack.length;
@@ -50,6 +50,7 @@ const groups = computed(() => {
                 label: `${p.mv}. ${p.movementDesignation}${title ? ` (${title})` : ''}`,
                 value: p.slug,
                 search: `opus. ${opStr} no nr ${nrStr} ${p.mv}. ${title} ${p.movementDesignation}`,
+                highlightSlug: searchTerm.value && fuzzysearch(searchTerm.value, p.slug),
                 onSelect: () => {
                     navigateTo(
                         localePath({ name: 'piece-id', params: { id: p.slug } }),
@@ -102,7 +103,13 @@ const groups = computed(() => {
                 v-model:search-term="searchTerm"
             >
                 <template #item-trailing="{ item }">
-                    <div class="font-mono text-[0.75rem] text-gray-500 translate-y-0.5">{{ item.value }}</div>
+                    <UBadge
+                        size="sm"
+                        :variant="item.highlightSlug ? 'solid' : 'soft'"
+                        :color="item.highlightSlug ? 'primary' : 'neutral'"
+                        class="font-mono"
+                        :label="item.value"
+                    />
                 </template>
             </UCommandPalette>
         </template>
