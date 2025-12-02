@@ -219,9 +219,9 @@ transitions:
                 id: op04n02b
                 lineNumber: 197
             -
-                beat: 15
+                beat: 13
                 id: op04n02d
-                lineNumber: 39
+                lineNumber: 36
             -
                 beat: 27
                 id: op04n02d

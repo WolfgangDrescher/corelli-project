@@ -1526,9 +1526,9 @@ chords:
     - {beat: 9, fb: 4 2, hint: P4 M2, deg: '1', timeSig: 3/4, lineNumber: 30, pieceId: op04n02d, nextDeg: 7+, meterWeight: strong}
     - {beat: 10, fb: 5 3, hint: d5 m3, deg: 7+, timeSig: 3/4, lineNumber: 31, pieceId: op04n02d, nextDeg: '1', meterWeight: weak}
     - {beat: 11, fb: 5 3, hint: d5 m3, deg: 7+, timeSig: 3/4, lineNumber: 32, pieceId: op04n02d, nextDeg: '1', meterWeight: weak}
-    - {beat: 12, fb: 5 4, hint: P5 P4, deg: '1', timeSig: 3/4, lineNumber: 34, pieceId: op04n02d, nextDeg: '1', meterWeight: strong}
-    - {beat: 13, fb: '3', hint: M3, deg: '1', timeSig: 3/4, lineNumber: 35, pieceId: op04n02d, nextDeg: '1', meterWeight: weak}
-    - {beat: 14, fb: 7 5, hint: m7 P5, deg: '1', timeSig: 3/4, lineNumber: 36, pieceId: op04n02d, nextDeg: '1', meterWeight: weak}
+    - {beat: 12, fb: 5 4, hint: P5 P4, deg: '1', timeSig: 3/4, lineNumber: 34, pieceId: op04n02d, nextDeg: '5', meterWeight: strong}
+    - {beat: 13, fb: '3', hint: M3, deg: '5', timeSig: 3/4, lineNumber: 36, pieceId: op04n02d, nextDeg: '5', meterWeight: weak}
+    - {beat: 14, fb: 7 5, hint: m7 P5, deg: '5', timeSig: 3/4, lineNumber: 37, pieceId: op04n02d, nextDeg: '1', meterWeight: weak}
     - {beat: 15, fb: 9 3, hint: M9 m3, deg: '1', timeSig: 3/4, lineNumber: 39, pieceId: op04n02d, nextDeg: '1', meterWeight: strong}
     - {beat: 16, fb: '5', hint: P5, deg: '1', timeSig: 3/4, lineNumber: 40, pieceId: op04n02d, nextDeg: 7+, meterWeight: weak}
     - {beat: 17, fb: '3', hint: m3, deg: '1', timeSig: 3/4, lineNumber: 41, pieceId: op04n02d, nextDeg: 7+, meterWeight: weak}

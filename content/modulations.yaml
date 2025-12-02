@@ -681,8 +681,8 @@ modulations:
         startLine: 30
     -
         deg: i
-        endBeat: 15
-        endLine: 39
+        endBeat: 13
+        endLine: 36
         key: g
         pieceId: op04n02d
         startBeat: 0
@@ -693,8 +693,8 @@ modulations:
         endLine: 44
         key: c
         pieceId: op04n02d
-        startBeat: 15
-        startLine: 39
+        startBeat: 13
+        startLine: 36
     -
         deg: i
         endBeat: 27
