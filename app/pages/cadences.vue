@@ -1,11 +1,9 @@
 <script setup>
-const { data: cadencesData } = await useAsyncData('cadences', () => queryCollection('cadences').first(), {
-    deep: false,
-});
+const { data: cadencesData } = await useAsyncData('cadences', () => queryCollection('cadences').all());
 
 const localePath = useLocalePath();
 
-const cadences = cadencesData.value.cadences;
+const cadences = cadencesData.value;
 
 const uniqueTags = [...new Set(cadences.flatMap(cadence => cadence.tags || []))].toSorted();
 
