@@ -84,6 +84,101 @@ sequences:
             - Synkopen aufwärts
             - special
     -
+        endBeat: 16
+        endLine: 27
+        pieceId: op03n02c
+        startBeat: 0
+        startLine: 17
+        tags:
+            - Lamento
+    -
+        endBeat: 52
+        endLine: 54
+        pieceId: op03n02c
+        startBeat: 36
+        startLine: 43
+        tags:
+            - Romanesca
+            - Synkopenkette aufwärts
+    -
+        endBeat: 98
+        endLine: 89
+        pieceId: op03n02c
+        startBeat: 78
+        startLine: 74
+        tags:
+            - Karussell
+            - Special Ende
+    -
+        endBeat: 210
+        endLine: 172
+        pieceId: op03n02c
+        startBeat: 180
+        startLine: 150
+        tags:
+            - Synkopenkette aufwärts
+    -
+        endBeat: 204
+        endLine: 167
+        pieceId: op03n02c
+        startBeat: 182
+        startLine: 151
+        tags:
+            - Romanesca
+            - Synkopenkette aufwärts
+    -
+        endBeat: 210
+        endLine: 172
+        pieceId: op03n02c
+        startBeat: 198
+        startLine: 163
+        tags:
+            - Synkopenkette aufwärts
+    -
+        endBeat: 234
+        endLine: 187
+        pieceId: op03n02c
+        startBeat: 222
+        startLine: 181
+        tags:
+            - Lamento
+    -
+        endBeat: 22
+        endLine: 58
+        pieceId: op03n03a
+        startBeat: 16
+        startLine: 49
+        tags:
+            - Karussell
+            - Synkopenkette
+            - unregelmässig
+    -
+        endBeat: 27
+        endLine: 69
+        pieceId: op03n03a
+        startBeat: 17
+        startLine: 50
+        tags:
+            - Synkopenkette
+            - unregelmässig
+    -
+        endBeat: 51
+        endLine: 119
+        pieceId: op03n03a
+        startBeat: 43
+        startLine: 102
+        tags:
+            - Synkopenkette
+    -
+        endBeat: 48
+        endLine: 113
+        pieceId: op03n03a
+        startBeat: 44
+        startLine: 104
+        tags:
+            - Romanesca
+            - Synkopenkette
+    -
         endBeat: 11
         endLine: 42
         pieceId: op04n01a

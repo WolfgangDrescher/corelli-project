@@ -1,5 +1,77 @@
 modulations:
     -
+        deg: i
+        endBeat: 24
+        endLine: 36
+        key: g
+        pieceId: op01n05c
+        startBeat: 4
+        startLine: 20
+    -
+        deg: III
+        endBeat: 38
+        endLine: 80
+        key: B-
+        pieceId: op01n05c
+        startBeat: 24
+        startLine: 36
+    -
+        deg: VII
+        endBeat: 58
+        endLine: 134
+        key: F
+        pieceId: op01n05c
+        startBeat: 38
+        startLine: 80
+    -
+        deg: IV
+        endBeat: 66
+        endLine: 145
+        key: C
+        pieceId: op01n05c
+        startBeat: 58
+        startLine: 134
+    -
+        deg: III
+        endBeat: 78
+        endLine: 152
+        key: B-
+        pieceId: op01n05c
+        startBeat: 66
+        startLine: 145
+    -
+        deg: i
+        endBeat: 100
+        endLine: 166
+        key: g
+        pieceId: op01n05c
+        startBeat: 78
+        startLine: 152
+    -
+        deg: III
+        endBeat: 122
+        endLine: 218
+        key: B-
+        pieceId: op01n05c
+        startBeat: 100
+        startLine: 166
+    -
+        deg: VII
+        endBeat: 132
+        endLine: 233
+        key: F
+        pieceId: op01n05c
+        startBeat: 122
+        startLine: 218
+    -
+        deg: III
+        endBeat: 146
+        endLine: 18
+        key: B-
+        pieceId: op01n05c
+        startBeat: 132
+        startLine: 233
+    -
         deg: I
         endBeat: 20
         endLine: 57
@@ -79,6 +151,118 @@ modulations:
         pieceId: op03n02a
         startBeat: 48
         startLine: 117
+    -
+        deg: i
+        endBeat: 42
+        endLine: 48
+        key: b
+        pieceId: op03n02c
+        startBeat: 0
+        startLine: 17
+    -
+        deg: III
+        endBeat: 78
+        endLine: 74
+        key: D
+        pieceId: op03n02c
+        startBeat: 42
+        startLine: 48
+    -
+        deg: i
+        endBeat: 106
+        endLine: 96
+        key: b
+        pieceId: op03n02c
+        startBeat: 78
+        startLine: 74
+    -
+        deg: v
+        endBeat: 128
+        endLine: 113
+        key: f#
+        pieceId: op03n02c
+        startBeat: 106
+        startLine: 96
+    -
+        deg: III
+        endBeat: 176
+        endLine: 147
+        key: D
+        pieceId: op03n02c
+        startBeat: 128
+        startLine: 113
+    -
+        deg: i
+        endBeat: 192
+        endLine: 159
+        key: b
+        pieceId: op03n02c
+        startBeat: 176
+        startLine: 147
+    -
+        deg: III
+        endBeat: 210
+        endLine: 172
+        key: D
+        pieceId: op03n02c
+        startBeat: 192
+        startLine: 159
+    -
+        deg: i
+        endBeat: 240
+        endLine: 16
+        key: b
+        pieceId: op03n02c
+        startBeat: 210
+        startLine: 172
+    -
+        deg: I
+        endBeat: 10
+        endLine: 34
+        key: B-
+        pieceId: op03n03a
+        startBeat: 0
+        startLine: 18
+    -
+        deg: V
+        endBeat: 16
+        endLine: 49
+        key: F
+        pieceId: op03n03a
+        startBeat: 10
+        startLine: 34
+    -
+        deg: I
+        endBeat: 20
+        endLine: 56
+        key: B-
+        pieceId: op03n03a
+        startBeat: 16
+        startLine: 49
+    -
+        deg: vi
+        endBeat: 26
+        endLine: 67
+        key: g
+        pieceId: op03n03a
+        startBeat: 20
+        startLine: 56
+    -
+        deg: ii
+        endBeat: 36
+        endLine: 91
+        key: c
+        pieceId: op03n03a
+        startBeat: 26
+        startLine: 67
+    -
+        deg: I
+        endBeat: 64
+        endLine: 12
+        key: B-
+        pieceId: op03n03a
+        startBeat: 36
+        startLine: 91
     -
         deg: I
         endBeat: 16
