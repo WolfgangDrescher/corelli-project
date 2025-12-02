@@ -73,11 +73,6 @@ async function redirectToFirstFilteredPiece() {
 
 <template>
     <UContainer>
-        {{ cadences }}
-        <USkeleton />
-        {{ modulations }}
-        <USkeleton />
-        {{ sequences }}
         <div class="flex flex-col gap-8">
             <div>
                 <Heading>
