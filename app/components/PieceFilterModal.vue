@@ -5,7 +5,7 @@ const { data: countFilteredPieces } = await useAsyncDataCountPiecesCollection();
 
 <template>
     <UModal v-if="countFilteredPieces !== undefined">
-        <UButton :label="`${$t('filter')} ${countPieces === countFilteredPieces ? '' : `(${countFilteredPieces}/${countPieces})`}`" color="neutral" variant="subtle" size="xs" icon="i-lucide-funnel" />
+        <UButton :label="`${$t('filterPieces')} ${countPieces === countFilteredPieces ? '' : `(${countFilteredPieces}/${countPieces})`}`" color="neutral" variant="subtle" size="xs" icon="i-lucide-funnel" />
         <template #content>
             <PieceFilter />
         </template>
