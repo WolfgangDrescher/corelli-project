@@ -153,6 +153,9 @@ getFiles(pathToKernScores).forEach(file => {
             throw new Error(`❌ ${cadence.pieceId}-${cadence.startBeat}-${cadence.endBeat} has wrong start and end annotation`);
         }
         const slug = `${cadence.pieceId}-${cadence.startBeat}-${cadence.endBeat}`;
+        if (['.', '+', '/'].some(v => slug.includes(v))) {
+            throw new Error(`❌ ${cadence.pieceId}-${cadence.startBeat}-${cadence.endBeat} has a bad slug`);
+        }
         fs.writeFileSync(pathResolve(pathToCadences, `${slug}.yaml`), yaml.dump({...cadence, slug}, {
             indent: 4,
             lineWidth: -1,
