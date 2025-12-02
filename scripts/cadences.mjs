@@ -149,7 +149,7 @@ getFiles(pathToKernScores).forEach(file => {
     });
 
     newCadences.filter(c => c.pieceId).forEach(cadence => {
-        if (cadence.startBeat >= cadence.endBeat) {
+        if (cadence.startBeat > cadence.endBeat) {
             throw new Error(`❌ ${cadence.pieceId}-${cadence.startBeat}-${cadence.endBeat} has wrong start and end annotation`);
         }
         const slug = `${cadence.pieceId}-${cadence.startBeat}-${cadence.endBeat}`;
