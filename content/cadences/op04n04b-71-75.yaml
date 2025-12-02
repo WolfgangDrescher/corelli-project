@@ -1,11 +1,11 @@
-deg: V
-endBassDeg: '2'
+deg: vi
+endBassDeg: '1'
 endBeat: 75
-endLine: 132
-key: A
+endLine: 133
+key: b
 pieceId: op04n04b
 slug: op04n04b-71-75
 startBeat: 71
-startLine: 124
+startLine: 125
 tags:
     - composta

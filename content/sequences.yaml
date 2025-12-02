@@ -708,6 +708,50 @@ sequences:
         tags:
             - Quintfall
     -
+        endBeat: 20
+        endLine: 51
+        pieceId: op04n04b
+        startBeat: 8
+        startLine: 31
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+            - Quintfall
+    -
+        endBeat: 36
+        endLine: 73
+        pieceId: op04n04b
+        startBeat: 30
+        startLine: 65
+        tags:
+            - Lamento in Dur (Oktavregel)
+    -
+        endBeat: 47
+        endLine: 89
+        pieceId: op04n04b
+        startBeat: 38
+        startLine: 76
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+            - Quintfall
+    -
+        endBeat: 83
+        endLine: 144
+        pieceId: op04n04b
+        tags:
+            - Fonte
+            - unregelmässig
+    -
+        endBeat: 104
+        endLine: 173
+        pieceId: op04n04b
+        startBeat: 95
+        startLine: 161
+        tags:
+            - 5-6-Konsekutive
+            - aufsteigende Quintfälle
+    -
         endBeat: 25
         endLine: 81
         pieceId: op04n05b
@@ -758,6 +802,48 @@ sequences:
         startLine: 229
         tags:
             - Quintfall
+    -
+        endBeat: 6
+        endLine: 25
+        pieceId: op04n05c
+        startBeat: 0
+        startLine: 18
+        tags:
+            - Lamento
+    -
+        endBeat: 23
+        endLine: 45
+        pieceId: op04n05c
+        startBeat: 17
+        startLine: 37
+        tags:
+            - Fauxbourdon
+    -
+        endBeat: 69
+        endLine: 107
+        pieceId: op04n05c
+        startBeat: 63
+        startLine: 100
+        tags:
+            - Lamento
+    -
+        endBeat: 92
+        endLine: 135
+        pieceId: op04n05c
+        startBeat: 80
+        startLine: 119
+        tags:
+            - Fauxbourdon
+            - 6-5-Konsekutive abwärts
+    -
+        endBeat: 108
+        endLine: 157
+        pieceId: op04n05c
+        startBeat: 102
+        startLine: 149
+        tags:
+            - Fauxbourdon
+            - 6-5-Konsekutive abwärts
     -
         endBeat: 6
         endLine: 27
