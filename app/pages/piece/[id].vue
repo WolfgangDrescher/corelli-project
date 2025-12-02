@@ -6,11 +6,11 @@ const { t } = useI18n();
 const localePath = useLocalePath();
 const { params: { id } } = useRoute();
 const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection('pieces').where('stem', '=', `pieces/${id}`).first());
-const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').first());
+const { data: cadencesData } = await useAsyncData(`cadences/piece/${id}`, () => queryCollection('cadences').where('pieceId', '=', id).all());
 const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
 const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
 
-const cadences = cadencesData.value.cadences.filter(c => c.pieceId === id);
+const cadences = cadencesData.value;
 const modulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
 const sequences = sequencesData.value.sequences.filter(s => s.pieceId === id);
 
@@ -73,6 +73,11 @@ async function redirectToFirstFilteredPiece() {
 
 <template>
     <UContainer>
+        {{ cadences }}
+        <USkeleton />
+        {{ modulations }}
+        <USkeleton />
+        {{ sequences }}
         <div class="flex flex-col gap-8">
             <div>
                 <Heading>
