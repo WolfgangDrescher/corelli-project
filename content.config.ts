@@ -81,7 +81,7 @@ export default defineContentConfig({
                     pieceId: z.string(),
                     startBeat: z.number(),
                     startLine:z.number(),
-                    tags: z.union([z.string(), z.array(z.string())]),
+                    tags: z.array(z.string()),
                 })),
             }),
         }),
