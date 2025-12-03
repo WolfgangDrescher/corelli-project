@@ -1,20 +1,28 @@
 <script setup>
-const { data: sequencesData } = await useAsyncData('sequences', () => queryCollection('sequences').first(), {
-    deep: false,
-});
+const { data: filteredPiecesData } = await useAsyncDataPiecesCollection();
+
+const { data: sequencesData } = await useAsyncData('sequences', () => queryCollection('sequences').first());
 
 const localePath = useLocalePath();
 
 const sequences = sequencesData.value.sequences;
 
+const sequencesForPieceFilter = computed(() => {
+    return sequencesData.value.sequences.filter(c => filteredPiecesData.value ? filteredPiecesData.value.map(p => p.slug).includes(c.pieceId) : true);
+});
+
 const uniqueTags = [...new Set(sequences.flatMap(sequence => sequence.tags || []))].toSorted();
 
-const { filters, filteredSequences, resetFilters } = useSequenceFilter(sequences);
+const { filters, filteredSequences, resetFilters } = useSequenceFilter(sequencesForPieceFilter);
 </script>
 
 <template>
     <UContainer>
         <Heading>{{ $t('sequences') }}</Heading>
+
+        <div class="my-4">
+            <PieceFilterModal />
+        </div>
 
         <UCard>
             <template #header>
