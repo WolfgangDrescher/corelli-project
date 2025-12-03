@@ -44,11 +44,12 @@ const wrapperElem = useTemplateRef('wrapperElem');
 const scoreKey = ref(Date.now());
 
 const markerContainerStyle = reactive({
-    width: '0px',
+    width: props.horizontal ? '0px' : undefined,
+    height: props.horizontal ? '0px' : undefined,
 });
 
 function updateMarkerWidth() {
-    if (scoreContainer.value && markerContainer.value) {
+    if (props.horizontal && scoreContainer.value && markerContainer.value) {
         const width = scoreContainer.value.querySelector('svg')?.getAttribute('width');
         if (width) {
             markerContainerStyle.width = width;
@@ -67,7 +68,8 @@ async function onScoreIsReady() {
     if (!resolvedSections.value?.length) return;
     if (!scoreContainer.value || !wrapperElem.value) return;
 
-    const first = resolvedSections.value[0].items[0];
+    const first = resolvedSections.value[0]?.items[0];
+    if (!first) return
     const selector = `g[id^="note-L${first.startLine}"]`;
 
     await scrollElementIntoView(selector, scoreContainer.value, wrapperElem.value, true); // smooth scroll
@@ -89,8 +91,8 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="relative overflow-x-auto" ref="wrapperElem">
-        <div class="absolute h-full top-0 left-0 overflow-hidden" ref="markerContainer" :key="scoreKey" :style="markerContainerStyle">
+    <div class="relative" :class="horizontal && 'overflow-x-auto'" ref="wrapperElem">
+        <div class="absolute h-full top-0 left-0 overflow-hidden" :class="!horizontal && 'w-full'" ref="markerContainer" :key="scoreKey" :style="markerContainerStyle">
             <template v-if="scoreContainer">
                 <template v-for="noteGroup in resolvedNotes">
                     <HighlightedNote v-for="noteId in noteGroup.items" :note-id="noteId" :color="noteGroup.color" :container="scoreContainer" />
