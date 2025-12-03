@@ -9,6 +9,10 @@ const props = defineProps<{
     lines?: LinesProp,
     sections?: SectionsProp,
     filters?: Array<string>,
+    horizontal: {
+        type: Boolean,
+        default: false,
+    },
 }>();
 
 defineOptions({ inheritAttrs: false });
@@ -26,6 +30,7 @@ watch(() => props.filters, (filters) => {
 const verovioCanvasAttrs = computed(() => {
     return Object.assign({
         pageMargin: 50,
+        viewMode: props.horizontal ? 'horizontal' : 'vertical',
         options: {
             ...props.verovioOptions,
             svgBoundingBoxes: true,
@@ -35,16 +40,32 @@ const verovioCanvasAttrs = computed(() => {
     });
 });
 
-const scoreContainer = ref();
+const scoreContainer = useTemplateRef('scoreContainer');
+const markerContainer = useTemplateRef('markerContainer');
 const scoreKey = ref(Date.now());
+
+const markerContainerStyle = reactive({
+    width: '0px',
+});
+
+function updateMarkerWidth() {
+    if (scoreContainer.value && markerContainer.value) {
+        const width = scoreContainer.value.querySelector('svg')?.getAttribute('width');
+        if (width) {
+            markerContainerStyle.width = width;
+        }
+    }
+}
 
 function mutationObserverEvent() {
     scoreKey.value = Date.now();
+    updateMarkerWidth();
 }
 
 onMounted(async () => {
     loadScore(props.pieceId, props.filters);
     await nextTick();
+    updateMarkerWidth();
     const mutationObserver = new MutationObserver(mutationObserverEvent);
     if (scoreContainer.value) {
         mutationObserver.observe(scoreContainer.value, {
@@ -57,8 +78,8 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="relative">
-        <div class="absolute w-full h-full top-0 left-0 overflow-hidden" ref="markerContainer" :key="scoreKey">
+    <div class="relative overflow-x-auto">
+        <div class="absolute h-full top-0 left-0 overflow-hidden" ref="markerContainer" :key="scoreKey" :style="markerContainerStyle">
             <template v-if="scoreContainer">
                 <template v-for="noteGroup in resolvedNotes">
                     <HighlightedNote v-for="noteId in noteGroup.items" :note-id="noteId" :color="noteGroup.color" :container="scoreContainer" />
@@ -76,3 +97,9 @@ onMounted(async () => {
         </div>
     </div>
 </template>
+
+<style scoped>
+:deep(.verovio-canvas-horizontal) {
+    overflow-y: visible;
+}
+</style>
