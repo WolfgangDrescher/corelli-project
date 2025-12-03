@@ -103,9 +103,6 @@ onMounted(async () => {
                 <template v-for="lineGroup in resolvedLines">
                     <HighlightedSection v-for="line in lineGroup.items" :start-line="line.lineNumber" :end-line="line.lineNumber" :label="line.label" :color="lineGroup.color" :container="scoreContainer" />
                 </template>
-                <template v-for="sectionGroup in resolvedBelowSections">
-                    <HighlightedSection v-for="section in sectionGroup.items" :start-line="section.startLine" :end-line="section.endLine" :label="section.label" :color="sectionGroup.color" :container="scoreContainer" :top="200" :inset-label="true" />
-                </template>
             </template>
         </div>
         <div ref="scoreContainer" class="verovio-canvas-container">
