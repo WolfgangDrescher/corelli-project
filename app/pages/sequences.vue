@@ -80,6 +80,7 @@ const uniquePieces = computed(() => {
                                 })),
                             }
                         ]"
+                        :scroll-to-first-section="true"
                     />
                 </UCard>
             </div>

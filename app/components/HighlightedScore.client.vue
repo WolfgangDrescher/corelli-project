@@ -10,6 +10,7 @@ const props = defineProps<{
     sections?: SectionsProp,
     filters?: Array<string>,
     horizontal?: Boolean,
+    scrollToFirstSection?: Boolean,
 }>();
 
 defineOptions({ inheritAttrs: false });
@@ -39,6 +40,7 @@ const verovioCanvasAttrs = computed(() => {
 
 const scoreContainer = useTemplateRef('scoreContainer');
 const markerContainer = useTemplateRef('markerContainer');
+const wrapperElem = useTemplateRef('wrapperElem');
 const scoreKey = ref(Date.now());
 
 const markerContainerStyle = reactive({
@@ -59,6 +61,18 @@ function mutationObserverEvent() {
     updateMarkerWidth();
 }
 
+const { scrollElementIntoView } = useHorizontalScroll();
+
+async function onScoreIsReady() {
+    if (!resolvedSections.value?.length) return;
+    if (!scoreContainer.value || !wrapperElem.value) return;
+
+    const first = resolvedSections.value[0].items[0];
+    const selector = `g[id^="note-L${first.startLine}"]`;
+
+    await scrollElementIntoView(selector, scoreContainer.value, wrapperElem.value, true); // smooth scroll
+}
+
 onMounted(async () => {
     loadScore(props.pieceId, props.filters);
     await nextTick();
@@ -75,7 +89,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="relative overflow-x-auto">
+    <div class="relative overflow-x-auto" ref="wrapperElem">
         <div class="absolute h-full top-0 left-0 overflow-hidden" ref="markerContainer" :key="scoreKey" :style="markerContainerStyle">
             <template v-if="scoreContainer">
                 <template v-for="noteGroup in resolvedNotes">
@@ -87,10 +101,13 @@ onMounted(async () => {
                 <template v-for="lineGroup in resolvedLines">
                     <HighlightedSection v-for="line in lineGroup.items" :start-line="line.lineNumber" :end-line="line.lineNumber" :label="line.label" :color="lineGroup.color" :container="scoreContainer" />
                 </template>
+                <template v-for="sectionGroup in resolvedBelowSections">
+                    <HighlightedSection v-for="section in sectionGroup.items" :start-line="section.startLine" :end-line="section.endLine" :label="section.label" :color="sectionGroup.color" :container="scoreContainer" :top="200" :inset-label="true" />
+                </template>
             </template>
         </div>
         <div ref="scoreContainer" class="verovio-canvas-container">
-            <VerovioCanvas v-if="verovioCanvasAttrs.data" ref="verovioCanvas" v-bind="{ ...$attrs, ...verovioCanvasAttrs }" />
+            <VerovioCanvas v-if="verovioCanvasAttrs.data" ref="verovioCanvas" v-bind="{ ...$attrs, ...verovioCanvasAttrs }" @score-is-ready="onScoreIsReady" />
         </div>
     </div>
 </template>
