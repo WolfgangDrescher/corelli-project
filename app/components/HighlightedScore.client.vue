@@ -65,6 +65,7 @@ function mutationObserverEvent() {
 const { scrollElementIntoView } = useHorizontalScroll();
 
 async function onScoreIsReady() {
+    if (!props.scrollToFirstSection) return;
     if (!resolvedSections.value?.length) return;
     if (!scoreContainer.value || !wrapperElem.value) return;
 
