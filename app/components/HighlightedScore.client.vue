@@ -9,10 +9,7 @@ const props = defineProps<{
     lines?: LinesProp,
     sections?: SectionsProp,
     filters?: Array<string>,
-    horizontal: {
-        type: Boolean,
-        default: false,
-    },
+    horizontal?: Boolean,
 }>();
 
 defineOptions({ inheritAttrs: false });
