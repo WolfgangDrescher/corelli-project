@@ -122,9 +122,9 @@ const highlightedLines = computed(() => {
 });
 
 const editTabItems = [
-    { label: t('modulations'), slot: 'modulations' },
-    { label: t('cadences'), slot: 'cadences' },
-    { label: t('sequences'), slot: 'sequences' },
+    { label: t('modulations'), value: 'modulations', slot: 'modulations' },
+    { label: t('cadences'), value: 'cadences',slot: 'cadences' },
+    { label: t('sequences'), value: 'sequences',slot: 'sequences' },
 ];
 
 const editedAnnotationsString = computed(() => {
