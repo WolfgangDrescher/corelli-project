@@ -119,6 +119,7 @@ async function redirectToFirstFilteredPiece() {
 
             <HighlightedScore
                 :piece-id="piece.slug"
+                :horizontal="scoreOptions.showHorizontalViewMode"
                 :verovio-options="{
                     ...scoreOptions.verovioOptions,
                     header: true,
