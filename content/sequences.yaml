@@ -1,5 +1,50 @@
 sequences:
     -
+        endBeat: 15
+        endLine: 52
+        pieceId: op01n01a
+        startBeat: 10
+        startLine: 36
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+    -
+        endBeat: 31
+        endLine: 79
+        pieceId: op01n01a
+        startBeat: 21
+        startLine: 64
+        tags:
+            - Synkopenkette
+            - unregelmässig
+    -
+        endBeat: 30
+        endLine: 78
+        pieceId: op01n01a
+        startBeat: 26
+        startLine: 71
+        tags:
+            - Terzfalltreppe
+            - special
+    -
+        endBeat: 37
+        endLine: 97
+        pieceId: op01n01a
+        startBeat: 32
+        startLine: 81
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+    -
+        endBeat: 47
+        endLine: 128
+        pieceId: op01n01a
+        startBeat: 43
+        startLine: 115
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+    -
         endBeat: 23
         endLine: 64
         pieceId: op03n01a
