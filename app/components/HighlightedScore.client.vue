@@ -43,24 +43,13 @@ const markerContainer = useTemplateRef('markerContainer');
 const wrapperElem = useTemplateRef('wrapperElem');
 const scoreKey = ref(Date.now());
 
-const markerContainerStyle = reactive({
-    width: props.horizontal ? '0px' : undefined,
-    height: props.horizontal ? '0px' : undefined,
+const markerContainerStyle = reactive<{
+    width: string | undefined,
+    height: string | undefined,
+}>({
+    width: undefined,
+    height: undefined,
 });
-
-function updateMarkerWidth() {
-    if (props.horizontal && scoreContainer.value && markerContainer.value) {
-        const width = scoreContainer.value.querySelector('svg')?.getAttribute('width');
-        if (width) {
-            markerContainerStyle.width = width;
-        }
-    }
-}
-
-function mutationObserverEvent() {
-    scoreKey.value = Date.now();
-    updateMarkerWidth();
-}
 
 const { scrollElementIntoView } = useHorizontalScroll();
 
@@ -73,26 +62,64 @@ async function onScoreIsReady() {
     if (!first) return
     const selector = `g[id^="note-L${first.startLine}"]`;
 
-    await scrollElementIntoView(selector, scoreContainer.value, wrapperElem.value, true); // smooth scroll
+    await scrollElementIntoView(selector, scoreContainer.value, wrapperElem.value, true);
 }
 
-onMounted(async () => {
-    loadScore(props.pieceId, props.filters);
+function updateMarkerWidth() {
+    if (props.horizontal && scoreContainer.value && markerContainer.value) {
+        const width = scoreContainer.value.querySelector('svg')?.getAttribute('width');
+        if (width) {
+            markerContainerStyle.width = width;
+        }
+        const height = scoreContainer.value.querySelector('svg')?.getAttribute('height');
+        if (height) {
+            markerContainerStyle.height = height;
+        }
+    }
+    if (!props.horizontal) {
+        markerContainerStyle.width = undefined;
+        markerContainerStyle.height = undefined;
+    }
+}
+
+async function mutationObserverEvent() {
+    scoreKey.value = Date.now();
     await nextTick();
     updateMarkerWidth();
-    const mutationObserver = new MutationObserver(mutationObserverEvent);
+}
+
+const mutationObserver = ref<MutationObserver | null>(null);
+
+function setupMutationObserver() {
+    if (mutationObserver.value) {
+        mutationObserver.value.disconnect();
+    }
+    mutationObserver.value = new MutationObserver(mutationObserverEvent);
     if (scoreContainer.value) {
-        mutationObserver.observe(scoreContainer.value, {
+        mutationObserver.value.observe(scoreContainer.value, {
             // attributes: true,
             childList: true,
             subtree: true,
         });
     }
+}
+
+watch(() => props.horizontal, async () => {
+    scoreKey.value = Date.now();
+    await nextTick();
+    setupMutationObserver();
+});
+
+onMounted(async () => {
+    loadScore(props.pieceId, props.filters);
+    await nextTick();
+    updateMarkerWidth();
+    setupMutationObserver(); 
 });
 </script>
 
 <template>
-    <div class="relative" :class="horizontal && 'overflow-x-auto'" ref="wrapperElem">
+    <div class="relative" :class="horizontal && 'overflow-x-auto'" ref="wrapperElem" :key="horizontal ? 'horizontal' : 'vertical'">
         <div class="absolute h-full top-0 left-0 overflow-hidden" :class="!horizontal && 'w-full'" ref="markerContainer" :key="scoreKey" :style="markerContainerStyle">
             <template v-if="scoreContainer">
                 <template v-for="noteGroup in resolvedNotes">
