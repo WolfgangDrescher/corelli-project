@@ -134,17 +134,17 @@ const editedAnnotationsString = computed(() => {
         modulations: editedModulations.value.map(i => ({
             startLine: i.startLine,
             key: i.key,
-        })),
+        })).sort((a, b) => a.startLine - b.startLine),
         cadences: editedCadences.value.map(i => ({
             startLine: i.startLine,
             endLine: i.endLine,
             tags: i.tags,
-        })),
+        })).sort((a, b) => a.startLine - b.startLine),
         sequences: editedSequences.value.map(i => ({
             startLine: i.startLine,
             endLine: i.endLine,
             tags: i.tags,
-        })),
+        })).sort((a, b) => a.startLine - b.startLine),
     }, null, 4);
 });
 
