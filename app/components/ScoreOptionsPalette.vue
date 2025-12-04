@@ -139,6 +139,7 @@ const groups = computed(() => {
                     onSelect: () => (scoreOptions.showHorizontalViewMode = !scoreOptions.showHorizontalViewMode),
                     active: scoreOptions.showHorizontalViewMode,
                     showCheckbox: true,
+                    kbd: 'H',
                 },
             ],
         },
