@@ -130,6 +130,7 @@ const editTabItems = [
 const editedAnnotationsString = computed(() => {
     return JSON.stringify({
         pieceId: id,
+        commitSha: useRuntimeConfig().public.corelliTrioSonatasSha,
         modulations: editedModulations.value.map(i => ({
             startLine: i.startLine,
             key: i.key,
