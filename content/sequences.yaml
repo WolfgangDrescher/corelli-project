@@ -45,6 +45,33 @@ sequences:
             - Fauxbourdon
             - Synkopenkette
     -
+        endBeat: 31
+        endLine: 63
+        pieceId: op01n01c
+        startBeat: 19
+        startLine: 46
+        tags:
+            - Synkopenkette
+            - Karussell
+            - special
+    -
+        endBeat: 57
+        endLine: 103
+        pieceId: op01n01c
+        startBeat: 43
+        startLine: 83
+        tags:
+            - Synkopenkette
+            - Stimmtausch
+    -
+        endBeat: 75
+        endLine: 129
+        pieceId: op01n01c
+        startBeat: 64
+        startLine: 113
+        tags:
+            - Synkopenkette
+    -
         endBeat: 23
         endLine: 64
         pieceId: op03n01a
