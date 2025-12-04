@@ -244,8 +244,8 @@ function downloadAnnotationsFile() {
             <USwitch v-model="editAnnotations" :label="$t('editAnnotations')" />
 
             <div v-if="editAnnotations">
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div class="lg:col-span-2">
                         <UTabs v-model="activeEditTab" :items="editTabItems">
                             <template #modulations>
                                 <div class="grid grid-cols-1 gap-4">
@@ -312,7 +312,7 @@ function downloadAnnotationsFile() {
                         </UTabs>
                     </div>
                     <div>
-                        <div class="flex gap-2 justify-end mb-4">
+                        <div class="flex gap-2 flex-wrap justify-end mb-4">
                             <UButton @click="downloadAnnotationsFile" :label="$t('downloadAnnotationsFile')" />
                             <UButton :to="githubIssueUrl" target="_blank" :label="$t('createGithubIssue')" />
                         </div>
