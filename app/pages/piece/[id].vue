@@ -253,8 +253,8 @@ function downloadAnnotationsFile() {
                                         <div class="w-25">
                                             <UInput v-model="modulation.key" class="w-full"/>
                                         </div>
-                                        <div class="w-25">
-                                            <UInputNumber v-model="modulation.startLine" />
+                                        <div class="w-35">
+                                            <ScoreLineInput v-model="modulation.startLine" />
                                         </div>
                                         <div>
                                             <UButton @click="removeModulation(modulation.id)" icon="i-lucide-trash" color="error" variant="soft" />
@@ -272,11 +272,11 @@ function downloadAnnotationsFile() {
                                         <div class="w-75">
                                             <UInputTags v-model="cadence.tags" class="w-full"/>
                                         </div>
-                                        <div class="w-25">
-                                            <UInputNumber v-model="cadence.startLine" />
+                                        <div class="w-35">
+                                            <ScoreLineInput v-model="cadence.startLine" />
                                         </div>
-                                        <div class="w-25">
-                                            <UInputNumber v-model="cadence.endLine" />
+                                        <div class="w-35">
+                                            <ScoreLineInput v-model="cadence.endLine" />
                                         </div>
                                         <div>
                                             <UButton @click="removeCadence(cadence.id)" icon="i-lucide-trash" color="error" variant="soft" />
@@ -294,11 +294,11 @@ function downloadAnnotationsFile() {
                                         <div class="w-75">
                                             <UInputTags v-model="sequence.tags" class="w-full"/>
                                         </div>
-                                        <div class="w-25">
-                                            <UInputNumber v-model="sequence.startLine" />
+                                        <div class="w-35">
+                                            <ScoreLineInput v-model="sequence.startLine" />
                                         </div>
-                                        <div class="w-25">
-                                            <UInputNumber v-model="sequence.endLine" />
+                                        <div class="w-35">
+                                            <ScoreLineInput v-model="sequence.endLine" />
                                         </div>
                                         <div>
                                             <UButton @click="removeSequence(sequence.id)" icon="i-lucide-trash" color="error" variant="soft" />
