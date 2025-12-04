@@ -7,8 +7,6 @@ export function useEditAnnotations(modulations, cadences, sequences) {
         key: m.key,
     })));
 
-    console.log(modulations, editedModulations.value);
-
     function removeModulation(id) {
         editedModulations.value = editedModulations.value.filter(c => c.id !== id);
     }
