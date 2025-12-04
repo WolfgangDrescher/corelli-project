@@ -59,7 +59,8 @@ const uniquePieces = computed(() => {
                 <UCard >
                     <template #header>
                         <NuxtLink :to="localePath({ name: 'piece-id', params: { id: pieceId } })">
-                            {{ pieceId }}
+                            <div class="inline font-bold">{{ pieceId }}</div>
+                            ({{ $t('countSequencesInPiece', filteredSequences.filter(s => s.pieceId === pieceId).length) }})
                         </NuxtLink>
                     </template>
                     <HighlightedScore
