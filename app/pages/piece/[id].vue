@@ -127,6 +127,14 @@ const editTabItems = [
     { label: t('sequences'), value: 'sequences',slot: 'sequences' },
 ];
 
+const activeEditTab = ref('modulations');
+
+watch(activeEditTab, (value) => {
+    if (value === 'modulations') scoreOptions.showModulations = true;
+    if (value === 'cadences') scoreOptions.showCadences = true;
+    if (value === 'sequences') scoreOptions.showSequences = true;
+}, { immediate: true });
+
 const editedAnnotationsString = computed(() => {
     return JSON.stringify({
         pieceId: id,
@@ -238,7 +246,7 @@ function downloadAnnotationsFile() {
             <div v-if="editAnnotations">
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <UTabs :items="editTabItems">
+                        <UTabs v-model="activeEditTab" :items="editTabItems">
                             <template #modulations>
                                 <div class="grid grid-cols-1 gap-4">
                                     <div class="flex gap-4" v-for="modulation in editedModulations" :key="modulation.id">
