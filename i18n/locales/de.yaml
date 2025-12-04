@@ -85,3 +85,6 @@ noPiecesFound: Keine Stücke mit den gewählten Filtern gefunden
 dcmlOptions: DCML Optionen
 showDcmlAnnotations: Annotationen der DCML corpus initiative anzeigen
 filterPieces: Stücke filtern
+sequencesFilterCountTitle: '{count} / {total} ({piecesCount} Stücke)'
+countSequencesInPiece: '{n} Sequenzen'
+showHorizontalViewMode: Paritur horizontal anzeigen
