@@ -356,8 +356,8 @@ sequences:
         endBeat: 11
         endLine: 43
         pieceId: op04n01c
-        startBeat: 8
-        startLine: 36
+        startBeat: 7
+        startLine: 33
         tags:
             - Synkopenkette
             - Orgelpunkt
@@ -365,8 +365,8 @@ sequences:
         endBeat: 19
         endLine: 62
         pieceId: op04n01c
-        startBeat: 16
-        startLine: 55
+        startBeat: 15
+        startLine: 52
         tags:
             - Synkopenkette
             - Orgelpunkt
