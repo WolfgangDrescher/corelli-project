@@ -176,6 +176,10 @@ function downloadAnnotationsFile() {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
 }
+
+function copyJsonToClipboard() {
+    copy(editedAnnotationsString.value);
+}
 </script>
 
 <template>
@@ -311,13 +315,20 @@ function downloadAnnotationsFile() {
                             </template>
                         </UTabs>
                     </div>
-                    <div>
+                    <UCard>
                         <div class="flex gap-2 flex-wrap justify-end mb-4">
                             <UButton @click="downloadAnnotationsFile" :label="$t('downloadAnnotationsFile')" />
                             <UButton :to="githubIssueUrl" target="_blank" :label="$t('createGithubIssue')" />
                         </div>
-                        <pre v-text="editedAnnotationsString" class="text-xs max-h-100 overflow-x-auto bg-gray-50 rounded p-4"></pre>
-                    </div>
+                        <div class="relative">
+                            <div class="absolute right-4 top-2">
+                                <UTooltip :text="$t('copied')" :open="copied">
+                                    <UButton icon="lucide:copy" @click="copyJsonToClipboard" size="xs" color="neutral" variant="soft" />
+                                </UTooltip>
+                            </div>
+                            <pre v-text="editedAnnotationsString" class="text-xs max-h-100 overflow-x-auto scrollbar-gutter-stable bg-gray-50 rounded p-4"></pre>
+                        </div>
+                    </UCard>
                 </div>
             </div>
 
