@@ -769,9 +769,17 @@ transitions:
                 lineNumber: 105
         nextDeg: ii
     -
-        count: 2
+        count: 4
         currentDeg: v
         items:
+            -
+                beat: 24
+                id: op01n06a
+                lineNumber: 75
+            -
+                beat: 32
+                id: op01n06a
+                lineNumber: 95
             -
                 beat: 128
                 id: op03n02c
@@ -950,7 +958,7 @@ transitions:
                 lineNumber: 154
         nextDeg: I
     -
-        count: 32
+        count: 33
         currentDeg: i
         items:
             -
@@ -961,6 +969,10 @@ transitions:
                 beat: 100
                 id: op01n05c
                 lineNumber: 166
+            -
+                beat: 4
+                id: op01n06a
+                lineNumber: 24
             -
                 beat: 42
                 id: op03n02c
@@ -1083,9 +1095,13 @@ transitions:
                 lineNumber: 170
         nextDeg: III
     -
-        count: 13
+        count: 14
         currentDeg: i
         items:
+            -
+                beat: 20
+                id: op01n06a
+                lineNumber: 63
             -
                 beat: 106
                 id: op03n02c
@@ -1263,13 +1279,21 @@ transitions:
                 lineNumber: 218
         nextDeg: VII
     -
-        count: 32
+        count: 34
         currentDeg: III
         items:
             -
                 beat: 78
                 id: op01n05c
                 lineNumber: 152
+            -
+                beat: 12
+                id: op01n06a
+                lineNumber: 44
+            -
+                beat: 36
+                id: op01n06a
+                lineNumber: 101
             -
                 beat: 78
                 id: op03n02c
@@ -1396,9 +1420,13 @@ transitions:
                 lineNumber: 283
         nextDeg: i
     -
-        count: 5
+        count: 6
         currentDeg: III
         items:
+            -
+                beat: 28
+                id: op01n06a
+                lineNumber: 85
             -
                 beat: 42
                 id: op04n02a

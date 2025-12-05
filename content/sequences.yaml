@@ -72,6 +72,24 @@ sequences:
         tags:
             - Synkopenkette
     -
+        endBeat: 13
+        endLine: 47
+        pieceId: op01n06a
+        startBeat: 6
+        startLine: 27
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+    -
+        endBeat: 39
+        endLine: 105
+        pieceId: op01n06a
+        startBeat: 31
+        startLine: 92
+        tags:
+            - Karussell
+            - Synkopenkette
+    -
         endBeat: 23
         endLine: 64
         pieceId: op03n01a
