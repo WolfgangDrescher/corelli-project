@@ -56,7 +56,7 @@ Synkopenketten.forEach(Syncopatio => {
         | sed '/^\\*\\*kern$/a\\
 *${Syncopatio.key}:' \
         | beat -ca | beatx -fd -u 4 \
-        | mint \
+        | mint -d \
         | ridx -I`).toString().trim();
 
     // parse the figuration intervals
@@ -69,17 +69,7 @@ Synkopenketten.forEach(Syncopatio => {
     });
     // classify figuration types based on interval patterns
     const figurationPattern = figurationRows.map(r => {
-        // 1) bracketed tokens like "[c#]" or "[EE-]" -> no numeric interval
-        if (/^\[.*\]$/.test(r.interval)) {
-            return 'unknown';
-        }
-        // 2) normalize common unicode minus/en-dash variants to ASCII '-'
-        const normalized = r.interval.replace(/\u2212|\u2013/g, '-');
-
-        // 3) capture: optional sign, optional letter(s), then digits
-        // matches examples: "-m2", "+P4", "P1", "m3", "-P8", "+M2"
-        const m = normalized.match(/^([+\-])?([A-Za-z]+)?(\d+)$/);
-        const interval = m ? (m[1] === '-' ? -1 : 1) * parseInt(m[3], 10) : null;
+        const interval = parseInt(r.interval, 10);
         if (interval === 0) return 'repeat';
         if (interval > 0 && interval <= 2) return 'scaleup';
         if (interval < 0 && interval >= -2) return 'scaledown';
@@ -91,6 +81,7 @@ Synkopenketten.forEach(Syncopatio => {
         if (interval === -5) return 'fifthdown';
         if (interval === 8) return 'octaveup';
         if (interval === -8) return 'octavedown';
+        if (Number.isNaN(interval)) return 'unknown';
         return 'other';
     }).join(';');
  
