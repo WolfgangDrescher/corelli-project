@@ -54,7 +54,7 @@ Synkopenketten.forEach(Syncopatio => {
         | extractxx -k1 | extractxx -i '**kern' \
         | ridxx -LGTMd \
         | sed '/^\\*\\*kern$/a\\
-    *${Syncopatio.key}:' \
+*${Syncopatio.key}:' \
         | beat -ca | beatx -fd -u 4 \
         | mint \
         | ridx -I`).toString().trim();
