@@ -17,6 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const pathToKernScores = `${__dirname}/../corelli-trio-sonatas/kern/`;
 const pathToSequences = `${__dirname}/../content/sequences.yaml`;
+const pathToSyncopationsYaml = `${__dirname}/../content/syncopations.yaml`;
 
 const sequencesAsString = fs.readFileSync(pathToSequences, 'utf8').toString();
 
@@ -118,3 +119,7 @@ const sortedTwoPatternFigurations = Object.entries(twoPatternFigurations).map((e
 // Output the sorted unique figuration patterns
 
 console.log(sortedUniqueFigurations);
+
+fs.writeFileSync(pathToSyncopationsYaml, yaml.dump({
+    bassFigurations: sortedUniqueFigurations,
+}));

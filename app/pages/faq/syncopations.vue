@@ -1,9 +1,8 @@
 <script setup>
-import { onKeyStroke } from '@vueuse/core';
-
 definePageMeta({
     layout: 'faq',
 });
+
 //Daten holen - aber Synkopenketten sind in sequences.. vielleicht vorher noch extrahieren?
 const { data: syncopationsData } = await useAsyncData('syncopations', () => queryCollection('syncopations').first(), {
     deep: false,
@@ -12,9 +11,8 @@ const { data: syncopationsData } = await useAsyncData('syncopations', () => quer
 const { t } = useI18n();
 const localePath = useLocalePath();
 
-const syncopations = syncopationsData.value.syncopations;
-
-const filteredSyncopations = syncopations.filter(s => s.fb);
+const syncopationsLength = 0;
+const filteredSyncopationsLength = 0
 </script>
 
 <template>
@@ -29,8 +27,8 @@ const filteredSyncopations = syncopations.filter(s => s.fb);
             und auf ihre Bassstimme hin untersucht. Dabei haben sich folgende
             Patterns ergeben, die am häufigsten auftreten.
             
-            Auf diese Weise wurden von insgesamt {{ syncopations.length }}
-            Synkopenketten {{ filteredSyncopations.length }} Synkopenketten gefunden, bei
+            Auf diese Weise wurden von insgesamt {{ syncopationsLength }}
+            Synkopenketten {{ filteredSyncopationsLength }} Synkopenketten gefunden, bei
             denen die Bassstimme eine der unten aufgeführten Figurationen aufweist.
         </p>
         <p>
@@ -38,6 +36,13 @@ const filteredSyncopations = syncopations.filter(s => s.fb);
             die mittlere Stimme. So bedeutet beispielsweise „5 3“ eine Quinte
             über dem Bass in Violine 1 und eine Terz über dem Bass in Violine 2.
         </p>
+
+        <template v-for="syncopation in syncopationsData.bassFigurations">
+            <Subheading>{{ syncopation.signature }}</Subheading>
+            <div class="gap-2 flex flex-wrap">
+                <UBadge v-for="id in syncopation.ids" :label="id" />
+            </div>
+        </template>
 
     </div>
 </template>
