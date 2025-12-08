@@ -67,22 +67,11 @@ Synkopenketten.forEach(Syncopatio => {
             beat: columns [2],
         }
     });
+    // Ignore first element with the pitch, such as [GG]
+    const figurationRowsWithoutFirstElement = figurationRows.slice(1);
     // classify figuration types based on interval patterns
-    const figurationPattern = figurationRows.map(r => {
-        const interval = parseInt(r.interval, 10);
-        if (interval === 0) return 'repeat';
-        if (interval > 0 && interval <= 2) return 'scaleup';
-        if (interval < 0 && interval >= -2) return 'scaledown';
-        if (interval === 3) return 'thirdup';
-        if (interval === -3) return 'thirddown';
-        if (interval === 4) return 'fourthup';
-        if (interval === -4) return 'fourthdown';
-        if (interval === 5) return 'fifthup';
-        if (interval === -5) return 'fifthdown';
-        if (interval === 8) return 'octaveup';
-        if (interval === -8) return 'octavedown';
-        if (Number.isNaN(interval)) return 'unknown';
-        return 'other';
+    const figurationPattern = figurationRowsWithoutFirstElement.map(r => {
+        return r.interval;
     }).join(';');
  
     // if uniqueFigurations does not yet have a property with figurationPattern as key
