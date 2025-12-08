@@ -82,7 +82,7 @@ const {
     addSequence,
 } = useEditAnnotations(modulations, cadences, sequences);
 
-const editAnnotations = ref(false);
+const editAnnotations = ref(true);
 
 const highlightedSections = computed(() => {
     const currentCadences = editAnnotations.value ? editedCadences.value : cadences;
@@ -202,12 +202,20 @@ function copyJsonToClipboard() {
                 </Heading>
                 <div class="flex gap-2">
                     <UButton :disabled="!prevPiece" :to="localePath({ name: 'piece-id', params: { id: prevPiece?.slug }, hash: $route.hash })" size="xs">
-                        <Icon name="heroicons:arrow-left-circle" class="text-xl" />
+                        <template #leading>
+                            <UKbd color="neutral">
+                                <UIcon name="lucide:arrow-left" />
+                            </UKbd>
+                        </template>
                         {{ $t('previous') }}
                     </UButton>
                     <UButton :disabled="!nextPiece" :to="localePath({ name: 'piece-id', params: { id: nextPiece?.slug }, hash: $route.hash })" size="xs">
                         {{ $t('next') }}
-                        <Icon name="heroicons:arrow-right-circle" class="text-xl" />
+                        <template #trailing>
+                            <UKbd color="neutral">
+                                <UIcon name="lucide:arrow-right" />
+                            </UKbd>
+                        </template>
                     </UButton>
                     <PieceFilterModal @after:leave="redirectToFirstFilteredPiece" />
                 </div>
