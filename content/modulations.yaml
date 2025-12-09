@@ -1400,49 +1400,49 @@ modulations:
         startBeat: 0
         startLine: 18
     -
-        deg: V
-        endBeat: 33.5
-        endLine: 91
-        key: A
+        deg: IV
+        endBeat: 27.5
+        endLine: 78
+        key: G
         pieceId: op04n04d
         startBeat: 21.5
         startLine: 64
     -
+        deg: V
+        endBeat: 33.5
+        endLine: 92
+        key: A
+        pieceId: op04n04d
+        startBeat: 27.5
+        startLine: 78
+    -
         deg: I
-        endBeat: 47
-        endLine: 120
+        endBeat: 54.5
+        endLine: 138
         key: D
         pieceId: op04n04d
         startBeat: 33.5
-        startLine: 91
+        startLine: 92
     -
         deg: V
         endBeat: 93.5
-        endLine: 219
+        endLine: 220
         key: A
         pieceId: op04n04d
-        startBeat: 47
-        startLine: 120
+        startBeat: 54.5
+        startLine: 138
     -
         deg: vi
-        endBeat: 111.5
-        endLine: 259
+        endBeat: 114.5
+        endLine: 267
         key: b
         pieceId: op04n04d
         startBeat: 93.5
-        startLine: 219
-    -
-        deg: II
-        endBeat: 114.5
-        endLine: 267
-        key: E
-        pieceId: op04n04d
-        startBeat: 111.5
-        startLine: 259
+        startLine: 220
     -
         deg: V
-        endBeat: 120.5
-        endLine: 281
+        endBeat: 126.5
+        endLine: 294
         key: A
         pieceId: op04n04d
         startBeat: 114.5
@@ -1453,12 +1453,12 @@ modulations:
         endLine: 313
         key: f#
         pieceId: op04n04d
-        startBeat: 120.5
-        startLine: 281
+        startBeat: 126.5
+        startLine: 294
     -
         deg: ii
-        endBeat: 150.5
-        endLine: 347
+        endBeat: 141.5
+        endLine: 327
         key: e
         pieceId: op04n04d
         startBeat: 135.5
@@ -1469,8 +1469,8 @@ modulations:
         endLine: 20
         key: D
         pieceId: op04n04d
-        startBeat: 150.5
-        startLine: 347
+        startBeat: 141.5
+        startLine: 327
     -
         deg: i
         endBeat: 20
