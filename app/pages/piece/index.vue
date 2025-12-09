@@ -23,7 +23,6 @@ const pieces = computed(() => {
         op: item.op,
         slug: item.slug,
         opnr: `${item.op} / ${item.nr}`,
-        mvAndDesignation: `${item.mv}. ${item.movementDesignation}`,
         title: item.body.title,
     }));
 });
@@ -31,7 +30,7 @@ const pieces = computed(() => {
 const columns = [
     { accessorKey: 'audio', header: '' },
     { accessorKey: 'opnr', header: t('opNr') },
-    { accessorKey: 'mvAndDesignation', header: t('movement') },
+    { accessorKey: 'movementDesignation', header: t('movement') },
     { accessorKey: 'title', header: t('title') },
     { accessorKey: 'key', header: t('key')  },
     { accessorKey: 'majorMinor', header: t('majorMinor') },
@@ -57,6 +56,12 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
                 <template #meter-cell="{ row }">
                     <div class="flex flex-wrap gap-2">
                         <UBadge v-for="(meter, index) in row.original.meter" :key="index" :label="meter" variant="soft"/>
+                    </div>
+                </template>
+                <template #movementDesignation-cell="{ row }">
+                    <div class="flex flex-wrap gap-2">
+                        <div>{{ row.original.mv }}.</div>
+                        <UBadge v-for="(omd, index) in row.original.movementDesignation" :key="index" :label="omd" variant="soft"/>
                     </div>
                 </template>
                 <template #title-cell="{ row }">

@@ -60,7 +60,7 @@ getFiles(pathToKernScores).forEach(file => {
         title: referenceRecords.OTL ?? null,
         largerWorkTitle: referenceRecords.OPR ?? null,
         // movementDesignation: (Array.isArray(referenceRecords.OMD) ? [...new Set(referenceRecords.OMD)].join(' - ') : referenceRecords.OMD) ?? null,
-        movementDesignation: (Array.isArray(referenceRecords.OMD) ? referenceRecords.OMD[0] : referenceRecords.OMD) ?? null,
+        movementDesignation: [].concat(referenceRecords.OMD || []),
         urlScan: referenceRecords['URL-scan'],
         op: parseInt(referenceRecords.OPS.replaceAll(/\D/g, '')),
         nr: parseInt(referenceRecords.ONM.replaceAll(/\D/g, '')),
