@@ -23,7 +23,7 @@ export const usePieceFilterOptions = defineStore('piece_filter_options', {
 function queryBuidler(store, queryBuidler) {
     if (store.meter.length) {
         if (store.meter.length) {
-            queryBuidler.andWhere(q => {
+            queryBuidler.orWhere(q => {
                 store.meter.forEach(meter => q.where('meter', 'LIKE', `%${meter}%`))
                 return q;
             });
@@ -36,7 +36,7 @@ function queryBuidler(store, queryBuidler) {
 
     if (store.tempo.length) {
         if (store.tempo.length) {
-            queryBuidler.andWhere(q => {
+            queryBuidler.orWhere(q => {
                 // TODO case insensitive
                 store.tempo.forEach(tempo => q.where('movementDesignation', 'LIKE', `%${tempo}%`))
                 return q;
