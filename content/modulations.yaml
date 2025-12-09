@@ -1433,8 +1433,8 @@ modulations:
         startLine: 138
     -
         deg: vi
-        endBeat: 114.5
-        endLine: 267
+        endBeat: 111.5
+        endLine: 260
         key: b
         pieceId: op04n04d
         startBeat: 93.5
@@ -1445,8 +1445,8 @@ modulations:
         endLine: 294
         key: A
         pieceId: op04n04d
-        startBeat: 114.5
-        startLine: 267
+        startBeat: 111.5
+        startLine: 260
     -
         deg: iii
         endBeat: 135.5

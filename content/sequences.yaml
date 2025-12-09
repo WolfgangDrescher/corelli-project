@@ -850,12 +850,16 @@ sequences:
         tags:
             - Monte
     -
+        endBeat: 66
+        endLine: 162
         pieceId: op04n04d
         startBeat: 57
         startLine: 144
         tags:
             - Fauxbourdon
     -
+        endBeat: 78
+        endLine: 188
         pieceId: op04n04d
         startBeat: 69
         startLine: 170
@@ -894,12 +898,16 @@ sequences:
         tags:
             - 5-6-Konsekutive
     -
+        endBeat: 168
+        endLine: 384
         pieceId: op04n04d
         startBeat: 159
         startLine: 366
         tags:
             - Fauxbourdon
     -
+        endBeat: 180
+        endLine: 410
         pieceId: op04n04d
         startBeat: 171
         startLine: 392
