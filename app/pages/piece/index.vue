@@ -29,6 +29,7 @@ const pieces = computed(() => {
 
 const columns = [
     { accessorKey: 'audio', header: '' },
+    { accessorKey: 'id', header: t('id') },
     { accessorKey: 'opnr', header: t('opNr') },
     { accessorKey: 'movementDesignation', header: t('movement') },
     { accessorKey: 'title', header: t('title') },
@@ -52,6 +53,11 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
             <UTable :data="pieces" :columns="columns" :get-row-id="(item) => item.slug" class="mt-8">
                 <template #audio-cell="{ row }">
                     <MidiPlayer :url="localScoreUrlGenerator(row.original.slug)" class="text-2xl"/>
+                </template>
+                <template #id-cell="{ row }">
+                    <NuxtLink :to="localePath({ name: 'piece-id', params: { id: row.original.slug } })">
+                        <UBadge color="neutral" variant="outline" class="font-mono w-[11ch] inline-flex items-center justify-center text-center" :label="row.original.slug" />
+                    </NuxtLink>
                 </template>
                 <template #meter-cell="{ row }">
                     <div class="flex flex-wrap gap-2">
