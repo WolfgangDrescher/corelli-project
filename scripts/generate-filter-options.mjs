@@ -15,11 +15,11 @@ const meterOptions = [...new Set(pieces.flatMap(piece => piece.meter ?? []))].so
     const [numB, denB] = b.split('/').map(Number);
     return denA - denB || numA - numB;
 });
-const keyOptions = [...new Set(pieces.map(piece => piece.key).filter(n => n))];
-const titleOptions = [...new Set(pieces.map(piece => piece.title).filter(n => n))];
+const keyOptions = [...new Set(pieces.map(piece => piece.key).filter(Boolean))];
+const titleOptions = [...new Set(pieces.map(piece => piece.title).filter(Boolean))];
 const tempoOptions = [...new Set(pieces.flatMap(piece => piece.movementDesignation ?? []))];
-const opOptions = [...new Set(pieces.map(piece => piece.op).filter(n => n))];
-const nrOptions = [...new Set(pieces.map(piece => piece.nr).filter(n => n))];
+const opOptions = [...new Set(pieces.map(piece => piece.op).filter(Boolean))];
+const nrOptions = [...new Set(pieces.map(piece => piece.nr).filter(Boolean))];
 
 const json = {
     meterOptions,
