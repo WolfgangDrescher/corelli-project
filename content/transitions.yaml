@@ -685,7 +685,7 @@ transitions:
             -
                 beat: 66
                 id: op01n05c
-                lineNumber: 145
+                lineNumber: 144
         nextDeg: III
     -
         count: 8
@@ -964,11 +964,11 @@ transitions:
             -
                 beat: 24
                 id: op01n05c
-                lineNumber: 36
+                lineNumber: 35
             -
                 beat: 100
                 id: op01n05c
-                lineNumber: 166
+                lineNumber: 165
             -
                 beat: 4
                 id: op01n06a
@@ -1272,11 +1272,11 @@ transitions:
             -
                 beat: 38
                 id: op01n05c
-                lineNumber: 80
+                lineNumber: 79
             -
                 beat: 122
                 id: op01n05c
-                lineNumber: 218
+                lineNumber: 217
         nextDeg: VII
     -
         count: 34
@@ -1285,7 +1285,7 @@ transitions:
             -
                 beat: 78
                 id: op01n05c
-                lineNumber: 152
+                lineNumber: 151
             -
                 beat: 12
                 id: op01n06a
@@ -1498,7 +1498,7 @@ transitions:
             -
                 beat: 58
                 id: op01n05c
-                lineNumber: 134
+                lineNumber: 133
         nextDeg: IV
     -
         count: 3
@@ -1507,7 +1507,7 @@ transitions:
             -
                 beat: 132
                 id: op01n05c
-                lineNumber: 233
+                lineNumber: 232
             -
                 beat: 23
                 id: op04n05d
