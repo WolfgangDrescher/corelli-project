@@ -22,7 +22,12 @@ export const usePieceFilterOptions = defineStore('piece_filter_options', {
 
 function queryBuidler(store, queryBuidler) {
     if (store.meter.length) {
-        queryBuidler.where('meter', 'IN', [...store.meter]);
+        if (store.meter.length) {
+            queryBuidler.andWhere(q => {
+                store.meter.forEach(meter => q.where('meter', 'LIKE', `%${meter}%`))
+                return q;
+            });
+        }
     }
 
     if (store.op.length) {

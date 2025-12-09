@@ -10,7 +10,7 @@ export default defineContentConfig({
                 key: z.string(),
                 largerWorkTitle: z.string(),
                 majorMinor: z.string(),
-                meter: z.string(),
+                meter: z.array(z.string()),
                 movementDesignation: z.string(),
                 mv: z.number(),
                 nr: z.number(),

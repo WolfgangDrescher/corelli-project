@@ -54,6 +54,11 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
                 <template #audio-cell="{ row }">
                     <MidiPlayer :url="localScoreUrlGenerator(row.original.slug)" class="text-2xl"/>
                 </template>
+                <template #meter-cell="{ row }">
+                    <div class="flex flex-wrap gap-2">
+                        <UBadge v-for="(meter, index) in row.original.meter" :key="index" :label="meter" variant="soft"/>
+                    </div>
+                </template>
                 <template #title-cell="{ row }">
                     <NuxtLink :to="localePath({ name: 'piece-id', params: { id: row.original.slug } })">
                         {{ row.original.title ?? '' }}
