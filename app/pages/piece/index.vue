@@ -79,11 +79,6 @@ function toggleTempo(tempo) {
                         <UBadge color="neutral" variant="outline" class="font-mono w-[11ch] inline-flex items-center justify-center text-center" :label="row.original.slug" />
                     </NuxtLink>
                 </template>
-                <template #meter-cell="{ row }">
-                    <div class="flex flex-wrap gap-2">
-                        <UBadge v-for="(meter, index) in row.original.meter" :key="index" :label="meter" variant="soft" @click="toggleMeter(meter)" />
-                    </div>
-                </template>
                 <template #movementDesignation-cell="{ row }">
                     <div class="flex gap-2">
                         <div class="shrink-0">{{ row.original.mv }}.</div>
@@ -92,7 +87,8 @@ function toggleTempo(tempo) {
                                 v-for="(omd, index) in row.original.movementDesignation"
                                 :key="index"
                                 :label="omd"
-                                variant="soft"
+                                :variant="pieceFilter.$state.tempo.includes(omd) ? 'solid' : 'soft'"
+                                class="cursor-pointer"
                                 @click="toggleTempo(omd)"
                             />
                         </div>
@@ -102,6 +98,18 @@ function toggleTempo(tempo) {
                     <NuxtLink :to="localePath({ name: 'piece-id', params: { id: row.original.slug } })">
                         {{ row.original.title ?? '' }}
                     </NuxtLink>
+                </template>
+                <template #meter-cell="{ row }">
+                    <div class="flex flex-wrap gap-2">
+                        <UBadge
+                            v-for="(meter, index) in row.original.meter"
+                            :key="index"
+                            :label="meter"
+                            :variant="pieceFilter.$state.meter.includes(meter) ? 'solid' : 'soft'"
+                            class="cursor-pointer"
+                            @click="toggleMeter(meter)"
+                        />
+                    </div>
                 </template>
                 <template #actions-cell="{ row }">
                     <div class="flex gap-1 justify-end">
