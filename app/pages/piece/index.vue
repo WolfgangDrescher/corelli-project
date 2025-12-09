@@ -40,6 +40,26 @@ const columns = [
 ];
 
 const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
+
+const pieceFilter = usePieceFilterOptions();
+
+function toggleMeter(meter) {
+    const index = pieceFilter.$state.meter.indexOf(meter);
+    if (index > -1) {
+        pieceFilter.$state.meter.splice(index, 1);
+    } else {
+        pieceFilter.$state.meter.push(meter);
+    }
+}
+
+function toggleTempo(tempo) {
+    const index = pieceFilter.$state.tempo.indexOf(tempo);
+    if (index > -1) {
+        pieceFilter.$state.tempo.splice(index, 1);
+    } else {
+        pieceFilter.$state.tempo.push(tempo);
+    }
+}
 </script>
 
 <template>
@@ -61,7 +81,7 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
                 </template>
                 <template #meter-cell="{ row }">
                     <div class="flex flex-wrap gap-2">
-                        <UBadge v-for="(meter, index) in row.original.meter" :key="index" :label="meter" variant="soft"/>
+                        <UBadge v-for="(meter, index) in row.original.meter" :key="index" :label="meter" variant="soft" @click="toggleMeter(meter)" />
                     </div>
                 </template>
                 <template #movementDesignation-cell="{ row }">
@@ -73,6 +93,7 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
                                 :key="index"
                                 :label="omd"
                                 variant="soft"
+                                @click="toggleTempo(omd)"
                             />
                         </div>
                     </div>
