@@ -65,9 +65,16 @@ const { localScoreUrlGenerator, vhvScoreUrlGenerator } = useScoreUrlGenerator();
                     </div>
                 </template>
                 <template #movementDesignation-cell="{ row }">
-                    <div class="flex flex-wrap gap-2">
-                        <div>{{ row.original.mv }}.</div>
-                        <UBadge v-for="(omd, index) in row.original.movementDesignation" :key="index" :label="omd" variant="soft"/>
+                    <div class="flex gap-2">
+                        <div class="shrink-0">{{ row.original.mv }}.</div>
+                        <div class="flex flex-wrap gap-2">
+                            <UBadge
+                                v-for="(omd, index) in row.original.movementDesignation"
+                                :key="index"
+                                :label="omd"
+                                variant="soft"
+                            />
+                        </div>
                     </div>
                 </template>
                 <template #title-cell="{ row }">
