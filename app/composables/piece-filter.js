@@ -35,8 +35,13 @@ function queryBuidler(store, queryBuidler) {
     }
 
     if (store.tempo.length) {
-        // TODO case insensitive
-        queryBuidler.where('movementDesignation', 'IN', [...store.tempo]);
+        if (store.tempo.length) {
+            queryBuidler.andWhere(q => {
+                // TODO case insensitive
+                store.tempo.forEach(tempo => q.where('movementDesignation', 'LIKE', `%${tempo}%`))
+                return q;
+            });
+        }
     }
 
     if (store.key.length) {
