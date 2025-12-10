@@ -90,6 +90,58 @@ sequences:
             - Karussell
             - Synkopenkette
     -
+        endBeat: 6
+        endLine: 25
+        pieceId: op01n07b
+        startBeat: 2
+        startLine: 20
+        tags:
+            - Lamento
+    -
+        endBeat: 13
+        endLine: 35
+        pieceId: op01n07b
+        startBeat: 8
+        startLine: 28
+        tags:
+            - Fauxbourdon
+    -
+        endBeat: 25
+        endLine: 51
+        pieceId: op01n07b
+        startBeat: 16
+        startLine: 39
+        tags:
+            - Synkopenkette
+            - Romanesca
+            - special
+    -
+        endBeat: 33
+        endLine: 65
+        pieceId: op01n07b
+        startBeat: 27
+        startLine: 55
+        tags:
+            - Synkopenkette
+            - Terzfalltreppe
+    -
+        endBeat: 43
+        endLine: 78
+        pieceId: op01n07b
+        startBeat: 37
+        startLine: 70
+        tags:
+            - Fauxbourdon
+            - Synkopenkette
+    -
+        endBeat: 49
+        endLine: 87
+        pieceId: op01n07b
+        startBeat: 44
+        startLine: 80
+        tags:
+            - Fauxbourdon
+    -
         endBeat: 23
         endLine: 64
         pieceId: op03n01a

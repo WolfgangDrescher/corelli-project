@@ -272,6 +272,54 @@ modulations:
         startBeat: 36
         startLine: 101
     -
+        deg: i
+        endBeat: 8
+        endLine: 28
+        key: a
+        pieceId: op01n07b
+        startBeat: 0
+        startLine: 18
+    -
+        deg: III
+        endBeat: 19
+        endLine: 43
+        key: C
+        pieceId: op01n07b
+        startBeat: 8
+        startLine: 28
+    -
+        deg: i
+        endBeat: 26
+        endLine: 53
+        key: a
+        pieceId: op01n07b
+        startBeat: 19
+        startLine: 43
+    -
+        deg: III
+        endBeat: 31
+        endLine: 62
+        key: C
+        pieceId: op01n07b
+        startBeat: 26
+        startLine: 53
+    -
+        deg: i
+        endBeat: 42
+        endLine: 77
+        key: a
+        pieceId: op01n07b
+        startBeat: 31
+        startLine: 62
+    -
+        deg: III
+        endBeat: 56
+        endLine: 12
+        key: C
+        pieceId: op01n07b
+        startBeat: 42
+        startLine: 77
+    -
         deg: I
         endBeat: 20
         endLine: 57
