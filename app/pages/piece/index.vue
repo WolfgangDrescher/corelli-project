@@ -13,7 +13,7 @@ const pieces = computed(() => {
     const base = filteredPieces.value ?? allPieces.value ?? [];
     return base.map(item => ({
         // composer: item.composer,
-        key: item.key,
+        key: item.key ? t(`keyNames.${item.key}`) : null,
         // largerWorkTitle: item.largerWorkTitle,
         majorMinor: item.majorMinor,
         meter: item.meter,
