@@ -81,7 +81,7 @@ const localizedKeyOptions = keyOptions.map(key => ({
                     v-model="key"
                     multiple
                     class="w-full"
-                    :search-input="false"
+                    :search-input="true"
                     value-key="value"
                     :items="localizedKeyOptions"
                 />
