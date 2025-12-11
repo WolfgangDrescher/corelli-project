@@ -10,41 +10,41 @@
 		"12/8"
 	],
 	"keyOptions": [
-		"F",
-		"g",
-		"b",
-		"a",
-		"d",
-		"D",
-		"B-",
-		"e",
 		"C",
+		"c",
+		"D",
+		"d",
 		"E-",
-		"A",
 		"E",
-		"B",
+		"e",
+		"F",
 		"G",
-		"c"
+		"g",
+		"A",
+		"a",
+		"B-",
+		"B",
+		"b"
 	],
 	"titleOptions": [
-		"Preludio",
-		"Corrente",
 		"Allemanda",
-		"Sarabanda",
-		"Tempo di Gavotta",
+		"Corrente",
+		"Gavotta",
 		"Giga",
-		"Gavotta"
+		"Preludio",
+		"Sarabanda",
+		"Tempo di Gavotta"
 	],
 	"tempoOptions": [
-		"Grave",
-		"Allegro",
 		"Adagio",
-		"Vivace",
-		"Presto",
 		"Adagio e piano",
+		"Allego",
+		"Allegro",
+		"Grave",
 		"Largo",
 		"Largo e puntato",
-		"Allego"
+		"Presto",
+		"Vivace"
 	],
 	"opOptions": [
 		1,
