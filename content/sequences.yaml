@@ -825,8 +825,8 @@ sequences:
         tags:
             - Synkopenkette aufwärts
     -
-        endBeat: 51
-        endLine: 104
+        endBeat: 49
+        endLine: 100
         pieceId: op04n04a
         startBeat: 42
         startLine: 83
