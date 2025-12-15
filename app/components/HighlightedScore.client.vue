@@ -25,6 +25,14 @@ watch(() => props.filters, (filters) => {
     applyScoreFormatting([], filters);
 });
 
+watch([
+    () => props.notes,
+    () => props.lines,
+    () => props.sections,
+], () => {
+    scoreKey.value = Date.now();
+});
+
 const verovioCanvasAttrs = computed(() => {
     return Object.assign({
         pageMargin: 50,
