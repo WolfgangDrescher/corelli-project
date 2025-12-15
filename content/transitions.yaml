@@ -1043,7 +1043,7 @@ transitions:
                 lineNumber: 154
         nextDeg: I
     -
-        count: 36
+        count: 38
         currentDeg: i
         items:
             -
@@ -1190,6 +1190,14 @@ transitions:
                 beat: 68
                 id: op04n12b
                 lineNumber: 170
+            -
+                beat: 28.5
+                id: op04n12c
+                lineNumber: 76
+            -
+                beat: 48
+                id: op04n12c
+                lineNumber: 112
         nextDeg: III
     -
         count: 14
@@ -1376,7 +1384,7 @@ transitions:
                 lineNumber: 217
         nextDeg: VII
     -
-        count: 36
+        count: 37
         currentDeg: III
         items:
             -
@@ -1523,6 +1531,10 @@ transitions:
                 beat: 116.5
                 id: op04n12b
                 lineNumber: 283
+            -
+                beat: 84
+                id: op04n12c
+                lineNumber: 193
         nextDeg: i
     -
         count: 6
@@ -1554,7 +1566,7 @@ transitions:
                 lineNumber: 175
         nextDeg: v
     -
-        count: 5
+        count: 7
         currentDeg: III
         items:
             -
@@ -1577,6 +1589,14 @@ transitions:
                 beat: 97
                 id: op04n11c
                 lineNumber: 243
+            -
+                beat: 36
+                id: op04n12c
+                lineNumber: 94
+            -
+                beat: 57
+                id: op04n12c
+                lineNumber: 132
         nextDeg: iv
     -
         count: 1
@@ -1691,7 +1711,7 @@ transitions:
                 lineNumber: 332
         nextDeg: I
     -
-        count: 17
+        count: 18
         currentDeg: iv
         items:
             -
@@ -1762,9 +1782,13 @@ transitions:
                 beat: 45
                 id: op04n12a
                 lineNumber: 82
+            -
+                beat: 40.5
+                id: op04n12c
+                lineNumber: 102
         nextDeg: i
     -
-        count: 8
+        count: 9
         currentDeg: iv
         items:
             -
@@ -1799,6 +1823,10 @@ transitions:
                 beat: 108.5
                 id: op04n12b
                 lineNumber: 264
+            -
+                beat: 78
+                id: op04n12c
+                lineNumber: 179
         nextDeg: III
     -
         count: 3

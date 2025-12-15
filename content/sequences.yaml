@@ -2016,3 +2016,28 @@ sequences:
         startLine: 61
         tags:
             - Quintstieg
+    -
+        endBeat: 9
+        endLine: 37
+        pieceId: op04n12c
+        startBeat: 0
+        startLine: 18
+        tags:
+            - Lamento
+    -
+        endBeat: 33
+        endLine: 86
+        pieceId: op04n12c
+        startBeat: 22
+        startLine: 62
+        tags:
+            - Parallelismus
+    -
+        endBeat: 63
+        endLine: 145
+        pieceId: op04n12c
+        startBeat: 48
+        startLine: 112
+        tags:
+            - Ansteigende Sequenz
+            - quasi-Monte

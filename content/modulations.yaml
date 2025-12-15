@@ -3575,3 +3575,67 @@ modulations:
         pieceId: op04n12b
         startBeat: 116.5
         startLine: 283
+    -
+        deg: i
+        endBeat: 28.5
+        endLine: 76
+        key: b
+        pieceId: op04n12c
+        startBeat: 0
+        startLine: 18
+    -
+        deg: III
+        endBeat: 36
+        endLine: 94
+        key: D
+        pieceId: op04n12c
+        startBeat: 28.5
+        startLine: 76
+    -
+        deg: iv
+        endBeat: 40.5
+        endLine: 102
+        key: e
+        pieceId: op04n12c
+        startBeat: 36
+        startLine: 94
+    -
+        deg: i
+        endBeat: 48
+        endLine: 112
+        key: b
+        pieceId: op04n12c
+        startBeat: 40.5
+        startLine: 102
+    -
+        deg: III
+        endBeat: 57
+        endLine: 132
+        key: D
+        pieceId: op04n12c
+        startBeat: 48
+        startLine: 112
+    -
+        deg: iv
+        endBeat: 78
+        endLine: 179
+        key: e
+        pieceId: op04n12c
+        startBeat: 57
+        startLine: 132
+    -
+        deg: III
+        endBeat: 84
+        endLine: 193
+        key: D
+        pieceId: op04n12c
+        startBeat: 78
+        startLine: 179
+    -
+        deg: i
+        endBeat: 114
+        endLine: 16
+        key: b
+        pieceId: op04n12c
+        startBeat: 84
+        startLine: 193
