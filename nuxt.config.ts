@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 
 function resolveCorelliTrioSonatasSha() {
     try {
-        return execSync(`git rev-parse --short=7 HEAD:corelli-trio-sonatas`, { encoding: 'utf8' }).toString().trim();
+        return execSync(`cd corelli-trio-sonatas && git rev-parse --short=7 HEAD`, { encoding: 'utf8' }).toString().trim();
     } catch {
         return '';
     }
