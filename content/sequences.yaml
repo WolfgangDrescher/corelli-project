@@ -1196,6 +1196,54 @@ sequences:
             - Chromatik
             - Bass schrittweise aufwärts
     -
+        endBeat: 51
+        endLine: 117
+        pieceId: op04n06g
+        startBeat: 45
+        startLine: 104
+        tags:
+            - Quintfall
+    -
+        endBeat: 63
+        endLine: 141
+        pieceId: op04n06g
+        startBeat: 57
+        startLine: 128
+        tags:
+            - Quintfall
+    -
+        endBeat: 108
+        endLine: 218
+        pieceId: op04n06g
+        startBeat: 84
+        startLine: 175
+        tags:
+            - Fonte
+    -
+        endBeat: 143
+        endLine: 268
+        pieceId: op04n06g
+        startBeat: 132
+        startLine: 251
+        tags:
+            - Fonte
+    -
+        endBeat: 156
+        endLine: 294
+        pieceId: op04n06g
+        startBeat: 151
+        startLine: 284
+        tags:
+            - Quintfall
+    -
+        endBeat: 171
+        endLine: 319
+        pieceId: op04n06g
+        startBeat: 166
+        startLine: 309
+        tags:
+            - Quintfall
+    -
         endBeat: 64
         endLine: 66
         pieceId: op04n08a
