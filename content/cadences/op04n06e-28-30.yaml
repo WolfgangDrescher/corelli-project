@@ -1,10 +1,11 @@
 deg: VII
 endBassDeg: '1'
 endBeat: 30
-endLine: 40
+endLine: 39
 key: A
 pieceId: op04n06e
 slug: op04n06e-28-30
 startBeat: 28
-startLine: 38
-tags: []
+startLine: 37
+tags:
+    - cantizans

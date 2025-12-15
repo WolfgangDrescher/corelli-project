@@ -1,11 +1,12 @@
 deg: iv
 endBassDeg: '5'
 endBeat: 54
-endLine: 56
+endLine: 55
 key: e
 pieceId: op04n06e
-slug: op04n06e-46-54
-startBeat: 46
-startLine: 51
+slug: op04n06e-50-54
+startBeat: 50
+startLine: 53
 tags:
     - phrygian
+    - half

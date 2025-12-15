@@ -1,11 +1,12 @@
-deg: i
-endBassDeg: '3'
+deg: III
+endBassDeg: '1'
 endBeat: 24
-endLine: 81
-key: b
+endLine: 80
+key: D
 pieceId: op04n04c
 slug: op04n04c-22-24
 startBeat: 22
-startLine: 77
+startLine: 75
 tags:
-    - semplice
+    - doppia
+    - fast

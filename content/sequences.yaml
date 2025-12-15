@@ -881,6 +881,8 @@ sequences:
         endBeat: 83
         endLine: 145
         pieceId: op04n04b
+        startBeat: 66
+        startLine: 120
         tags:
             - Fonte
             - unregelmässig
@@ -894,8 +896,26 @@ sequences:
             - 5-6-Konsekutive
             - aufsteigende Quintfälle
     -
-        endBeat: 30
-        endLine: 85
+        endBeat: 8
+        endLine: 40
+        pieceId: op04n04c
+        startBeat: 0
+        startLine: 17
+        tags:
+            - Parallelismus
+    -
+        endBeat: 44
+        endLine: 131
+        pieceId: op04n04c
+        startBeat: 38
+        startLine: 115
+        tags:
+            - quasi-Fonte
+            - unregelmässig
+            - special
+    -
+        endBeat: 33
+        endLine: 90
         pieceId: op04n04d
         startBeat: 21
         startLine: 64
@@ -965,6 +985,33 @@ sequences:
         startLine: 392
         tags:
             - Fauxbourdon
+    -
+        endBeat: 28
+        endLine: 71
+        pieceId: op04n05a
+        startBeat: 0
+        startLine: 19
+        tags:
+            - Parallelismus
+    -
+        endBeat: 14
+        endLine: 52
+        pieceId: op04n05a
+        startBeat: 8
+        startLine: 35
+        tags:
+            - Lamento
+            - Synkopenkette
+    -
+        endBeat: 58
+        endLine: 142
+        pieceId: op04n05a
+        startBeat: 54
+        startLine: 132
+        tags:
+            - Karussell
+            - Synkopenkette
+            - fast
     -
         endBeat: 25
         endLine: 81
@@ -1068,7 +1115,7 @@ sequences:
             - Parallelismus
     -
         endBeat: 22
-        endLine: 48
+        endLine: 49
         pieceId: op04n05d
         startBeat: 16
         startLine: 40
@@ -1076,7 +1123,7 @@ sequences:
             - Fonte
     -
         endBeat: 38
-        endLine: 74
+        endLine: 75
         pieceId: op04n05d
         startBeat: 32
         startLine: 66
@@ -1091,6 +1138,7 @@ sequences:
         tags:
             - Quintfall
             - Synkopenkette
+            - Fauxbourdon
     -
         endBeat: 19
         endLine: 62
@@ -1099,6 +1147,15 @@ sequences:
         startLine: 51
         tags:
             - Synkopenkette
+            - Fauxbourdon
+    -
+        endBeat: 24
+        endLine: 74
+        pieceId: op04n06b
+        startBeat: 15
+        startLine: 52
+        tags:
+            - Lamento in Dur (Oktavregel)
     -
         endBeat: 55
         endLine: 145
@@ -1115,15 +1172,16 @@ sequences:
         startLine: 27
         tags:
             - Quintfall
-            - Sopranklausel
+            - cantizans
     -
-        endBeat: 26
-        endLine: 79
+        endBeat: 27
+        endLine: 82
         pieceId: op04n06d
         startBeat: 19
         startLine: 63
         tags:
             - Synkopenkette
+            - Lamento
     -
         endBeat: 45
         endLine: 123
@@ -1148,21 +1206,31 @@ sequences:
         startLine: 165
         tags:
             - Quintfall
+            - Fauxbourdon
+            - Synkopenkette
     -
-        endBeat: 24
-        endLine: 35
+        endBeat: 81
+        endLine: 193
+        pieceId: op04n06d
+        startBeat: 75
+        startLine: 187
+        tags:
+            - Lamento in Dur (Oktavregel)
+    -
+        endBeat: 30
+        endLine: 39
         pieceId: op04n06e
         startBeat: 16
         startLine: 28
         tags:
             - Quintfall
-            - Sopranklausel
+            - cantizans
     -
         endBeat: 54
-        endLine: 56
+        endLine: 55
         pieceId: op04n06e
         startBeat: 42
-        startLine: 50
+        startLine: 49
         tags:
             - Lamento
     -
@@ -1212,13 +1280,22 @@ sequences:
         tags:
             - Quintfall
     -
-        endBeat: 108
-        endLine: 218
+        endBeat: 105
+        endLine: 216
         pieceId: op04n06g
         startBeat: 84
         startLine: 175
         tags:
             - Fonte
+    -
+        endBeat: 129
+        endLine: 243
+        pieceId: op04n06g
+        startBeat: 108
+        startLine: 218
+        tags:
+            - quasi-Monte
+            - quasi aufsteigende Quintfälle
     -
         endBeat: 143
         endLine: 268
@@ -1228,19 +1305,19 @@ sequences:
         tags:
             - Fonte
     -
-        endBeat: 156
-        endLine: 294
+        endBeat: 159
+        endLine: 296
         pieceId: op04n06g
-        startBeat: 151
-        startLine: 284
+        startBeat: 150
+        startLine: 281
         tags:
             - Quintfall
     -
-        endBeat: 171
-        endLine: 319
+        endBeat: 174
+        endLine: 322
         pieceId: op04n06g
-        startBeat: 166
-        startLine: 309
+        startBeat: 165
+        startLine: 306
         tags:
             - Quintfall
     -
