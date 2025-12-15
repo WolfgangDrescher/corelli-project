@@ -190,7 +190,7 @@ function copyJsonToClipboard() {
                     {{ `${piece.largerWorkTitle} Op. ${piece.op} №${piece.nr}` }}
                     <div class="text-2xl flex gap-2">
                         <div>
-                            {{ `${piece.mv}. ${piece.body.title ? `${piece.title}: ` : ''} ${piece.movementDesignation}`}}
+                            {{ `${piece.mv}. ${piece.body.title ? `${piece.title}: ` : ''} ${piece.movementDesignation.filter((value, index, array) => index === 0 || value !== array[index - 1]).slice(0, 2).join(', ')}`}}
                         </div>
                         <div class="flex items-center">
                             <UBadge color="neutral" size="sm" variant="outline" class="font-mono cursor-pointer select-none w-[11ch] inline-flex items-center justify-center text-center" @click="copyId" :label="copied ? $t('copied') : id" />
