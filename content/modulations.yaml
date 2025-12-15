@@ -1337,36 +1337,44 @@ modulations:
         startLine: 18
     -
         deg: V
-        endBeat: 66.5
-        endLine: 119
+        endBeat: 57.5
+        endLine: 106
         key: A
         pieceId: op04n04b
         startBeat: 38.5
         startLine: 76
     -
+        deg: I
+        endBeat: 66.5
+        endLine: 120
+        key: D
+        pieceId: op04n04b
+        startBeat: 57.5
+        startLine: 106
+    -
         deg: vi
         endBeat: 78.5
-        endLine: 138
+        endLine: 139
         key: b
         pieceId: op04n04b
         startBeat: 66.5
-        startLine: 119
+        startLine: 120
     -
         deg: V
         endBeat: 84.5
-        endLine: 147
+        endLine: 148
         key: A
         pieceId: op04n04b
         startBeat: 78.5
-        startLine: 138
+        startLine: 139
     -
         deg: I
         endBeat: 123
-        endLine: 10
+        endLine: 12
         key: D
         pieceId: op04n04b
         startBeat: 84.5
-        startLine: 147
+        startLine: 148
     -
         deg: i
         endBeat: 4
@@ -3297,44 +3305,36 @@ modulations:
         startLine: 179
     -
         deg: i
-        endBeat: 114
-        endLine: 253
+        endBeat: 132.5
+        endLine: 297
         key: c
         pieceId: op04n11b
         startBeat: 111
         startLine: 247
     -
-        deg: i
-        endBeat: 132.5
-        endLine: 298
-        key: c
-        pieceId: op04n11b
-        startBeat: 114
-        startLine: 253
-    -
         deg: III
         endBeat: 147.5
-        endLine: 328
+        endLine: 327
         key: E-
         pieceId: op04n11b
         startBeat: 132.5
-        startLine: 298
+        startLine: 297
     -
         deg: iv
         endBeat: 159.5
-        endLine: 349
+        endLine: 348
         key: f
         pieceId: op04n11b
         startBeat: 147.5
-        startLine: 328
+        startLine: 327
     -
         deg: i
         endBeat: 219
-        endLine: 22
+        endLine: 20
         key: c
         pieceId: op04n11b
         startBeat: 159.5
-        startLine: 349
+        startLine: 348
     -
         deg: i
         endBeat: 6

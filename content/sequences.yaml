@@ -879,17 +879,17 @@ sequences:
             - Quintfall
     -
         endBeat: 83
-        endLine: 144
+        endLine: 145
         pieceId: op04n04b
         tags:
             - Fonte
             - unregelmässig
     -
         endBeat: 104
-        endLine: 173
+        endLine: 174
         pieceId: op04n04b
         startBeat: 95
-        startLine: 161
+        startLine: 162
         tags:
             - 5-6-Konsekutive
             - aufsteigende Quintfälle
@@ -1865,18 +1865,18 @@ sequences:
             - Lamento
     -
         endBeat: 138
-        endLine: 312
+        endLine: 311
         pieceId: op04n11b
         startBeat: 134
-        startLine: 302
+        startLine: 301
         tags:
             - Monte
     -
         endBeat: 192
-        endLine: 420
+        endLine: 419
         pieceId: op04n11b
         startBeat: 171
-        startLine: 371
+        startLine: 370
         tags:
             - Quintfall
     -

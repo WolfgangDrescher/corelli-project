@@ -52,6 +52,10 @@ reviews:
         needsReview: false
         pieceId: op04n04a
     -
+        date: 2025-12-15T00:00:00.000Z
+        needsReview: false
+        pieceId: op04n04b
+    -
         date: 2025-11-18T00:00:00.000Z
         needsReview: false
         pieceId: op04n05b
@@ -105,7 +109,7 @@ reviews:
         pieceId: op04n11a
     -
         date: 2025-11-18T00:00:00.000Z
-        needsReview: false
+        needsReview: true
         pieceId: op04n11b
     -
         date: 2025-11-20T00:00:00.000Z
