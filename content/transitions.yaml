@@ -840,9 +840,13 @@ transitions:
                 lineNumber: 105
         nextDeg: ii
     -
-        count: 4
+        count: 5
         currentDeg: v
         items:
+            -
+                beat: 44
+                id: op01n02a
+                lineNumber: 92
             -
                 beat: 24
                 id: op01n06a
@@ -860,6 +864,59 @@ transitions:
                 id: op04n02b
                 lineNumber: 105
         nextDeg: III
+    -
+        count: 12
+        currentDeg: v
+        items:
+            -
+                beat: 38
+                id: op01n02b
+                lineNumber: 89
+            -
+                beat: 98
+                id: op01n02b
+                lineNumber: 213
+            -
+                beat: 65
+                id: op01n02c
+                lineNumber: 98
+            -
+                beat: 49
+                id: op04n05a
+                lineNumber: 119
+            -
+                beat: 86
+                id: op04n05b
+                lineNumber: 222
+            -
+                beat: 63
+                id: op04n05c
+                lineNumber: 100
+            -
+                beat: 92
+                id: op04n08a
+                lineNumber: 86
+            -
+                beat: 48
+                id: op04n08b
+                lineNumber: 216
+            -
+                beat: 111
+                id: op04n11b
+                lineNumber: 247
+            -
+                beat: 68
+                id: op04n11c
+                lineNumber: 175
+            -
+                beat: 113
+                id: op04n11c
+                lineNumber: 281
+            -
+                beat: 38.5
+                id: op04n12b
+                lineNumber: 108
+        nextDeg: i
     -
         count: 8
         currentDeg: v
@@ -906,47 +963,6 @@ transitions:
                 id: op04n02d
                 lineNumber: 171
         nextDeg: vii
-    -
-        count: 9
-        currentDeg: v
-        items:
-            -
-                beat: 49
-                id: op04n05a
-                lineNumber: 119
-            -
-                beat: 86
-                id: op04n05b
-                lineNumber: 222
-            -
-                beat: 63
-                id: op04n05c
-                lineNumber: 100
-            -
-                beat: 92
-                id: op04n08a
-                lineNumber: 86
-            -
-                beat: 48
-                id: op04n08b
-                lineNumber: 216
-            -
-                beat: 111
-                id: op04n11b
-                lineNumber: 247
-            -
-                beat: 68
-                id: op04n11c
-                lineNumber: 175
-            -
-                beat: 113
-                id: op04n11c
-                lineNumber: 281
-            -
-                beat: 38.5
-                id: op04n12b
-                lineNumber: 108
-        nextDeg: i
     -
         count: 1
         currentDeg: v
@@ -1034,9 +1050,86 @@ transitions:
                 lineNumber: 177
         nextDeg: I
     -
-        count: 39
+        count: 17
         currentDeg: i
         items:
+            -
+                beat: 16
+                id: op01n02a
+                lineNumber: 39
+            -
+                beat: 25
+                id: op01n02b
+                lineNumber: 62
+            -
+                beat: 26
+                id: op01n02c
+                lineNumber: 46
+            -
+                beat: 20
+                id: op01n06a
+                lineNumber: 63
+            -
+                beat: 106
+                id: op03n02c
+                lineNumber: 96
+            -
+                beat: 12
+                id: op04n01c
+                lineNumber: 46
+            -
+                beat: 28.5
+                id: op04n02b
+                lineNumber: 90
+            -
+                beat: 26
+                id: op04n04c
+                lineNumber: 86
+            -
+                beat: 83
+                id: op04n05b
+                lineNumber: 213
+            -
+                beat: 48
+                id: op04n08a
+                lineNumber: 53
+            -
+                beat: 24
+                id: op04n09c
+                lineNumber: 53
+            -
+                beat: 16
+                id: op04n10d
+                lineNumber: 40
+            -
+                beat: 40
+                id: op04n11a
+                lineNumber: 102
+            -
+                beat: 75.5
+                id: op04n11b
+                lineNumber: 179
+            -
+                beat: 42
+                id: op04n11c
+                lineNumber: 118
+            -
+                beat: 22.5
+                id: op04n12b
+                lineNumber: 71
+            -
+                beat: 86.5
+                id: op04n12b
+                lineNumber: 212
+        nextDeg: v
+    -
+        count: 40
+        currentDeg: i
+        items:
+            -
+                beat: 52
+                id: op01n02b
+                lineNumber: 118
             -
                 beat: 24
                 id: op01n05c
@@ -1195,67 +1288,6 @@ transitions:
                 lineNumber: 112
         nextDeg: III
     -
-        count: 14
-        currentDeg: i
-        items:
-            -
-                beat: 20
-                id: op01n06a
-                lineNumber: 63
-            -
-                beat: 106
-                id: op03n02c
-                lineNumber: 96
-            -
-                beat: 12
-                id: op04n01c
-                lineNumber: 46
-            -
-                beat: 28.5
-                id: op04n02b
-                lineNumber: 90
-            -
-                beat: 26
-                id: op04n04c
-                lineNumber: 86
-            -
-                beat: 83
-                id: op04n05b
-                lineNumber: 213
-            -
-                beat: 48
-                id: op04n08a
-                lineNumber: 53
-            -
-                beat: 24
-                id: op04n09c
-                lineNumber: 53
-            -
-                beat: 16
-                id: op04n10d
-                lineNumber: 40
-            -
-                beat: 40
-                id: op04n11a
-                lineNumber: 102
-            -
-                beat: 75.5
-                id: op04n11b
-                lineNumber: 179
-            -
-                beat: 42
-                id: op04n11c
-                lineNumber: 118
-            -
-                beat: 22.5
-                id: op04n12b
-                lineNumber: 71
-            -
-                beat: 86.5
-                id: op04n12b
-                lineNumber: 212
-        nextDeg: v
-    -
         count: 3
         currentDeg: i
         items:
@@ -1356,6 +1388,76 @@ transitions:
                 id: op04n11a
                 lineNumber: 148
         nextDeg: VI
+    -
+        count: 8
+        currentDeg: III
+        items:
+            -
+                beat: 52
+                id: op01n02a
+                lineNumber: 111
+            -
+                beat: 40
+                id: op04n02b
+                lineNumber: 116
+            -
+                beat: 61
+                id: op04n02d
+                lineNumber: 105
+            -
+                beat: 34
+                id: op04n05c
+                lineNumber: 61
+            -
+                beat: 147.5
+                id: op04n11b
+                lineNumber: 327
+            -
+                beat: 97
+                id: op04n11c
+                lineNumber: 243
+            -
+                beat: 36
+                id: op04n12c
+                lineNumber: 94
+            -
+                beat: 57
+                id: op04n12c
+                lineNumber: 132
+        nextDeg: iv
+    -
+        count: 7
+        currentDeg: III
+        items:
+            -
+                beat: 68
+                id: op01n02b
+                lineNumber: 151
+            -
+                beat: 28
+                id: op01n06a
+                lineNumber: 85
+            -
+                beat: 42
+                id: op04n02a
+                lineNumber: 104
+            -
+                beat: 104
+                id: op04n02d
+                lineNumber: 162
+            -
+                beat: 37
+                id: op04n05a
+                lineNumber: 91
+            -
+                beat: 57
+                id: op04n05b
+                lineNumber: 147
+            -
+                beat: 36
+                id: op04n08b
+                lineNumber: 175
+        nextDeg: v
     -
         count: 2
         currentDeg: III
@@ -1531,68 +1633,6 @@ transitions:
                 lineNumber: 193
         nextDeg: i
     -
-        count: 6
-        currentDeg: III
-        items:
-            -
-                beat: 28
-                id: op01n06a
-                lineNumber: 85
-            -
-                beat: 42
-                id: op04n02a
-                lineNumber: 104
-            -
-                beat: 104
-                id: op04n02d
-                lineNumber: 162
-            -
-                beat: 37
-                id: op04n05a
-                lineNumber: 91
-            -
-                beat: 57
-                id: op04n05b
-                lineNumber: 147
-            -
-                beat: 36
-                id: op04n08b
-                lineNumber: 175
-        nextDeg: v
-    -
-        count: 7
-        currentDeg: III
-        items:
-            -
-                beat: 40
-                id: op04n02b
-                lineNumber: 116
-            -
-                beat: 61
-                id: op04n02d
-                lineNumber: 105
-            -
-                beat: 34
-                id: op04n05c
-                lineNumber: 61
-            -
-                beat: 147.5
-                id: op04n11b
-                lineNumber: 327
-            -
-                beat: 97
-                id: op04n11c
-                lineNumber: 243
-            -
-                beat: 36
-                id: op04n12c
-                lineNumber: 94
-            -
-                beat: 57
-                id: op04n12c
-                lineNumber: 132
-        nextDeg: iv
-    -
         count: 1
         currentDeg: III
         items:
@@ -1602,103 +1642,13 @@ transitions:
                 lineNumber: 66
         nextDeg: IV
     -
-        count: 1
-        currentDeg: VII
-        items:
-            -
-                beat: 58
-                id: op01n05c
-                lineNumber: 133
-        nextDeg: IV
-    -
-        count: 3
-        currentDeg: VII
-        items:
-            -
-                beat: 132
-                id: op01n05c
-                lineNumber: 232
-            -
-                beat: 22
-                id: op04n05d
-                lineNumber: 49
-            -
-                beat: 84
-                id: op04n11c
-                lineNumber: 213
-        nextDeg: III
-    -
-        count: 1
-        currentDeg: VII
-        items:
-            -
-                beat: 35
-                id: op04n01c
-                lineNumber: 100
-        nextDeg: i
-    -
-        count: 2
-        currentDeg: VII
-        items:
-            -
-                beat: 72
-                id: op04n05b
-                lineNumber: 183
-            -
-                beat: 32
-                id: op04n06e
-                lineNumber: 41
-        nextDeg: iv
-    -
-        count: 5
-        currentDeg: iii
-        items:
-            -
-                beat: 32
-                id: op04n01a
-                lineNumber: 88
-            -
-                beat: 84
-                id: op04n01d
-                lineNumber: 207
-            -
-                beat: 135.5
-                id: op04n04d
-                lineNumber: 313
-            -
-                beat: 37
-                id: op04n09a
-                lineNumber: 170
-            -
-                beat: 128
-                id: op04n10e
-                lineNumber: 184
-        nextDeg: ii
-    -
-        count: 4
-        currentDeg: iii
-        items:
-            -
-                beat: 112
-                id: op04n03d
-                lineNumber: 163
-            -
-                beat: 56
-                id: op04n09d
-                lineNumber: 110
-            -
-                beat: 160
-                id: op04n09d
-                lineNumber: 288
-            -
-                beat: 84
-                id: op04n10b
-                lineNumber: 332
-        nextDeg: I
-    -
-        count: 17
+        count: 18
         currentDeg: iv
         items:
+            -
+                beat: 68
+                id: op01n02a
+                lineNumber: 150
             -
                 beat: 26
                 id: op04n01c
@@ -1848,6 +1798,100 @@ transitions:
                 id: op04n10d
                 lineNumber: 69
         nextDeg: VI
+    -
+        count: 1
+        currentDeg: VII
+        items:
+            -
+                beat: 58
+                id: op01n05c
+                lineNumber: 133
+        nextDeg: IV
+    -
+        count: 3
+        currentDeg: VII
+        items:
+            -
+                beat: 132
+                id: op01n05c
+                lineNumber: 232
+            -
+                beat: 22
+                id: op04n05d
+                lineNumber: 49
+            -
+                beat: 84
+                id: op04n11c
+                lineNumber: 213
+        nextDeg: III
+    -
+        count: 1
+        currentDeg: VII
+        items:
+            -
+                beat: 35
+                id: op04n01c
+                lineNumber: 100
+        nextDeg: i
+    -
+        count: 2
+        currentDeg: VII
+        items:
+            -
+                beat: 72
+                id: op04n05b
+                lineNumber: 183
+            -
+                beat: 32
+                id: op04n06e
+                lineNumber: 41
+        nextDeg: iv
+    -
+        count: 5
+        currentDeg: iii
+        items:
+            -
+                beat: 32
+                id: op04n01a
+                lineNumber: 88
+            -
+                beat: 84
+                id: op04n01d
+                lineNumber: 207
+            -
+                beat: 135.5
+                id: op04n04d
+                lineNumber: 313
+            -
+                beat: 37
+                id: op04n09a
+                lineNumber: 170
+            -
+                beat: 128
+                id: op04n10e
+                lineNumber: 184
+        nextDeg: ii
+    -
+        count: 4
+        currentDeg: iii
+        items:
+            -
+                beat: 112
+                id: op04n03d
+                lineNumber: 163
+            -
+                beat: 56
+                id: op04n09d
+                lineNumber: 110
+            -
+                beat: 160
+                id: op04n09d
+                lineNumber: 288
+            -
+                beat: 84
+                id: op04n10b
+                lineNumber: 332
+        nextDeg: I
     -
         count: 1
         currentDeg: vii

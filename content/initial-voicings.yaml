@@ -261,7 +261,7 @@ initialVoicings:
         fb: '3'
         pieceId: op03n10c
     -
-        fb: 2 4
+        fb: null
         pieceId: op03n10d
     -
         fb: 5 3
