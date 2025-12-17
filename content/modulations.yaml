@@ -888,6 +888,134 @@ modulations:
         startBeat: 36
         startLine: 101
     -
+        deg: I
+        endBeat: 14
+        endLine: 57
+        key: C
+        pieceId: op01n07a
+        startBeat: 0
+        startLine: 18
+    -
+        deg: V
+        endBeat: 28
+        endLine: 99
+        key: G
+        pieceId: op01n07a
+        startBeat: 14
+        startLine: 57
+    -
+        deg: I
+        endBeat: 41
+        endLine: 147
+        key: C
+        pieceId: op01n07a
+        startBeat: 28
+        startLine: 99
+    -
+        deg: V
+        endBeat: 47
+        endLine: 165
+        key: G
+        pieceId: op01n07a
+        startBeat: 41
+        startLine: 147
+    -
+        deg: I
+        endBeat: 54
+        endLine: 188
+        key: C
+        pieceId: op01n07a
+        startBeat: 47
+        startLine: 165
+    -
+        deg: V
+        endBeat: 58
+        endLine: 201
+        key: G
+        pieceId: op01n07a
+        startBeat: 54
+        startLine: 188
+    -
+        deg: I
+        endBeat: 64
+        endLine: 228
+        key: C
+        pieceId: op01n07a
+        startBeat: 58
+        startLine: 201
+    -
+        deg: IV
+        endBeat: 66
+        endLine: 237
+        key: F
+        pieceId: op01n07a
+        startBeat: 64
+        startLine: 228
+    -
+        deg: I
+        endBeat: 98
+        endLine: 335
+        key: C
+        pieceId: op01n07a
+        startBeat: 66
+        startLine: 237
+    -
+        deg: vi
+        endBeat: 108
+        endLine: 366
+        key: a
+        pieceId: op01n07a
+        startBeat: 98
+        startLine: 335
+    -
+        deg: V
+        endBeat: 112
+        endLine: 384
+        key: G
+        pieceId: op01n07a
+        startBeat: 108
+        startLine: 366
+    -
+        deg: I
+        endBeat: 119
+        endLine: 412
+        key: C
+        pieceId: op01n07a
+        startBeat: 112
+        startLine: 384
+    -
+        deg: IV
+        endBeat: 132
+        endLine: 454
+        key: F
+        pieceId: op01n07a
+        startBeat: 119
+        startLine: 412
+    -
+        deg: I
+        endBeat: 140
+        endLine: 479
+        key: C
+        pieceId: op01n07a
+        startBeat: 132
+        startLine: 454
+    -
+        deg: V
+        endBeat: 144
+        endLine: 491
+        key: G
+        pieceId: op01n07a
+        startBeat: 140
+        startLine: 479
+    -
+        deg: I
+        endBeat: 160
+        endLine: 32
+        key: C
+        pieceId: op01n07a
+        startBeat: 144
+        startLine: 491
+    -
         deg: i
         endBeat: 8
         endLine: 28

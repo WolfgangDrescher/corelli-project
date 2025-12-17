@@ -540,6 +540,47 @@ sequences:
             - Karussell
             - Synkopenkette
     -
+        endBeat: 66
+        endLine: 237
+        pieceId: op01n07a
+        startBeat: 59
+        startLine: 205
+        tags:
+            - TODO
+    -
+        endBeat: 98
+        endLine: 335
+        pieceId: op01n07a
+        startBeat: 93
+        startLine: 323
+        tags:
+            - Quintfall
+    -
+        endBeat: 115
+        endLine: 398
+        pieceId: op01n07a
+        startBeat: 106
+        startLine: 356
+        tags:
+            - Quintfall
+    -
+        endBeat: 122
+        endLine: 422
+        pieceId: op01n07a
+        startBeat: 119
+        startLine: 412
+        tags:
+            - 5-6-Konsekutive
+            - Monte
+    -
+        endBeat: 154
+        endLine: 520
+        pieceId: op01n07a
+        startBeat: 149
+        startLine: 505
+        tags:
+            - 7-6-Konsekutive
+    -
         endBeat: 6
         endLine: 25
         pieceId: op01n07b
