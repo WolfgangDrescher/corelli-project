@@ -12,12 +12,12 @@ const { data: pieces } = await useAsyncData(`pieces`, () => queryCollection('pie
 const { data: cadencesData } = await useAsyncData(`cadences`, () => queryCollection('cadences').all());
 const { data: demoPieceCadencesData } = await useAsyncData(`cadences/piece/${id}`, () => queryCollection('cadences').where('pieceId', '=', id).all());
 const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
-const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
+const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').all());
 const { data: reviewsData } = await useAsyncData(`reviews`, () => queryCollection('reviews').first());
 
 const demoPieceCadences = demoPieceCadencesData.value;
 const demoPieceSequences = sequencesData.value.sequences.filter(s => s.pieceId === id);
-const demoPieceModulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
+const demoPieceModulations = modulationsData.value.filter(m => m.pieceId === id);
 
 const scoreOptions = useScoreOptions();
 useScoreKeyboardShortcuts();
@@ -75,7 +75,7 @@ const totalPieces = computed(() => pieces.value.filter(item => filterPiecesByOp(
 
 const modulationCount = computed(() => {
     if (!pieces.value || !modulationsData.value) return 0;
-    const mods = modulationsData.value.modulations.filter(item => filterPiecesByOp(item, 'pieceId'));
+    const mods = modulationsData.value.filter(item => filterPiecesByOp(item, 'pieceId'));
     const piecesWithMods = new Set(mods.map(m => m.pieceId));
     return pieces.value.filter(p => piecesWithMods.has(p.slug)).length;
 });

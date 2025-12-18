@@ -1,6 +1,6 @@
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
-import { dirname } from 'node:path';
+import { dirname, resolve as pathResolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { romanize } from '../app/utils/romanize.js';
@@ -9,11 +9,16 @@ import { getIdFromFilename, getFiles } from './utils.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const pathToKernScores = `${__dirname}/../corelli-trio-sonatas/kern/`;
-const pathToModulations = `${__dirname}/../corelli-trio-sonatas/modulations.yaml`;
-const modulationsYamlPath = `${__dirname}/../content/modulations.yaml`;
+const pathToModulationsYaml = `${__dirname}/../corelli-trio-sonatas/modulations.yaml`;
+const modulationsPath = `${__dirname}/../content/modulations`;
 const transitionsYamlPath = `${__dirname}/../content/transitions.yaml`;
 
-const modulationAnnotations = yaml.load(fs.readFileSync(pathToModulations, 'utf8').toString());
+if (fs.existsSync(modulationsPath)) {
+    fs.rmSync(modulationsPath, { recursive: true, force: true });
+}
+fs.mkdirSync(modulationsPath);
+
+const modulationAnnotations = yaml.load(fs.readFileSync(pathToModulationsYaml, 'utf8').toString());
 
 const modulationsResult = [];
 
@@ -110,6 +115,15 @@ getFiles(pathToKernScores).forEach(file => {
         modulation.endLine = modulations[index + 1]?.startLine ?? lines.length;
     });
 
+    modulations.forEach((modulation) => {
+        const slug = `${modulation.pieceId}-${modulation.startBeat}`.replace('.', '_');
+        fs.writeFileSync(pathResolve(modulationsPath, `${slug}.yaml`), yaml.dump({...modulation, slug}, {
+            indent: 4,
+            lineWidth: -1,
+            sortKeys: true,
+        }));
+    })
+
     modulationsResult.push(...modulations);
 
 });
@@ -151,12 +165,6 @@ for (const currentDeg in transitionsMap) {
         });
     }
 }
-
-fs.writeFileSync(modulationsYamlPath, yaml.dump({modulations: modulationsResult}, {
-    indent: 4,
-    lineWidth: -1,
-    sortKeys: true,
-}));
 
 fs.writeFileSync(transitionsYamlPath, yaml.dump({transitions}, {
     indent: 4,

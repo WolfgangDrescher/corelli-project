@@ -36,18 +36,17 @@ export default defineContentConfig({
             }),
         }),
         modulations: defineCollection({
-            source: 'modulations.yaml',
+            source: 'modulations/*.yaml',
             type: 'data',
             schema: z.object({
-                modulations: z.array(z.object({
-                    deg: z.string(),
-                    endBeat: z.number(),
-                    endLine: z.number(),
-                    key: z.string(),
-                    pieceId: z.string(),
-                    startBeat: z.number(),
-                    startLine: z.number(),
-                })),
+                deg: z.string(),
+                endBeat: z.number(),
+                endLine: z.number(),
+                key: z.string(),
+                pieceId: z.string(),
+                startBeat: z.number(),
+                startLine: z.number(),
+                slug: z.string(),
             }),
         }),
         transitions: defineCollection({

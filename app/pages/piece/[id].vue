@@ -7,11 +7,11 @@ const localePath = useLocalePath();
 const { params: { id } } = useRoute();
 const { data: piece } = await useAsyncData(`pieces/${id}`, () => queryCollection('pieces').where('stem', '=', `pieces/${id}`).first());
 const { data: cadencesData } = await useAsyncData(`cadences/piece/${id}`, () => queryCollection('cadences').where('pieceId', '=', id).all());
-const { data: modulationsData } = await useAsyncData(`modulations`, () => queryCollection('modulations').first());
+const { data: modulationsData } = await useAsyncData(`modulations/piece/${id}`, () => queryCollection('modulations').where('pieceId', '=', id).all());
 const { data: sequencesData } = await useAsyncData(`sequences`, () => queryCollection('sequences').first());
 
 const cadences = cadencesData.value;
-const modulations = modulationsData.value.modulations.filter(m => m.pieceId === id);
+const modulations = modulationsData.value;
 const sequences = sequencesData.value.sequences.filter(s => s.pieceId === id);
 
 if (!piece.value) {
