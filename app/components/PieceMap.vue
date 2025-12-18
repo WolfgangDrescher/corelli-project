@@ -18,7 +18,7 @@ const modulationsGroupedByKey = computed(() => {
     }, {}));
 });
 
-const maxBeat = props.modulations[props.modulations.length - 1].endBeat;
+const maxBeat = Math.max(...props.modulations.map(m => m.endBeat));
 
 function getWidth(startBeat, endBeat) {
     return (endBeat - startBeat) / maxBeat * 100;
